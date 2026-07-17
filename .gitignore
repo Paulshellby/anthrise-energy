@@ -1,0 +1,16 @@
+# Build output
+dist/
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Design files (not needed for production)
+*.psd
+*.sketch
+*.fig
