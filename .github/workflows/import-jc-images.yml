@@ -1,0 +1,36 @@
+name: Import JC Lighting product photos into ANTHRISE
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-jc-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-jc-lighting-images
+  cancel-in-progress: false
+
+jobs:
+  copy-original-photos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout ANTHRISE
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download and validate all 30 source images
+        run: python3 .github/scripts/import_jc_lighting.py
+      - name: Commit website with local product photos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html images/jc-lighting
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: self-host all 30 JC Lighting catalogue photos"
+            git push origin HEAD:main
+          fi
