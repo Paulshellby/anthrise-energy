@@ -13,9 +13,34 @@ ANTHRISE（昂旭新能源）双语静态展示官网。主页：`index.html`，
 
 **关于 D 盘素材**：这个 GitHub 仓库目前能核实的 JC Lighting 产品图为 30 张。若本机 D 盘还有未上传照片，请先整理为 ZIP，核实来源及使用授权，再补充进 `images/jc-lighting/`；不要直接假定 D 盘剩余图片已上传。
 
+## ANTHRISE 统一型号规则（2026-11-10 更新）
+
+**产品代码前缀：**
+
+- `AE-E-` = ANTHRISE Energy Storage（储能电池及储能系统）。
+- `AE-I-` = ANTHRISE Inverter（逆变器）。
+- `AE-L-` = ANTHRISE Lighting（照明灯具）。
+
+| 家族系列 | 示例 | 备注 |
+|---|---|---|
+| SEED / ROOT | `AE-E-SEED-12V100` / `AE-E-ROOT-0512` | 12.8V / 25.6V 基础电池、51.2V 机架电池 |
+| DAWN / RISE | `AE-E-DAWN-16` / `AE-E-RISE-32` | 低压壁挂、落地/扩容家储 |
+| ASCEND | `AE-E-ASCEND-20` | 高压堆叠；实际直流电压需另行确认 |
+| HORIZON / UNION | `AE-E-HORIZON-125` / `AE-E-UNION-10` | 工商业储能柜 / 储能逆变一体化 |
+| PULSE / ORBIT | `AE-I-PULSE-5K-S-LV` / `AE-I-ORBIT-10K-T-HV` | 低压/高压单相/三相混合逆变器 |
+| TRAIL / BEACON | `AE-I-TRAIL-5K-S-OFF` / `AE-I-BEACON-20K-T-ON` | 离网 / 并网逆变器 |
+| GUARD / BLOOM / AURA | `AE-L-GUARD-01`, `AE-L-BLOOM-01`, `AE-L-AURA-01` | 安防、庭院、氛围照明 |
+| ROAM / BEAM | `AE-L-ROAM-01`, `AE-L-BEAM-01` | 离网便携、交流商用照明 |
+
+**专属页面：** [储能与逆变器完整型号中心 energy.html](./energy.html)（14 个系列、84 个规划型号）；[储能型号 CSV](./energy-models.csv)；[照明图库 lighting.html](./lighting.html)（30 款 AE-L 产品）；[照明型号与旧供应商编号对照 CSV](./lighting-inventory.csv)。
+
+**编码释义：** `S` = Single phase（单相）；`T` = Three phase（三相）；`LV` = Low voltage battery（低压电池）；`HV` = High voltage battery（高压电池）；`OFF` = Off-grid（离网）；`ON` = On-grid（并网）。电池型号末尾 `05`、`16`、`20` 等通常指容量等级，而非承诺精确额定容量；精确值与串并联结构应由工厂出具规格书。基础电池 12V/24V 为商业类别命名，参考常见 LiFePO₄ 标称电压 12.8V/25.6V，具体以产品为准。
+
+**特别注意：** 以上均为 **ANTHRISE 规划选品编码、概念效果图和目标容量/功率段**，并非已定型、量产或持证的正式工厂产品。正式样机、产品外观、固件、通讯、输出、认证、实物照片、供货资格和品牌名称商标检索须逐项核实。原网站参考型号和第三方目录来源在内部资料中保留以供对照，不应据此宣称原厂授权。
+
 ## 网站功能 / Website Features
 
-- **64 个产品展示条目**：家储（16/32kWh 等）、商用储能、逆变器、光伏、太阳能灯具、Volt 便携电源、Core 低压电池、Ray 光伏产品及配件，保留原站 22 款产品，并整合 JC Lighting 产品目录参考素材。
+- **78 个首页产品展示条目（含 14 个新增储能/逆变器系列）**：家储（16/32kWh 等）、商用储能、逆变器、光伏、太阳能灯具、Volt 便携电源、Core 低压电池、Ray 光伏产品及配件，保留原站 22 款产品，并整合 JC Lighting 产品目录参考素材。
 - **中英文切换 / Chinese & English**：支持页面文本、产品名称与选型内容切换。
 - **产品搜索与分类**：按储能、逆变器、光伏、照明、便携电源、配件筛选；灯具可按子类进一步筛选。
 - **场景选品 / Solution Finder**：家庭、工商业、离网、太阳能照明及便携场景的初步推荐。
