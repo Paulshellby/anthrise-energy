@@ -70,4 +70,44 @@ $('selection').addEventListener('click',e=>{if(e.target.closest('#copy'))copy();
 $('langButton').addEventListener('click',()=>{document.documentElement.lang=zh()?'en':'zh-CN';document.querySelectorAll('[data-zh][data-en]').forEach(x=>x.textContent=x.dataset[zh()?'zh':'en']);$('langButton').textContent=zh()?'EN':'中文';$('backHome').textContent=t('← 返回官网','← Main website');$('search').placeholder=t('搜索容量、功率、型号或关键词...','Search capacity, power or model code...');render()});
 render();
 })();
-</script></body></html>
+</script><script>
+/* ANTHRISE image path resilience:
+   Use repository images locally or on GitHub Pages. If a relative image is
+   unavailable (e.g. a single HTML file opened via file://), retry the public
+   image hosted in the ANTHRISE GitHub repository. */
+(function(){
+'use strict';
+const base='https://raw.githubusercontent.com/Paulshellby/anthrise-energy/main/';
+function remote(path){return base+path.split('/').map(encodeURIComponent).join('/');}
+function placeholder(image){
+ const isZh=(document.documentElement.lang||'').toLowerCase().startsWith('zh');
+ const line1=isZh?'图片暂时无法加载':'Image temporarily unavailable';
+ const line2=isZh?'请连接网络，或下载包含 images 文件夹的完整网站':'Connect to the internet or use the full website ZIP';
+ const svg='<svg xmlns="http://www.w3.org/2000/svg" width="800" height="550" viewBox="0 0 800 550">'+
+ '<rect width="800" height="550" rx="16" fill="#e9f3ef"/>'+
+ '<circle cx="400" cy="200" r="76" fill="#d1ebdd"/>'+
+ '<path d="M340 245 L390 140 H410 L460 245 H435 L400 177 L365 245 Z" fill="#159577"/>'+
+ '<path d="M410 123 A46 46 0 0 1 502 123" fill="none" stroke="#f2ad3c" stroke-width="12"/>'+
+ '<text x="400" y="344" fill="#173d35" font-family="Arial,sans-serif" font-weight="bold" font-size="27" text-anchor="middle">'+line1+'</text>'+
+ '<text x="400" y="392" fill="#5e766c" font-family="Arial,sans-serif" font-size="19" text-anchor="middle">'+line2+'</text></svg>';
+ image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+}
+document.addEventListener('error',function(ev){
+ const image=ev.target;
+ if(!image||image.tagName!=='IMG')return;
+ const src=image.getAttribute('src')||'';
+ const state=image.dataset.anthriseImgState||'';
+ if(state==='remote'){
+   image.dataset.anthriseImgState='placeholder';
+   placeholder(image);
+   return;
+ }
+ if(state==='placeholder')return;
+ if(/^images\//i.test(src)){
+   image.dataset.anthriseImgState='remote';
+   image.src=remote(src);
+ }
+},true);
+})();
+</script>
+</body></html>
