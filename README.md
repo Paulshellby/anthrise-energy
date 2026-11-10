@@ -2,6 +2,17 @@
 
 ANTHRISE（昂旭新能源）双语静态展示官网。主页：`index.html`，产品图片资源：`images/`。
 
+## ANTHRISE LIGHTING · 昂旭照明系列
+
+- **独立图库**：[lighting.html](./lighting.html)，统一纳入 ANTHRISE LIGHTING 品牌网站架构。
+- **30 款、30 张图片**：当前来源为仓库 `images/jc-lighting/`，全部图片已核对存在，并已逐款对应。
+- **5 个子系列**：安防与路灯（8）、庭院景观（3）、氛围装饰（7）、离网便携（9）、商用交流照明（3）。
+- **交互功能**：中英文切换、产品搜索与分类、查看大图、选择多款灯具、复制询盘清单、导出 TXT。
+- **图文对照表**：[lighting-inventory.csv](./lighting-inventory.csv)，使用 ANTHRISE 站内选品编码 AL-001 至 AL-030。
+- 首页 `index.html` 已加入独立图库入口。图片来源和产品参数仍按供应链参考资料标示，并不代表已经获得品牌定制、商标或图片授权。
+
+**关于 D 盘素材**：这个 GitHub 仓库目前能核实的 JC Lighting 产品图为 30 张。若本机 D 盘还有未上传照片，请先整理为 ZIP，核实来源及使用授权，再补充进 `images/jc-lighting/`；不要直接假定 D 盘剩余图片已上传。
+
 ## 网站功能 / Website Features
 
 - **64 个产品展示条目**：家储（16/32kWh 等）、商用储能、逆变器、光伏、太阳能灯具、Volt 便携电源、Core 低压电池、Ray 光伏产品及配件，保留原站 22 款产品，并整合 JC Lighting 产品目录参考素材。
