@@ -66,6 +66,14 @@ GitHub 官方教程：[Configuring a publishing source](https://docs.github.com/
 
 **未启用 Pages 之前，上述网址可能显示 404。** 仓库代码已经存在与网页公开部署属于两种不同状态。
 
+## 图片显示问题与修复 / Missing Images
+
+- `index.html`、`energy.html`、`lighting.html`、`product.html` 已加入图片加载补救：如果相对路径 `images/...` 加载失败，会自动从本公开 GitHub 仓库的 `raw.githubusercontent.com` 地址重试。
+- **只下载单个 HTML 文件时**：请保持联网（产品图片位于 GitHub，不在 HTML 文件内）；Logo 与部分内嵌插画可能仍可离线显示。
+- **需要完全离线查看所有产品图片时**：请使用 [完整项目 ZIP](https://github.com/Paulshellby/anthrise-energy/archive/refs/heads/main.zip)，解压后保留 `index.html`、`lighting.html`、`energy.html`、`product.html` 与 `images/` 的同级目录结构，再用 Chrome 打开 HTML。
+- 如果图片仍不可见，检查是否能访问 `raw.githubusercontent.com`，以及本地网络或代理是否阻止 GitHub 图片。
+- GitHub 页面链接 `https://paulshellby.github.io/anthrise-energy/` **只有启用 Pages 并完成部署后才能使用**；当前需要仓库管理员在 Settings → Pages 中启用。
+
 ## 下载源码 / Download Source
 
 - GitHub → Code → Download ZIP，或使用 [下载整个项目 ZIP](https://github.com/Paulshellby/anthrise-energy/archive/refs/heads/main.zip)。
