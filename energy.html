@@ -50,6 +50,11 @@ let type='all',sub='all',query='';
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const families=[['all','全部系列','All series'],['E','储能电池 · AE-E','Batteries · AE-E'],['I','逆变器 · AE-I','Inverters · AE-I']];
 const subs=[['all','全部','All'],['battery-basic','基础 12V / 24V','12V / 24V'],['battery-lv','低压家储','Low-voltage ESS'],['battery-hv','高压堆叠','HV Stack'],['battery-ci','工商业','Commercial'],['battery-aio','一体机','All-in-One'],['inv-lv','低压混合','LV Hybrid'],['inv-hv','高压混合','HV Hybrid'],['inv-off','离网','Off-grid'],['inv-grid','并网','On-grid']];
+const requestedCategory=new URLSearchParams(window.location.search).get('category');
+if(subs.some(([key])=>key!=='all'&&key===requestedCategory)){
+  sub=requestedCategory;
+  type=sub.startsWith('battery-')?'E':'I';
+}
 function fits(g){return(type==='all'||(type==='E'?g.category.startsWith('battery'):g.category.startsWith('inv')))&&(sub==='all'||g.category===sub)&&(!query||[g.zh,g.en,g.line,g.voltage,g.descZh,g.descEn,...g.models.flatMap(m=>[m.model,m.rating])].join(' ').toLowerCase().includes(query))}
 function renderTabs(){
 $('tabs').innerHTML=families.map(v=>'<button type="button" data-type="'+v[0]+'" class="'+(type===v[0]?'active':'')+'" aria-pressed="'+(type===v[0])+'">'+esc(t(v[1],v[2]))+'</button>').join('');
