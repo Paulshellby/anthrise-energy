@@ -270,7 +270,7 @@ function renderEnergyFamilies(){
 }
 function renderProducts(){renderEnergyFamilies();const family=energyFamilies[state.filter]?.[state.energyFamily]?.[2];const keyword=state.search.trim().toLowerCase();const items=products.filter(p=>catalogCategories[state.filter].includes(p.category)&&(!family||family.includes(p.id))&&(state.filter!=='lighting'||state.lightingFamily==='all'||p.family===state.lightingFamily)&&(!keyword||[p.zh,p.en,p.modelCode||'',(p.modelCodes||[]).join(' '),p.descriptionZh,p.descriptionEn,p.tags.join(' '),p.family||''].join(' ').toLowerCase().includes(keyword)));$('#lightingFamilyBar').hidden=state.filter!=='lighting';$('#resultsCount').textContent=tr(`显示 ${items.length} / ${products.length} 项`,`Showing ${items.length} / ${products.length}`);$('#productGrid').innerHTML=items.length?items.map(p=>`<article class="product-card"><div class="card-art">${p.image?`<img class="original-product-img" src="${escapeHtml(p.image)}" alt="${escapeHtml(tr(p.zh,p.en))}" loading="lazy" decoding="async">`:illustration(p.type)}<span class="illustration-note">${p.image?tr('图片参考','Reference image'):tr('概念示意','Concept')}</span></div><div class="card-body"><div class="card-overline"><span>${escapeHtml(p.modelCode||p.num)}</span><span>${escapeHtml(tr(...categories[p.category]))}</span></div><h3>${escapeHtml(tr(p.zh,p.en))}</h3><p>${escapeHtml(tr(p.descriptionZh,p.descriptionEn))}</p><div class="tag-list">${p.tags.map(tag=>`<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div><div class="card-bottom"><button type="button" class="compare-chip" data-compare="${p.id}" aria-label="${escapeHtml(tr('对比：'+p.zh,'Compare: '+p.en))}">${tr('＋ 对比','＋ Compare')}</button><button type="button" class="link-btn" data-product="${p.id}" aria-label="${escapeHtml(tr('查看详情：'+p.zh,'View details: '+p.en))}">${tr('了解产品','View details')} &nbsp;↗</button></div></div></article>`).join(''):`<div class="empty">${tr('暂无匹配产品，请尝试其他关键词。','No matching products. Try another search.')}</div>`;}
 function renderScene(){const s=scenes[state.scene];$('#sceneKicker').textContent=s.k;$('#sceneTitle').textContent=tr(...s.title);$('#sceneDescription').textContent=tr(...s.desc);$('#sceneTags').innerHTML=s.tags.map(x=>`<span>${escapeHtml(tr(...x))}</span>`).join('');$('#sceneFlow').innerHTML=s.flow.map(x=>`<div class="flow-node"><span aria-hidden="true">${x[0]}</span>${escapeHtml(tr(x[1],x[2]))}</div>`).join('');$$('[data-scene]').forEach(b=>{const active=b.dataset.scene===state.scene;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));});}
-const heroSlides=['ess16','hybrid12','origAEV1000','series_ascend','hybrid50','origAER400','jcLight01'];
+const heroSlides=['ess16','hybrid12','origAEV1000','series_ascend','hybrid50','origAER400','jcLight01','origAEAMPPT'];
 let heroSlideIndex=0;
 let heroUserPaused=false;
 const heroMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -309,12 +309,17 @@ function renderHeroMode(){
   $('#heroPause').textContent=heroUserPaused?'▶':'Ⅱ';
   $('#heroPause').setAttribute('aria-label',heroUserPaused?tr('播放轮播','Play slideshow'):tr('暂停轮播','Pause slideshow'));
   $$('[data-mode]').forEach(b=>{
-    const active=b.dataset.mode===state.mode;
+    const active=b.dataset.mode===heroCategory;
     b.classList.toggle('active',active);
     b.setAttribute('aria-pressed',String(active));
   });
 }
 const heroCarousel=$('#heroCarousel');
+$('.hero-catalog-link').addEventListener('click',()=>{
+  const product=products.find(p=>p.id===heroSlides[heroSlideIndex]);
+  const category=Object.keys(catalogCategories).find(key=>catalogCategories[key].includes(product.category));
+  selectProductCategory(category);
+});
 $('#heroPrev').addEventListener('click',()=>stepHero(-1));
 $('#heroNext').addEventListener('click',()=>stepHero(1));
 $('#heroPause').addEventListener('click',()=>{
