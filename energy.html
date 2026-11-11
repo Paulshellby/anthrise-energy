@@ -49,14 +49,15 @@ const $=id=>document.getElementById(id);const zh=()=>document.documentElement.la
 let type='all',sub='all',query='';
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const families=[['all','全部系列','All series'],['E','储能电池 · AE-E','Batteries · AE-E'],['I','逆变器 · AE-I','Inverters · AE-I']];
-const subs=[['all','全部','All'],['battery-basic','Deep Cycle 磷酸铁锂电池','Deep Cycle LiFePO₄ Batteries'],['battery-lv','低压家储','Low-voltage ESS'],['battery-rack','机架式储能','Rack-mounted ESS'],['battery-hv','高压堆叠','HV Stack'],['battery-ci','工商业','Commercial'],['battery-aio','一体机','All-in-One'],['inv-hybrid','混合逆变器','Hybrid inverters'],['inv-off','离网','Off-grid'],['inv-grid','并网','On-grid']];
+const subs=[['all','全部','All'],['battery-cell','磷酸铁锂电池','LiFePO₄ batteries'],['battery-system','储能系统','Energy storage systems'],['inv-hybrid','混合逆变器','Hybrid inverters'],['inv-off','离网逆变器','Off-grid inverters'],['inv-grid','并网逆变器','Grid-tied inverters']];
+const energyCategoryGroups={'battery-cell':['battery-basic','battery-lv','battery-rack','battery-hv'],'battery-system':['battery-ci','battery-aio']};
 const categoryParam=new URLSearchParams(window.location.search).get('category');
-const requestedCategory=['inv-lv','inv-hv'].includes(categoryParam)?'inv-hybrid':categoryParam;
+const requestedCategory=['inv-lv','inv-hv'].includes(categoryParam)?'inv-hybrid':Object.keys(energyCategoryGroups).find(key=>energyCategoryGroups[key].includes(categoryParam))||categoryParam;
 if(subs.some(([key])=>key!=='all'&&key===requestedCategory)){
   sub=requestedCategory;
   type=sub.startsWith('battery-')?'E':'I';
 }
-function fits(g){return(type==='all'||(type==='E'?g.category.startsWith('battery'):g.category.startsWith('inv')))&&(sub==='all'||g.category===sub)&&(!query||[g.zh,g.en,g.line,g.voltage,g.descZh,g.descEn,...g.models.flatMap(m=>[m.model,m.rating])].join(' ').toLowerCase().includes(query))}
+function fits(g){return(type==='all'||(type==='E'?g.category.startsWith('battery'):g.category.startsWith('inv')))&&(sub==='all'||(energyCategoryGroups[sub]||[sub]).includes(g.category))&&(!query||[g.zh,g.en,g.line,g.voltage,g.descZh,g.descEn,...g.models.flatMap(m=>[m.model,m.rating])].join(' ').toLowerCase().includes(query))}
 function renderTabs(){
 $('tabs').innerHTML=families.map(v=>'<button type="button" data-type="'+v[0]+'" class="'+(type===v[0]?'active':'')+'" aria-pressed="'+(type===v[0])+'">'+esc(t(v[1],v[2]))+'</button>').join('');
 const show=subs.filter(v=>v[0]==='all'||type==='all'||(type==='E'?v[0].startsWith('battery'):v[0].startsWith('inv')));
