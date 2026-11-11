@@ -181,6 +181,40 @@ header{z-index:90}.mega-item summary{list-style:none;cursor:pointer;display:flex
 #energyFamilyBar .family-btn.active,#lightingFamilyBar .family-btn.active{background:#e9f2ec;color:#0d6956;border-color:#bfd2c5;font-weight:650}
 .product-card .card-overline{font-size:10px;color:#87998f;letter-spacing:.06em}.product-card h3{font-size:21px;color:var(--ink)}.product-card .tag{font-size:10px;font-weight:500;background:#f0f4f0;color:#60766a}
 @media(max-width:640px){.mega-products .mega-column{padding:5px 12px}.mega-products .mega-column .mega-title{font-size:17px;margin-top:8px}.mega-products .mega-panel-inner{padding:8px 0}#productFilters{width:100%;display:grid;grid-template-columns:repeat(3,1fr)}#productFilters .tab{font-size:12px;padding:10px 8px}#products{scroll-margin-top:calc(var(--navh) + 10px)}}
+
+/* A single studio surface for mixed portrait and landscape originals. */
+.premium-hero .hero-product-stage{
+  box-sizing:border-box;
+  padding:clamp(14px,2vw,28px);
+  background:#fff;
+  border:0;
+  border-radius:12px;
+  box-shadow:0 24px 56px rgba(0,0,0,.15);
+}
+.premium-hero .hero-product-image{
+  display:block;
+  flex:0 1 auto;
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:100%;
+  min-width:0;
+  object-fit:contain;
+  background:transparent;
+  border-radius:0;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent),linear-gradient(to bottom,transparent,#000 4%,#000 96%,transparent);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent),linear-gradient(to bottom,transparent,#000 4%,#000 96%,transparent);
+  mask-composite:intersect;
+}
+.premium-hero .hero-thumbnails img{
+  background:#fff;
+  border-radius:4px;
+}
+@media(max-width:640px){
+  .premium-hero .hero-product-stage{padding:12px;border-radius:9px}
+}
+
 </style>
 </head>
 <body>
