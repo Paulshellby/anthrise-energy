@@ -1,331 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0c1418">
-<title>Anthrise Energy — Product Details</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230c1418'/><path d='M17.5 6 L9 18 h5.5 l-1.5 8 L22 13 h-5.5 z' fill='%2325d59a'/></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#103c32"><title>Product details | ANTHRISE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ink:#0c1418;--ink-2:#101c22;--paper:#f5f7f6;--paper-2:#ffffff;--mist:#c3ccce;--steel:#7f8f95;--line:rgba(255,255,255,.09);--line-dk:rgba(12,20,24,.12);--volt:#25d59a;--volt-dk:#12a877;--amber:#f2a63b}
-html{scroll-behavior:smooth;font-size:17px}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:600;line-height:1.12;letter-spacing:-.02em}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:1100px;margin:0 auto;padding:0 32px}
-.btn{display:inline-flex;align-items:center;gap:9px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.92rem;padding:12px 22px;border-radius:8px;cursor:pointer;border:1px solid transparent;transition:transform .15s,background .15s;white-space:nowrap}
-.btn-primary{background:var(--volt);color:#04211a}
-.btn-primary:hover{transform:translateY(-2px);background:#2ee0a3}
-.btn-ghost{background:transparent;border-color:var(--line-dk);color:var(--ink)}
-.btn-ghost:hover{border-color:var(--ink)}
-.btn-ghost.on-dark{border-color:rgba(255,255,255,.24);color:var(--paper)}
-.btn-ghost.on-dark:hover{border-color:#fff}
-
-/* NAV */
-header.nav{position:sticky;top:0;z-index:60;background:rgba(12,20,24,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1200px;margin:0 auto;padding:0 32px}
-.brand{display:flex;align-items:center;gap:10px;color:var(--paper)}
-.brand svg{width:26px;height:26px}
-.brand b{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.12rem}
-.brand span{color:var(--volt)}
-.nav-right{display:flex;align-items:center;gap:12px}
-.langs{display:flex;gap:2px;border:1px solid var(--line);border-radius:7px;padding:3px}
-.langs button{background:none;border:0;color:var(--steel);font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:600;padding:4px 8px;border-radius:5px;cursor:pointer;transition:.15s}
-.langs button.active{background:var(--volt);color:#04211a}
-
-/* HERO */
-.hero{background:linear-gradient(180deg,var(--ink),var(--ink-2));color:var(--paper)}
-.hero-in{display:grid;grid-template-columns:1fr 1fr;min-height:460px}
-.hero-img{display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 45%,rgba(37,213,154,.08),transparent 55%),linear-gradient(155deg,#101e24,#0c1418);padding:40px;min-height:380px}
-.hero-img img{max-width:94%;max-height:400px;object-fit:contain}
-.hero-info{display:flex;flex-direction:column;justify-content:center;padding:40px 40px 40px 0}
-.hero-info .model{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--volt-dk);margin-bottom:8px}
-.hero-info h1{font-size:clamp(1.5rem,2.6vw,2.2rem);color:#fff;margin-bottom:10px}
-.hero-info .desc{font-size:.95rem;color:var(--mist);font-weight:300;line-height:1.6;margin-bottom:18px}
-.tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
-.tags span{font-family:'Space Grotesk',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--volt-dk);background:rgba(37,213,154,.12);padding:4px 10px;border-radius:20px}
-.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
-
-/* BODY */
-.main{background:var(--paper);padding:64px 0}
-.main-in{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
-
-/* SPECS */
-.specs-section h2{font-size:1.25rem;margin-bottom:20px}
-.specs-list{list-style:none;border:1px solid var(--line-dk);border-radius:14px;overflow:hidden;background:var(--paper-2)}
-.specs-list li{display:flex;justify-content:space-between;align-items:center;font-size:.86rem;padding:14px 18px;border-bottom:1px dashed var(--line-dk)}
-.specs-list li:last-child{border-bottom:none}
-.specs-list li span:first-child{color:var(--steel);font-family:'Space Grotesk',sans-serif;font-size:.7rem;letter-spacing:.04em;text-transform:uppercase}
-.specs-list li span:last-child{font-weight:600;color:var(--ink);font-family:'Space Grotesk',sans-serif;text-align:right;max-width:60%}
-.specs-list .tbd{color:var(--amber)!important;font-weight:500}
-
-/* SIDEBAR */
-.sidebar{display:flex;flex-direction:column;gap:26px}
-.side-section h3{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--volt-dk);margin-bottom:10px}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chips span,.chips a{display:inline-flex;font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:500;border-radius:20px;padding:5px 12px}
-.app-chip{color:var(--amber);background:rgba(242,166,59,.08);border:1px solid rgba(242,166,59,.18)}
-.pair-chip{color:var(--ink);background:rgba(37,213,154,.06);border:1px solid rgba(37,213,154,.15);transition:.15s;cursor:pointer}
-.pair-chip:hover{background:rgba(37,213,154,.15);border-color:var(--volt)}
-.quote-card{background:linear-gradient(135deg,var(--ink),var(--ink-2));color:var(--paper);border-radius:14px;padding:24px 22px;border:1px solid var(--line)}
-.quote-card h3{font-size:1.05rem;color:#fff;margin-bottom:8px}
-.quote-card p{font-size:.85rem;color:var(--mist);font-weight:300;margin-bottom:16px;line-height:1.5}
-.quote-card .btn{width:100%;justify-content:center}
-
-/* NOT FOUND */
-.notfound{text-align:center;padding:120px 32px}
-.notfound h2{font-size:1.8rem;margin-bottom:12px}
-.notfound p{color:var(--steel);margin-bottom:28px}
-
-/* FOOTER */
-footer{background:var(--ink);color:var(--mist);padding:28px 0 22px;border-top:1px solid var(--line)}
-.foot-in{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:.82rem}
-
-/* WHATSAPP */
-.wa-float{position:fixed;bottom:28px;right:28px;z-index:80}
-.wa-float .wa-btn{width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s}
-.wa-float .wa-btn:hover{transform:scale(1.08)}
-.wa-float .wa-btn svg{width:28px;height:28px;fill:#fff}
-
-@media(max-width:860px){
-  .hero-in{grid-template-columns:1fr;min-height:auto}
-  .hero-img{min-height:280px;padding:24px}
-  .hero-info{padding:24px 32px 36px}
-  .main-in{grid-template-columns:1fr;gap:36px}
-}
-@media(max-width:560px){
-  .wrap{padding:0 20px}
-  .nav-in{padding:0 16px}
-  .hero-img{min-height:220px}
-  .hero-info{padding:20px 16px}
-  .main{padding:40px 0}
-  .wa-float{bottom:18px;right:18px}
-}
-.hero-img{background:#fff;border-radius:12px;overflow:hidden}.hero-img img{background:#fff;object-fit:contain}
-</style>
-</head>
-<body>
-
-<!-- NAV -->
-<header class="nav">
-  <div class="nav-in">
-    <a href="index.html" class="brand">
-      <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="none"/><path d="M17.5 5 L8.5 18 h5.5 l-1.5 9 L23 12 h-5.5 z" fill="#25d59a"/></svg>
-      <b>Anthrise <span>Energy</span></b>
-    </a>
-    <div class="nav-right">
-      <a href="index.html#products" class="btn btn-ghost on-dark" style="padding:8px 14px;font-size:.8rem"><span id="backLabel">← Back to Products</span></a>
-      <div class="langs">
-        <button data-lang="en" class="active">EN</button>
-        <button data-lang="zh">中</button>
-        <button data-lang="es">ES</button>
-      </div>
-      <a href="index.html#contact" class="btn btn-primary" style="padding:8px 14px;font-size:.8rem"><span id="ctaLabel">Get a Quote</span></a>
-    </div>
-  </div>
-</header>
-
-<!-- NOT FOUND (shown when model is invalid) -->
-<div class="notfound" id="notfound" style="display:none">
-  <h2 id="nfTitle">Product not found</h2>
-  <p id="nfDesc">The model you requested does not exist.</p>
-  <a href="index.html#products" class="btn btn-primary" id="nfLink">Browse all products</a>
-</div>
-
-<!-- PRODUCT HERO (hidden until populated) -->
-<section class="hero" id="pdHero">
-  <div class="wrap hero-in">
-    <div class="hero-img" id="heroImg"><img src="" alt="" id="pdImg"></div>
-    <div class="hero-info">
-      <span class="model" id="pdModel"></span>
-      <h1 id="pdTitle"></h1>
-      <p class="desc" id="pdDesc"></p>
-      <div class="tags" id="pdTags"></div>
-      <div class="hero-cta">
-        <a href="index.html#contact" class="btn btn-primary" id="pdQuoteBtn">Request quote</a>
-        <a href="index.html#products" class="btn btn-ghost on-dark"><span id="backLabel2">← Back to Products</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCT BODY -->
-<section class="main">
-  <div class="wrap main-in">
-    <div class="specs-section">
-      <h2 id="specsTitle">Specifications</h2>
-      <ul class="specs-list" id="pdSpecs"></ul>
-    </div>
-    <div class="sidebar">
-      <div class="side-section" id="appsSection">
-        <h3 id="appsTitle">Applications</h3>
-        <div class="chips" id="pdApps"></div>
-      </div>
-      <div class="side-section" id="pairsSection">
-        <h3 id="pairsTitle">Pairs With</h3>
-        <div class="chips" id="pdPairs"></div>
-      </div>
-      <div class="quote-card">
-        <h3>Request quote — <span id="quoteModel"></span></h3>
-        <p>Send us your target quantities and market. We reply with pricing and availability within 24 hours.</p>
-        <a href="index.html#contact" class="btn btn-primary">Get wholesale pricing</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="wrap foot-in">
-    <div><b>Anthrise <span style="color:var(--volt)">Energy</span></b> &nbsp;·&nbsp; <span id="footLegal">Specifications subject to confirmation. CE + RoHS baseline.</span></div>
-    <span style="color:var(--steel)">© 2026 Anthrise Energy · 昂旭能源</span>
-  </div>
-</footer>
-
-<!-- WHATSAPP -->
-<a href="https://wa.me/8613138189642" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
-  <span class="wa-btn"><svg viewBox="0 0 24 24"><path d="M17.5 6.5A7 7 0 0 0 5.6 16.2l-.9 3.3 3.4-.9a7 7 0 0 0 9.4-12zM12 2a10 10 0 0 0-8.8 14.7L2 22l5.5-1.4A10 10 0 0 0 12 22a10 10 0 0 0 0-20z"/><path d="M9 7.5a.8.8 0 0 0-.6.3c-.3.3-.9 1-.9 2s1 2.5 1.2 2.7c.1.2 2 3.2 5 4.4 2.4.9 3.3.7 3.9.6a3 3 0 0 0 2-2.2c.1-.5.1-.9 0-1-.1-.1-.2-.2-.5-.3s-1.5-.8-1.8-.9c-.2-.1-.3-.1-.5.1-.2.3-.6.9-.8 1.1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.7-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.3-.4.1-.2 0-.3 0-.4-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.5-.4h-.4z"/></svg></span>
-</a>
-
+:root{--ink:#14372e;--green:#087b65;--muted:#63796d;--line:#dfe9e2;--paper:#f6f8f5;--gold:#ac873b}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Outfit,system-ui,sans-serif}a{color:inherit;text-decoration:none}button,select{font:inherit}button,a,summary{touch-action:manipulation}button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:4px}header{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}.header-inner{max-width:1240px;padding:18px 24px;margin:auto;display:flex;gap:28px;align-items:center}.brand img{display:block;width:190px;height:39px;object-fit:contain}.top-links{display:flex;gap:24px;margin-left:auto;font-size:13px}.locale{position:relative}.locale summary{display:flex;align-items:center;gap:6px;cursor:pointer;list-style:none;border:1px solid var(--line);border-radius:22px;padding:8px 12px;font-size:11px}.locale summary::-webkit-details-marker{display:none}.locale svg{width:23px;height:23px}.locale-options{position:absolute;right:0;top:45px;min-width:150px;padding:8px;background:white;border:1px solid var(--line);border-radius:9px;box-shadow:0 14px 24px #14372e18}.locale-options button{display:block;width:100%;text-align:left;border:0;background:none;padding:10px;cursor:pointer;color:var(--ink)}.locale-options button[aria-pressed=true]{background:#edf5ee;color:var(--green)}.wrap{max-width:1240px;margin:auto;padding:28px 24px 60px}.crumbs{display:flex;flex-wrap:wrap;gap:11px;color:var(--muted);font-size:11px;margin:0 0 30px}.crumbs a{color:var(--green)}.product-layout{display:grid;grid-template-columns:180px minmax(0,1.15fr) minmax(280px,.85fr);gap:30px;align-items:start}.sidebar{border-right:1px solid var(--line);padding-right:22px}.sidebar a{display:block;padding:12px 0;font-size:13px;color:var(--muted);line-height:1.5}.sidebar>a{font-size:15px;font-weight:650;color:var(--ink)}.sidebar a[aria-current=true]{color:var(--green)}.sidebar .sub{border-left:2px solid var(--line);padding:4px 0 4px 12px;margin:6px 0 16px}.sidebar .sub a{font-size:11px;padding:7px 0}.gallery{min-width:0}.main-picture{position:relative;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;aspect-ratio:1}.main-picture>img{width:100%;height:100%;object-fit:contain}.zoom-button{position:absolute;bottom:14px;right:14px;border:1px solid var(--line);border-radius:20px;padding:7px 12px;background:#ffffffed;color:var(--ink);font-size:11px;cursor:pointer}.gallery-controls{display:flex;align-items:center;gap:8px;margin:13px 0}.gallery-controls>button{width:30px;height:32px;border:1px solid var(--line);border-radius:5px;background:#fff;color:var(--ink);cursor:pointer}.thumbs{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.thumbs button{background:#fff;border:1px solid var(--line);border-radius:6px;padding:5px;cursor:pointer;color:var(--muted)}.thumbs button[aria-current=true]{border-color:var(--green);box-shadow:0 0 0 1px var(--green)}.thumbs img{display:block;width:100%;height:66px;object-fit:contain}.thumbs span{font-size:9px;line-height:1.4;display:block;padding:4px 0}.gallery-note{font-size:10px;line-height:1.6;color:var(--muted);margin-top:12px}.product-info{padding:16px 0}.eyebrow{text-transform:uppercase;letter-spacing:.1em;color:var(--green);font-size:10px;font-weight:650}.product-info h1{font-size:clamp(27px,3vw,40px);line-height:1.18;letter-spacing:-.025em;margin:13px 0 16px}.description{color:var(--muted);font-size:14px;line-height:1.85}.model{font-size:11px;line-height:1.7;margin:20px 0;overflow-wrap:anywhere}.model strong{color:var(--green);font-weight:600}.actions{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:43px;padding:10px 17px;border-radius:6px;font-size:12px;font-weight:600;border:1px solid var(--line)}.btn.primary{background:var(--green);border-color:var(--green);color:#fff}.tags{display:flex;gap:7px;flex-wrap:wrap}.tags span{font-size:10px;padding:6px 9px;border:1px solid var(--line);border-radius:4px;color:var(--muted)}.detail-section{margin-top:38px;padding-top:28px;border-top:1px solid var(--line)}h2{font-size:22px;line-height:1.35}.specs{border:1px solid var(--line);border-radius:9px;overflow:hidden}.spec-row{display:grid;grid-template-columns:190px 1fr;gap:20px;padding:15px 19px;background:#fff;border-bottom:1px solid var(--line);font-size:12px;line-height:1.7}.spec-row:last-child{border-bottom:0}.spec-row>span{color:var(--muted)}.features{padding-left:20px;color:var(--muted);font-size:13px;line-height:1.9}.model-list{display:flex;gap:7px;flex-wrap:wrap}.model-list span{border:1px solid var(--line);padding:7px 9px;font-size:10px;border-radius:4px;background:#fff}.related{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.related a{padding:14px;border:1px solid var(--line);border-radius:9px;background:#fff}.related img{width:100%;height:160px;object-fit:contain}.related strong{display:block;font-size:13px;line-height:1.5;margin-top:12px}.related small{color:var(--muted);font-size:10px}.not-found{padding:80px 20px;text-align:center}.not-found[hidden]{display:none}dialog{border:0;border-radius:12px;padding:18px;max-width:95vw;max-height:95dvh;background:#fff}dialog::backdrop{background:#071f1bbd}dialog img{display:block;max-width:85vw;max-height:80dvh;object-fit:contain}dialog>button{position:absolute;right:10px;top:8px;border:1px solid var(--line);border-radius:50%;background:#fff;color:var(--ink);font-size:25px;width:34px;height:34px;cursor:pointer}footer{border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:11px;padding:25px}.main-content[hidden]{display:none}
+@media(max-width:1000px){.product-layout{grid-template-columns:minmax(0,1fr) minmax(260px,.85fr)}.sidebar{display:none}.top-links{gap:14px;font-size:11px}}
+@media(max-width:640px){.header-inner{padding:13px 16px;gap:12px}.brand img{width:145px;height:31px}.top-links{display:none}.locale{margin-left:auto}.wrap{padding:22px 16px 40px}.crumbs{margin-bottom:20px}.product-layout{grid-template-columns:1fr;gap:12px}.product-info{padding:8px 0}.product-info h1{font-size:29px}.related{grid-template-columns:repeat(2,minmax(0,1fr))}.related img{height:130px}.spec-row{grid-template-columns:100px 1fr;gap:12px;padding:12px;font-size:11px}.thumbs img{height:66px}}
+@media(prefers-reduced-motion:no-preference){.main-picture>img{animation:reveal .3s ease}@keyframes reveal{from{opacity:.4}to{opacity:1}}}
+.sidebar .sub{max-height:480px;overflow-y:auto;padding-right:7px;scrollbar-width:thin;scrollbar-color:#c0d2c6 transparent}
+</style></head><body>
+<header><div class="header-inner"><a class="brand" href="index.html"><img src="images/anthrise-logo.webp" alt="ANTHRISE"></a><nav class="top-links"><a href="index.html?category=storage#products" data-ui="storage">Energy storage</a><a href="index.html?category=solar#products" data-ui="solar">Solar panels & inverters</a><a href="index.html?category=lighting#products" data-ui="lighting">Lighting</a></nav><details class="locale" id="locale"><summary aria-label="Language"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="17" cy="19" r="11" fill="none" stroke="currentColor" stroke-width="1.4"/><ellipse cx="17" cy="19" rx="5" ry="11" fill="none" stroke="currentColor"/><path d="M6 19h22M9 13h16M9 25h16" stroke="currentColor"/><circle cx="28" cy="8" r="3" fill="#d9a63e"/></svg><span id="languageCode">EN</span></summary><div class="locale-options"><button type="button" data-lang="en">English</button><button type="button" data-lang="es">Español</button><button type="button" data-lang="zh">简体中文</button><button type="button" data-lang="ru">Русский</button></div></details></div></header>
+<div class="not-found" id="notFound" hidden><h1 data-ui="missing">Product not found</h1><a class="btn primary" href="index.html#products" data-ui="back">Back to products</a></div>
+<main class="wrap main-content" id="content"><nav class="crumbs"><a href="index.html" data-ui="home">Home</a><span>/</span><a id="categoryCrumb"></a><span>/</span><span id="modelCrumb"></span></nav><div class="product-layout"><aside class="sidebar" id="sidebar"></aside><div class="gallery"><div class="main-picture" id="pictureArea" tabindex="0"><img id="mainImage" alt=""><button class="zoom-button" id="zoom" type="button" data-ui="zoom">Enlarge</button></div><div class="gallery-controls"><button type="button" id="previous" aria-label="Previous image">←</button><div class="thumbs" id="thumbnails"></div><button type="button" id="next" aria-label="Next image">→</button></div><p class="gallery-note" data-ui="imageNote">Detail images are enlarged crops of the same product image.</p></div><section class="product-info"><div class="eyebrow" id="categoryLabel"></div><h1 id="productTitle"></h1><p class="description" id="description"></p><div class="model"><span data-ui="model">Model</span> <strong id="modelCode"></strong></div><div class="tags" id="tags"></div><div class="actions"><a class="btn primary" id="inquire" data-ui="inquire">Request product information</a><a class="btn" id="backCatalog" data-ui="back">Back to products</a></div></section></div>
+<section class="detail-section"><h2 data-ui="information">Product information</h2><div class="specs" id="specs"></div><ul class="features" id="features"></ul></section><section class="detail-section" id="variantsSection" hidden><h2 data-ui="variants">Model options</h2><div class="model-list" id="modelList"></div></section><section class="detail-section"><h2 data-ui="related">Related products</h2><div class="related" id="relatedProducts"></div></section></main>
+<dialog id="zoomDialog"><button type="button" id="closeZoom" aria-label="Close">×</button><img id="zoomImage" alt=""></dialog><footer>ANTHRISE · Powering Humanity’s Rise.</footer>
+<script src="assets/product-catalog.js"></script>
 <script>
-// ════════════ INLINE PRODUCT DATABASE ════════════
-var PRODUCT_DB = {
-'AE-V200':{model:'AE-V200',series:'Volt 200',name:'Ultra-Compact',cat:'stations',desc:'Pocket-sized LiFePO4 backup. Enough to keep phones, tablets, LED lights and a small fan running through a blackout or a weekend camping trip. Fits in a backpack.',img:'images/studio-white/origaev200.webp',specs:[{l:'Capacity (target)',v:'150–300Wh'},{l:'AC Output',v:'TBD — pending factory spec'},{l:'Chemistry',v:'LiFePO4 (lithium iron phosphate)'},{l:'BMS',v:'Smart BMS — overcharge / overheat / short-circuit'},{l:'Weight',v:'~2–3 kg'},{l:'Warranty',v:'2 years (baseline)'},{l:'Certification',v:'CE · RoHS · UN38.3'},{l:'MOQ',v:'Sample → container'}],apps:['Smartphones & tablets','LED camping lights','Small USB fans','CPAP (short-duration)','Field sensors / cameras'],pairs:['AE-R60 (60W solar panel)'],tags:['LiFePO4','Portable','Entry-level']},
-'AE-V500':{model:'AE-V500',series:'Volt 500',name:'Compact All-Rounder',cat:'stations',desc:'The sweet spot for camping, field work and short blackouts. Runs a laptop, desk fan, LED lights and charges devices simultaneously.',img:'images/studio-white/origaev500.webp',specs:[{l:'Capacity (target)',v:'300–600Wh'},{l:'AC Output',v:'TBD — pending factory spec'},{l:'Chemistry',v:'LiFePO4'},{l:'BMS',v:'Smart BMS — full protection suite'},{l:'Weight',v:'~4–6 kg'},{l:'Warranty',v:'2 years (baseline)'},{l:'Certification',v:'CE · RoHS · UN38.3'},{l:'MOQ',v:'Sample → container'}],apps:['Laptop & monitor (4-6 hrs)','Camp site lighting','Portable fridge','Drone / camera charging','Small power tools'],pairs:['AE-R100 (100W solar)'],tags:['LiFePO4','Portable','Mid-capacity']},
-'AE-V1000':{model:'AE-V1000',series:'Volt 1000 ★',name:'Mid-Range Workhorse',cat:'stations',desc:'The volume seller. 600–1200Wh powers a fridge, TV, CPAP and lights through a full load-shedding cycle. The model distributors reorder in container quantities.',img:'images/studio-white/origaev1000.webp',specs:[{l:'Capacity (target)',v:'600–1200Wh'},{l:'AC Output',v:'TBD — pending factory spec'},{l:'Chemistry',v:'LiFePO4'},{l:'BMS',v:'Smart BMS — full protection suite'},{l:'Weight',v:'~8–12 kg'},{l:'Warranty',v:'2 years (baseline)'},{l:'Certification',v:'CE · RoHS · UN38.3'},{l:'MOQ',v:'Sample → container'}],apps:['Full-size fridge (8-18 hrs)','LED TV + decoder (4-8 hrs)','CPAP machine (full night)','Home office: laptop + router','Load-shedding essentials'],pairs:['AE-R200 (200W fast solar)','AE-R100 (100W solar)'],tags:['LiFePO4','Bestseller','Load-shedding']},
-'AE-V1500':{model:'AE-V1500',series:'Volt 1500',name:'Large-Capacity',cat:'stations',desc:'For households that need real runtime through extended outages. 1200–2000Wh target. Runs multiple appliances simultaneously.',img:'images/studio-white/origaev1500.webp',specs:[{l:'Capacity (target)',v:'1200–2000Wh'},{l:'AC Output',v:'TBD — pending factory spec'},{l:'Chemistry',v:'LiFePO4'},{l:'BMS',v:'Smart BMS — full protection suite'},{l:'Weight',v:'~15–22 kg'},{l:'Features',v:'Wheels + telescoping handle'},{l:'Warranty',v:'2 years (baseline)'},{l:'MOQ',v:'Sample → container'}],apps:['Full kitchen appliances','Extended blackout (12-24 hrs)','Small business backup','Medical equipment','Event / market stall power'],pairs:['AE-R200 (200W solar)','AE-R400 (rooftop 400W)'],tags:['LiFePO4','Home backup','Wheeled']},
-'AE-V2500':{model:'AE-V2500',series:'Volt 2500',name:'Professional',cat:'stations',desc:'Whole-home backup for serious outages. 2000–3600Wh target. 240V split-phase capable. The unit installers specify for clients who refuse to go dark.',img:'images/studio-white/origaev2500.webp',specs:[{l:'Capacity (target)',v:'2000–3600Wh'},{l:'AC Output',v:'TBD — pending factory spec'},{l:'Output',v:'240V split-phase capable'},{l:'BMS',v:'Smart BMS — full protection suite'},{l:'Weight',v:'~25–35 kg'},{l:'Features',v:'Trolley handle + heavy-duty wheels'},{l:'Warranty',v:'2 years (baseline)'},{l:'MOQ',v:'Sample → container'}],apps:['Whole-home backup','Construction site power','Commercial backup','Telecom / radio repeater','Multi-day off-grid cabin'],pairs:['AE-R400 (rigid 400W solar array)','AE-A-INV (supplementary inverter)'],tags:['LiFePO4','Professional','Heavy-duty']},
-'AE-VP':{model:'AE-VP',series:'Volt Pro',name:'Modular Expandable',cat:'stations',desc:'Stack extra battery packs to scale capacity on site. Start with the base 2000Wh unit, grow as your customer needs grow.',img:'images/studio-white/origaevp.webp',specs:[{l:'Capacity',v:'2000Wh base + expandable'},{l:'AC Output',v:'TBD — pending factory spec'},{l:'Chemistry',v:'LiFePO4'},{l:'BMS',v:'Smart BMS — full protection suite'},{l:'Expansion',v:'Side-dock expansion connector'},{l:'Cycle life',v:'3500+ cycles to 80%'},{l:'Warranty',v:'2 years (baseline)'},{l:'OEM/ODM',v:'Logo, colour, packaging'}],apps:['Scalable home energy storage','Installer / integrator platform','Expandable off-grid system','Small commercial backup'],pairs:['AE-R400 (rigid array)','Battery compatibility subject to confirmation'],tags:['LiFePO4','Modular','Scalable']},
-'AE-R60':{model:'AE-R60',series:'Ray 60',name:'60W Foldable',cat:'solar',desc:'Keep the AE-V200 topped up on the trail. Ultralight ETFE-coated foldable panel. Pairs with any power station via MC4 or DC5521 adapter.',img:'images/studio-white/origaer60.webp',specs:[{l:'Rated power',v:'60W'},{l:'Type',v:'Foldable, ETFE-coated'},{l:'Cell type',v:'Monocrystalline'},{l:'Open circuit voltage',v:'~21V (TBD)'},{l:'Weight',v:'~2.5 kg'},{l:'Connector',v:'MC4 standard'},{l:'Warranty',v:'1 year (baseline)'},{l:'Certification',v:'CE · RoHS'}],apps:['Hiking / trek day-charge','Volt 200 companion','USB device direct charging','Emergency kit solar'],pairs:['AE-V200 (Volt 200)'],tags:['Foldable','ETFE','60W']},
-'AE-R100':{model:'AE-R100',series:'Ray 100',name:'100W Foldable',cat:'solar',desc:'The standard solar companion. Two panels fully charge an AE-V500 in a day of good sun. ETFE coating for years of trail durability.',img:'images/studio-white/origaer100.webp',specs:[{l:'Rated power',v:'100W'},{l:'Type',v:'Foldable, ETFE-coated'},{l:'Cell type',v:'Monocrystalline'},{l:'Open circuit voltage',v:'~21V (TBD)'},{l:'Weight',v:'~4.5 kg'},{l:'Connector',v:'MC4 standard'},{l:'Warranty',v:'1 year (baseline)'},{l:'Certification',v:'CE · RoHS'}],apps:['Volt 500 full-day recharge','Camping base station','Campsite / overlanding','Balcony solar (apartment)'],pairs:['AE-V500 or AE-V1000'],tags:['Foldable','ETFE','100W','Bestseller']},
-'AE-R200':{model:'AE-R200',series:'Ray 200',name:'200W Foldable',cat:'solar',desc:'Fast solar charging for AE-V1000 and above. 5-6 panel fold-out with adjustable kickstand. Packs flat for container shipping.',img:'images/studio-white/origaer200.webp',specs:[{l:'Rated power',v:'200W'},{l:'Type',v:'Foldable, ETFE-coated'},{l:'Cell type',v:'Monocrystalline'},{l:'Open circuit voltage',v:'~21V (TBD)'},{l:'Weight',v:'~7.5 kg'},{l:'Features',v:'Adjustable kickstand'},{l:'Warranty',v:'1 year (baseline)'},{l:'Certification',v:'CE · RoHS'}],apps:['Volt 1000/1500 fast recharge','Off-grid cabin primary solar','Overlanding / expedition','Disaster relief rapid deploy'],pairs:['AE-V1000 / AE-V1500 / AE-V2500'],tags:['Foldable','ETFE','200W','Fast-charge']},
-'AE-R400':{model:'AE-R400',series:'Ray 400',name:'400W Rigid',cat:'solar',desc:'Roof-mount monocrystalline PERC panel for permanent off-grid installations. Aluminum frame, tempered glass, MC4 junction box.',img:'images/studio-white/origaer400.webp',specs:[{l:'Rated power',v:'400W'},{l:'Type',v:'Rigid, monocrystalline PERC'},{l:'Frame',v:'Silver anodized aluminum'},{l:'Glass',v:'Tempered, anti-reflective coated'},{l:'Weight',v:'~21 kg'},{l:'Dimensions',v:'~1722×1134×35 mm (TBD)'},{l:'Warranty',v:'1 year (baseline)'},{l:'Certification',v:'CE · RoHS'}],apps:['Rooftop fixed installation','Off-grid home solar array','Core battery bank charging','Water pumping systems','Telecom site permanent power'],pairs:['Battery compatibility subject to confirmation','AE-A-MPPT (40-60A MPPT)'],tags:['Rigid','PERC','400W','Roof-mount']},
-'AE-SK1':{model:'AE-SK1',series:'Starter Kit',name:'Solar Generator Bundle',cat:'solar',desc:'Power station + foldable solar panel in one order. Plug and play — ready for true off-grid use straight out of the box.',img:'images/studio-white/origaesk1.webp',specs:[{l:'Bundle contents',v:'Power station + foldable solar panel (model per quote)'},{l:'Chemistry',v:'LiFePO4'},{l:'Connectors',v:'MC4 + adapters included'},{l:'Warranty',v:'Per individual product'},{l:'MOQ',v:'Sample → container'},{l:'Certification',v:'CE · RoHS · UN38.3'}],apps:['All-in-one off-grid starter','Disaster preparedness kit','Cabin / tiny home power','NGO / aid agency procurement'],pairs:['Configurable — specify Volt + Ray models on enquiry'],tags:['Bundle','Off-grid','Plug-and-play']},
-'AE-A-MPPT':{model:'AE-A-MPPT',series:'Accessory',name:'MPPT Charge Controller',cat:'accs',desc:'Smart MPPT solar charge controllers in 10A / 20A / 40A / 60A ratings. Maximise solar harvest for Core batteries and off-grid systems.',img:'images/studio-white/origaeamppt.webp',specs:[{l:'Ratings',v:'10A / 20A / 40A / 60A (select at order)'},{l:'Type',v:'MPPT (Maximum Power Point Tracking)'},{l:'Battery support',v:'LiFePO4 / AGM / Gel / Flooded'},{l:'Protection',v:'Overcharge · Over-discharge · Reverse polarity'},{l:'MOQ',v:'Per unit, negotiable'}],apps:['Core battery solar charging','Off-grid system regulation','Panel → battery optimisation'],pairs:['Battery compatibility subject to confirmation','AE-R60 through AE-R400'],tags:['Electronics','MPPT','Controller']},
-'AE-A-INV':{model:'AE-A-INV',series:'Accessory',name:'Pure Sine Wave Inverter',cat:'accs',desc:'Clean AC power from your Core battery bank. 300W / 500W / 1000W / 2000W pure sine wave. Safe for sensitive electronics.',img:'images/studio-white/origaeainv.webp',specs:[{l:'Power ratings',v:'300W / 500W / 1000W / 2000W (select)'},{l:'Waveform',v:'Pure sine wave'},{l:'Input',v:'12V DC (battery terminals)'},{l:'Output',v:'AC outlet(s) — per model'},{l:'Protection',v:'Overload · Overheat · Low voltage shutdown'},{l:'MOQ',v:'Per unit, negotiable'}],apps:['Core battery → AC appliance power','Load-shedding home backup','RV / marine AC power','Small office UPS substitute'],pairs:['Battery compatibility subject to confirmation'],tags:['Electronics','Inverter','Pure sine']},
-'AE-A-DC':{model:'AE-A-DC',series:'Accessory',name:'DC-DC Car Charger',cat:'accs',desc:'20A / 40A DC-DC charger with smart alternator sensing. Charges your Core battery from the vehicle while driving.',img:'images/studio-white/origaeadc.webp',specs:[{l:'Ratings',v:'20A / 40A (select at order)'},{l:'Input',v:'12V / 24V alternator'},{l:'Output',v:'12V LiFePO4 charge profile'},{l:'Type',v:'Isolated DC-DC'},{l:'Features',v:'Smart alternator detection · Multi-stage charging'},{l:'MOQ',v:'Per unit, negotiable'}],apps:['RV / overland vehicle auxiliary charging','Service vehicle battery top-up','Marine engine → house battery'],pairs:['Battery compatibility subject to confirmation'],tags:['Electronics','DC-DC','Automotive']},
-};
-
-// ════════════ I18N ════════════
-var T = {
-zh:{
-'pd.back':'← 返回产品列表','pd.notfound':'未找到产品','pd.notfound.desc':'您请求的型号不存在。','pd.browse':'浏览全部产品','pd.specs':'规格参数','pd.apps':'应用场景','pd.pairs':'推荐搭配',
-'nav.cta':'获取报价','foot.legal':'规格以确认为准。CE + RoHS 底线。','brand.name':'昂旭<span>能源</span>'
-},
-es:{
-'pd.back':'← Volver a Productos','pd.notfound':'Producto no encontrado','pd.notfound.desc':'El modelo solicitado no existe.','pd.browse':'Explorar todos los productos','pd.specs':'Especificaciones','pd.apps':'Aplicaciones','pd.pairs':'Combina con',
-'nav.cta':'Cotizacion','foot.legal':'Especificaciones sujetas a confirmacion. CE + RoHS.','brand.name':'Anthrise <span>Energy</span>'
-}
-};
-
 (function(){
-  var lang='en';
-  try{lang=localStorage.getItem('everstor_lang')||'en';}catch(e){}
-  var urlP=new URLSearchParams(location.search).get('lang');
-  if(urlP) lang=urlP;
-
-  function t(k){
-    if(lang==='en') return null;
-    var d=T[lang];
-    return (d&&d[k])?d[k]:null;
-  }
-
-  function setLang(l){
-    lang=l;
-    try{localStorage.setItem('everstor_lang',l);}catch(e){}
-    document.documentElement.lang=l;
-    // update static labels
-    var els=document.querySelectorAll('[data-key]');
-    for(var i=0;i<els.length;i++){
-      var k=els[i].getAttribute('data-key');
-      var v=t(k);
-      if(v) els[i].innerHTML=v;
-    }
-    // lang buttons
-    var btns=document.querySelectorAll('.langs button');
-    for(var j=0;j<btns.length;j++){btns[j].classList.toggle('active',btns[j].dataset.lang===l);}
-    // update page title
-    updateTitle();
-  }
-
-  document.querySelectorAll('.langs button').forEach(function(b){
-    b.addEventListener('click',function(){setLang(b.dataset.lang);});
-  });
-
-  // ════════════ RENDER PRODUCT ════════════
-  var model = new URLSearchParams(location.search).get('model');
-  var p = PRODUCT_DB[model];
-
-  if(!p){
-    document.getElementById('notfound').style.display='block';
-    document.getElementById('pdHero').style.display='none';
-    document.querySelector('.main').style.display='none';
-    setLang(lang);
-    return;
-  }
-
-  // hero
-  document.getElementById('pdImg').src=p.img;
-  document.getElementById('pdImg').alt='Anthrise Energy '+p.model+' '+p.name;
-  document.getElementById('pdImg').onerror=function(){
-    if(!this.dataset.anthriseRemoteTried && /^images\//i.test(p.img||'')){
-      this.dataset.anthriseRemoteTried='1';
-      this.src='https://raw.githubusercontent.com/Paulshellby/anthrise-energy/main/'+
-        p.img.split('/').map(encodeURIComponent).join('/');
-      return;
-    }
-    document.getElementById('heroImg').innerHTML='<svg width="64" height="64" viewBox="0 0 24 24" style="stroke:var(--volt);fill:none;stroke-width:1.3;opacity:.35"><rect x="2" y="3" width="20" height="14" rx="2"/><circle cx="12" cy="12" r="3"/></svg>';
-  };
-  document.getElementById('pdModel').textContent=p.model;
-  document.getElementById('pdTitle').textContent=p.series+' — '+p.name;
-  document.getElementById('pdDesc').textContent=p.desc;
-
-  // tags
-  if(p.tags&&p.tags.length){
-    document.getElementById('pdTags').innerHTML=p.tags.map(function(t){return '<span>'+t+'</span>';}).join('');
-  }
-
-  // quote
-  document.getElementById('pdQuoteBtn').textContent='Request quote — '+p.model;
-  document.getElementById('quoteModel').textContent=p.model;
-
-  // specs
-  document.getElementById('pdSpecs').innerHTML=p.specs.map(function(s){
-    var cls=(s.v.indexOf('TBD')!==-1||s.v.indexOf('pending')!==-1)?'tbd':'';
-    return '<li><span>'+s.l+'</span><span class="'+cls+'">'+s.v+'</span></li>';
-  }).join('');
-
-  // apps
-  if(p.apps&&p.apps.length){
-    document.getElementById('pdApps').innerHTML=p.apps.map(function(a){return '<span class="app-chip">'+a+'</span>';}).join('');
-  }else{
-    document.getElementById('appsSection').style.display='none';
-  }
-
-  // pairings
-  if(p.pairs&&p.pairs.length){
-    document.getElementById('pdPairs').innerHTML=p.pairs.map(function(pp){
-      var m=pp.match(/AE-\w+/);
-      if(m){return '<a class="pair-chip" href="product.html?model='+m[0]+'">'+pp+'</a>';}
-      return '<span class="pair-chip" style="cursor:default">'+pp+'</span>';
-    }).join('');
-  }else{
-    document.getElementById('pairsSection').style.display='none';
-  }
-
-  function updateTitle(){
-    document.title=p.model+' '+p.series+' — '+p.name+' | Anthrise Energy';
-  }
-  updateTitle();
-
-  // init language
-  setLang(lang);
+'use strict';
+const all=window.ANTHRISE_PRODUCTS||[],copy=window.ANTHRISE_DETAIL_COPY||{};
+const params=new URLSearchParams(location.search);
+let lang='en';
+try{lang=params.get('lang')||localStorage.getItem('anthrise_lang')||'en';}catch{}
+if(!['en','es','zh','ru'].includes(lang))lang='en';
+const ui={
+home:['Home','首页','Inicio','Главная'],storage:['Energy storage','储能','Almacenamiento','Хранение энергии'],solar:['Solar panels & inverters','光伏板和逆变器','Paneles solares e inversores','Солнечные панели и инверторы'],lighting:['Lighting','照明','Iluminación','Освещение'],
+back:['Back to products','返回产品目录','Volver al catálogo','Вернуться в каталог'],model:['Model','型号','Modelo','Модель'],zoom:['Enlarge','放大查看','Ampliar','Увеличить'],inquire:['Request product information','咨询此产品','Consultar este producto','Запросить информацию'],
+information:['Product information','产品信息','Información del producto','Информация о продукте'],variants:['Model options','型号选项','Opciones de modelo','Варианты моделей'],related:['Related products','相关产品','Productos relacionados','Связанная продукция'],missing:['Product not found','未找到此产品','Producto no encontrado','Продукт не найден'],
+overview:['Overview','产品全图','Vista general','Общий вид'],upper:['Upper detail','上部细节','Detalle superior','Верхняя часть'],lower:['Lower detail','下部细节','Detalle inferior','Нижняя часть'],
+imageNote:['Detail images are enlarged crops of the same product image.','细节图为同一产品图片的局部放大。','Las imágenes de detalle son recortes ampliados de la misma imagen del producto.','Детальные изображения представляют собой увеличенные фрагменты одного изображения продукта.'],
+category:['Category','产品分类','Categoría','Категория'],references:['Reference information','参考信息','Información de referencia','Справочная информация'],
+planning:['These are catalogue selection codes. Confirm final specifications and compatibility against the product datasheet.','以上为目录选型编码，具体规格与兼容性请结合产品规格书确认。','Son códigos de selección del catálogo. Confirme las especificaciones y compatibilidad con la ficha técnica.','Это коды выбора в каталоге. Уточняйте окончательные характеристики и совместимость по техническому паспорту.'],
+previous:['Previous image','上一张图片','Imagen anterior','Предыдущее изображение'],next:['Next image','下一张图片','Imagen siguiente','Следующее изображение'],close:['Close','关闭','Cerrar','Закрыть']
+};
+const $=id=>document.getElementById(id),esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function text(key){return (ui[key]||[key,key,key,key])[{en:0,zh:1,es:2,ru:3}[lang]];}
+function translate(zh,en){if(lang==='zh')return zh;return (copy[en]||[])[lang==='es'?0:lang==='ru'?1:-1]||en;}
+const legacy={'AE-V200':'origAEV200','AE-V500':'origAEV500','AE-V1000':'origAEV1000','AE-V1500':'origAEV1500','AE-V2500':'origAEV2500','AE-VP':'origAEVP','AE-A-MPPT':'origAEAMPPT','AE-A-INV':'origAEAINV','AE-A-DC':'origAEADC'};
+const requested=params.get('id')||params.get('model')||'';
+const product=all.find(p=>p.id===requested||p.id===legacy[requested]||p.modelCode===requested||(p.modelCodes||[]).includes(requested)||p.en.split(' · ')[0]===requested);
+let imageIndex=0;
+function category(p){return ['storage','portable'].includes(p.category)?'storage':p.category==='lighting'?'lighting':'solar';}
+function detailURL(p){return 'product.html?id='+encodeURIComponent(p.id)+'&lang='+lang;}
+function imageFallback(image){image.addEventListener('error',()=>{if(!image.dataset.remote){image.dataset.remote='true';image.src='https://raw.githubusercontent.com/Paulshellby/anthrise-energy/main/'+image.getAttribute('src').split('/').map(encodeURIComponent).join('/');}},{once:true});}
+function showImage(index){
+ imageIndex=(index+product.gallery.length)%product.gallery.length;
+ $('mainImage').src=product.gallery[imageIndex];
+ $('mainImage').alt=translate(product.zh,product.en)+' · '+text(['overview','upper','lower'][imageIndex]);
+ $('thumbnails').querySelectorAll('button').forEach((button,i)=>button.setAttribute('aria-current',String(i===imageIndex)));
+}
+function render(){
+ document.documentElement.lang=lang==='zh'?'zh-CN':lang;
+ document.querySelectorAll('[data-ui]').forEach(el=>el.textContent=text(el.dataset.ui));
+ document.querySelectorAll('[data-lang]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lang===lang)));
+ $('languageCode').textContent={en:'EN',es:'ES',zh:'中',ru:'RU'}[lang];
+ $('previous').setAttribute('aria-label',text('previous'));$('next').setAttribute('aria-label',text('next'));$('closeZoom').setAttribute('aria-label',text('close'));
+ if(!product){$('content').hidden=true;$('notFound').hidden=false;return;}
+ const cat=category(product),name=translate(product.zh,product.en),code=product.modelCode||product.en.split(' · ')[0];
+ document.title=name+' | ANTHRISE';
+ $('productTitle').textContent=name;$('description').textContent=translate(product.descriptionZh,product.descriptionEn);
+ $('categoryLabel').textContent=text(cat);$('categoryCrumb').textContent=text(cat);$('categoryCrumb').href='index.html?category='+cat+'#products';$('modelCrumb').textContent=code;$('modelCode').textContent=code;
+ $('inquire').href='index.html?inquire='+encodeURIComponent(product.id)+'#inquiry';$('backCatalog').href='index.html?category='+cat+'#products';
+ $('tags').innerHTML=(product.tags||[]).map(t=>'<span>'+esc(translate(t,t))+'</span>').join('');
+ $('thumbnails').innerHTML=product.gallery.map((path,i)=>'<button type="button" data-image="'+i+'" aria-current="'+(i===imageIndex)+'"><img src="'+esc(path)+'" alt="" loading="lazy"><span>'+esc(text(['overview','upper','lower'][i]))+'</span></button>').join('');
+ $('sidebar').innerHTML=['storage','solar','lighting'].map(key=>'<a href="index.html?category='+key+'#products" aria-current="'+(key===cat)+'">'+esc(text(key))+'</a>'+(key===cat?'<div class="sub">'+all.filter(p=>category(p)===cat).map(p=>'<a href="'+detailURL(p)+'" aria-current="'+(p.id===product.id)+'">'+esc(translate(p.zh,p.en))+'</a>').join('')+'</div>':'')).join('');
+ $('specs').innerHTML=[[text('model'),code],[text('category'),text(cat)],[text('references'),(product.tags||[]).join(' · ')]].map(([label,value])=>'<div class="spec-row"><span>'+esc(label)+'</span><strong>'+esc(value)+'</strong></div>').join('');
+ $('features').innerHTML=(lang==='zh'?product.featuresZh:product.featuresEn||[]).map(t=>'<li>'+esc(translate(t,t))+'</li>').join('');
+ $('variantsSection').hidden=!(product.modelCodes||[]).length;
+ $('modelList').innerHTML=(product.modelCodes||[]).map(code=>'<span>'+esc(code)+'</span>').join('')+'<p class="gallery-note">'+esc(text('planning'))+'</p>';
+ $('relatedProducts').innerHTML=all.filter(p=>p.id!==product.id&&category(p)===cat).slice(0,4).map(p=>'<a href="'+detailURL(p)+'"><img src="'+esc(p.image)+'" alt="'+esc(translate(p.zh,p.en))+'" loading="lazy"><strong>'+esc(translate(p.zh,p.en))+'</strong><small>'+esc(p.modelCode||'')+'</small></a>').join('');
+ showImage(imageIndex);
+ document.querySelectorAll('img').forEach(imageFallback);
+}
+$('thumbnails').addEventListener('click',event=>{const button=event.target.closest('[data-image]');if(button)showImage(Number(button.dataset.image));});
+$('previous').addEventListener('click',()=>showImage(imageIndex-1));$('next').addEventListener('click',()=>showImage(imageIndex+1));
+$('pictureArea').addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();showImage(imageIndex+(event.key==='ArrowRight'?1:-1));}});
+let touchX;
+$('pictureArea').addEventListener('touchstart',event=>{touchX=event.changedTouches[0].clientX;},{passive:true});
+$('pictureArea').addEventListener('touchend',event=>{const delta=event.changedTouches[0].clientX-touchX;if(Math.abs(delta)>40)showImage(imageIndex+(delta<0?1:-1));},{passive:true});
+$('zoom').addEventListener('click',()=>{$('zoomImage').src=product.gallery[imageIndex];$('zoomImage').alt=$('mainImage').alt;$('zoomDialog').showModal();});
+$('closeZoom').addEventListener('click',()=>$('zoomDialog').close());
+$('zoomDialog').addEventListener('click',event=>{if(event.target===$('zoomDialog'))$('zoomDialog').close();});
+document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>{lang=button.dataset.lang;try{localStorage.setItem('anthrise_lang',lang);}catch{}const url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState(null,'',url);$('locale').open=false;render();}));
+document.addEventListener('click',event=>{if(!event.target.closest('.locale'))$('locale').open=false;});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')$('locale').open=false;});
+render();
 })();
-</script>
-</body>
-</html>
+</script></body></html>
