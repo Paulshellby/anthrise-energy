@@ -10,7 +10,7 @@ const copy={en:{welcome:"Hi, I'm Risey. Need help finding your energy solution?"
 
 
 let paused=false,language='',poseTimer,blinkTimer,bubbleTimer,idleTimer,microTimer,actionSerial=0,lastReaction=0,lastBubble=0,currentKind='',contextName='',arrivalHandled=false;
-const detailPage=location.pathname.endsWith('/product.html'),catalogPage=/\/(energy|lighting)\.html$/.test(location.pathname);
+const detailPage=(location.pathname.endsWith('/product.html')||!!window.ANTHRISE_PAGE?.id),catalogPage=/\/(energy|lighting)(?:-zh)?\.html$/.test(location.pathname);
 const words=()=>copy[document.documentElement.lang.startsWith('zh')?'zh':'en'],moving=()=>!paused&&!reduce.matches&&!document.hidden;
 const art=q('.risey-art'),canvas=q('.risey-canvas');
 let puppet=null,puppetReady=Promise.resolve();const motionCounts={};const visitVariant=Number(safeGet('risey-motion-visit')||0)%3;safeSet('risey-motion-visit',String(visitVariant+1));
@@ -51,11 +51,11 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden)setOp
 document.addEventListener('pointerdown',e=>{if(!panel.hidden&&!host.contains(e.target))setOpen(false)});
 new MutationObserver(()=>{if(language!==document.documentElement.lang)sync()}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 document.addEventListener('visibilitychange',motionChanged);reduce.addEventListener('change',motionChanged);
-document.addEventListener('focusin',e=>{const el=e.target;if(!(el instanceof Element))return;const form=!!el.closest('#inquiryForm');host.classList.toggle('form-active',form);if(form)react('service',false,'listening');else if(!(['inquiry','listening'].includes(currentKind)&&Date.now()-lastReaction<1200)&&el.closest('button[data-product],a[data-product],button[data-view],a[data-view],a[href*="product.html"],#heroViewProduct')){lookAt(el);react('battery',false,'product',publicProductName(el))}});
-document.addEventListener('pointerover',e=>{const t=e.target instanceof Element?e.target:null;const card=t?.closest('button[data-product],a[data-product],button[data-view],a[data-view],a[href*="product.html"],#heroViewProduct');if(card&&!card.contains(e.relatedTarget))lookAt(card)});
+document.addEventListener('focusin',e=>{const el=e.target;if(!(el instanceof Element))return;const form=!!el.closest('#inquiryForm');host.classList.toggle('form-active',form);if(form)react('service',false,'listening');else if(!(['inquiry','listening'].includes(currentKind)&&Date.now()-lastReaction<1200)&&el.closest('button[data-product],a[data-product],button[data-view],a[data-view],a[href*="product.html"],a[href*="products/"],#heroViewProduct')){lookAt(el);react('battery',false,'product',publicProductName(el))}});
+document.addEventListener('pointerover',e=>{const t=e.target instanceof Element?e.target:null;const card=t?.closest('button[data-product],a[data-product],button[data-view],a[data-view],a[href*="product.html"],a[href*="products/"],#heroViewProduct');if(card&&!card.contains(e.relatedTarget))lookAt(card)});
 document.addEventListener('click',e=>{const t=e.target instanceof Element?e.target:null;if(!t||host.contains(t))return;let action,kind='',name='';
 if(t.closest('#heroAskProduct,#sceneInquiry,#planToInquiry,a[href*="#inquiry"],#inquire,#addProduct,#modalAdd,#useEstimate')){action='service';kind='inquiry'}
-else if(t.closest('button[data-product],a[data-product],button[data-view],a[data-view],a[href*="product.html"],#heroViewProduct')){action='battery';kind='product';name=publicProductName(t);persist(action,kind,name)}
+else if(t.closest('button[data-product],a[data-product],button[data-view],a[data-view],a[href*="product.html"],a[href*="products/"],#heroViewProduct')){action='battery';kind='product';name=publicProductName(t);persist(action,kind,name)}
 else if(t.closest('#copyInquiry,#downloadInquiry,#previewInquiry,#copyList,#downloadList,#copy,#download')){action='happy';kind='summary'}
 else if(t.closest('#documentPanel a[download]')){action='happy';kind='selection'}
 else if(t.closest('[data-document-tab],a[href="#downloadsSection"]')){action='think';kind='search'}

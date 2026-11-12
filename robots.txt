@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://paulshellby.github.io/anthrise-energy/sitemap.xml
