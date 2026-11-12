@@ -57,6 +57,9 @@ document.addEventListener('click',e=>{const t=e.target instanceof Element?e.targ
 if(t.closest('#heroAskProduct,#sceneInquiry,#planToInquiry,a[href*="#inquiry"],#inquire,#addProduct,#modalAdd,#useEstimate')){action='service';kind='inquiry'}
 else if(t.closest('button[data-product],a[data-product],button[data-view],a[data-view],a[href*="product.html"],#heroViewProduct')){action='battery';kind='product';name=publicProductName(t);persist(action,kind,name)}
 else if(t.closest('#copyInquiry,#downloadInquiry,#previewInquiry,#copyList,#downloadList,#copy,#download')){action='happy';kind='summary'}
+else if(t.closest('#documentPanel a[download]')){action='happy';kind='selection'}
+else if(t.closest('[data-document-tab],a[href="#downloadsSection"]')){action='think';kind='search'}
+else if(t.closest('a[href="#applicationsSection"]')){action='battery';kind='product';name=publicProductName(t)}
 else if(t.closest('[data-compare],[data-pick],[data-model]')){action='happy';kind='selection'}
 else if(t.closest('a[href*="#planner"],a[href*="#calculator"],#resetCalc,#planToCalc,[data-capacity]'))action='think';
 else if(t.closest('#productFilters,#productGrid,#productSearch,#filters,[data-family],[data-type],[data-sub],#thumbnails,#next,#previous,#heroPrev,#heroNext,[data-slide],[data-promotion],[data-scene]')){action='battery';kind='catalog'}
