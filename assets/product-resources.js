@@ -2,6 +2,7 @@
 (function () {
   'use strict';
   const scenes = {
+    balcony:['Balcony solar self-consumption','阳台光伏自用','Autoconsumo solar en balcón','Балконное солнечное энергоснабжение'],
     home: ['Residential energy','住宅能源','Energía residencial','Энергоснабжение дома'],
     business: ['Shops & small businesses','门店与小型商业','Tiendas y comercios','Магазины и малый бизнес'],
     industrial: ['Factories & warehouses','工厂与仓库','Fábricas y almacenes','Заводы и склады'],
@@ -19,6 +20,7 @@
     worksite:['Mobile maintenance & field work','移动维护与现场作业','Mantenimiento móvil y trabajo de campo','Выездное обслуживание и полевые работы']
   };
   function applicationKeys(p) {
+    if(p.id==='balconyBess')return ['balcony','terrace','home'];
     if (p.id==='series_horizon'||p.id==='hybrid50'||p.id==='series_beacon') return ['industrial','business','workshop'];
     if (p.id==='origAEADC'||p.id==='series_seed12'||p.id==='series_seed24') return ['camp','worksite','rural'];
     if (p.category==='portable'||/origAER(60|100|200)|origAESK1/.test(p.id)) return ['camp','worksite','rural'];

@@ -76,6 +76,7 @@ function render(){
  $('thumbnails').innerHTML=product.gallery.map((path,i)=>'<button type="button" data-image="'+i+'" aria-current="'+(i===imageIndex)+'"><img src="'+esc(path)+'" alt="" loading="lazy"><span>'+esc(text(product.angleKeys[i]))+'</span></button>').join('');
  $('sidebar').innerHTML=['storage','solar','lighting'].map(key=>'<a href="index.html?category='+key+'#products" aria-current="'+(key===cat)+'">'+esc(text(key))+'</a>'+(key===cat?'<div class="sub">'+all.filter(p=>category(p)===cat).map(p=>'<a href="'+detailURL(p)+'" aria-current="'+(p.id===product.id)+'">'+esc(translate(p.zh,p.en))+'</a>').join('')+'</div>':'')).join('');
  $('specs').innerHTML=[[text('model'),code],[text('category'),text(cat)],[text('references'),(product.tags||[]).join(' · ')]].map(([label,value])=>'<div class="spec-row"><span>'+esc(label)+'</span><strong>'+esc(value)+'</strong></div>').join('');
+ const specLang={en:0,zh:1,es:2,ru:3}[lang];$('specs').innerHTML+=(product.specs||[]).map(r=>'<div class="spec-row"><span>'+esc(r.label[specLang]||r.label[0])+'</span><strong>'+esc(r.value[specLang]||r.value[0])+'</strong></div>').join('');
  $('features').innerHTML=(lang==='zh'?product.featuresZh:product.featuresEn||[]).map(t=>'<li>'+esc(translate(t,t))+'</li>').join('');
  $('variantsSection').hidden=!(product.modelCodes||[]).length;
  $('modelList').innerHTML=(product.modelCodes||[]).map(code=>'<span>'+esc(code)+'</span>').join('')+'<p class="gallery-note">'+esc(text('planning'))+'</p>';
