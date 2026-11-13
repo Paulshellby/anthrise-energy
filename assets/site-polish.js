@@ -42,3 +42,5 @@ const observer=new MutationObserver(()=>{polishText();document.querySelectorAll(
 document.querySelectorAll('.product-jump a').forEach(a=>a.addEventListener('click',()=>{document.querySelectorAll('.product-jump a').forEach(n=>n.removeAttribute('aria-current'));a.setAttribute('aria-current','true');}));
 if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting){reveal(entry.target);io.unobserve(entry.target);}},{threshold:.12});document.querySelectorAll('.application-card,.solution-process article').forEach(n=>io.observe(n));}
 })();
+
+;(()=>{const s=document.createElement('script');s.src='assets/site-contact.js?v=1';document.head.append(s);})();
