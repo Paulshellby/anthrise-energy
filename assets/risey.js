@@ -17,6 +17,9 @@ let puppet=null,puppetReady=Promise.resolve();const motionCounts={};const visitV
 function motionState(){return{kind:currentKind,variant:Number(host.dataset.variant)||0,duration:(Number(host.dataset.duration)||5200)/1000,sequence:actionSerial}}
 function sendMotion(){if(puppet)puppet.setState(host.dataset.state,motionState())}
 if(window.AnthriseRiseyRig){puppet=new window.AnthriseRiseyRig(host,canvas,art,{sources:window.ANTHRISE_RISEY_TEXTURES});puppetReady=puppet.init().then(()=>{host.dataset.animation='ready';puppet.setState(host.dataset.state,motionState());puppet.setPaused(paused,reduce.matches)}).catch(error=>{canvas.hidden=true;art.hidden=false;puppet=null;host.dataset.animation='fallback';console.warn('[ANTHRISE Risey] Animated renderer could not start:',error?.message||'unknown error')})}
+// Keep contextual expressions available when WebGL cannot initialize.
+function fallbackFace(){if(host.dataset.animation!=='fallback')return;const textures=window.ANTHRISE_RISEY_TEXTURES||{};const state=host.dataset.state;const key=host.dataset.blink==='true'?'blink':state==='happy'?'joy':state==='think'?'thought':state==='service'?'talk':'neutral';art.src=textures[key]||new URL('images/risey-rig/'+key+'.png',document.baseURI).href;host.dataset.expression=key;}
+new MutationObserver(fallbackFace).observe(host,{attributes:true,attributeFilter:['data-state','data-blink','data-animation']});
 function drawPose(){if(puppet){puppet.setState(host.dataset.state,motionState());puppet.setPaused(paused,reduce.matches)}}
 new MutationObserver(()=>{if(puppet)puppet.setState(host.dataset.state,motionState())}).observe(host,{attributes:true,attributeFilter:['data-state']});
 art.addEventListener('error',()=>{art.src=new URL('images/risey-web.png',document.baseURI).href},{once:true});
