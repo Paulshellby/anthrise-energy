@@ -23,7 +23,7 @@ function apply(){
  let schema=document.getElementById('pageStructuredData');if(!schema){schema=document.createElement('script');schema.type='application/ld+json';schema.id='pageStructuredData';document.head.append(schema);}
  const organization={'@type':'Organization','@id':origin+'#organization',name:legal,legalName:legal,alternateName:'ANTHRISE',url:origin,logo:origin+'images/anthrise-logo.webp'};
  const graph=[organization,{'@type':'WebSite','@id':origin+'#website',url:origin,name:'ANTHRISE',publisher:{'@id':origin+'#organization'},inLanguage:lang}];
- if(product){graph.push({'@type':'Product',name:name(product,lang),description,sku:product.modelCode||product.id,image:[image],url:canonical,brand:{'@type':'Brand',name:'ANTHRISE'}});graph.push({'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'ANTHRISE',item:origin+'index.html'},{'@type':'ListItem',position:2,name:name(product,lang),item:canonical}]});}
+ if(product){graph.push({'@type':product.entryKind==='collection'?'CollectionPage':'Product',name:name(product,lang),description,...(product.entryKind==='collection'?{}:{sku:product.modelCode||product.id}),image:[image],url:canonical,brand:{'@type':'Brand',name:'ANTHRISE'}});graph.push({'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'ANTHRISE',item:origin+'index.html'},{'@type':'ListItem',position:2,name:name(product,lang),item:canonical}]});}
  schema.textContent=JSON.stringify({'@context':'https://schema.org','@graph':graph});
 }
 // Initial query/PAGE language is the identity of the crawlable document.
