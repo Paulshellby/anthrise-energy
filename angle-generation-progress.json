@@ -1,0 +1,1018 @@
+{
+  "inventory": [
+    {
+      "id": "ess16",
+      "image": "images/studio-white/ess16-transparent.webp",
+      "name": "16kWh Home Storage"
+    },
+    {
+      "id": "series_ascend",
+      "image": "images/studio-white/series_ascend.webp",
+      "name": "High-Voltage Modular Battery Stack"
+    },
+    {
+      "id": "ess10",
+      "image": "images/studio-white/ess10.webp",
+      "name": "5–10kWh Compact Storage"
+    },
+    {
+      "id": "hybrid6",
+      "image": "images/studio-white/hybrid6.webp",
+      "name": "6 kW Hybrid Inverter"
+    },
+    {
+      "id": "hybrid12",
+      "image": "images/studio-white/hybrid12.webp",
+      "name": "12 kW Hybrid Inverter"
+    },
+    {
+      "id": "hybrid20",
+      "image": "images/studio-white/hybrid20.webp",
+      "name": "20 kW Hybrid Inverter"
+    },
+    {
+      "id": "hybrid50",
+      "image": "images/studio-white/hybrid50.webp",
+      "name": "50 kW Hybrid Inverter"
+    },
+    {
+      "id": "origAEV200",
+      "image": "images/studio-white/origaev200.webp",
+      "name": "Ultra-Compact"
+    },
+    {
+      "id": "origAEV500",
+      "image": "images/studio-white/origaev500.webp",
+      "name": "Compact All-Rounder"
+    },
+    {
+      "id": "origAEV1000",
+      "image": "images/studio-white/origaev1000.webp",
+      "name": "Mid-Range Workhorse"
+    },
+    {
+      "id": "origAEV1500",
+      "image": "images/studio-white/origaev1500.webp",
+      "name": "Large-Capacity"
+    },
+    {
+      "id": "origAEV2500",
+      "image": "images/studio-white/origaev2500.webp",
+      "name": "Professional"
+    },
+    {
+      "id": "origAEVP",
+      "image": "images/studio-white/origaevp.webp",
+      "name": "Modular Expandable"
+    },
+    {
+      "id": "origAER60",
+      "image": "images/studio-white/origaer60.webp",
+      "name": "AE-R60 · 60W Foldable"
+    },
+    {
+      "id": "origAER100",
+      "image": "images/studio-white/origaer100.webp",
+      "name": "AE-R100 · 100W Foldable"
+    },
+    {
+      "id": "origAER200",
+      "image": "images/studio-white/origaer200.webp",
+      "name": "AE-R200 · 200W Foldable"
+    },
+    {
+      "id": "origAER400",
+      "image": "images/studio-white/origaer400.webp",
+      "name": "AE-R400 · 400W Rigid"
+    },
+    {
+      "id": "origAESK1",
+      "image": "images/studio-white/origaesk1.webp",
+      "name": "AE-SK1 · Solar Generator Bundle"
+    },
+    {
+      "id": "origAEAMPPT",
+      "image": "images/studio-white/origaeamppt.webp",
+      "name": "AE-A-MPPT · MPPT Charge Controllers"
+    },
+    {
+      "id": "origAEAINV",
+      "image": "images/studio-white/origaeainv.webp",
+      "name": "Pure Sine Wave Inverters"
+    },
+    {
+      "id": "origAEADC",
+      "image": "images/studio-white/origaeadc.webp",
+      "name": "AE-A-DC · DC-DC Car Chargers"
+    },
+    {
+      "id": "jcLight06",
+      "image": "images/studio-white/gardenlighting.webp",
+      "name": "Solar Garden Stake Light · 8-Pack"
+    },
+    {
+      "id": "jcLight01",
+      "image": "images/studio-white/floodlighting.webp",
+      "name": "Solar Motion Flood Light · 3-Head"
+    },
+    {
+      "id": "jcLight02",
+      "image": "images/studio-white/jclight02.webp",
+      "name": "PIR Motion Sensor Wall Light"
+    },
+    {
+      "id": "jcLight07",
+      "image": "images/studio-white/jclight07.webp",
+      "name": "Solar Flood Security Light · 30W"
+    },
+    {
+      "id": "jcLight10",
+      "image": "images/studio-white/jclight10.webp",
+      "name": "Up-Down Solar Wall Light"
+    },
+    {
+      "id": "jcLight09",
+      "image": "images/studio-white/jclight09.webp",
+      "name": "All-in-One Solar Street Light"
+    },
+    {
+      "id": "jcLight27",
+      "image": "images/studio-white/jclight27.webp",
+      "name": "Split Solar Street Light (30/60/100W)"
+    },
+    {
+      "id": "jcLight25",
+      "image": "images/studio-white/jclight25.webp",
+      "name": "Solar Warning Beacon Light"
+    },
+    {
+      "id": "jcLight26",
+      "image": "images/studio-white/jclight26.webp",
+      "name": "Solar Flag Pole Light"
+    },
+    {
+      "id": "jcLight28",
+      "image": "images/studio-white/jclight28.webp",
+      "name": "Solar Courtyard Column Light (1-2m)"
+    },
+    {
+      "id": "jcLight08",
+      "image": "images/studio-white/jclight08.webp",
+      "name": "Solar Garden Spike Spotlight"
+    },
+    {
+      "id": "jcLight04",
+      "image": "images/studio-white/jclight04.webp",
+      "name": "Outdoor Wall Lantern · Solar / AC"
+    },
+    {
+      "id": "jcLight11",
+      "image": "images/studio-white/jclight11.webp",
+      "name": "Solar Edison String Lights"
+    },
+    {
+      "id": "jcLight19",
+      "image": "images/studio-white/jclight19.webp",
+      "name": "Solar Flame Torch Light"
+    },
+    {
+      "id": "jcLight20",
+      "image": "images/studio-white/jclight20.webp",
+      "name": "Solar Fairy Copper Wire String Lights"
+    },
+    {
+      "id": "jcLight21",
+      "image": "images/studio-white/jclight21.webp",
+      "name": "Solar Umbrella Light"
+    },
+    {
+      "id": "jcLight22",
+      "image": "images/studio-white/jclight22.webp",
+      "name": "Solar Outdoor Floor Lamp"
+    },
+    {
+      "id": "jcLight29",
+      "image": "images/studio-white/jclight29.webp",
+      "name": "Solar Pool Float Light"
+    },
+    {
+      "id": "jcLight15",
+      "image": "images/studio-white/jclight15.webp",
+      "name": "Solar Indoor Wall Light (Split Panel)"
+    },
+    {
+      "id": "jcLight16",
+      "image": "images/studio-white/jclight16.webp",
+      "name": "Solar Emergency LED Bulb (E27 / B22)"
+    },
+    {
+      "id": "jcLight17",
+      "image": "images/studio-white/jclight17.webp",
+      "name": "Solar Home Lighting Kit (2 Lights)"
+    },
+    {
+      "id": "jcLight18",
+      "image": "images/studio-white/jclight18.webp",
+      "name": "Solar Ceiling Fan with Light"
+    },
+    {
+      "id": "jcLight13",
+      "image": "images/studio-white/jclight13.webp",
+      "name": "Solar Portable Camping Lantern"
+    },
+    {
+      "id": "jcLight14",
+      "image": "images/studio-white/jclight14.webp",
+      "name": "Solar Bug Zapper Light"
+    },
+    {
+      "id": "jcLight23",
+      "image": "images/studio-white/jclight23.webp",
+      "name": "Solar Portable Work Light"
+    },
+    {
+      "id": "jcLight24",
+      "image": "images/studio-white/jclight24.webp",
+      "name": "Solar Power Bank Lantern Pro"
+    },
+    {
+      "id": "jcLight30",
+      "image": "images/studio-white/jclight30.webp",
+      "name": "Emergency UFO Rechargeable Light"
+    },
+    {
+      "id": "jcLight31",
+      "image": "images/studio-white/jclight31.webp",
+      "name": "AC LED Floodlight (50-1000W)"
+    },
+    {
+      "id": "jcLight32",
+      "image": "images/studio-white/jclight32.webp",
+      "name": "UFO High Bay Light (100-300W)"
+    },
+    {
+      "id": "jcLight33",
+      "image": "images/studio-white/jclight33.webp",
+      "name": "AC Street Light (50-100W)"
+    },
+    {
+      "id": "series_seed12",
+      "image": "images/studio-white/series_seed12.webp",
+      "name": "12V Deep Cycle LiFePO₄ Battery"
+    },
+    {
+      "id": "series_seed24",
+      "image": "images/studio-white/series_seed24.webp",
+      "name": "25.6V Deep Cycle LiFePO₄ Battery"
+    },
+    {
+      "id": "series_root",
+      "image": "images/studio-white/series_root.webp",
+      "name": "51.2V Rack-Mount ESS"
+    },
+    {
+      "id": "series_rise",
+      "image": "images/studio-white/an-lv-floor.svg",
+      "name": "LV Floor-Standing & Expandable ESS"
+    },
+    {
+      "id": "series_horizon",
+      "image": "images/studio-white/series_horizon.webp",
+      "name": "Commercial & Industrial ESS Cabinet"
+    },
+    {
+      "id": "series_union",
+      "image": "images/studio-white/series_union.webp",
+      "name": "All-in-One Energy System"
+    },
+    {
+      "id": "series_trail",
+      "image": "images/studio-white/an-inverter-single.svg",
+      "name": "Single-Phase Off-Grid Inverter"
+    },
+    {
+      "id": "series_beacon",
+      "image": "images/studio-white/an-inverter-three.svg",
+      "name": "Three-Phase Grid-Tied PV Inverter"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "ess16",
+      "source": "images/studio-white/ess16-transparent.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-b20bd994-9978-42a4-a6e8-d90040a3319e.png"
+    },
+    {
+      "id": "ess16",
+      "source": "images/studio-white/ess16-transparent.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-aecd7041-8b8b-4ac2-a92e-02cd1b6e7e0d.png"
+    },
+    {
+      "id": "series_ascend",
+      "source": "images/studio-white/series_ascend.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-9620b77e-0dea-4316-93ea-208375c8483d.png"
+    },
+    {
+      "id": "series_ascend",
+      "source": "images/studio-white/series_ascend.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-e5d6a44a-afca-4402-8874-34879c5503db.png"
+    },
+    {
+      "id": "ess10",
+      "source": "images/studio-white/ess10.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-79c94baf-8402-4ffb-a2cd-725fd892d93c.png"
+    },
+    {
+      "id": "ess10",
+      "source": "images/studio-white/ess10.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-e37d53b7-c4b5-4dca-8609-81db3e532f96.png"
+    },
+    {
+      "id": "hybrid6",
+      "source": "images/studio-white/hybrid6.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-49493566-671e-4a50-8305-6c0337c1a418.png"
+    },
+    {
+      "id": "hybrid6",
+      "source": "images/studio-white/hybrid6.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-f5c9656d-56e3-48b7-94e4-c78263c4f1ad.png"
+    },
+    {
+      "id": "hybrid12",
+      "source": "images/studio-white/hybrid12.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-33bc8ca5-3501-4961-88d1-16dff8759dbb.png"
+    },
+    {
+      "id": "hybrid12",
+      "source": "images/studio-white/hybrid12.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-becaa485-695e-440f-b95c-5aa67f0427f5.png"
+    },
+    {
+      "id": "hybrid20",
+      "source": "images/studio-white/hybrid20.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-40a9a169-adec-49e3-b2fc-590006f3b34a.png"
+    },
+    {
+      "id": "hybrid20",
+      "source": "images/studio-white/hybrid20.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-ca82be0e-c77d-4d77-8d4d-f045ec14ce35.png"
+    },
+    {
+      "id": "hybrid50",
+      "source": "images/studio-white/hybrid50.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-947465de-df60-4021-8a50-a4eca4a23c3b.png"
+    },
+    {
+      "id": "hybrid50",
+      "source": "images/studio-white/hybrid50.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-cbc81096-c741-43f2-a200-567813a333ea.png"
+    },
+    {
+      "id": "origAEV200",
+      "source": "images/studio-white/origaev200.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-8fcbb915-825c-4211-914c-7abb408dbc44.png"
+    },
+    {
+      "id": "origAEV200",
+      "source": "images/studio-white/origaev200.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-25bb6ac5-62b5-44ab-b9aa-6510b6ccfad9.png"
+    },
+    {
+      "id": "origAEV500",
+      "source": "images/studio-white/origaev500.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-622a2cd1-1f6e-4600-8da4-b2e8c2ac9661.png"
+    },
+    {
+      "id": "origAEV500",
+      "source": "images/studio-white/origaev500.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-1df1d5ad-9da8-4cef-ad84-a57f56d19afe.png"
+    },
+    {
+      "id": "origAEV1000",
+      "source": "images/studio-white/origaev1000.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-8912f24f-1a61-4532-b1a6-a6c263948768.png"
+    },
+    {
+      "id": "origAEV1000",
+      "source": "images/studio-white/origaev1000.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-cee80d50-b0c9-42fc-ae81-ce7799367ca1.png"
+    },
+    {
+      "id": "origAEV1500",
+      "source": "images/studio-white/origaev1500.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-c7298cb9-7e2f-43a0-9fed-5e91f0aaefcd.png"
+    },
+    {
+      "id": "origAEV1500",
+      "source": "images/studio-white/origaev1500.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-fd329feb-d391-4caa-8d8e-4394fb624689.png"
+    },
+    {
+      "id": "origAEV2500",
+      "source": "images/studio-white/origaev2500.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-a4cc4af1-a3ce-4633-8e66-3530e35090db.png"
+    },
+    {
+      "id": "origAEV2500",
+      "source": "images/studio-white/origaev2500.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-feed1b42-e957-489b-b7c2-20e17b2f42cd.png"
+    },
+    {
+      "id": "origAEVP",
+      "source": "images/studio-white/origaevp.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-f5b78c8e-832e-4b3d-b8c2-f202c4020024.png"
+    },
+    {
+      "id": "origAEVP",
+      "source": "images/studio-white/origaevp.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-38b2608b-7c40-4c09-ba22-be8a9d41d4c2.png"
+    },
+    {
+      "id": "origAER60",
+      "source": "images/studio-white/origaer60.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-d4f2c3e5-eb5c-4831-a66f-c96e309c0b89.png"
+    },
+    {
+      "id": "origAER60",
+      "source": "images/studio-white/origaer60.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-71b8f7c7-a9f2-4060-979b-9c2a6991481b.png"
+    },
+    {
+      "id": "origAER100",
+      "source": "images/studio-white/origaer100.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-ebf5e3e9-5fd1-4037-a305-b34dc7baa444.png"
+    },
+    {
+      "id": "origAER100",
+      "source": "images/studio-white/origaer100.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-f38d0d50-98b9-4502-b3c7-e63b8438663b.png"
+    },
+    {
+      "id": "origAER200",
+      "source": "images/studio-white/origaer200.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-d938307a-d1a5-49d6-a90f-738e68576694.png"
+    },
+    {
+      "id": "origAER200",
+      "source": "images/studio-white/origaer200.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-591d30cd-d995-40c8-996e-f7c590d1394f.png"
+    },
+    {
+      "id": "origAER400",
+      "source": "images/studio-white/origaer400.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-23b114ec-7f38-4224-9a73-0059b1b94e33.png"
+    },
+    {
+      "id": "origAER400",
+      "source": "images/studio-white/origaer400.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-315cb41e-c862-4834-94af-8fb5c7097e3c.png"
+    },
+    {
+      "id": "origAESK1",
+      "source": "images/studio-white/origaesk1.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-6bc3cbc0-1b35-4d58-985f-a396446a0661.png"
+    },
+    {
+      "id": "origAESK1",
+      "source": "images/studio-white/origaesk1.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-470f37d3-a277-4b19-b0c7-0c19a4e4150d.png"
+    },
+    {
+      "id": "origAEAMPPT",
+      "source": "images/studio-white/origaeamppt.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-4160768a-b4f1-487a-af82-512b51e50d06.png"
+    },
+    {
+      "id": "origAEAMPPT",
+      "source": "images/studio-white/origaeamppt.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-4ec504bb-f4aa-4d8b-bcbb-adb88167cbd8.png"
+    },
+    {
+      "id": "origAEAINV",
+      "source": "images/studio-white/origaeainv.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-f80a61ac-d6de-4d5d-98c0-704b848062cd.png"
+    },
+    {
+      "id": "origAEAINV",
+      "source": "images/studio-white/origaeainv.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-f247c980-9219-48ab-b044-784590ad4162.png"
+    },
+    {
+      "id": "origAEADC",
+      "source": "images/studio-white/origaeadc.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-8bbc789e-3754-4de5-be96-77c9b35e44a2.png"
+    },
+    {
+      "id": "origAEADC",
+      "source": "images/studio-white/origaeadc.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-c01daa55-b469-493f-91be-95017286eecf.png"
+    },
+    {
+      "id": "jcLight06",
+      "source": "images/studio-white/gardenlighting.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-b1e7e856-0f9e-4d0f-ae5c-8ba11fe894c4.png"
+    },
+    {
+      "id": "jcLight06",
+      "source": "images/studio-white/gardenlighting.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-f7f682b4-79bd-4496-a516-33d741a9d7d8.png"
+    },
+    {
+      "id": "jcLight01",
+      "source": "images/studio-white/floodlighting.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-3ee9551a-4cfe-4e27-ad56-b1b9e6d927df.png"
+    },
+    {
+      "id": "jcLight01",
+      "source": "images/studio-white/floodlighting.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-b20721ac-5e6e-4030-81e8-420a1843cdd5.png"
+    },
+    {
+      "id": "jcLight02",
+      "source": "images/studio-white/jclight02.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-7b81c465-663a-4370-bce1-2564dedf7199.png"
+    },
+    {
+      "id": "jcLight02",
+      "source": "images/studio-white/jclight02.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-1e9b348c-c60d-4e12-8066-fc599b77dee1.png"
+    },
+    {
+      "id": "jcLight07",
+      "source": "images/studio-white/jclight07.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-a1553117-daa1-4286-b580-24def1eb0dd5.png"
+    },
+    {
+      "id": "jcLight07",
+      "source": "images/studio-white/jclight07.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-dd3a4446-3003-40eb-aec7-7cb62b5851df.png"
+    },
+    {
+      "id": "jcLight10",
+      "source": "images/studio-white/jclight10.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-29efc7c7-5d8e-494a-a291-7bdb64e5cfa7.png"
+    },
+    {
+      "id": "jcLight10",
+      "source": "images/studio-white/jclight10.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-e008f55c-5752-424e-b3d5-55f494e1bb40.png"
+    },
+    {
+      "id": "jcLight09",
+      "source": "images/studio-white/jclight09.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-2610810b-b962-4eb6-9cc5-b9d1ac8ddcfe.png"
+    },
+    {
+      "id": "jcLight09",
+      "source": "images/studio-white/jclight09.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-6e7e3b1b-43e8-4eb6-88ab-fdabf7c6e6ce.png"
+    },
+    {
+      "id": "jcLight27",
+      "source": "images/studio-white/jclight27.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-87f40648-8aaf-4113-805b-0015e245fcea.png"
+    },
+    {
+      "id": "jcLight27",
+      "source": "images/studio-white/jclight27.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-c1bd7d72-3ef3-4ff6-967c-3e7cdff6fab7.png"
+    },
+    {
+      "id": "jcLight25",
+      "source": "images/studio-white/jclight25.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-68e6ae67-2f86-47b4-8880-1fd529ad3f5d.png"
+    },
+    {
+      "id": "jcLight25",
+      "source": "images/studio-white/jclight25.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-56b56656-1ca4-4fa1-bd38-4cd2db314556.png"
+    },
+    {
+      "id": "jcLight26",
+      "source": "images/studio-white/jclight26.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-f03e225b-aa80-46f1-838f-ddad06d38ddd.png"
+    },
+    {
+      "id": "jcLight26",
+      "source": "images/studio-white/jclight26.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-b81917ac-b78c-4e9a-a5f8-6c385e9df8d9.png"
+    },
+    {
+      "id": "jcLight28",
+      "source": "images/studio-white/jclight28.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-28f4cab1-0a3f-40c0-b537-c86a82b95078.png"
+    },
+    {
+      "id": "jcLight28",
+      "source": "images/studio-white/jclight28.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-c3dbb72c-732f-4d36-8d31-d72281feb4c4.png"
+    },
+    {
+      "id": "jcLight08",
+      "source": "images/studio-white/jclight08.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-e60c34f3-ed9b-455b-90a2-35a8559371e2.png"
+    },
+    {
+      "id": "jcLight08",
+      "source": "images/studio-white/jclight08.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-b646f83d-0380-413a-acac-471ec0cc0bec.png"
+    },
+    {
+      "id": "jcLight04",
+      "source": "images/studio-white/jclight04.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-9f478484-b416-44d6-8f61-20956c31ae65.png"
+    },
+    {
+      "id": "jcLight04",
+      "source": "images/studio-white/jclight04.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-ec75d5a1-0355-4c3c-92ed-57b93ec00965.png"
+    },
+    {
+      "id": "jcLight11",
+      "source": "images/studio-white/jclight11.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-bb46024c-c5c3-4b8b-b51c-5b31eacce593.png"
+    },
+    {
+      "id": "jcLight11",
+      "source": "images/studio-white/jclight11.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-dade6c75-e51f-4afb-8ebf-7c1fae789b15.png"
+    },
+    {
+      "id": "jcLight19",
+      "source": "images/studio-white/jclight19.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-1554e288-78a8-441d-9cce-3c1fd42d8b35.png"
+    },
+    {
+      "id": "jcLight19",
+      "source": "images/studio-white/jclight19.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-d5edff6d-4f16-47ac-8c60-92647582b898.png"
+    },
+    {
+      "id": "jcLight20",
+      "source": "images/studio-white/jclight20.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-39b8b0a2-2071-4e5d-85d0-78aadeff83c8.png"
+    },
+    {
+      "id": "jcLight20",
+      "source": "images/studio-white/jclight20.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-84cab6e8-a952-4ae1-95cf-f6192bd383d3.png"
+    },
+    {
+      "id": "jcLight21",
+      "source": "images/studio-white/jclight21.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-174f6154-156f-4970-a5a3-5ac8edf8a62d.png"
+    },
+    {
+      "id": "jcLight21",
+      "source": "images/studio-white/jclight21.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-b9687491-e5d7-42be-a0f1-feebb50d2133.png"
+    },
+    {
+      "id": "jcLight22",
+      "source": "images/studio-white/jclight22.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-18db6966-cdf8-4833-84f4-1bbaf87f8063.png"
+    },
+    {
+      "id": "jcLight22",
+      "source": "images/studio-white/jclight22.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-18637b2c-e016-4a86-9f69-20c14ccccbcd.png"
+    },
+    {
+      "id": "jcLight29",
+      "source": "images/studio-white/jclight29.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-305245ae-b9cb-4788-bfac-4e3016c9afd4.png"
+    },
+    {
+      "id": "jcLight29",
+      "source": "images/studio-white/jclight29.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-54b30e73-4753-4674-9494-017519c7ecd5.png"
+    },
+    {
+      "id": "jcLight15",
+      "source": "images/studio-white/jclight15.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-78a5805e-2d81-42d5-82b7-6e667bb0f71c.png"
+    },
+    {
+      "id": "jcLight15",
+      "source": "images/studio-white/jclight15.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-0b5dccaf-e012-4df7-96eb-05e80cb87731.png"
+    },
+    {
+      "id": "jcLight16",
+      "source": "images/studio-white/jclight16.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-c72ccc60-e749-405d-812d-8e42b21c081e.png"
+    },
+    {
+      "id": "jcLight16",
+      "source": "images/studio-white/jclight16.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-697b7d60-8647-41d7-bb96-fdb93425861f.png"
+    },
+    {
+      "id": "jcLight17",
+      "source": "images/studio-white/jclight17.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-979bcf8c-3ae0-43bc-a6c4-626175e34097.png"
+    },
+    {
+      "id": "jcLight17",
+      "source": "images/studio-white/jclight17.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-e5009351-3e45-46f8-b402-f46ac906fd23.png"
+    },
+    {
+      "id": "jcLight18",
+      "source": "images/studio-white/jclight18.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-ecd8cda9-590b-43e2-85f0-7e12825fad90.png"
+    },
+    {
+      "id": "jcLight18",
+      "source": "images/studio-white/jclight18.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-c76d055e-5072-462d-ab78-c18b91c86d2b.png"
+    },
+    {
+      "id": "jcLight13",
+      "source": "images/studio-white/jclight13.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-bba128ab-f453-40a6-894b-358d495de4a1.png"
+    },
+    {
+      "id": "jcLight13",
+      "source": "images/studio-white/jclight13.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-138deb7d-3a4c-4d57-a0de-0eb1d1287a9e.png"
+    },
+    {
+      "id": "jcLight14",
+      "source": "images/studio-white/jclight14.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-a696eab6-ea53-45f1-aeac-ed557b998f10.png"
+    },
+    {
+      "id": "jcLight14",
+      "source": "images/studio-white/jclight14.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-1088fb01-fcee-4131-a127-390fe8573b24.png"
+    },
+    {
+      "id": "jcLight23",
+      "source": "images/studio-white/jclight23.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-c4b01859-6687-41ed-8837-994bf3d8da73.png"
+    },
+    {
+      "id": "jcLight23",
+      "source": "images/studio-white/jclight23.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-cadf6514-6a1e-42d4-bf81-79b6aeb801f2.png"
+    },
+    {
+      "id": "jcLight24",
+      "source": "images/studio-white/jclight24.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-1bc0aca3-b65d-4ec9-b89f-f54f809f303d.png"
+    },
+    {
+      "id": "jcLight24",
+      "source": "images/studio-white/jclight24.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-7e6a589a-7055-4d7f-bf95-0885b8cda30c.png"
+    },
+    {
+      "id": "jcLight30",
+      "source": "images/studio-white/jclight30.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-6b5855dc-664f-43be-9e4b-a1cb4abfcf81.png"
+    },
+    {
+      "id": "jcLight30",
+      "source": "images/studio-white/jclight30.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-da0c3717-3046-4385-ad7f-a5b03eccaf56.png"
+    },
+    {
+      "id": "jcLight31",
+      "source": "images/studio-white/jclight31.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-4a71150b-83d6-48a8-bab5-3d5a0d0d6a99.png"
+    },
+    {
+      "id": "jcLight31",
+      "source": "images/studio-white/jclight31.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-bfe3b54d-99a0-4089-9fa4-05d477354d3b.png"
+    },
+    {
+      "id": "jcLight32",
+      "source": "images/studio-white/jclight32.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-a578960e-6c88-47e1-a475-493ba000fcc3.png"
+    },
+    {
+      "id": "jcLight32",
+      "source": "images/studio-white/jclight32.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-b98251e3-fbb5-401d-9e68-434b145373d5.png"
+    },
+    {
+      "id": "jcLight33",
+      "source": "images/studio-white/jclight33.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-e1effa14-09a2-46d5-8f31-1c382a376b24.png"
+    },
+    {
+      "id": "jcLight33",
+      "source": "images/studio-white/jclight33.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-17a151a1-5e71-4f64-a344-3eb56b8b5d18.png"
+    },
+    {
+      "id": "series_seed12",
+      "source": "images/studio-white/series_seed12.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-ad331b5a-b316-4ecd-bcef-79fbb1242174.png"
+    },
+    {
+      "id": "series_seed12",
+      "source": "images/studio-white/series_seed12.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-a6be5a46-33d8-4eba-9277-8b4b531fc7d6.png"
+    },
+    {
+      "id": "series_seed24",
+      "source": "images/studio-white/series_seed24.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-68c2cad9-c132-4dd4-a971-a7dd21847a4b.png"
+    },
+    {
+      "id": "series_seed24",
+      "source": "images/studio-white/series_seed24.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-47ddd936-499b-4810-b693-f4e7e591c237.png"
+    },
+    {
+      "id": "series_root",
+      "source": "images/studio-white/series_root.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-39fdec4c-a01a-4dc1-8c90-e67fb2ba7ec2.png"
+    },
+    {
+      "id": "series_root",
+      "source": "images/studio-white/series_root.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-f2916142-a4a0-46f6-adeb-7e50ccf861ee.png"
+    },
+    {
+      "id": "series_horizon",
+      "source": "images/studio-white/series_horizon.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-f04222b1-a808-4e06-bce5-1662b9e698fe.png"
+    },
+    {
+      "id": "series_horizon",
+      "source": "images/studio-white/series_horizon.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-4824ab9e-beea-46e6-85ac-1da77437287e.png"
+    },
+    {
+      "id": "series_union",
+      "source": "images/studio-white/series_union.webp",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-435f4878-a10c-4653-a5f7-106e8cd5ac89.png"
+    },
+    {
+      "id": "series_union",
+      "source": "images/studio-white/series_union.webp",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-8d5c2ffd-d114-45a2-ac0c-210237775cc8.png"
+    },
+    {
+      "id": "jcLight09-reference",
+      "angle": "overview",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-f9bd62ad-1d57-4555-a18e-7c2d3c9c262b.png"
+    },
+    {
+      "id": "jcLight09-reference",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-5e6cf219-4e13-4430-bf6c-0efc3d2f4658.png"
+    },
+    {
+      "id": "jcLight09-reference",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-d1b37296-cea3-4c04-843e-71182e08990d.png"
+    },
+    {
+      "id": "jcLight27-reference",
+      "angle": "overview",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-830a5b7c-887e-42ee-af6a-764bfda62034.png"
+    },
+    {
+      "id": "jcLight27-reference",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-701c4bf6-9b52-480f-91d8-0d46739d6ac2.png"
+    },
+    {
+      "id": "jcLight27-reference",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-3ee3edb6-31a8-4862-bded-3d8f9ec1306f.png"
+    },
+    {
+      "id": "tieredLandscape-reference",
+      "angle": "overview",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-d04efd71-ef63-4e62-a3e5-1547ad07ede5.png"
+    },
+    {
+      "id": "tieredLandscape-reference",
+      "angle": "front",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-fadf2be4-8171-411f-b62c-3ad6ba711a23.png"
+    },
+    {
+      "id": "tieredLandscape-reference",
+      "angle": "side",
+      "path": "C:\\Users\\Jam\\.codex\\generated_images\\01a1c9a0-f434-7ac3-ab2b-0ffeab955cfa\\exec-d869bd68-2bf9-461f-a808-eb0c5432bcf9.png"
+    }
+  ]
+}
