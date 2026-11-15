@@ -20,6 +20,7 @@
     worksite:['Mobile maintenance & field work','移动维护与现场作业','Mantenimiento móvil y trabajo de campo','Выездное обслуживание и полевые работы']
   };
   function applicationKeys(p) {
+    if(/^seed(?:12|24)_/.test(p.id))return ['camp','worksite','rural'];
     if(p.id==='balconyBess')return ['balcony','terrace','home'];
     if (p.id==='series_horizon'||p.id==='hybrid50'||p.id==='series_beacon') return ['industrial','business','workshop'];
     if (p.id==='origAEADC'||p.id==='series_seed12'||p.id==='series_seed24') return ['camp','worksite','rural'];
