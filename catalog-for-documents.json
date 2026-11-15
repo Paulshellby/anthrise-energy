@@ -17622,459 +17622,11 @@
     "descriptionRu": "Освещение садов, дорожек и придомовых открытых пространств. Место монтажа, покрытие и режим выбирают для конкретной модели."
   },
   {
-    "id": "diy16s",
-    "category": "storage",
-    "type": "battery",
-    "family": "diy",
-    "num": "ANTHRISE / DIY & PRE-ASSEMBLED",
-    "en": "16S DIY Battery Kit",
-    "zh": "16S DIY 电池套件",
-    "descriptionEn": "Build a low-voltage LiFePO4 storage system with a clearly defined package: case kit without cells, or a kit with matched cells for professional assembly. Final component list and electrical limits are agreed per quotation.",
-    "descriptionZh": "面向低压磷酸铁锂储能系统，区分不含电芯的箱体套件与含配套电芯的组装套件。具体物料清单、电芯尺寸与电气限制按报价确认，由具备相应能力的人员组装。",
-    "descriptionEs": "Para almacenamiento LiFePO4 de baja tensión: elija una carcasa sin celdas o un kit con celdas compatibles para montaje profesional. La lista de componentes y los límites eléctricos se acuerdan en la oferta.",
-    "descriptionRu": "Для низковольтного накопителя LiFePO4: корпус без ячеек либо комплект с подобранными ячейками для профессиональной сборки. Состав и электрические пределы согласуются в предложении.",
-    "tags": [
-      "16S",
-      "LiFePO4",
-      "Case / cell-kit options",
-      "Proposed configuration"
-    ],
-    "featuresEn": [
-      "Cell arrangement: 16S1P",
-      "Calculated nominal energy with 314Ah cells: 16.0768 kWh (51.2 V × 314 Ah)",
-      "Battery chemistry: LiFePO4"
-    ],
-    "featuresZh": [
-      "电芯连接: 16S1P",
-      "314Ah 电芯配置的计算标称电量: 16.0768 kWh (51.2 V × 314 Ah)",
-      "电池类型: LiFePO4"
-    ],
-    "image": "images/studio-white/diy16s.webp",
-    "modelCode": "AE-E-BUILD-16S",
-    "modelCodes": [
-      "AE-E-BUILD-16S",
-      "AE-E-BUILD-16S-C314"
-    ],
-    "specs": [
-      {
-        "key": "delivery",
-        "label": [
-          "Supply format",
-          "交付形式",
-          "Formato de suministro",
-          "Формат поставки"
-        ],
-        "value": [
-          "Case kit: no cells. Cell-kit option: 16 compatible cells, assembly required.",
-          "箱体套件不含电芯；含芯套件选项配 16 只适配电芯，需组装。",
-          "Carcasa sin celdas; opción con 16 celdas compatibles, requiere montaje.",
-          "Корпус без ячеек; вариант с 16 совместимыми ячейками требует сборки."
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "status",
-        "label": [
-          "Configuration status",
-          "配置状态",
-          "Estado de configuración",
-          "Статус комплектации"
-        ],
-        "value": [
-          "Proposed configuration — request final specification",
-          "规划配置，请索取最终规格",
-          "Configuración propuesta; solicite la ficha final",
-          "Проектная комплектация; запросите итоговый паспорт"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "chemistry",
-        "label": [
-          "Battery chemistry",
-          "电池类型",
-          "Química",
-          "Химический состав"
-        ],
-        "value": [
-          "LiFePO4",
-          "LiFePO4",
-          "LiFePO4",
-          "LiFePO4"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "configuration",
-        "label": [
-          "Cell arrangement",
-          "电芯连接",
-          "Configuración de celdas",
-          "Соединение ячеек"
-        ],
-        "value": [
-          "16S1P",
-          "16S1P",
-          "16S1P",
-          "16S1P"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "voltage",
-        "label": [
-          "Proposed nominal voltage",
-          "规划标称电压",
-          "Tensión nominal propuesta",
-          "Проектное напряжение"
-        ],
-        "value": [
-          "51.2 V (16 × 3.2 V)",
-          "51.2 V (16 × 3.2 V)",
-          "51.2 V (16 × 3.2 V)",
-          "51.2 V (16 × 3.2 V)"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "capacity",
-        "label": [
-          "Cell-kit / assembled option",
-          "含芯套件 / 成品配置",
-          "Opción con celdas / ensamblada",
-          "Вариант с ячейками / в сборе"
-        ],
-        "value": [
-          "314 Ah",
-          "314 Ah",
-          "314 Ah",
-          "314 Ah"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "energy",
-        "label": [
-          "Calculated nominal energy with 314Ah cells",
-          "314Ah 电芯配置的计算标称电量",
-          "Energía nominal calculada con celdas de 314 Ah",
-          "Расчётная энергия с ячейками 314 А·ч"
-        ],
-        "value": [
-          "16.0768 kWh (51.2 V × 314 Ah)",
-          "16.0768 kWh (51.2 V × 314 Ah)",
-          "16.0768 kWh (51.2 V × 314 Ah)",
-          "16.0768 kWh (51.2 V × 314 Ah)"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "bms",
-        "label": [
-          "BMS selection",
-          "BMS 选配",
-          "Selección del BMS",
-          "Выбор BMS"
-        ],
-        "value": [
-          "16S LiFePO4; current rating and firmware by final BOM",
-          "16S 磷酸铁锂，电流等级及固件按最终物料清单确认",
-          "LiFePO4 16S; corriente y firmware según lista final",
-          "LiFePO4 16S; ток и прошивка по итоговой спецификации"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "charge",
-        "label": [
-          "Continuous charge / discharge",
-          "持续充放电电流",
-          "Carga / descarga continua",
-          "Непрерывный ток заряда / разряда"
-        ],
-        "value": [
-          "Confirm for the quoted configuration",
-          "按报价配置确认",
-          "Confirmar según la configuración cotizada",
-          "Уточняется для согласованной комплектации"
-        ],
-        "status": "pending"
-      },
-      {
-        "key": "compatibility",
-        "label": [
-          "Inverter matching",
-          "逆变器适配",
-          "Compatibilidad con inversor",
-          "Совместимость с инвертором"
-        ],
-        "value": [
-          "48V-class external inverter; battery window, protocol and firmware must match",
-          "48V 等级外置逆变器，须核对电池电压窗口、协议及固件",
-          "Inversor externo de clase 48 V; verificar tensión, protocolo y firmware",
-          "Внешний инвертор класса 48 В; сверить напряжение, протокол и прошивку"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "ip",
-        "label": [
-          "Protection rating / location",
-          "防护等级 / 放置环境",
-          "Protección / ubicación",
-          "Степень защиты / размещение"
-        ],
-        "value": [
-          "IP rating unverified; plan a dry indoor installation",
-          "IP 等级尚未核实，按干燥室内环境规划",
-          "IP sin verificar; prever instalación interior seca",
-          "IP не подтверждён; планировать сухое помещение"
-        ],
-        "status": "pending"
-      },
-      {
-        "key": "cycle",
-        "label": [
-          "Cycle life / warranty",
-          "循环寿命 / 质保",
-          "Ciclos / garantía",
-          "Ресурс / гарантия"
-        ],
-        "value": [
-          "Confirm for the quoted configuration",
-          "按报价配置确认",
-          "Confirmar según la configuración cotizada",
-          "Уточняется для согласованной комплектации"
-        ],
-        "status": "pending"
-      },
-      {
-        "key": "size",
-        "label": [
-          "Dimensions / weight",
-          "尺寸 / 重量",
-          "Dimensiones / peso",
-          "Размеры / масса"
-        ],
-        "value": [
-          "Confirm for the quoted configuration",
-          "按报价配置确认",
-          "Confirmar según la configuración cotizada",
-          "Уточняется для согласованной комплектации"
-        ],
-        "status": "pending"
-      },
-      {
-        "key": "function",
-        "label": [
-          "System role",
-          "系统功能",
-          "Función del sistema",
-          "Назначение"
-        ],
-        "value": [
-          "DC battery storage; external inverter required for AC loads",
-          "直流电池储能，交流负载需外置逆变器",
-          "Almacenamiento CC; inversor externo para cargas CA",
-          "Накопитель DC; для нагрузок AC требуется внешний инвертор"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "empty_case",
-        "label": [
-          "Case-kit energy",
-          "空箱套件电量",
-          "Energía de carcasa sin celdas",
-          "Энергия корпуса без ячеек"
-        ],
-        "value": [
-          "No stored energy without cells",
-          "未装电芯时不具有储能容量",
-          "Sin almacenamiento hasta instalar celdas",
-          "Без ячеек энергия не запасается"
-        ],
-        "status": "proposed"
-      }
-    ],
-    "coreHighlights": [
-      {
-        "key": "configuration",
-        "label": [
-          "Cell arrangement",
-          "电芯连接",
-          "Configuración de celdas",
-          "Соединение ячеек"
-        ],
-        "value": [
-          "16S1P",
-          "16S1P",
-          "16S1P",
-          "16S1P"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "energy",
-        "label": [
-          "Calculated nominal energy with 314Ah cells",
-          "314Ah 电芯配置的计算标称电量",
-          "Energía nominal calculada con celdas de 314 Ah",
-          "Расчётная энергия с ячейками 314 А·ч"
-        ],
-        "value": [
-          "16.0768 kWh (51.2 V × 314 Ah)",
-          "16.0768 kWh (51.2 V × 314 Ah)",
-          "16.0768 kWh (51.2 V × 314 Ah)",
-          "16.0768 kWh (51.2 V × 314 Ah)"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "chemistry",
-        "label": [
-          "Battery chemistry",
-          "电池类型",
-          "Química",
-          "Химический состав"
-        ],
-        "value": [
-          "LiFePO4",
-          "LiFePO4",
-          "LiFePO4",
-          "LiFePO4"
-        ],
-        "status": "proposed"
-      }
-    ],
-    "gallery": [
-      "images/studio-white/diy16s.webp",
-      "images/product-angles/preassembled16-front.jpg",
-      "images/product-angles/preassembled16-side.jpg"
-    ],
-    "configurationStatus": "proposed",
-    "supplyStatus": "subject-to-confirmation",
-    "displaySpecs": [
-      {
-        "key": "configuration",
-        "label": [
-          "Cell arrangement",
-          "电芯连接",
-          "Configuración de celdas",
-          "Соединение ячеек"
-        ],
-        "value": [
-          "16S1P",
-          "16S1P",
-          "16S1P",
-          "16S1P"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "energy",
-        "label": [
-          "Calculated nominal energy with 314Ah cells",
-          "314Ah 电芯配置的计算标称电量",
-          "Energía nominal calculada con celdas de 314 Ah",
-          "Расчётная энергия с ячейками 314 А·ч"
-        ],
-        "value": [
-          "16.0768 kWh (51.2 V × 314 Ah)",
-          "16.0768 kWh (51.2 V × 314 Ah)",
-          "16.0768 kWh (51.2 V × 314 Ah)",
-          "16.0768 kWh (51.2 V × 314 Ah)"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "voltage",
-        "label": [
-          "Proposed nominal voltage",
-          "规划标称电压",
-          "Tensión nominal propuesta",
-          "Проектное напряжение"
-        ],
-        "value": [
-          "51.2 V (16 × 3.2 V)",
-          "51.2 V (16 × 3.2 V)",
-          "51.2 V (16 × 3.2 V)",
-          "51.2 V (16 × 3.2 V)"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "chemistry",
-        "label": [
-          "Battery chemistry",
-          "电池类型",
-          "Química",
-          "Химический состав"
-        ],
-        "value": [
-          "LiFePO4",
-          "LiFePO4",
-          "LiFePO4",
-          "LiFePO4"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "function",
-        "label": [
-          "System role",
-          "系统功能",
-          "Función del sistema",
-          "Назначение"
-        ],
-        "value": [
-          "DC battery storage; external inverter required for AC loads",
-          "直流电池储能，交流负载需外置逆变器",
-          "Almacenamiento CC; inversor externo para cargas CA",
-          "Накопитель DC; для нагрузок AC требуется внешний инвертор"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "delivery",
-        "label": [
-          "Supply format",
-          "交付形式",
-          "Formato de suministro",
-          "Формат поставки"
-        ],
-        "value": [
-          "Case kit: no cells. Cell-kit option: 16 compatible cells, assembly required.",
-          "箱体套件不含电芯；含芯套件选项配 16 只适配电芯，需组装。",
-          "Carcasa sin celdas; opción con 16 celdas compatibles, requiere montaje.",
-          "Корпус без ячеек; вариант с 16 совместимыми ячейками требует сборки."
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "status",
-        "label": [
-          "Configuration status",
-          "配置状态",
-          "Estado de configuración",
-          "Статус комплектации"
-        ],
-        "value": [
-          "Proposed configuration — request final specification",
-          "规划配置，请索取最终规格",
-          "Configuración propuesta; solicite la ficha final",
-          "Проектная комплектация; запросите итоговый паспорт"
-        ],
-        "status": "proposed"
-      }
-    ]
-  },
-  {
     "id": "preassembled16",
     "category": "storage",
     "type": "battery",
-    "family": "diy",
-    "num": "ANTHRISE / DIY & PRE-ASSEMBLED",
+    "family": "preassembled",
+    "num": "ANTHRISE / PRE-ASSEMBLED BATTERIES",
     "en": "Pre-assembled 16kWh Battery",
     "zh": "16kWh 预组装箱式电池",
     "descriptionEn": "A proposed factory-assembled LiFePO4 battery for residential solar storage and backup through a matched external inverter. Cells are fitted within the enclosure; commissioning, inverter settings and installation remain project-specific.",
@@ -18184,10 +17736,10 @@
       {
         "key": "capacity",
         "label": [
-          "Cell-kit / assembled option",
-          "含芯套件 / 成品配置",
-          "Opción con celdas / ensamblada",
-          "Вариант с ячейками / в сборе"
+          "Nominal capacity",
+          "标称容量",
+          "Capacidad nominal",
+          "Номинальная ёмкость"
         ],
         "value": [
           "314 Ah",
@@ -18385,50 +17937,18 @@
     "supplyStatus": "subject-to-confirmation",
     "displaySpecs": [
       {
-        "key": "configuration",
+        "key": "delivery",
         "label": [
-          "Cell arrangement",
-          "电芯连接",
-          "Configuración de celdas",
-          "Соединение ячеек"
+          "Supply format",
+          "交付形式",
+          "Formato de suministro",
+          "Формат поставки"
         ],
         "value": [
-          "16S1P",
-          "16S1P",
-          "16S1P",
-          "16S1P"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "energy",
-        "label": [
-          "Calculated nominal energy with 314Ah cells",
-          "314Ah 电芯配置的计算标称电量",
-          "Energía nominal calculada con celdas de 314 Ah",
-          "Расчётная энергия с ячейками 314 А·ч"
-        ],
-        "value": [
-          "16.0768 kWh (51.2 V × 314 Ah)",
-          "16.0768 kWh (51.2 V × 314 Ah)",
-          "16.0768 kWh (51.2 V × 314 Ah)",
-          "16.0768 kWh (51.2 V × 314 Ah)"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "voltage",
-        "label": [
-          "Proposed nominal voltage",
-          "规划标称电压",
-          "Tensión nominal propuesta",
-          "Проектное напряжение"
-        ],
-        "value": [
-          "51.2 V (16 × 3.2 V)",
-          "51.2 V (16 × 3.2 V)",
-          "51.2 V (16 × 3.2 V)",
-          "51.2 V (16 × 3.2 V)"
+          "Cells installed in enclosure; no inverter included; commissioning required.",
+          "箱内已装电芯，不含逆变器，仍需安装与调试。",
+          "Celdas instaladas; sin inversor; requiere puesta en marcha.",
+          "Ячейки установлены; инвертор не входит; требуется настройка."
         ],
         "status": "proposed"
       },
@@ -18449,6 +17969,70 @@
         "status": "proposed"
       },
       {
+        "key": "configuration",
+        "label": [
+          "Cell arrangement",
+          "电芯连接",
+          "Configuración de celdas",
+          "Соединение ячеек"
+        ],
+        "value": [
+          "16S1P",
+          "16S1P",
+          "16S1P",
+          "16S1P"
+        ],
+        "status": "proposed"
+      },
+      {
+        "key": "voltage",
+        "label": [
+          "Proposed nominal voltage",
+          "规划标称电压",
+          "Tensión nominal propuesta",
+          "Проектное напряжение"
+        ],
+        "value": [
+          "51.2 V (16 × 3.2 V)",
+          "51.2 V (16 × 3.2 V)",
+          "51.2 V (16 × 3.2 V)",
+          "51.2 V (16 × 3.2 V)"
+        ],
+        "status": "proposed"
+      },
+      {
+        "key": "capacity",
+        "label": [
+          "Nominal capacity",
+          "标称容量",
+          "Capacidad nominal",
+          "Номинальная ёмкость"
+        ],
+        "value": [
+          "314 Ah",
+          "314 Ah",
+          "314 Ah",
+          "314 Ah"
+        ],
+        "status": "proposed"
+      },
+      {
+        "key": "energy",
+        "label": [
+          "Calculated nominal energy with 314Ah cells",
+          "314Ah 电芯配置的计算标称电量",
+          "Energía nominal calculada con celdas de 314 Ah",
+          "Расчётная энергия с ячейками 314 А·ч"
+        ],
+        "value": [
+          "16.0768 kWh (51.2 V × 314 Ah)",
+          "16.0768 kWh (51.2 V × 314 Ah)",
+          "16.0768 kWh (51.2 V × 314 Ah)",
+          "16.0768 kWh (51.2 V × 314 Ah)"
+        ],
+        "status": "proposed"
+      },
+      {
         "key": "function",
         "label": [
           "System role",
@@ -18461,38 +18045,6 @@
           "直流电池储能，交流负载需外置逆变器",
           "Almacenamiento CC; inversor externo para cargas CA",
           "Накопитель DC; для нагрузок AC требуется внешний инвертор"
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "delivery",
-        "label": [
-          "Supply format",
-          "交付形式",
-          "Formato de suministro",
-          "Формат поставки"
-        ],
-        "value": [
-          "Cells installed in enclosure; no inverter included; commissioning required.",
-          "箱内已装电芯，不含逆变器，仍需安装与调试。",
-          "Celdas instaladas; sin inversor; requiere puesta en marcha.",
-          "Ячейки установлены; инвертор не входит; требуется настройка."
-        ],
-        "status": "proposed"
-      },
-      {
-        "key": "status",
-        "label": [
-          "Configuration status",
-          "配置状态",
-          "Estado de configuración",
-          "Статус комплектации"
-        ],
-        "value": [
-          "Proposed configuration — request final specification",
-          "规划配置，请索取最终规格",
-          "Configuración propuesta; solicite la ficha final",
-          "Проектная комплектация; запросите итоговый паспорт"
         ],
         "status": "proposed"
       }

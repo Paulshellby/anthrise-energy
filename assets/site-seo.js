@@ -3,7 +3,7 @@
 const origin='https://paulshellby.github.io/anthrise-energy/',legal='深圳市昂旭启元科技有限公司';
 const params=new URLSearchParams(location.search),defaults=window.ANTHRISE_PAGE||{};
 const lang=['en','zh','es','ru'].includes(params.get('lang'))?params.get('lang'):(defaults.lang||(document.documentElement.lang==='zh-CN'?'zh':document.documentElement.lang)||'en');
-const id=params.get('id')||defaults.id;const product=(window.ANTHRISE_PRODUCTS||[]).find(p=>p.id===id);
+const rawId=params.get('id')||params.get('model')||defaults.id;const id=rawId==='diy16s'?'preassembled16':rawId;const product=(window.ANTHRISE_PRODUCTS||[]).find(p=>p.id===id);
 const kind=product?'product':location.pathname.includes('energy')?'energy':location.pathname.includes('lighting')?'lighting':'home';
 const titles={home:{en:'ANTHRISE | Energy Storage, Solar & Lighting Solutions',zh:legal+' | 储能、光伏与照明解决方案',es:'ANTHRISE | Almacenamiento, energía solar e iluminación',ru:'ANTHRISE | Накопители, солнечная энергия и освещение'},energy:{en:'Energy Storage & Inverter Selection | ANTHRISE',zh:'储能与逆变器产品选型 | '+legal},lighting:{en:'Solar & Commercial Lighting | ANTHRISE',zh:'太阳能与工程照明 | '+legal}};
 const desc={en:'Explore energy storage, inverters, solar panels, portable power and lighting. Compare product options, review application scenarios and prepare your project inquiry.',zh:'了解深圳市昂旭启元科技有限公司的储能、逆变器、光伏板、便携电源与照明产品，查看应用场景、产品资料及选型工具，提交清晰的项目需求。',es:'Explore almacenamiento, inversores, paneles solares, energía portátil e iluminación. Compare productos, consulte aplicaciones y prepare su consulta.',ru:'Изучите накопители, инверторы, солнечные панели, портативное питание и освещение. Сравните продукцию и подготовьте запрос по проекту.'};
