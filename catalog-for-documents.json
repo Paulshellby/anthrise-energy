@@ -6,8 +6,8 @@
     "num": "01 / ENERGY STORAGE",
     "zh": "16kWh 家用储能",
     "en": "16kWh Home Storage",
-    "descriptionZh": "面向家庭备电与光伏配储的磷酸铁锂储能产品，可与适配逆变器组合使用。",
-    "descriptionEn": "LiFePO₄ storage range for home backup and solar-plus-storage, subject to inverter compatibility.",
+    "descriptionZh": "ANTHRISE 16kWh 家用储能（AE-E-DAWN-16），用于光伏配储与备用电源。目录配置：LiFePO4; 51.2 V。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE 16kWh Home Storage (AE-E-DAWN-16) for solar storage and backup power. Listed configuration: LiFePO4; 51.2 V. Explore applications, system matching and product documents.",
     "tags": [
       "16 kWh",
       "LiFePO₄",
@@ -541,8 +541,8 @@
       }
     ],
     "showcase": "images/engineering/ess16-demo.webp",
-    "descriptionEs": "Almacenamiento residencial de 16 kWh. Evalúe la capacidad, tensión de batería, compatibilidad del inversor y condiciones de instalación. Confirme los datos y la configuración del modelo seleccionado.",
-    "descriptionRu": "Домашний накопитель 16 кВт·ч. Оцените ёмкость, напряжение батареи, совместимость инвертора и условия монтажа. Подтвердите данные и комплектацию выбранной модели."
+    "descriptionEs": "ANTHRISE Almacenamiento residencial de 16 kWh (AE-E-DAWN-16) para almacenamiento solar y respaldo. Configuración: LiFePO4; 51.2 V. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Домашний накопитель 16 кВт·ч (AE-E-DAWN-16) для солнечного накопления и резерва. Конфигурация: LiFePO4; 51.2 V. Области применения, согласование и документация."
   },
   {
     "id": "series_ascend",
@@ -551,8 +551,8 @@
     "num": "ANTHRISE · ASCEND",
     "zh": "高压模块化堆叠电池",
     "en": "High-Voltage Modular Battery Stack",
-    "descriptionZh": "适配外置混合逆变器的高压电池堆叠系统，串联模块会提高系统电压，模块数量须落在逆变器与 BMS 的工作范围内。",
-    "descriptionEn": "High-voltage battery-only stack for a matched external hybrid inverter. Series-connected modules raise system voltage; module count must remain within the inverter and BMS operating window.",
+    "descriptionZh": "ANTHRISE 高压模块化堆叠电池（AE-E-ASCEND），用于光伏配储与备用电源。目录配置：20.48 kWh / 4-module HV configuration; 204.8 V。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE High-Voltage Modular Battery Stack (AE-E-ASCEND) for solar storage and backup power. Listed configuration: 20.48 kWh / 4-module HV configuration; 204.8 V. Explore applications, system matching and product documents.",
     "tags": [
       "ASCEND",
       "Brand series",
@@ -917,8 +917,8 @@
       "所示型号为品牌规划选品编码，容量和功率段为概念目标。",
       "电池额定电压、充放电电流、逆变器相数、接口和认证需按供应商文件确认。"
     ],
-    "descriptionEs": "Batería modular de alta tensión para inversor híbrido externo compatible. La conexión en serie eleva la tensión; limite los módulos al rango del inversor y BMS.",
-    "descriptionRu": "Высоковольтная батарейная стойка для совместимого внешнего гибридного инвертора. Последовательные модули повышают напряжение; количество ограничено диапазоном инвертора и BMS.",
+    "descriptionEs": "ANTHRISE Batería modular de alta tensión (AE-E-ASCEND) para almacenamiento solar y respaldo. Configuración: 20.48 kWh / 4-module HV configuration; 204.8 V. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Высоковольтная модульная батарея (AE-E-ASCEND) для солнечного накопления и резерва. Конфигурация: 20.48 kWh / 4-module HV configuration; 204.8 V. Области применения, согласование и документация.",
     "galleryLabels": [
       [
         "Three-quarter view",
@@ -1080,8 +1080,8 @@
     "modelCode": "AE-E-BALCONY",
     "zh": "阳台储能系统",
     "en": "Balcony Energy Storage System",
-    "descriptionZh": "面向阳台光伏自用的紧凑型储能系统，提供 2.56–5.12 kWh 模块化容量配置，结合 APP 监测与便于搬运的侧提手设计。",
-    "descriptionEn": "Compact storage for balcony solar self-consumption, with a 2.56–5.12 kWh modular capacity range, app monitoring and recessed side handles.",
+    "descriptionZh": "ANTHRISE 阳台储能系统（AE-E-BALCONY），用于光伏配储与备用电源。目录配置：2.56-5.12 kWh; LiFePO4。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Balcony Energy Storage System (AE-E-BALCONY) for solar storage and backup power. Listed configuration: 2.56-5.12 kWh; LiFePO4. Explore applications, system matching and product documents.",
     "tags": [
       "2.56–5.12 kWh",
       "LiFePO4",
@@ -1524,8 +1524,8 @@
       }
     ],
     "showcase": "images/engineering/balconyBess-demo.webp",
-    "descriptionEs": "Almacenamiento compacto para autoconsumo solar en balcones, con capacidad modular de 2,56–5,12 kWh y supervisión mediante aplicación.",
-    "descriptionRu": "Компактный накопитель для балконных солнечных систем: модульная ёмкость 2,56–5,12 кВт·ч и мониторинг через приложение."
+    "descriptionEs": "ANTHRISE Sistema de almacenamiento para balcón (AE-E-BALCONY) para almacenamiento solar y respaldo. Configuración: 2.56-5.12 kWh; LiFePO4. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Балконная система накопления энергии (AE-E-BALCONY) для солнечного накопления и резерва. Конфигурация: 2.56-5.12 kWh; LiFePO4. Области применения, согласование и документация."
   },
   {
     "id": "ess10",
@@ -1534,8 +1534,8 @@
     "num": "03 / ENERGY STORAGE",
     "zh": "5–10kWh 紧凑型储能",
     "en": "5–10kWh Compact Storage",
-    "descriptionZh": "针对基本家庭备电、有限空间及小型系统的储能产品方向。",
-    "descriptionEn": "Storage product direction for entry-level home backup, limited spaces and smaller systems.",
+    "descriptionZh": "ANTHRISE 5–10kWh 紧凑型储能（AE-E-DAWN-05），用于光伏配储与备用电源。目录配置：LiFePO4; 51.2 V。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE 5–10kWh Compact Storage (AE-E-DAWN-05) for solar storage and backup power. Listed configuration: LiFePO4; 51.2 V. Explore applications, system matching and product documents.",
     "tags": [
       "5–10 kWh",
       "Home",
@@ -2101,8 +2101,8 @@
       }
     ],
     "showcase": "images/engineering/ess10-demo.webp",
-    "descriptionEs": "Almacenamiento compacto de 5-10 kWh. Evalúe la capacidad, tensión de batería, compatibilidad del inversor y condiciones de instalación. Confirme los datos y la configuración del modelo seleccionado.",
-    "descriptionRu": "Компактный накопитель 5-10 кВт·ч. Оцените ёмкость, напряжение батареи, совместимость инвертора и условия монтажа. Подтвердите данные и комплектацию выбранной модели."
+    "descriptionEs": "ANTHRISE Almacenamiento compacto de 5-10 kWh (AE-E-DAWN-05) para almacenamiento solar y respaldo. Configuración: LiFePO4; 51.2 V. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Компактный накопитель 5-10 кВт·ч (AE-E-DAWN-05) для солнечного накопления и резерва. Конфигурация: LiFePO4; 51.2 V. Области применения, согласование и документация."
   },
   {
     "id": "hybrid6",
@@ -2112,8 +2112,8 @@
     "modelCode": "AE-I-HYBRID-6K",
     "zh": "6 kW 混网逆变器",
     "en": "6 kW Hybrid Inverter",
-    "descriptionZh": "相数、电池电压及兼容性待规格书确认。",
-    "descriptionEn": "Confirm phase, battery voltage and compatibility against the datasheet.",
+    "descriptionZh": "ANTHRISE 6 kW 混网逆变器（AE-I-HYBRID-6K），用于光伏变流与系统集成。目录配置：6000 W; 220 / 230 V。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE 6 kW Hybrid Inverter (AE-I-HYBRID-6K) for solar power conversion and system integration. Listed configuration: 6000 W; 220 / 230 V. Explore applications, system matching and product documents.",
     "tags": [
       "6 kW",
       "Hybrid"
@@ -2558,8 +2558,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Inversor híbrido de 50 kW. Compruebe fase, modo de trabajo, límites de entrada y salida y compatibilidad del sistema. Confirme los requisitos locales y la ficha del modelo.",
-    "descriptionRu": "Гибридный инвертор 50 кВт. Проверьте фазность, режим работы, пределы входа и выхода и совместимость системы. Уточните местные требования и паспорт модели."
+    "descriptionEs": "ANTHRISE Inversor híbrido de 6 kW (AE-I-HYBRID-6K) para conversión solar e integración del sistema. Configuración: 6000 W; 220 / 230 V. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Гибридный инвертор 6 кВт (AE-I-HYBRID-6K) для солнечного преобразования и интеграции. Конфигурация: 6000 W; 220 / 230 V. Области применения, согласование и документация."
   },
   {
     "id": "hybrid12",
@@ -2569,8 +2569,8 @@
     "modelCode": "AE-I-HYBRID-12K",
     "zh": "12 kW 混网逆变器",
     "en": "12 kW Hybrid Inverter",
-    "descriptionZh": "相数、电池电压及兼容性待规格书确认。",
-    "descriptionEn": "Confirm phase, battery voltage and compatibility against the datasheet.",
+    "descriptionZh": "ANTHRISE 12 kW 混网逆变器（AE-I-HYBRID-12K），用于光伏变流与系统集成。目录配置：12000 W; 40-60 V。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE 12 kW Hybrid Inverter (AE-I-HYBRID-12K) for solar power conversion and system integration. Listed configuration: 12000 W; 40-60 V. Explore applications, system matching and product documents.",
     "tags": [
       "12 kW",
       "Hybrid"
@@ -2855,8 +2855,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Inversor híbrido de 50 kW. Compruebe fase, modo de trabajo, límites de entrada y salida y compatibilidad del sistema. Confirme los requisitos locales y la ficha del modelo.",
-    "descriptionRu": "Гибридный инвертор 50 кВт. Проверьте фазность, режим работы, пределы входа и выхода и совместимость системы. Уточните местные требования и паспорт модели."
+    "descriptionEs": "ANTHRISE Inversor híbrido de 12 kW (AE-I-HYBRID-12K) para conversión solar e integración del sistema. Configuración: 12000 W; 40-60 V. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Гибридный инвертор 12 кВт (AE-I-HYBRID-12K) для солнечного преобразования и интеграции. Конфигурация: 12000 W; 40-60 V. Области применения, согласование и документация."
   },
   {
     "id": "hybrid20",
@@ -2866,8 +2866,8 @@
     "modelCode": "AE-I-HYBRID-20K",
     "zh": "20 kW 混网逆变器",
     "en": "20 kW Hybrid Inverter",
-    "descriptionZh": "相数、电池电压及兼容性待规格书确认。",
-    "descriptionEn": "Confirm phase, battery voltage and compatibility against the datasheet.",
+    "descriptionZh": "ANTHRISE 20 kW 混网逆变器（AE-I-HYBRID-20K），用于光伏变流与系统集成。目录配置：20 kW。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE 20 kW Hybrid Inverter (AE-I-HYBRID-20K) for solar power conversion and system integration. Listed configuration: 20 kW. Explore applications, system matching and product documents.",
     "tags": [
       "20 kW",
       "Hybrid"
@@ -3184,8 +3184,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Inversor híbrido de 50 kW. Compruebe fase, modo de trabajo, límites de entrada y salida y compatibilidad del sistema. Confirme los requisitos locales y la ficha del modelo.",
-    "descriptionRu": "Гибридный инвертор 50 кВт. Проверьте фазность, режим работы, пределы входа и выхода и совместимость системы. Уточните местные требования и паспорт модели."
+    "descriptionEs": "ANTHRISE Inversor híbrido de 20 kW (AE-I-HYBRID-20K) para conversión solar e integración del sistema. Configuración: 20 kW. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Гибридный инвертор 20 кВт (AE-I-HYBRID-20K) для солнечного преобразования и интеграции. Конфигурация: 20 kW. Области применения, согласование и документация."
   },
   {
     "id": "hybrid50",
@@ -3195,8 +3195,8 @@
     "modelCode": "AE-I-HYBRID-50K",
     "zh": "50 kW 混网逆变器",
     "en": "50 kW Hybrid Inverter",
-    "descriptionZh": "相数、电池电压及兼容性待规格书确认。",
-    "descriptionEn": "Confirm phase, battery voltage and compatibility against the datasheet.",
+    "descriptionZh": "ANTHRISE 50 kW 混网逆变器（AE-I-HYBRID-50K），用于光伏变流与系统集成。目录配置：50000 W; 160-800 V。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE 50 kW Hybrid Inverter (AE-I-HYBRID-50K) for solar power conversion and system integration. Listed configuration: 50000 W; 160-800 V. Explore applications, system matching and product documents.",
     "tags": [
       "50 kW",
       "Hybrid"
@@ -3481,8 +3481,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Inversor híbrido de 50 kW. Compruebe fase, modo de trabajo, límites de entrada y salida y compatibilidad del sistema. Confirme los requisitos locales y la ficha del modelo.",
-    "descriptionRu": "Гибридный инвертор 50 кВт. Проверьте фазность, режим работы, пределы входа и выхода и совместимость системы. Уточните местные требования и паспорт модели."
+    "descriptionEs": "ANTHRISE Inversor híbrido de 50 kW (AE-I-HYBRID-50K) para conversión solar e integración del sistema. Configuración: 50000 W; 160-800 V. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Гибридный инвертор 50 кВт (AE-I-HYBRID-50K) для солнечного преобразования и интеграции. Конфигурация: 50000 W; 160-800 V. Области применения, согласование и документация."
   },
   {
     "id": "origAEV200",
@@ -3490,9 +3490,9 @@
     "type": "batterySmall",
     "num": "09 / ORIGINAL CATALOG",
     "zh": "Volt 200 轻量便携电源",
-    "en": "Ultra-Compact",
-    "descriptionZh": "Volt 便携储能系列，适用于户外移动用电、限电备电等场景。 具体规格和供货情况以正式资料为准。",
-    "descriptionEn": "Pocket-sized backup for phones, tablets and LED lights. Throw it in a bag — 150–300Wh target. Specifications and supply require confirmation.",
+    "en": "Ultra-Compact Portable Power Station",
+    "descriptionZh": "ANTHRISE Volt 200 轻量便携电源（AE-E-VOLT-200），用于移动作业、户外及备用电源。目录配置：192 Wh / 200 W; 192 Wh。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Ultra-Compact Portable Power Station (AE-E-VOLT-200) for mobile work, outdoor use and backup power. Listed configuration: 192 Wh / 200 W; 192 Wh. Explore applications, system matching and product documents.",
     "tags": [
       "AE-E-VOLT-200",
       "Capacity150–300Wh",
@@ -3803,8 +3803,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Estación portátil ultracompacta. Compare cargas, energía útil, conectores de salida y opciones de carga para su uso móvil o de respaldo. Confirme los límites del modelo.",
-    "descriptionRu": "Ультракомпактная электростанция. Сравните нагрузки, полезную энергию, выходные разъёмы и способы зарядки для выездной работы или резерва. Уточните пределы модели."
+    "descriptionEs": "ANTHRISE Estación portátil ultracompacta · Estación de energía portátil (AE-E-VOLT-200) para trabajo móvil, uso exterior y respaldo. Configuración: 192 Wh / 200 W; 192 Wh. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Ультракомпактная электростанция · Портативная электростанция (AE-E-VOLT-200) для выездной работы, отдыха и резерва. Конфигурация: 192 Wh / 200 W; 192 Wh. Области применения, согласование и документация."
   },
   {
     "id": "origAEV500",
@@ -3812,9 +3812,9 @@
     "type": "batterySmall",
     "num": "10 / ORIGINAL CATALOG",
     "zh": "Volt 500 户外便携电源",
-    "en": "Compact All-Rounder",
-    "descriptionZh": "Volt 便携储能系列，适用于户外移动用电、限电备电等场景。 具体规格和供货情况以正式资料为准。",
-    "descriptionEn": "The sweet spot for camping, field work and short blackouts. 300–600Wh target. Runs a laptop, fan and lights. Specifications and supply require confirmation.",
+    "en": "Compact All-Rounder Portable Power Station",
+    "descriptionZh": "ANTHRISE Volt 500 户外便携电源（AE-E-VOLT-500），用于移动作业、户外及备用电源。目录配置：384 Wh / 500 W; 384 Wh。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Compact All-Rounder Portable Power Station (AE-E-VOLT-500) for mobile work, outdoor use and backup power. Listed configuration: 384 Wh / 500 W; 384 Wh. Explore applications, system matching and product documents.",
     "tags": [
       "AE-E-VOLT-500",
       "Capacity300–600Wh",
@@ -4141,8 +4141,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Estación portátil compacta. Compare cargas, energía útil, conectores de salida y opciones de carga para su uso móvil o de respaldo. Confirme los límites del modelo.",
-    "descriptionRu": "Компактная портативная электростанция. Сравните нагрузки, полезную энергию, выходные разъёмы и способы зарядки для выездной работы или резерва. Уточните пределы модели."
+    "descriptionEs": "ANTHRISE Estación portátil compacta · Estación de energía portátil (AE-E-VOLT-500) para trabajo móvil, uso exterior y respaldo. Configuración: 384 Wh / 500 W; 384 Wh. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Компактная портативная электростанция · Портативная электростанция (AE-E-VOLT-500) для выездной работы, отдыха и резерва. Конфигурация: 384 Wh / 500 W; 384 Wh. Области применения, согласование и документация."
   },
   {
     "id": "origAEV1000",
@@ -4150,9 +4150,9 @@
     "type": "batterySmall",
     "num": "11 / ORIGINAL CATALOG",
     "zh": "Volt 1000 中容量便携电源",
-    "en": "Mid-Range Workhorse",
-    "descriptionZh": "Volt 便携储能系列，适用于户外移动用电、限电备电等场景。 具体规格和供货情况以正式资料为准。",
-    "descriptionEn": "The bestseller. 600–1200Wh powers a fridge, TV, CPAP and lights through a full load-shedding cycle. Specifications and supply require confirmation.",
+    "en": "Mid-Range Workhorse Portable Power Station",
+    "descriptionZh": "ANTHRISE Volt 1000 中容量便携电源（AE-E-VOLT-1000），用于移动作业、户外及备用电源。目录配置：768 Wh / 1000 W; 768 Wh。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Mid-Range Workhorse Portable Power Station (AE-E-VOLT-1000) for mobile work, outdoor use and backup power. Listed configuration: 768 Wh / 1000 W; 768 Wh. Explore applications, system matching and product documents.",
     "tags": [
       "AE-E-VOLT-1000",
       "Capacity600–1200Wh",
@@ -4495,8 +4495,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Estación portátil de capacidad intermedia. Compare cargas, energía útil, conectores de salida y opciones de carga para su uso móvil o de respaldo. Confirme los límites del modelo.",
-    "descriptionRu": "Портативная электростанция среднего класса. Сравните нагрузки, полезную энергию, выходные разъёмы и способы зарядки для выездной работы или резерва. Уточните пределы модели."
+    "descriptionEs": "ANTHRISE Estación portátil de capacidad intermedia · Estación de energía portátil (AE-E-VOLT-1000) para trabajo móvil, uso exterior y respaldo. Configuración: 768 Wh / 1000 W; 768 Wh. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Портативная электростанция среднего класса · Портативная электростанция (AE-E-VOLT-1000) для выездной работы, отдыха и резерва. Конфигурация: 768 Wh / 1000 W; 768 Wh. Области применения, согласование и документация."
   },
   {
     "id": "origAEV1500",
@@ -4504,9 +4504,9 @@
     "type": "batterySmall",
     "num": "12 / ORIGINAL CATALOG",
     "zh": "Volt 1500 大容量电源",
-    "en": "Large-Capacity",
-    "descriptionZh": "Volt 便携储能系列，适用于户外移动用电、限电备电等场景。 具体规格和供货情况以正式资料为准。",
-    "descriptionEn": "For households that need real runtime. 1200–2000Wh target. Runs multiple appliances through extended outages. Specifications and supply require confirmation.",
+    "en": "Large-Capacity Portable Power Station",
+    "descriptionZh": "ANTHRISE Volt 1500 大容量电源（AE-E-VOLT-1500），用于移动作业、户外及备用电源。目录配置：1200-2000 Wh; LiFePO4。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Large-Capacity Portable Power Station (AE-E-VOLT-1500) for mobile work, outdoor use and backup power. Listed configuration: 1200-2000 Wh; LiFePO4. Explore applications, system matching and product documents.",
     "tags": [
       "AE-E-VOLT-1500",
       "Capacity1200–2000Wh",
@@ -4833,8 +4833,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Estación portátil de gran capacidad. Compare cargas, energía útil, conectores de salida y opciones de carga para su uso móvil o de respaldo. Confirme los límites del modelo.",
-    "descriptionRu": "Портативная электростанция большой ёмкости. Сравните нагрузки, полезную энергию, выходные разъёмы и способы зарядки для выездной работы или резерва. Уточните пределы модели."
+    "descriptionEs": "ANTHRISE Estación portátil de gran capacidad · Estación de energía portátil (AE-E-VOLT-1500) para trabajo móvil, uso exterior y respaldo. Configuración: 1200-2000 Wh; LiFePO4. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Портативная электростанция большой ёмкости · Портативная электростанция (AE-E-VOLT-1500) для выездной работы, отдыха и резерва. Конфигурация: 1200-2000 Wh; LiFePO4. Области применения, согласование и документация."
   },
   {
     "id": "origAEV2500",
@@ -4842,9 +4842,9 @@
     "type": "batterySmall",
     "num": "13 / ORIGINAL CATALOG",
     "zh": "Volt 2500 专业储能电源",
-    "en": "Professional",
-    "descriptionZh": "面向移动作业与指定备电负载的大容量便携能源，按所选配置核对持续交流功率、负载启动功率与补能条件。",
-    "descriptionEn": "High-capacity portable energy for mobile work and selected backup loads. Confirm continuous AC output, appliance starting power and recharge requirements for the selected configuration.",
+    "en": "Professional Portable Power Station",
+    "descriptionZh": "ANTHRISE Volt 2500 专业储能电源（AE-E-VOLT-2500），用于移动作业、户外及备用电源。目录配置：2048 Wh / 2400 W AC / 230 V; 2048 Wh / LFP。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Professional Portable Power Station (AE-E-VOLT-2500) for mobile work, outdoor use and backup power. Listed configuration: 2048 Wh / 2400 W AC / 230 V; 2048 Wh / LFP. Explore applications, system matching and product documents.",
     "tags": [
       "AE-E-VOLT-2500",
       "Capacity2000–3600Wh",
@@ -5137,8 +5137,8 @@
       "核对应用场景、兼容性与认证要求",
       "最终价格和供货以报价为准"
     ],
-    "descriptionEs": "Energía portátil de alta capacidad para trabajo móvil y cargas de respaldo seleccionadas. Verifique salida CA, arranque de equipos y recarga.",
-    "descriptionRu": "Портативная энергия большой ёмкости для выездной работы и выбранных резервных нагрузок. Уточните AC-мощность, пусковую нагрузку и заряд.",
+    "descriptionEs": "ANTHRISE Estación portátil profesional · Estación de energía portátil (AE-E-VOLT-2500) para trabajo móvil, uso exterior y respaldo. Configuración: 2048 Wh / 2400 W AC / 230 V; 2048 Wh / LFP. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Профессиональная портативная электростанция · Портативная электростанция (AE-E-VOLT-2500) для выездной работы, отдыха и резерва. Конфигурация: 2048 Wh / 2400 W AC / 230 V; 2048 Wh / LFP. Области применения, согласование и документация.",
     "displaySpecs": [
       {
         "key": "selected_configuration",
@@ -5244,9 +5244,9 @@
     "type": "batterySmall",
     "num": "14 / ORIGINAL CATALOG",
     "zh": "Volt Pro 模块化便携电源",
-    "en": "Modular Expandable",
-    "descriptionZh": "Volt 便携储能系列，适用于户外移动用电、限电备电等场景。 具体规格和供货情况以正式资料为准。",
-    "descriptionEn": "Stack extra battery packs to scale capacity on site. Start with the base unit, grow as your customer's needs grow. Specifications and supply require confirmation.",
+    "en": "Modular Expandable Portable Power Station",
+    "descriptionZh": "ANTHRISE Volt Pro 模块化便携电源（AE-E-VOLT-PRO），用于移动作业、户外及备用电源。目录配置：2000 Wh; LiFePO4。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Modular Expandable Portable Power Station (AE-E-VOLT-PRO) for mobile work, outdoor use and backup power. Listed configuration: 2000 Wh; LiFePO4. Explore applications, system matching and product documents.",
     "tags": [
       "AE-E-VOLT-PRO",
       "Capacity2000Wh + expandable",
@@ -5629,8 +5629,8 @@
       }
     ],
     "showcase": "images/engineering/origAEVP-demo.webp",
-    "descriptionEs": "Estación portátil modular ampliable. Compare cargas, energía útil, conectores de salida y opciones de carga para su uso móvil o de respaldo. Confirme los límites del modelo.",
-    "descriptionRu": "Модульная расширяемая электростанция. Сравните нагрузки, полезную энергию, выходные разъёмы и способы зарядки для выездной работы или резерва. Уточните пределы модели."
+    "descriptionEs": "ANTHRISE Estación portátil modular ampliable · Estación de energía portátil (AE-E-VOLT-PRO) para trabajo móvil, uso exterior y respaldo. Configuración: 2000 Wh; LiFePO4. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Модульная расширяемая электростанция · Портативная электростанция (AE-E-VOLT-PRO) для выездной работы, отдыха и резерва. Конфигурация: 2000 Wh; LiFePO4. Области применения, согласование и документация."
   },
   {
     "id": "origAER60",
@@ -5639,8 +5639,8 @@
     "num": "18 / ORIGINAL CATALOG",
     "zh": "Ray 60W 折叠太阳能板",
     "en": "AE-R60 · 60W Foldable",
-    "descriptionZh": "用于适配充电系统的光伏发电，连接前核对组件开路电压、电流、接头极性与接收端 MPPT 范围。",
-    "descriptionEn": "Solar generation for a correctly matched charging system. Check panel open-circuit voltage, current, connector polarity and the receiving MPPT range before connection.",
+    "descriptionZh": "ANTHRISE Ray 60W 折叠太阳能板（origAER60），用于光伏充电与离网发电。目录配置：60 W。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE AE-R60 · 60W Foldable (origAER60) for solar charging and off-grid energy generation. Listed configuration: 60 W. Explore applications, system matching and product documents.",
     "tags": [
       "AE-R60",
       "Power60W",
@@ -5816,8 +5816,8 @@
       "核对应用场景、兼容性与认证要求",
       "最终价格和供货以报价为准"
     ],
-    "descriptionEs": "Generación solar para un sistema de carga compatible. Verifique tensión en circuito abierto, corriente, polaridad y rango MPPT antes de conectar.",
-    "descriptionRu": "Солнечная генерация для совместимой зарядной системы. До подключения сверяют напряжение холостого хода, ток, полярность и диапазон MPPT.",
+    "descriptionEs": "ANTHRISE AE-R60 · Panel solar plegable de 60 W (origAER60) para carga solar y generación aislada. Configuración: 60 W. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE AE-R60 · Складная солнечная панель 60 Вт (origAER60) для солнечной зарядки и автономной генерации. Конфигурация: 60 W. Области применения, согласование и документация.",
     "displaySpecs": [
       {
         "label": [
@@ -5924,8 +5924,8 @@
     "num": "19 / ORIGINAL CATALOG",
     "zh": "Ray 100W 折叠太阳能板",
     "en": "AE-R100 · 100W Foldable",
-    "descriptionZh": "用于适配充电系统的光伏发电，连接前核对组件开路电压、电流、接头极性与接收端 MPPT 范围。",
-    "descriptionEn": "Solar generation for a correctly matched charging system. Check panel open-circuit voltage, current, connector polarity and the receiving MPPT range before connection.",
+    "descriptionZh": "ANTHRISE Ray 100W 折叠太阳能板（origAER100），用于光伏充电与离网发电。目录配置：100 W; 24.3 V / 20.4 V。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE AE-R100 · 100W Foldable (origAER100) for solar charging and off-grid energy generation. Listed configuration: 100 W; 24.3 V / 20.4 V. Explore applications, system matching and product documents.",
     "tags": [
       "AE-R100",
       "Power100W",
@@ -6101,8 +6101,8 @@
       "核对应用场景、兼容性与认证要求",
       "最终价格和供货以报价为准"
     ],
-    "descriptionEs": "Generación solar para un sistema de carga compatible. Verifique tensión en circuito abierto, corriente, polaridad y rango MPPT antes de conectar.",
-    "descriptionRu": "Солнечная генерация для совместимой зарядной системы. До подключения сверяют напряжение холостого хода, ток, полярность и диапазон MPPT.",
+    "descriptionEs": "ANTHRISE AE-R100 · Panel solar plegable de 100 W (origAER100) para carga solar y generación aislada. Configuración: 100 W; 24.3 V / 20.4 V. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE AE-R100 · Складная солнечная панель 100 Вт (origAER100) для солнечной зарядки и автономной генерации. Конфигурация: 100 W; 24.3 V / 20.4 V. Области применения, согласование и документация.",
     "displaySpecs": [
       {
         "key": "configuration_0",
@@ -6209,8 +6209,8 @@
     "num": "20 / ORIGINAL CATALOG",
     "zh": "Ray 200W 折叠太阳能板",
     "en": "AE-R200 · 200W Foldable",
-    "descriptionZh": "用于适配充电系统的光伏发电，连接前核对组件开路电压、电流、接头极性与接收端 MPPT 范围。",
-    "descriptionEn": "Solar generation for a correctly matched charging system. Check panel open-circuit voltage, current, connector polarity and the receiving MPPT range before connection.",
+    "descriptionZh": "ANTHRISE Ray 200W 折叠太阳能板（origAER200），用于光伏充电与离网发电。目录配置：200 W。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE AE-R200 · 200W Foldable (origAER200) for solar charging and off-grid energy generation. Listed configuration: 200 W. Explore applications, system matching and product documents.",
     "tags": [
       "AE-R200",
       "Power200W",
@@ -6386,8 +6386,8 @@
       "核对应用场景、兼容性与认证要求",
       "最终价格和供货以报价为准"
     ],
-    "descriptionEs": "Generación solar para un sistema de carga compatible. Verifique tensión en circuito abierto, corriente, polaridad y rango MPPT antes de conectar.",
-    "descriptionRu": "Солнечная генерация для совместимой зарядной системы. До подключения сверяют напряжение холостого хода, ток, полярность и диапазон MPPT.",
+    "descriptionEs": "ANTHRISE AE-R200 · Panel solar plegable de 200 W (origAER200) para carga solar y generación aislada. Configuración: 200 W. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE AE-R200 · Складная солнечная панель 200 Вт (origAER200) для солнечной зарядки и автономной генерации. Конфигурация: 200 W. Области применения, согласование и документация.",
     "displaySpecs": [
       {
         "label": [
@@ -6494,8 +6494,8 @@
     "num": "21 / ORIGINAL CATALOG",
     "zh": "Ray 400W 固定式组件",
     "en": "AE-R400 · 400W Rigid",
-    "descriptionZh": "用于适配充电系统的光伏发电，连接前核对组件开路电压、电流、接头极性与接收端 MPPT 范围。",
-    "descriptionEn": "Solar generation for a correctly matched charging system. Check panel open-circuit voltage, current, connector polarity and the receiving MPPT range before connection.",
+    "descriptionZh": "ANTHRISE Ray 400W 固定式组件（origAER400），用于光伏充电与离网发电。目录配置：400 W。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE AE-R400 · 400W Rigid (origAER400) for solar charging and off-grid energy generation. Listed configuration: 400 W. Explore applications, system matching and product documents.",
     "tags": [
       "AE-R400",
       "Power400W",
@@ -6671,8 +6671,8 @@
       "核对应用场景、兼容性与认证要求",
       "最终价格和供货以报价为准"
     ],
-    "descriptionEs": "Generación solar para un sistema de carga compatible. Verifique tensión en circuito abierto, corriente, polaridad y rango MPPT antes de conectar.",
-    "descriptionRu": "Солнечная генерация для совместимой зарядной системы. До подключения сверяют напряжение холостого хода, ток, полярность и диапазон MPPT.",
+    "descriptionEs": "ANTHRISE AE-R400 · Panel solar rígido de 400 W (origAER400) para carga solar y generación aislada. Configuración: 400 W. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE AE-R400 · Жёсткая солнечная панель 400 Вт (origAER400) для солнечной зарядки и автономной генерации. Конфигурация: 400 W. Области применения, согласование и документация.",
     "displaySpecs": [
       {
         "label": [
@@ -6779,8 +6779,8 @@
     "num": "22 / ORIGINAL CATALOG",
     "zh": "太阳能发电机组合套装",
     "en": "AE-SK1 · Solar Generator Bundle",
-    "descriptionZh": "为移动用能搭配光伏板与便携电源，组件电压、充电输入及线缆按报价套装匹配，输出能力以所选电源为准。",
-    "descriptionEn": "Coordinated solar panel and portable power selection for mobile energy. Panel voltage, charging input and cables are matched for the quoted bundle; output depends on the selected station.",
+    "descriptionZh": "ANTHRISE 太阳能发电机组合套装（origAESK1），用于移动作业、户外及备用电源。目录配置：LiFePO4。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE AE-SK1 · Solar Generator Bundle (origAESK1) for mobile work, outdoor use and backup power. Listed configuration: LiFePO4. Explore applications, system matching and product documents.",
     "tags": [
       "AE-SK1",
       "PanelFoldable (ETFE)",
@@ -6972,8 +6972,8 @@
       "核对应用场景、兼容性与认证要求",
       "最终价格和供货以报价为准"
     ],
-    "descriptionEs": "Selección coordinada de panel solar y estación portátil. Tensión, entrada de carga y cables se ajustan al conjunto cotizado.",
-    "descriptionRu": "Подбор солнечной панели и портативной станции. Напряжение, зарядный вход и кабели согласуются для выбранного комплекта.",
+    "descriptionEs": "ANTHRISE AE-SK1 · Kit de generación solar (origAESK1) para trabajo móvil, uso exterior y respaldo. Configuración: LiFePO4. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE AE-SK1 · Комплект солнечного питания (origAESK1) для выездной работы, отдыха и резерва. Конфигурация: LiFePO4. Области применения, согласование и документация.",
     "galleryLabels": [
       [
         "Three-quarter view",
@@ -7102,8 +7102,8 @@
     "num": "24 / ORIGINAL CATALOG",
     "zh": "MPPT 充电控制器",
     "en": "AE-A-MPPT · MPPT Charge Controllers",
-    "descriptionZh": "跟踪光伏最大功率点并调节电池充电的直流控制设备。需共同选定光伏开路电压、电池电压与充电电流，不包含交流逆变功能。",
-    "descriptionEn": "DC solar charge control that tracks the PV maximum power point and regulates battery charging. Select PV open-circuit voltage, battery voltage and charge current together; AC conversion is not included.",
+    "descriptionZh": "ANTHRISE MPPT 充电控制器（origAEAMPPT），用于光伏充电与离网发电。目录配置：100 V PV / 30 A charge / 12-24 V battery; 12/24 V 自动识别。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE AE-A-MPPT · MPPT Charge Controllers (origAEAMPPT) for solar charging and off-grid energy generation. Listed configuration: 100 V PV / 30 A charge / 12-24 V battery; 12/24 V automatic. Explore applications, system matching and product documents.",
     "tags": [
       "AE-A-MPPT"
     ],
@@ -7320,8 +7320,8 @@
       "核对应用场景、兼容性与认证要求",
       "最终价格和供货以报价为准"
     ],
-    "descriptionEs": "Control de carga solar CC con seguimiento del punto de máxima potencia. Seleccione tensión FV, batería y corriente de carga; no incluye conversión CA.",
-    "descriptionRu": "Солнечный DC-контроллер отслеживает точку максимальной мощности PV и регулирует заряд АКБ. Подбирают напряжение PV, АКБ и ток; AC-преобразования нет.",
+    "descriptionEs": "ANTHRISE AE-A-MPPT · Controladores de carga MPPT (origAEAMPPT) para carga solar y generación aislada. Configuración: 100 V PV / 30 A charge / 12-24 V battery; 12/24 V automático. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE AE-A-MPPT · Контроллеры заряда MPPT (origAEAMPPT) для солнечной зарядки и автономной генерации. Конфигурация: 100 V PV / 30 A charge / 12-24 V battery; 12/24 V автоматически. Области применения, согласование и документация.",
     "galleryLabels": [
       [
         "Three-quarter view",
@@ -7450,8 +7450,8 @@
     "num": "25 / ORIGINAL CATALOG",
     "zh": "纯正弦波逆变器",
     "en": "Pure Sine Wave Inverters",
-    "descriptionZh": "光伏储能配套连接、控制、监测及安装配件方向。 具体规格和供货情况以正式资料为准。",
-    "descriptionEn": "300W / 500W / 1000W / 2000W. Clean power for sensitive electronics. Pair with Core batteries. Specifications and supply require confirmation.",
+    "descriptionZh": "ANTHRISE 纯正弦波逆变器（AE-I-UTILITY-01），用于光伏变流与系统集成。目录配置：300 / 500 / 1000 W。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Pure Sine Wave Inverters (AE-I-UTILITY-01) for solar power conversion and system integration. Listed configuration: 300 / 500 / 1000 W. Explore applications, system matching and product documents.",
     "tags": [
       "AE-I-UTILITY-01"
     ],
@@ -7808,8 +7808,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Inversores de onda sinusoidal pura. Compruebe fase, modo de trabajo, límites de entrada y salida y compatibilidad del sistema. Confirme los requisitos locales y la ficha del modelo.",
-    "descriptionRu": "Инверторы с чистой синусоидой. Проверьте фазность, режим работы, пределы входа и выхода и совместимость системы. Уточните местные требования и паспорт модели."
+    "descriptionEs": "ANTHRISE Inversores de onda sinusoidal pura (AE-I-UTILITY-01) para conversión solar e integración del sistema. Configuración: 300 / 500 / 1000 W. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Инверторы с чистой синусоидой (AE-I-UTILITY-01) для солнечного преобразования и интеграции. Конфигурация: 300 / 500 / 1000 W. Области применения, согласование и документация."
   },
   {
     "id": "origAEADC",
@@ -7818,8 +7818,8 @@
     "num": "27 / ORIGINAL CATALOG",
     "zh": "车载 DC-DC 充电器",
     "en": "AE-A-DC · DC-DC Car Chargers",
-    "descriptionZh": "光伏储能配套连接、控制、监测及安装配件方向。 具体规格和供货情况以正式资料为准。",
-    "descriptionEn": "20A / 40A DC-DC with smart alternator sensing. Charge your Core battery while you drive. Specifications and supply require confirmation.",
+    "descriptionZh": "ANTHRISE 车载 DC-DC 充电器（origAEADC），用于光伏充电与离网发电。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE AE-A-DC · DC-DC Car Chargers (origAEADC) for solar charging and off-grid energy generation. Explore applications, system matching and product documents.",
     "tags": [
       "AE-A-DC"
     ],
@@ -8038,8 +8038,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "AE-A-DC · Cargadores de vehículo CC-CC. Revise potencia, tensión, conectores, montaje y compatibilidad con el equipo receptor. La configuración final requiere confirmación.",
-    "descriptionRu": "AE-A-DC · Автомобильные зарядные устройства DC-DC. Проверьте мощность, напряжение, разъёмы, монтаж и совместимость с принимающим оборудованием. Окончательная конфигурация требует подтверждения."
+    "descriptionEs": "ANTHRISE AE-A-DC · Cargadores de vehículo CC-CC (origAEADC) para carga solar y generación aislada. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE AE-A-DC · Автомобильные зарядные устройства DC-DC (origAEADC) для солнечной зарядки и автономной генерации. Области применения, согласование и документация."
   },
   {
     "id": "gardenLighting",
@@ -8048,8 +8048,8 @@
     "num": "32 / NEW SOLUTIONS",
     "zh": "太阳能庭院灯 / 壁灯 · 系列概览",
     "en": "Solar Garden & Wall Lighting · Collection",
-    "descriptionZh": "面向庭院、景观步道与住宅户外空间的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for gardens, landscaped paths and residential outdoor spaces. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能庭院灯 / 壁灯 · 系列概览（AE-L-BLOOM-CN），用于户外与场地照明。目录配置：太阳能庭院柱灯（1-2m）; 太阳能花园插地灯 · 8只装。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Garden & Wall Lighting · Collection (AE-L-BLOOM-CN) for outdoor lighting and site illumination. Listed configuration: Solar Courtyard Column Light (1-2m); Solar Garden Stake Light · 8-Pack. Explore applications, system matching and product documents.",
     "tags": [
       "Garden",
       "Outdoor"
@@ -8213,8 +8213,8 @@
       "jcLight08",
       "jcLight10"
     ],
-    "descriptionEs": "Iluminación para jardines, senderos y espacios exteriores residenciales. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение садов, дорожек и придомовых открытых пространств. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Iluminación solar de jardín y pared · Colección (AE-L-BLOOM-CN) para iluminación exterior y de espacios. Configuración: Luminaria solar de columna para patio; Luminarias solares de jardín · Juego de 8. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечное садовое и настенное освещение · Коллекция (AE-L-BLOOM-CN) для наружного и объектного освещения. Конфигурация: Солнечный столбовой светильник для двора; Солнечные садовые светильники · Набор 8 шт.. Области применения, согласование и документация."
   },
   {
     "id": "floodLighting",
@@ -8223,8 +8223,8 @@
     "num": "33 / NEW SOLUTIONS",
     "zh": "太阳能投光灯 / 安防灯 · 系列概览",
     "en": "Solar Flood & Security Lighting · Collection",
-    "descriptionZh": "面向出入口、通行区域与户外安防的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for entrances, access routes and outdoor security. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能投光灯 / 安防灯 · 系列概览（AE-L-GUARD-CN），用于户外与场地照明。目录配置：三头太阳能感应投光灯; 太阳能泛光安防灯 · 30W。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Flood & Security Lighting · Collection (AE-L-GUARD-CN) for outdoor lighting and site illumination. Listed configuration: Solar Motion Flood Light · 3-Head; Solar Flood Security Light · 30W. Explore applications, system matching and product documents.",
     "tags": [
       "Floodlight",
       "Solar"
@@ -8388,8 +8388,8 @@
       "jcLight07",
       "jcLight09"
     ],
-    "descriptionEs": "Iluminación para accesos, zonas de paso y seguridad exterior. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение входов, проходов и наружных зон безопасности. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Proyectores solares y alumbrado de seguridad · Colección (AE-L-GUARD-CN) para iluminación exterior y de espacios. Configuración: Proyector solar triple con sensor de movimiento; Proyector solar de seguridad de 30 W. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечные прожекторы и охранное освещение · Коллекция (AE-L-GUARD-CN) для наружного и объектного освещения. Конфигурация: Трёхсекционный солнечный прожектор с датчиком движения; Солнечный охранный прожектор 30 Вт. Области применения, согласование и документация."
   },
   {
     "id": "jcLight01",
@@ -8399,8 +8399,8 @@
     "num": "35 / LIGHTING CATALOG",
     "zh": "三头太阳能感应投光灯",
     "en": "Solar Motion Flood Light · 3-Head",
-    "descriptionZh": "面向出入口、通行区域与户外安防的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for entrances, access routes and outdoor security. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 三头太阳能感应投光灯（AE-L-GUARD-01），用于户外与场地照明。目录配置：2500-3500 lm; LiFePO4。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Motion Flood Light · 3-Head (AE-L-GUARD-01) for outdoor lighting and site illumination. Listed configuration: 2500-3500 lm; LiFePO4. Explore applications, system matching and product documents.",
     "tags": [
       "Security & Street",
       "3500lm",
@@ -8715,8 +8715,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación para accesos, zonas de paso y seguridad exterior. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение входов, проходов и наружных зон безопасности. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Proyector solar triple con sensor de movimiento (AE-L-GUARD-01) para iluminación exterior y de espacios. Configuración: 2500-3500 lm; LiFePO4. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Трёхсекционный солнечный прожектор с датчиком движения (AE-L-GUARD-01) для наружного и объектного освещения. Конфигурация: 2500-3500 lm; LiFePO4. Области применения, согласование и документация."
   },
   {
     "id": "jcLight02",
@@ -8726,8 +8726,8 @@
     "num": "36 / LIGHTING CATALOG",
     "zh": "太阳能PIR感应壁灯",
     "en": "PIR Motion Sensor Wall Light",
-    "descriptionZh": "面向出入口、通行区域与户外安防的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for entrances, access routes and outdoor security. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能PIR感应壁灯（AE-L-GUARD-02），用于户外与场地照明。目录配置：800 lm; 4000 mAh。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE PIR Motion Sensor Wall Light (AE-L-GUARD-02) for outdoor lighting and site illumination. Listed configuration: 800 lm; 4000 mAh. Explore applications, system matching and product documents.",
     "tags": [
       "Security & Street",
       "800lm",
@@ -9042,8 +9042,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación para accesos, zonas de paso y seguridad exterior. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение входов, проходов и наружных зон безопасности. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Luminaria de pared con sensor PIR (AE-L-GUARD-02) para iluminación exterior y de espacios. Configuración: 800 lm; 4000 mAh. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Настенный светильник с датчиком PIR (AE-L-GUARD-02) для наружного и объектного освещения. Конфигурация: 800 lm; 4000 mAh. Области применения, согласование и документация."
   },
   {
     "id": "jcLight07",
@@ -9053,8 +9053,8 @@
     "num": "37 / LIGHTING CATALOG",
     "zh": "太阳能泛光安防灯 · 30W",
     "en": "Solar Flood Security Light · 30W",
-    "descriptionZh": "面向出入口、通行区域与户外安防的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for entrances, access routes and outdoor security. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能泛光安防灯 · 30W（AE-L-GUARD-03），用于户外与场地照明。目录配置：30 W; 2400 lm。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Flood Security Light · 30W (AE-L-GUARD-03) for outdoor lighting and site illumination. Listed configuration: 30 W; 2400 lm. Explore applications, system matching and product documents.",
     "tags": [
       "Security & Street",
       "30W",
@@ -9351,8 +9351,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación para accesos, zonas de paso y seguridad exterior. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение входов, проходов и наружных зон безопасности. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Proyector solar de seguridad de 30 W (AE-L-GUARD-03) para iluminación exterior y de espacios. Configuración: 30 W; 2400 lm. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечный охранный прожектор 30 Вт (AE-L-GUARD-03) для наружного и объектного освещения. Конфигурация: 30 W; 2400 lm. Области применения, согласование и документация."
   },
   {
     "id": "jcLight10",
@@ -9362,8 +9362,8 @@
     "num": "38 / LIGHTING CATALOG",
     "zh": "上下出光太阳能壁灯",
     "en": "Up-Down Solar Wall Light",
-    "descriptionZh": "面向出入口、通行区域与户外安防的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for entrances, access routes and outdoor security. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 上下出光太阳能壁灯（AE-L-GUARD-04），用于户外与场地照明。目录配置：2 × 3 W; 3000 K。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Up-Down Solar Wall Light (AE-L-GUARD-04) for outdoor lighting and site illumination. Listed configuration: 2 × 3 W; 3000 K. Explore applications, system matching and product documents.",
     "tags": [
       "Security & Street",
       "3W",
@@ -9643,8 +9643,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación para accesos, zonas de paso y seguridad exterior. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение входов, проходов и наружных зон безопасности. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Luminaria solar de pared de doble haz (AE-L-GUARD-04) para iluminación exterior y de espacios. Configuración: 2 × 3 W; 3000 K. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечный настенный светильник с двусторонним светом (AE-L-GUARD-04) для наружного и объектного освещения. Конфигурация: 2 × 3 W; 3000 K. Области применения, согласование и документация."
   },
   {
     "id": "jcLight09",
@@ -9654,8 +9654,8 @@
     "num": "39 / LIGHTING CATALOG",
     "zh": "一体化太阳能路灯",
     "en": "All-in-One Solar Street Light",
-    "descriptionZh": "面向出入口、通行区域与户外安防的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for entrances, access routes and outdoor security. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 一体化太阳能路灯（AE-L-GUARD-05），用于户外与场地照明。目录配置：200-class solar street-light configuration; 3.2 V / 15 Ah / 48 Wh。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE All-in-One Solar Street Light (AE-L-GUARD-05) for outdoor lighting and site illumination. Listed configuration: 200-class solar street-light configuration; 3.2 V / 15 Ah / 48 Wh. Explore applications, system matching and product documents.",
     "tags": [
       "Security & Street",
       "Solar"
@@ -9998,8 +9998,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación para accesos, zonas de paso y seguridad exterior. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение входов, проходов и наружных зон безопасности. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Luminaria vial solar integrada (AE-L-GUARD-05) para iluminación exterior y de espacios. Configuración: 200-class solar street-light configuration; 3.2 V / 15 Ah / 48 Wh. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Моноблочный солнечный уличный светильник (AE-L-GUARD-05) для наружного и объектного освещения. Конфигурация: 200-class solar street-light configuration; 3.2 V / 15 Ah / 48 Wh. Области применения, согласование и документация."
   },
   {
     "id": "jcLight27",
@@ -10009,8 +10009,8 @@
     "num": "40 / LIGHTING CATALOG",
     "zh": "分体式太阳能路灯",
     "en": "Split Solar Street Light",
-    "descriptionZh": "面向出入口、通行区域与户外安防的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for entrances, access routes and outdoor security. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 分体式太阳能路灯（AE-L-GUARD-06），用于户外与场地照明。目录配置：30 / 60 / 100 W; 3000-10000 lm。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Split Solar Street Light (AE-L-GUARD-06) for outdoor lighting and site illumination. Listed configuration: 30 / 60 / 100 W; 3000-10000 lm. Explore applications, system matching and product documents.",
     "tags": [
       "Security & Street",
       "Separate panel"
@@ -10323,8 +10323,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación para accesos, zonas de paso y seguridad exterior. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение входов, проходов и наружных зон безопасности. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Luminaria vial solar con panel separado (AE-L-GUARD-06) para iluminación exterior y de espacios. Configuración: 30 / 60 / 100 W; 3000-10000 lm. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечный уличный светильник с отдельной панелью (AE-L-GUARD-06) для наружного и объектного освещения. Конфигурация: 30 / 60 / 100 W; 3000-10000 lm. Области применения, согласование и документация."
   },
   {
     "id": "jcLight25",
@@ -10334,8 +10334,8 @@
     "num": "41 / LIGHTING CATALOG",
     "zh": "太阳能警示信号灯",
     "en": "Solar Warning Beacon Light",
-    "descriptionZh": "面向出入口、通行区域与户外安防的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for entrances, access routes and outdoor security. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能警示信号灯（AE-L-GUARD-07），用于户外与场地照明。目录配置：3000 mAh; LiFePO4。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Warning Beacon Light (AE-L-GUARD-07) for outdoor lighting and site illumination. Listed configuration: 3000 mAh; LiFePO4. Explore applications, system matching and product documents.",
     "tags": [
       "Security & Street",
       "3000mAh",
@@ -10648,8 +10648,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación para accesos, zonas de paso y seguridad exterior. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение входов, проходов и наружных зон безопасности. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Baliza solar de advertencia (AE-L-GUARD-07) para iluminación exterior y de espacios. Configuración: 3000 mAh; LiFePO4. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечный сигнальный маяк (AE-L-GUARD-07) для наружного и объектного освещения. Конфигурация: 3000 mAh; LiFePO4. Области применения, согласование и документация."
   },
   {
     "id": "jcLight26",
@@ -10659,8 +10659,8 @@
     "num": "42 / LIGHTING CATALOG",
     "zh": "太阳能旗杆投光灯",
     "en": "Solar Flag Pole Light",
-    "descriptionZh": "面向出入口、通行区域与户外安防的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for entrances, access routes and outdoor security. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能旗杆投光灯（AE-L-GUARD-08），用于户外与场地照明。目录配置：8 W; 600 lm。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Flag Pole Light (AE-L-GUARD-08) for outdoor lighting and site illumination. Listed configuration: 8 W; 600 lm. Explore applications, system matching and product documents.",
     "tags": [
       "Security & Street",
       "8W",
@@ -10975,8 +10975,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación para accesos, zonas de paso y seguridad exterior. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение входов, проходов и наружных зон безопасности. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Luminaria solar para mástil de bandera (AE-L-GUARD-08) para iluminación exterior y de espacios. Configuración: 8 W; 600 lm. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечная подсветка флагштока (AE-L-GUARD-08) для наружного и объектного освещения. Конфигурация: 8 W; 600 lm. Области применения, согласование и документация."
   },
   {
     "id": "jcLight28",
@@ -10986,8 +10986,8 @@
     "num": "43 / LIGHTING CATALOG",
     "zh": "太阳能庭院柱灯（1-2m）",
     "en": "Solar Courtyard Column Light (1-2m)",
-    "descriptionZh": "面向庭院、景观步道与住宅户外空间的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for gardens, landscaped paths and residential outdoor spaces. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能庭院柱灯（1-2m）（AE-L-BLOOM-01），用于户外与场地照明。目录配置：10 W; 800 lm。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Courtyard Column Light (1-2m) (AE-L-BLOOM-01) for outdoor lighting and site illumination. Listed configuration: 10 W; 800 lm. Explore applications, system matching and product documents.",
     "tags": [
       "Garden & Landscape",
       "10W",
@@ -11302,8 +11302,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación para jardines, senderos y espacios exteriores residenciales. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение садов, дорожек и придомовых открытых пространств. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Luminaria solar de columna para patio (AE-L-BLOOM-01) para iluminación exterior y de espacios. Configuración: 10 W; 800 lm. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечный столбовой светильник для двора (AE-L-BLOOM-01) для наружного и объектного освещения. Конфигурация: 10 W; 800 lm. Области применения, согласование и документация."
   },
   {
     "id": "jcLight06",
@@ -11313,8 +11313,8 @@
     "num": "44 / LIGHTING CATALOG",
     "zh": "太阳能花园插地灯 · 8只装",
     "en": "Solar Garden Stake Light · 8-Pack",
-    "descriptionZh": "面向庭院、景观步道与住宅户外空间的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for gardens, landscaped paths and residential outdoor spaces. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能花园插地灯 · 8只装（AE-L-BLOOM-02），用于户外与场地照明。目录配置：1.2 W; 600 mAh。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Garden Stake Light · 8-Pack (AE-L-BLOOM-02) for outdoor lighting and site illumination. Listed configuration: 1.2 W; 600 mAh. Explore applications, system matching and product documents.",
     "tags": [
       "Garden & Landscape",
       "1.2W",
@@ -11577,8 +11577,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación para jardines, senderos y espacios exteriores residenciales. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение садов, дорожек и придомовых открытых пространств. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Luminarias solares de jardín · Juego de 8 (AE-L-BLOOM-02) para iluminación exterior y de espacios. Configuración: 1.2 W; 600 mAh. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечные садовые светильники · Набор 8 шт. (AE-L-BLOOM-02) для наружного и объектного освещения. Конфигурация: 1.2 W; 600 mAh. Области применения, согласование и документация."
   },
   {
     "id": "jcLight08",
@@ -11588,8 +11588,8 @@
     "num": "45 / LIGHTING CATALOG",
     "zh": "太阳能景观插地聚光灯",
     "en": "Solar Garden Spike Spotlight",
-    "descriptionZh": "面向庭院、景观步道与住宅户外空间的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for gardens, landscaped paths and residential outdoor spaces. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能景观插地聚光灯（AE-L-BLOOM-03），用于户外与场地照明。目录配置：5 W; 400 lm。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Garden Spike Spotlight (AE-L-BLOOM-03) for outdoor lighting and site illumination. Listed configuration: 5 W; 400 lm. Explore applications, system matching and product documents.",
     "tags": [
       "Garden & Landscape",
       "5W",
@@ -11888,8 +11888,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación para jardines, senderos y espacios exteriores residenciales. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение садов, дорожек и придомовых открытых пространств. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Foco solar de jardín con estaca (AE-L-BLOOM-03) para iluminación exterior y de espacios. Configuración: 5 W; 400 lm. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечный садовый прожектор на колышке (AE-L-BLOOM-03) для наружного и объектного освещения. Конфигурация: 5 W; 400 lm. Области применения, согласование и документация."
   },
   {
     "id": "jcLight04",
@@ -11899,8 +11899,8 @@
     "num": "46 / LIGHTING CATALOG",
     "zh": "户外装饰壁灯 · 太阳能 / 市电",
     "en": "Outdoor Wall Lantern · Solar / AC",
-    "descriptionZh": "面向住宅与户外休闲空间的氛围照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Atmospheric lighting for residential and outdoor hospitality spaces. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 户外装饰壁灯 · 太阳能 / 市电（AE-L-AURA-01），用于户外与场地照明。目录配置：IP44。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Outdoor Wall Lantern · Solar / AC (AE-L-AURA-01) for outdoor lighting and site illumination. Listed configuration: IP44. Explore applications, system matching and product documents.",
     "tags": [
       "Decorative & Ambiance",
       "LiFePO4",
@@ -12163,8 +12163,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación ambiental para viviendas y zonas de ocio exterior. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Декоративное освещение жилых пространств и открытых зон отдыха. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Farol de pared exterior · Solar / CA (AE-L-AURA-01) para iluminación exterior y de espacios. Configuración: IP44. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Уличный настенный фонарь · Солнце / AC (AE-L-AURA-01) для наружного и объектного освещения. Конфигурация: IP44. Области применения, согласование и документация."
   },
   {
     "id": "jcLight11",
@@ -12174,8 +12174,8 @@
     "num": "47 / LIGHTING CATALOG",
     "zh": "太阳能爱迪生复古串灯",
     "en": "Solar Edison String Lights",
-    "descriptionZh": "面向住宅与户外休闲空间的氛围照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Atmospheric lighting for residential and outdoor hospitality spaces. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能爱迪生复古串灯（AE-L-AURA-02），用于户外与场地照明。目录配置：2700 K; IP65。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Edison String Lights (AE-L-AURA-02) for outdoor lighting and site illumination. Listed configuration: 2700 K; IP65. Explore applications, system matching and product documents.",
     "tags": [
       "Decorative & Ambiance",
       "IP65"
@@ -12454,8 +12454,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación ambiental para viviendas y zonas de ocio exterior. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Декоративное освещение жилых пространств и открытых зон отдыха. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Guirnalda solar de bombillas Edison (AE-L-AURA-02) para iluminación exterior y de espacios. Configuración: 2700 K; IP65. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечная гирлянда с лампами Эдисона (AE-L-AURA-02) для наружного и объектного освещения. Конфигурация: 2700 K; IP65. Области применения, согласование и документация."
   },
   {
     "id": "jcLight19",
@@ -12465,8 +12465,8 @@
     "num": "48 / LIGHTING CATALOG",
     "zh": "太阳能仿真火焰灯",
     "en": "Solar Flame Torch Light",
-    "descriptionZh": "面向住宅与户外休闲空间的氛围照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Atmospheric lighting for residential and outdoor hospitality spaces. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能仿真火焰灯（AE-L-AURA-03），用于户外与场地照明。目录配置：2200 mAh; LiFePO4。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Flame Torch Light (AE-L-AURA-03) for outdoor lighting and site illumination. Listed configuration: 2200 mAh; LiFePO4. Explore applications, system matching and product documents.",
     "tags": [
       "Decorative & Ambiance",
       "IP67",
@@ -12763,8 +12763,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación ambiental para viviendas y zonas de ocio exterior. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Декоративное освещение жилых пространств и открытых зон отдыха. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Antorcha solar de efecto llama (AE-L-AURA-03) para iluminación exterior y de espacios. Configuración: 2200 mAh; LiFePO4. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечный факел с эффектом пламени (AE-L-AURA-03) для наружного и объектного освещения. Конфигурация: 2200 mAh; LiFePO4. Области применения, согласование и документация."
   },
   {
     "id": "jcLight20",
@@ -12774,8 +12774,8 @@
     "num": "49 / LIGHTING CATALOG",
     "zh": "太阳能萤火虫铜线灯串",
     "en": "Solar Fairy Copper Wire String Lights",
-    "descriptionZh": "面向住宅与户外休闲空间的氛围照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Atmospheric lighting for residential and outdoor hospitality spaces. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能萤火虫铜线灯串（AE-L-AURA-04），用于户外与场地照明。目录配置：2700 K; 1200 mAh。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Fairy Copper Wire String Lights (AE-L-AURA-04) for outdoor lighting and site illumination. Listed configuration: 2700 K; 1200 mAh. Explore applications, system matching and product documents.",
     "tags": [
       "Decorative & Ambiance",
       "1200mAh",
@@ -13074,8 +13074,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación ambiental para viviendas y zonas de ocio exterior. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Декоративное освещение жилых пространств и открытых зон отдыха. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Guirnalda solar de alambre de cobre (AE-L-AURA-04) para iluminación exterior y de espacios. Configuración: 2700 K; 1200 mAh. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечная гирлянда на медной проволоке (AE-L-AURA-04) для наружного и объектного освещения. Конфигурация: 2700 K; 1200 mAh. Области применения, согласование и документация."
   },
   {
     "id": "jcLight21",
@@ -13085,8 +13085,8 @@
     "num": "50 / LIGHTING CATALOG",
     "zh": "太阳能太阳伞灯",
     "en": "Solar Umbrella Light",
-    "descriptionZh": "面向住宅与户外休闲空间的氛围照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Atmospheric lighting for residential and outdoor hospitality spaces. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能太阳伞灯（AE-L-AURA-05），用于户外与场地照明。目录配置：3.7 V / 2000 mAh; 5.5 V / 1.5 W。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Umbrella Light (AE-L-AURA-05) for outdoor lighting and site illumination. Listed configuration: 3.7 V / 2000 mAh; 5.5 V / 1.5 W. Explore applications, system matching and product documents.",
     "tags": [
       "Decorative & Ambiance",
       "RGB",
@@ -13367,8 +13367,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación ambiental para viviendas y zonas de ocio exterior. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Декоративное освещение жилых пространств и открытых зон отдыха. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Luminaria solar para sombrilla (AE-L-AURA-05) para iluminación exterior y de espacios. Configuración: 3.7 V / 2000 mAh; 5.5 V / 1.5 W. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечный светильник для зонта (AE-L-AURA-05) для наружного и объектного освещения. Конфигурация: 3.7 V / 2000 mAh; 5.5 V / 1.5 W. Области применения, согласование и документация."
   },
   {
     "id": "jcLight22",
@@ -13378,8 +13378,8 @@
     "num": "51 / LIGHTING CATALOG",
     "zh": "太阳能户外落地氛围灯",
     "en": "Solar Outdoor Floor Lamp",
-    "descriptionZh": "面向住宅与户外休闲空间的氛围照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Atmospheric lighting for residential and outdoor hospitality spaces. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能户外落地氛围灯（AE-L-AURA-06），用于户外与场地照明。目录配置：24 W; 1800 lm。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Outdoor Floor Lamp (AE-L-AURA-06) for outdoor lighting and site illumination. Listed configuration: 24 W; 1800 lm. Explore applications, system matching and product documents.",
     "tags": [
       "Decorative & Ambiance",
       "24W",
@@ -13694,8 +13694,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación ambiental para viviendas y zonas de ocio exterior. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Декоративное освещение жилых пространств и открытых зон отдыха. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Lámpara solar de pie para exterior (AE-L-AURA-06) para iluminación exterior y de espacios. Configuración: 24 W; 1800 lm. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечный напольный уличный светильник (AE-L-AURA-06) для наружного и объектного освещения. Конфигурация: 24 W; 1800 lm. Области применения, согласование и документация."
   },
   {
     "id": "jcLight29",
@@ -13705,8 +13705,8 @@
     "num": "52 / LIGHTING CATALOG",
     "zh": "太阳能泳池浮水灯",
     "en": "Solar Pool Float Light",
-    "descriptionZh": "面向住宅与户外休闲空间的氛围照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Atmospheric lighting for residential and outdoor hospitality spaces. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能泳池浮水灯（AE-L-AURA-07），用于户外与场地照明。目录配置：2000 mAh; IP68。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Pool Float Light (AE-L-AURA-07) for outdoor lighting and site illumination. Listed configuration: 2000 mAh; IP68. Explore applications, system matching and product documents.",
     "tags": [
       "Decorative & Ambiance",
       "RGB",
@@ -13969,8 +13969,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación ambiental para viviendas y zonas de ocio exterior. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Декоративное освещение жилых пространств и открытых зон отдыха. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Luminaria solar flotante para piscina (AE-L-AURA-07) para iluminación exterior y de espacios. Configuración: 2000 mAh; IP68. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Плавающий солнечный светильник для бассейна (AE-L-AURA-07) для наружного и объектного освещения. Конфигурация: 2000 mAh; IP68. Области применения, согласование и документация."
   },
   {
     "id": "jcLight15",
@@ -13980,8 +13980,8 @@
     "num": "53 / LIGHTING CATALOG",
     "zh": "太阳能室内壁灯（分体式）",
     "en": "Solar Indoor Wall Light (Split Panel)",
-    "descriptionZh": "面向相应室内、移动与离网应用的实用照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Practical lighting for selected indoor, mobile and off-grid applications. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能室内壁灯（分体式）（AE-L-ROAM-01），用于户外与场地照明。目录配置：5 W; 400 lm。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Indoor Wall Light (Split Panel) (AE-L-ROAM-01) for outdoor lighting and site illumination. Listed configuration: 5 W; 400 lm. Explore applications, system matching and product documents.",
     "tags": [
       "Off-grid & Portable",
       "5W",
@@ -14312,8 +14312,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación práctica para aplicaciones interiores, móviles y aisladas según modelo. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Практичное освещение для внутренних, мобильных и автономных задач по модели. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Luminaria solar de pared interior con panel separado (AE-L-ROAM-01) para iluminación exterior y de espacios. Configuración: 5 W; 400 lm. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечный внутренний настенный светильник с отдельной панелью (AE-L-ROAM-01) для наружного и объектного освещения. Конфигурация: 5 W; 400 lm. Области применения, согласование и документация."
   },
   {
     "id": "jcLight16",
@@ -14323,8 +14323,8 @@
     "num": "54 / LIGHTING CATALOG",
     "zh": "太阳能应急LED灯泡（E27 / B22）",
     "en": "Solar Emergency LED Bulb (E27 / B22)",
-    "descriptionZh": "面向相应室内、移动与离网应用的实用照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Practical lighting for selected indoor, mobile and off-grid applications. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能应急LED灯泡（E27 / B22）（AE-L-ROAM-02），用于户外与场地照明。目录配置：3 / 5 W; 300 / 500 lm。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Emergency LED Bulb (E27 / B22) (AE-L-ROAM-02) for outdoor lighting and site illumination. Listed configuration: 3 / 5 W; 300 / 500 lm. Explore applications, system matching and product documents.",
     "tags": [
       "Off-grid & Portable",
       "3W",
@@ -14639,8 +14639,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación práctica para aplicaciones interiores, móviles y aisladas según modelo. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Практичное освещение для внутренних, мобильных и автономных задач по модели. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Bombilla solar de emergencia E27 / B22 (AE-L-ROAM-02) para iluminación exterior y de espacios. Configuración: 3 / 5 W; 300 / 500 lm. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечная аварийная лампа E27 / B22 (AE-L-ROAM-02) для наружного и объектного освещения. Конфигурация: 3 / 5 W; 300 / 500 lm. Области применения, согласование и документация."
   },
   {
     "id": "jcLight17",
@@ -14650,8 +14650,8 @@
     "num": "55 / LIGHTING CATALOG",
     "zh": "太阳能家庭照明套装",
     "en": "Solar Home Lighting Kit (2 Lights)",
-    "descriptionZh": "面向相应室内、移动与离网应用的实用照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Practical lighting for selected indoor, mobile and off-grid applications. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能家庭照明套装（AE-L-ROAM-03），用于户外与场地照明。目录配置：2 × 3 W; 10 W。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Home Lighting Kit (2 Lights) (AE-L-ROAM-03) for outdoor lighting and site illumination. Listed configuration: 2 × 3 W; 10 W. Explore applications, system matching and product documents.",
     "tags": [
       "Off-grid & Portable",
       "10W",
@@ -14948,8 +14948,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación práctica para aplicaciones interiores, móviles y aisladas según modelo. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Практичное освещение для внутренних, мобильных и автономных задач по модели. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Kit solar de iluminación doméstica · 2 luces (AE-L-ROAM-03) para iluminación exterior y de espacios. Configuración: 2 × 3 W; 10 W. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Комплект солнечного домашнего освещения · 2 лампы (AE-L-ROAM-03) для наружного и объектного освещения. Конфигурация: 2 × 3 W; 10 W. Области применения, согласование и документация."
   },
   {
     "id": "jcLight18",
@@ -14959,8 +14959,8 @@
     "num": "56 / LIGHTING CATALOG",
     "zh": "太阳能吊扇灯",
     "en": "Solar Ceiling Fan with Light",
-    "descriptionZh": "面向相应室内、移动与离网应用的实用照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Practical lighting for selected indoor, mobile and off-grid applications. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能吊扇灯（AE-L-ROAM-04），用于户外与场地照明。目录配置：12 W; 900 lm。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Ceiling Fan with Light (AE-L-ROAM-04) for outdoor lighting and site illumination. Listed configuration: 12 W; 900 lm. Explore applications, system matching and product documents.",
     "tags": [
       "Off-grid & Portable",
       "12W",
@@ -15275,8 +15275,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación práctica para aplicaciones interiores, móviles y aisladas según modelo. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Практичное освещение для внутренних, мобильных и автономных задач по модели. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Ventilador solar de techo con luz (AE-L-ROAM-04) para iluminación exterior y de espacios. Configuración: 12 W; 900 lm. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечный потолочный вентилятор со светом (AE-L-ROAM-04) для наружного и объектного освещения. Конфигурация: 12 W; 900 lm. Области применения, согласование и документация."
   },
   {
     "id": "jcLight13",
@@ -15286,8 +15286,8 @@
     "num": "57 / LIGHTING CATALOG",
     "zh": "太阳能手提露营灯",
     "en": "Solar Portable Camping Lantern",
-    "descriptionZh": "面向相应室内、移动与离网应用的实用照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Practical lighting for selected indoor, mobile and off-grid applications. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能手提露营灯（AE-L-ROAM-05），用于户外与场地照明。目录配置：5 W; 4000 mAh。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Portable Camping Lantern (AE-L-ROAM-05) for outdoor lighting and site illumination. Listed configuration: 5 W; 4000 mAh. Explore applications, system matching and product documents.",
     "tags": [
       "Off-grid & Portable",
       "5W",
@@ -15550,8 +15550,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación práctica para aplicaciones interiores, móviles y aisladas según modelo. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Практичное освещение для внутренних, мобильных и автономных задач по модели. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Farol solar portátil para camping (AE-L-ROAM-05) para iluminación exterior y de espacios. Configuración: 5 W; 4000 mAh. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Портативный солнечный фонарь для кемпинга (AE-L-ROAM-05) для наружного и объектного освещения. Конфигурация: 5 W; 4000 mAh. Области применения, согласование и документация."
   },
   {
     "id": "jcLight14",
@@ -15561,8 +15561,8 @@
     "num": "58 / LIGHTING CATALOG",
     "zh": "太阳能灭蚊灯",
     "en": "Solar Bug Zapper Light",
-    "descriptionZh": "面向相应室内、移动与离网应用的实用照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Practical lighting for selected indoor, mobile and off-grid applications. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能灭蚊灯（AE-L-ROAM-06），用于户外与场地照明。目录配置：2 W; IP65。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Bug Zapper Light (AE-L-ROAM-06) for outdoor lighting and site illumination. Listed configuration: 2 W; IP65. Explore applications, system matching and product documents.",
     "tags": [
       "Off-grid & Portable",
       "2W",
@@ -15824,8 +15824,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación práctica para aplicaciones interiores, móviles y aisladas según modelo. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Практичное освещение для внутренних, мобильных и автономных задач по модели. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Luminaria solar antimosquitos (AE-L-ROAM-06) para iluminación exterior y de espacios. Configuración: 2 W; IP65. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечный светильник для уничтожения насекомых (AE-L-ROAM-06) для наружного и объектного освещения. Конфигурация: 2 W; IP65. Области применения, согласование и документация."
   },
   {
     "id": "jcLight23",
@@ -15835,8 +15835,8 @@
     "num": "59 / LIGHTING CATALOG",
     "zh": "太阳能便携工地作业灯",
     "en": "Solar Portable Work Light",
-    "descriptionZh": "面向相应室内、移动与离网应用的实用照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Practical lighting for selected indoor, mobile and off-grid applications. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能便携工地作业灯（AE-L-ROAM-07），用于户外与场地照明。目录配置：10 / 20 / 30 W; 1000-3000 lm。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Portable Work Light (AE-L-ROAM-07) for outdoor lighting and site illumination. Listed configuration: 10 / 20 / 30 W; 1000-3000 lm. Explore applications, system matching and product documents.",
     "tags": [
       "Off-grid & Portable",
       "30W",
@@ -16151,8 +16151,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación práctica para aplicaciones interiores, móviles y aisladas según modelo. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Практичное освещение для внутренних, мобильных и автономных задач по модели. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Luminaria solar portátil de trabajo (AE-L-ROAM-07) para iluminación exterior y de espacios. Configuración: 10 / 20 / 30 W; 1000-3000 lm. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Портативный солнечный рабочий светильник (AE-L-ROAM-07) для наружного и объектного освещения. Конфигурация: 10 / 20 / 30 W; 1000-3000 lm. Области применения, согласование и документация."
   },
   {
     "id": "jcLight24",
@@ -16162,8 +16162,8 @@
     "num": "60 / LIGHTING CATALOG",
     "zh": "太阳能充电宝露营灯Pro",
     "en": "Solar Power Bank Lantern Pro",
-    "descriptionZh": "面向相应室内、移动与离网应用的实用照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Practical lighting for selected indoor, mobile and off-grid applications. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 太阳能充电宝露营灯Pro（AE-L-ROAM-08），用于户外与场地照明。目录配置：400 lm; 8000 mAh。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Solar Power Bank Lantern Pro (AE-L-ROAM-08) for outdoor lighting and site illumination. Listed configuration: 400 lm; 8000 mAh. Explore applications, system matching and product documents.",
     "tags": [
       "Off-grid & Portable",
       "18W",
@@ -16478,8 +16478,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación práctica para aplicaciones interiores, móviles y aisladas según modelo. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Практичное освещение для внутренних, мобильных и автономных задач по модели. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Farol solar con batería externa Pro (AE-L-ROAM-08) para iluminación exterior y de espacios. Configuración: 400 lm; 8000 mAh. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Солнечный фонарь с пауэрбанком Pro (AE-L-ROAM-08) для наружного и объектного освещения. Конфигурация: 400 lm; 8000 mAh. Области применения, согласование и документация."
   },
   {
     "id": "jcLight30",
@@ -16489,8 +16489,8 @@
     "num": "61 / LIGHTING CATALOG",
     "zh": "充电应急飞碟灯",
     "en": "Emergency UFO Rechargeable Light",
-    "descriptionZh": "面向相应室内、移动与离网应用的实用照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Practical lighting for selected indoor, mobile and off-grid applications. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 充电应急飞碟灯（AE-L-ROAM-09），用于户外与场地照明。目录配置：3000 / 4000 / 6000 K; 4-6 h。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Emergency UFO Rechargeable Light (AE-L-ROAM-09) for outdoor lighting and site illumination. Listed configuration: 3000 / 4000 / 6000 K; 4-6 h. Explore applications, system matching and product documents.",
     "tags": [
       "Off-grid & Portable",
       "200W"
@@ -16751,8 +16751,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación práctica para aplicaciones interiores, móviles y aisladas según modelo. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Практичное освещение для внутренних, мобильных и автономных задач по модели. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Luminaria recargable de emergencia UFO (AE-L-ROAM-09) para iluminación exterior y de espacios. Configuración: 3000 / 4000 / 6000 K; 4-6 h. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Аккумуляторный аварийный светильник UFO (AE-L-ROAM-09) для наружного и объектного освещения. Конфигурация: 3000 / 4000 / 6000 K; 4-6 h. Области применения, согласование и документация."
   },
   {
     "id": "jcLight31",
@@ -16762,8 +16762,8 @@
     "num": "62 / LIGHTING CATALOG",
     "zh": "AC LED投光灯（50-1000W）",
     "en": "AC LED Floodlight (50-1000W)",
-    "descriptionZh": "面向商业作业空间与场地通行的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for commercial workspaces and site circulation. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE AC LED投光灯（50-1000W）（AE-L-BEAM-01），用于户外与场地照明。目录配置：50 / 100 / 200 / 300 / 400 / 600 / 800 / 1000 W; IP65。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE AC LED Floodlight (50-1000W) (AE-L-BEAM-01) for outdoor lighting and site illumination. Listed configuration: 50 / 100 / 200 / 300 / 400 / 600 / 800 / 1000 W; IP65. Explore applications, system matching and product documents.",
     "tags": [
       "AC Commercial",
       "1000W",
@@ -17011,8 +17011,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación para espacios de trabajo y circulación en instalaciones. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение рабочих пространств и путей движения на объектах. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Proyector LED de CA (AE-L-BEAM-01) para iluminación exterior y de espacios. Configuración: 50 / 100 / 200 / 300 / 400 / 600 / 800 / 1000 W; IP65. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Сетевой светодиодный прожектор (AE-L-BEAM-01) для наружного и объектного освещения. Конфигурация: 50 / 100 / 200 / 300 / 400 / 600 / 800 / 1000 W; IP65. Области применения, согласование и документация."
   },
   {
     "id": "jcLight32",
@@ -17022,8 +17022,8 @@
     "num": "63 / LIGHTING CATALOG",
     "zh": "UFO工矿灯（100-300W）",
     "en": "UFO High Bay Light (100-300W)",
-    "descriptionZh": "面向商业作业空间与场地通行的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for commercial workspaces and site circulation. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE UFO工矿灯（100-300W）（AE-L-BEAM-02），用于户外与场地照明。目录配置：100 / 120 / 150 W configuration; 100 / 120 / 150 W。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE UFO High Bay Light (100-300W) (AE-L-BEAM-02) for outdoor lighting and site illumination. Listed configuration: 100 / 120 / 150 W configuration; 100 / 120 / 150 W. Explore applications, system matching and product documents.",
     "tags": [
       "AC Commercial",
       "300W",
@@ -17335,8 +17335,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación para espacios de trabajo y circulación en instalaciones. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение рабочих пространств и путей движения на объектах. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Luminaria industrial UFO de gran altura (AE-L-BEAM-02) para iluminación exterior y de espacios. Configuración: 100 / 120 / 150 W configuration; 100 / 120 / 150 W. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Промышленный светильник UFO для высоких помещений (AE-L-BEAM-02) для наружного и объектного освещения. Конфигурация: 100 / 120 / 150 W configuration; 100 / 120 / 150 W. Области применения, согласование и документация."
   },
   {
     "id": "jcLight33",
@@ -17346,8 +17346,8 @@
     "num": "64 / LIGHTING CATALOG",
     "zh": "AC路灯头（50-100W）",
     "en": "AC Street Light (50-100W)",
-    "descriptionZh": "面向商业作业空间与场地通行的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for commercial workspaces and site circulation. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE AC路灯头（50-100W）（AE-L-BEAM-03），用于户外与场地照明。目录配置：50 / 100 W; IP65。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE AC Street Light (50-100W) (AE-L-BEAM-03) for outdoor lighting and site illumination. Listed configuration: 50 / 100 W; IP65. Explore applications, system matching and product documents.",
     "tags": [
       "AC Commercial",
       "100W",
@@ -17579,8 +17579,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación para espacios de trabajo y circulación en instalaciones. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение рабочих пространств и путей движения на объектах. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Luminaria vial de CA (AE-L-BEAM-03) para iluminación exterior y de espacios. Configuración: 50 / 100 W; IP65. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Сетевой уличный светильник (AE-L-BEAM-03) для наружного и объектного освещения. Конфигурация: 50 / 100 W; IP65. Области применения, согласование и документация."
   },
   {
     "id": "series_seed12",
@@ -17589,8 +17589,8 @@
     "num": "ANTHRISE · SEED",
     "zh": "12V Deep Cycle 磷酸铁锂电池",
     "en": "12V Deep Cycle LiFePO₄ Battery",
-    "descriptionZh": "12V 设备、RV/房车与铅酸替换的基础容量规划。 涵盖 5 个型号（50Ah · 0.64kWh – 300Ah · 3.84kWh）。",
-    "descriptionEn": "Entry battery for 12V equipment and lead-acid replacement. 5 planned versions: 50Ah · 0.64kWh to 300Ah · 3.84kWh.",
+    "descriptionZh": "ANTHRISE 12V Deep Cycle 磷酸铁锂电池（AE-E-SEED），用于光伏配储与备用电源。目录配置：12.8 V / 100 Ah / 1.28 kWh; 12.8 V / 100 Ah。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE 12V Deep Cycle LiFePO₄ Battery (AE-E-SEED) for solar storage and backup power. Listed configuration: 12.8 V / 100 Ah / 1.28 kWh; 12.8 V / 100 Ah. Explore applications, system matching and product documents.",
     "tags": [
       "SEED",
       "Brand series",
@@ -17970,8 +17970,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Batería LiFePO4 de ciclo profundo de 12 V. Evalúe la capacidad, tensión de batería, compatibilidad del inversor y condiciones de instalación. Confirme los datos y la configuración del modelo seleccionado.",
-    "descriptionRu": "Тяговая батарея LiFePO4 12 В. Оцените ёмкость, напряжение батареи, совместимость инвертора и условия монтажа. Подтвердите данные и комплектацию выбранной модели.",
+    "descriptionEs": "ANTHRISE Batería LiFePO4 de ciclo profundo de 12 V (AE-E-SEED) para almacenamiento solar y respaldo. Configuración: 12.8 V / 100 Ah / 1.28 kWh; 12.8 V / 100 Ah. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Тяговая батарея LiFePO4 12 В (AE-E-SEED) для солнечного накопления и резерва. Конфигурация: 12.8 V / 100 Ah / 1.28 kWh; 12.8 V / 100 Ah. Области применения, согласование и документация.",
     "entryKind": "collection",
     "collectionMembers": [
       "seed12_100",
@@ -17988,8 +17988,8 @@
     "num": "ANTHRISE · SEED",
     "zh": "25.6V Deep Cycle 磷酸铁锂电池",
     "en": "25.6V Deep Cycle LiFePO₄ Battery",
-    "descriptionZh": "24V 小型离网及设备供电应用。 涵盖 4 个型号（50Ah · 1.28kWh – 200Ah · 5.12kWh）。",
-    "descriptionEn": "24V entry off-grid and equipment power. 4 planned versions: 50Ah · 1.28kWh to 200Ah · 5.12kWh.",
+    "descriptionZh": "ANTHRISE 25.6V Deep Cycle 磷酸铁锂电池（AE-E-SEED），用于光伏配储与备用电源。目录配置：25.6 V / 100 Ah / 2.56 kWh; 25.6 V / 100 Ah。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE 25.6V Deep Cycle LiFePO₄ Battery (AE-E-SEED) for solar storage and backup power. Listed configuration: 25.6 V / 100 Ah / 2.56 kWh; 25.6 V / 100 Ah. Explore applications, system matching and product documents.",
     "tags": [
       "SEED",
       "Brand series",
@@ -18353,8 +18353,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Batería LiFePO4 de ciclo profundo de 25,6 V. Evalúe la capacidad, tensión de batería, compatibilidad del inversor y condiciones de instalación. Confirme los datos y la configuración del modelo seleccionado.",
-    "descriptionRu": "Тяговая батарея LiFePO4 25,6 В. Оцените ёмкость, напряжение батареи, совместимость инвертора и условия монтажа. Подтвердите данные и комплектацию выбранной модели.",
+    "descriptionEs": "ANTHRISE Batería LiFePO4 de ciclo profundo de 25,6 V (AE-E-SEED) para almacenamiento solar y respaldo. Configuración: 25.6 V / 100 Ah / 2.56 kWh; 25.6 V / 100 Ah. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Тяговая батарея LiFePO4 25,6 В (AE-E-SEED) для солнечного накопления и резерва. Конфигурация: 25.6 V / 100 Ah / 2.56 kWh; 25.6 V / 100 Ah. Области применения, согласование и документация.",
     "entryKind": "collection",
     "collectionMembers": [
       "seed24_100",
@@ -18371,8 +18371,8 @@
     "num": "ANTHRISE · ROOT",
     "zh": "51.2V 机架式电池",
     "en": "51.2V Rack-Mount ESS",
-    "descriptionZh": "机架与多模块家储，容量按电压和Ah计算。 涵盖 6 个型号（100Ah · 5.12kWh – 314Ah · 16.08kWh）。",
-    "descriptionEn": "Rack battery for residential and modular systems. 6 planned versions: 100Ah · 5.12kWh to 314Ah · 16.08kWh.",
+    "descriptionZh": "ANTHRISE 51.2V 机架式电池（AE-E-ROOT），用于光伏配储与备用电源。目录配置：51.2 V / 100 Ah / 5.12 kWh; LiFePO4。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE 51.2V Rack-Mount ESS (AE-E-ROOT) for solar storage and backup power. Listed configuration: 51.2 V / 100 Ah / 5.12 kWh; LiFePO4. Explore applications, system matching and product documents.",
     "tags": [
       "ROOT",
       "Brand series",
@@ -18928,8 +18928,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Almacenamiento de 51,2 V para rack. Evalúe la capacidad, tensión de batería, compatibilidad del inversor y condiciones de instalación. Confirme los datos y la configuración del modelo seleccionado.",
-    "descriptionRu": "Стоечный накопитель 51,2 В. Оцените ёмкость, напряжение батареи, совместимость инвертора и условия монтажа. Подтвердите данные и комплектацию выбранной модели."
+    "descriptionEs": "ANTHRISE Almacenamiento de 51,2 V para rack (AE-E-ROOT) para almacenamiento solar y respaldo. Configuración: 51.2 V / 100 Ah / 5.12 kWh; LiFePO4. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Стоечный накопитель 51,2 В (AE-E-ROOT) для солнечного накопления и резерва. Конфигурация: 51.2 V / 100 Ah / 5.12 kWh; LiFePO4. Области применения, согласование и документация."
   },
   {
     "id": "series_rise",
@@ -18938,8 +18938,8 @@
     "num": "ANTHRISE · RISE",
     "zh": "低压落地式扩容储能",
     "en": "LV Floor-Standing & Expandable ESS",
-    "descriptionZh": "落地模块化低压直流储能，并联扩展保持系统电压，交流转换需搭配适配的外置逆变器。",
-    "descriptionEn": "Low-voltage DC storage with floor-standing modular expansion. Parallel battery modules retain the system voltage; an external matched inverter provides AC conversion.",
+    "descriptionZh": "ANTHRISE 低压落地式扩容储能（AE-E-RISE），用于光伏配储与备用电源。目录配置：10.24kWh / 30.72kWh / 15.36kWh。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE LV Floor-Standing & Expandable ESS (AE-E-RISE) for solar storage and backup power. Listed configuration: 10.24kWh / 30.72kWh / 15.36kWh. Explore applications, system matching and product documents.",
     "tags": [
       "RISE",
       "Brand series",
@@ -19221,8 +19221,8 @@
       "所示型号为品牌规划选品编码，容量和功率段为概念目标。",
       "电池额定电压、充放电电流、逆变器相数、接口和认证需按供应商文件确认。"
     ],
-    "descriptionEs": "Almacenamiento CC modular de baja tensión. Los módulos en paralelo mantienen la tensión; la conversión CA requiere inversor externo compatible.",
-    "descriptionRu": "Напольный модульный низковольтный DC-накопитель. Параллельные модули сохраняют напряжение; для AC нужен совместимый внешний инвертор.",
+    "descriptionEs": "ANTHRISE Almacenamiento de baja tensión de suelo ampliable (AE-E-RISE) para almacenamiento solar y respaldo. Configuración: 10.24kWh / 30.72kWh / 15.36kWh. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Расширяемый напольный низковольтный накопитель (AE-E-RISE) для солнечного накопления и резерва. Конфигурация: 10.24kWh / 30.72kWh / 15.36kWh. Области применения, согласование и документация.",
     "galleryLabels": [
       [
         "Three-quarter view",
@@ -19383,8 +19383,8 @@
     "num": "ANTHRISE · HORIZON",
     "zh": "工商业储能柜",
     "en": "Commercial & Industrial ESS Cabinet",
-    "descriptionZh": "工商业储能按 30kW/60kWh、50kW/112kWh、125kW/261kWh 三组功率与电量规划。外置逆变器与电池柜共同选型，持续纯电池输出、热管理与保护方案按项目核定。",
-    "descriptionEn": "Commercial storage in three coordinated power/energy classes: 30kW/60kWh, 50kW/112kWh and 125kW/261kWh. External inverter and battery cabinet are sized as one system; continuous battery-only power, thermal design and protection are confirmed per project.",
+    "descriptionZh": "ANTHRISE 工商业储能柜（AE-E-HORIZON），用于光伏配储与备用电源。目录配置：50 kW AC / 112 kWh configuration; 50 kW 逆变器额定值。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Commercial & Industrial ESS Cabinet (AE-E-HORIZON) for solar storage and backup power. Listed configuration: 50 kW AC / 112 kWh configuration; 50 kW inverter rating. Explore applications, system matching and product documents.",
     "tags": [
       "30 kW / 60 kWh",
       "50 kW / 112 kWh",
@@ -19811,8 +19811,8 @@
         "batteryEnergyKwh": 261
       }
     ],
-    "descriptionEs": "Planificación comercial en tres clases: 30kW/60kWh, 50kW/112kWh y 125kW/261kWh. Se dimensionan conjuntamente inversor externo y batería; potencia continua, gestión térmica y protección se confirman por proyecto.",
-    "descriptionRu": "Коммерческие системы планируются в трёх классах: 30кВт/60кВт·ч, 50кВт/112кВт·ч и 125кВт/261кВт·ч. Инвертор и шкаф АКБ подбирают совместно; длительная мощность, охлаждение и защита уточняются по проекту.",
+    "descriptionEs": "ANTHRISE Armario de almacenamiento comercial e industrial (AE-E-HORIZON) para almacenamiento solar y respaldo. Configuración: 50 kW AC / 112 kWh configuration; 50 kW nominal del inversor. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Промышленный шкаф накопления энергии (AE-E-HORIZON) для солнечного накопления и резерва. Конфигурация: 50 kW AC / 112 kWh configuration; 50 kW номинал инвертора. Области применения, согласование и документация.",
     "galleryLabels": [
       [
         "30 kW / 60 kWh",
@@ -20020,8 +20020,8 @@
     "num": "ANTHRISE · UNION",
     "zh": "逆变储能一体机",
     "en": "All-in-One Energy System",
-    "descriptionZh": "电池与逆变器集成方向；功率及电池电压均须按具体方案确认。 涵盖 4 个型号（5.12kWh class – 20.48kWh class）。",
-    "descriptionEn": "Integrated storage and inverter concept; voltage and AC power subject to design. 4 planned versions: 5.12kWh class to 20.48kWh class.",
+    "descriptionZh": "ANTHRISE 逆变储能一体机（AE-E-UNION），用于光伏配储与备用电源。目录配置：5 kW AC / 5.12 kWh; 51.2 V。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE All-in-One Energy System (AE-E-UNION) for solar storage and backup power. Listed configuration: 5 kW AC / 5.12 kWh; 51.2 V. Explore applications, system matching and product documents.",
     "tags": [
       "UNION",
       "Brand series",
@@ -20511,8 +20511,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Sistema energético integrado. Evalúe la capacidad, tensión de batería, compatibilidad del inversor y condiciones de instalación. Confirme los datos y la configuración del modelo seleccionado.",
-    "descriptionRu": "Интегрированная энергетическая система. Оцените ёмкость, напряжение батареи, совместимость инвертора и условия монтажа. Подтвердите данные и комплектацию выбранной модели."
+    "descriptionEs": "ANTHRISE Sistema energético integrado (AE-E-UNION) para almacenamiento solar y respaldo. Configuración: 5 kW AC / 5.12 kWh; 51.2 V. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Интегрированная энергетическая система (AE-E-UNION) для солнечного накопления и резерва. Конфигурация: 5 kW AC / 5.12 kWh; 51.2 V. Области применения, согласование и документация."
   },
   {
     "id": "series_pulse",
@@ -20521,8 +20521,8 @@
     "num": "ANTHRISE · PULSE",
     "zh": "低压单相混合逆变器",
     "en": "LV Single-Phase Hybrid Inverter",
-    "descriptionZh": "适配低压电池的单相混合系统，按具体功率核对电池电流、光伏窗口与当地并网版本。",
-    "descriptionEn": "Single-phase hybrid system for a matched low-voltage battery. Select the battery current, PV window and grid-code version for the exact power rating.",
+    "descriptionZh": "ANTHRISE 低压单相混合逆变器（AE-I-PULSE），用于光伏变流与系统集成。目录配置：6 kW / single-phase / LV; 6000 W。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE LV Single-Phase Hybrid Inverter (AE-I-PULSE) for solar power conversion and system integration. Listed configuration: 6 kW / single-phase / LV; 6000 W. Explore applications, system matching and product documents.",
     "tags": [
       "PULSE",
       "Single-phase / Hybrid",
@@ -20919,8 +20919,8 @@
       "所示型号为品牌规划选品编码，容量和功率段为概念目标。",
       "电池额定电压、充放电电流、逆变器相数、接口和认证需按供应商文件确认。"
     ],
-    "descriptionEs": "Sistema híbrido monofásico con batería de baja tensión compatible. Verifique corriente, ventana FV y código de red para la potencia elegida.",
-    "descriptionRu": "Однофазная гибридная система с подходящей низковольтной АКБ. Ток, диапазон PV и сетевую версию уточняют для выбранной мощности.",
+    "descriptionEs": "ANTHRISE Inversor híbrido monofásico de baja tensión (AE-I-PULSE) para conversión solar e integración del sistema. Configuración: 6 kW / single-phase / LV; 6000 W. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Однофазный низковольтный гибридный инвертор (AE-I-PULSE) для солнечного преобразования и интеграции. Конфигурация: 6 kW / single-phase / LV; 6000 W. Области применения, согласование и документация.",
     "galleryLabels": [
       [
         "Three-quarter view",
@@ -21065,8 +21065,8 @@
     "num": "ANTHRISE · PULSE-T",
     "zh": "低压三相混合逆变器",
     "en": "LV Three-Phase Hybrid Inverter",
-    "descriptionZh": "适配低压电池的三相混合架构，电池持续电流与各相备电功率需共同核定。",
-    "descriptionEn": "Three-phase hybrid architecture for matched low-voltage batteries. Battery current capability and phase-specific backup limits must be sized together.",
+    "descriptionZh": "ANTHRISE 低压三相混合逆变器（AE-I-PULSET），用于光伏变流与系统集成。目录配置：12 kW / three-phase / LV; 12000 W。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE LV Three-Phase Hybrid Inverter (AE-I-PULSET) for solar power conversion and system integration. Listed configuration: 12 kW / three-phase / LV; 12000 W. Explore applications, system matching and product documents.",
     "tags": [
       "PULSE 3",
       "Three-phase / Hybrid",
@@ -21302,8 +21302,8 @@
       "所示型号为品牌规划选品编码，容量和功率段为概念目标。",
       "电池额定电压、充放电电流、逆变器相数、接口和认证需按供应商文件确认。"
     ],
-    "descriptionEs": "Arquitectura híbrida trifásica para baterías de baja tensión. Dimensione conjuntamente corriente de batería y respaldo por fase.",
-    "descriptionRu": "Трёхфазная гибридная архитектура с низковольтными АКБ. Ток батареи и резервную мощность по фазам подбирают совместно.",
+    "descriptionEs": "ANTHRISE Inversor híbrido trifásico de baja tensión (AE-I-PULSET) para conversión solar e integración del sistema. Configuración: 12 kW / three-phase / LV; 12000 W. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Трёхфазный низковольтный гибридный инвертор (AE-I-PULSET) для солнечного преобразования и интеграции. Конфигурация: 12 kW / three-phase / LV; 12000 W. Области применения, согласование и документация.",
     "galleryLabels": [
       [
         "Three-quarter view",
@@ -21448,8 +21448,8 @@
     "num": "ANTHRISE · ORBIT",
     "zh": "高压单相混合逆变器",
     "en": "HV Single-Phase Hybrid Inverter",
-    "descriptionZh": "适配高压电池组的单相混合架构，需匹配电池电压范围、BMS 协议与逆变器固件。",
-    "descriptionEn": "Single-phase hybrid architecture for a matched high-voltage battery stack. Battery voltage range, BMS protocol and inverter firmware must agree.",
+    "descriptionZh": "ANTHRISE 高压单相混合逆变器（AE-I-ORBIT），用于光伏变流与系统集成。目录配置：3 / 5 / 6 / 8 / 10 kW。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE HV Single-Phase Hybrid Inverter (AE-I-ORBIT) for solar power conversion and system integration. Listed configuration: 3 / 5 / 6 / 8 / 10 kW. Explore applications, system matching and product documents.",
     "tags": [
       "ORBIT 1",
       "Single-phase / Hybrid",
@@ -21701,8 +21701,8 @@
       "所示型号为品牌规划选品编码，容量和功率段为概念目标。",
       "电池额定电压、充放电电流、逆变器相数、接口和认证需按供应商文件确认。"
     ],
-    "descriptionEs": "Arquitectura híbrida monofásica con batería de alta tensión. Deben coincidir tensión, protocolo BMS y firmware.",
-    "descriptionRu": "Однофазная гибридная архитектура с высоковольтной АКБ. Диапазон напряжения, протокол BMS и прошивка должны совпадать.",
+    "descriptionEs": "ANTHRISE Inversor híbrido monofásico de alta tensión (AE-I-ORBIT) para conversión solar e integración del sistema. Configuración: 3 / 5 / 6 / 8 / 10 kW. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Однофазный высоковольтный гибридный инвертор (AE-I-ORBIT) для солнечного преобразования и интеграции. Конфигурация: 3 / 5 / 6 / 8 / 10 kW. Области применения, согласование и документация.",
     "galleryLabels": [
       [
         "Three-quarter view",
@@ -21847,8 +21847,8 @@
     "num": "ANTHRISE · ORBIT-T",
     "zh": "高压三相混合逆变器",
     "en": "HV Three-Phase Hybrid Inverter",
-    "descriptionZh": "适配高压储能的三相混合架构，选定交流功率前需核对完整电池电压窗口与持续直流功率。",
-    "descriptionEn": "Three-phase hybrid architecture for high-voltage storage. Match the full battery voltage window and continuous DC power before selecting the AC rating.",
+    "descriptionZh": "ANTHRISE 高压三相混合逆变器（AE-I-ORBITT），用于光伏变流与系统集成。目录配置：5 / 6 / 8 / 10 / 12 / 15 / 20 / 25 / 30 kW。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE HV Three-Phase Hybrid Inverter (AE-I-ORBITT) for solar power conversion and system integration. Listed configuration: 5 / 6 / 8 / 10 / 12 / 15 / 20 / 25 / 30 kW. Explore applications, system matching and product documents.",
     "tags": [
       "ORBIT 3",
       "Three-phase / Hybrid",
@@ -22104,8 +22104,8 @@
       "所示型号为品牌规划选品编码，容量和功率段为概念目标。",
       "电池额定电压、充放电电流、逆变器相数、接口和认证需按供应商文件确认。"
     ],
-    "descriptionEs": "Arquitectura híbrida trifásica para almacenamiento de alta tensión. Verifique la ventana completa de batería y la potencia CC continua.",
-    "descriptionRu": "Трёхфазная гибридная архитектура для высоковольтного накопителя. До выбора AC-мощности сверяют полный диапазон АКБ и длительную DC-мощность.",
+    "descriptionEs": "ANTHRISE Inversor híbrido trifásico de alta tensión (AE-I-ORBITT) para conversión solar e integración del sistema. Configuración: 5 / 6 / 8 / 10 / 12 / 15 / 20 / 25 / 30 kW. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Трёхфазный высоковольтный гибридный инвертор (AE-I-ORBITT) для солнечного преобразования и интеграции. Конфигурация: 5 / 6 / 8 / 10 / 12 / 15 / 20 / 25 / 30 kW. Области применения, согласование и документация.",
     "galleryLabels": [
       [
         "Three-quarter view",
@@ -22250,8 +22250,8 @@
     "num": "ANTHRISE · TRAIL",
     "zh": "单相离网逆变器",
     "en": "Single-Phase Off-Grid Inverter",
-    "descriptionZh": "为独立交流负载配置的离网光伏逆变充电系统。光伏输入与持续交流输出分别核定，电池电压及交流充电功能按型号确认。",
-    "descriptionEn": "Off-grid solar inverter/charger for independent AC loads. PV input power and continuous AC output are separate ratings; battery voltage and AC-input charging depend on the model.",
+    "descriptionZh": "ANTHRISE 单相离网逆变器（AE-I-TRAIL），用于光伏变流与系统集成。目录配置：3 / 5 / 6 / 8 / 10 / 12 kW。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Single-Phase Off-Grid Inverter (AE-I-TRAIL) for solar power conversion and system integration. Listed configuration: 3 / 5 / 6 / 8 / 10 / 12 kW. Explore applications, system matching and product documents.",
     "tags": [
       "TRAIL",
       "Single-phase / Off-grid",
@@ -22486,8 +22486,8 @@
       "所示型号为品牌规划选品编码，容量和功率段为概念目标。",
       "电池额定电压、充放电电流、逆变器相数、接口和认证需按供应商文件确认。"
     ],
-    "descriptionEs": "Inversor/cargador solar aislado para cargas CA independientes. La potencia FV y la salida CA continua son valores distintos; confirme batería y carga desde CA.",
-    "descriptionRu": "Автономный солнечный инвертор-зарядное устройство для независимых AC-нагрузок. Мощность PV и длительная AC-мощность различаются; АКБ и заряд от сети уточняются.",
+    "descriptionEs": "ANTHRISE Inversor monofásico aislado (AE-I-TRAIL) para conversión solar e integración del sistema. Configuración: 3 / 5 / 6 / 8 / 10 / 12 kW. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Однофазный автономный инвертор (AE-I-TRAIL) для солнечного преобразования и интеграции. Конфигурация: 3 / 5 / 6 / 8 / 10 / 12 kW. Области применения, согласование и документация.",
     "galleryLabels": [
       [
         "Three-quarter view",
@@ -22632,8 +22632,8 @@
     "num": "ANTHRISE · BEACON",
     "zh": "三相并网光伏逆变器",
     "en": "Three-Phase Grid-Tied PV Inverter",
-    "descriptionZh": "面向工商业屋顶的三相并网光伏转换设备。本系列为光伏并网逆变器，不作为电池充电机或独立备电电源。",
-    "descriptionEn": "Three-phase grid-connected PV conversion for commercial rooftops. This is a PV inverter, not a battery charger or an independent backup supply.",
+    "descriptionZh": "ANTHRISE 三相并网光伏逆变器（AE-I-BEACON），用于光伏变流与系统集成。目录配置：10 / 15 / 20 / 30 / 40 / 50 / 60 / 100 kW。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Three-Phase Grid-Tied PV Inverter (AE-I-BEACON) for solar power conversion and system integration. Listed configuration: 10 / 15 / 20 / 30 / 40 / 50 / 60 / 100 kW. Explore applications, system matching and product documents.",
     "tags": [
       "BEACON",
       "Three-phase / Grid-tied PV"
@@ -22821,8 +22821,8 @@
       "所示型号为品牌规划选品编码，容量和功率段为概念目标。",
       "电池额定电压、充放电电流、逆变器相数、接口和认证需按供应商文件确认。"
     ],
-    "descriptionEs": "Conversión FV trifásica conectada a red para cubiertas comerciales. No es un cargador de batería ni una fuente de respaldo autónoma.",
-    "descriptionRu": "Трёхфазное преобразование PV для коммерческих крыш с подключением к сети. Это не зарядное устройство АКБ и не автономный резервный источник.",
+    "descriptionEs": "ANTHRISE Inversor fotovoltaico trifásico de red (AE-I-BEACON) para conversión solar e integración del sistema. Configuración: 10 / 15 / 20 / 30 / 40 / 50 / 60 / 100 kW. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Трёхфазный сетевой фотоэлектрический инвертор (AE-I-BEACON) для солнечного преобразования и интеграции. Конфигурация: 10 / 15 / 20 / 30 / 40 / 50 / 60 / 100 kW. Области применения, согласование и документация.",
     "galleryLabels": [
       [
         "Three-quarter view",
@@ -22971,8 +22971,8 @@
     "zh": "叠层景观灯头 ",
     "en": "Tiered Landscape Light Head ",
     "image": "images/product-angles/tieredLandscape-reference-overview.jpg",
-    "descriptionZh": "面向庭院、景观步道与住宅户外空间的照明选型。 按具体型号选择安装位置、照明覆盖与运行模式。",
-    "descriptionEn": "Lighting for gardens, landscaped paths and residential outdoor spaces. Select mounting position, required coverage and operating profile for the exact model.",
+    "descriptionZh": "ANTHRISE 叠层景观灯头 （AE-L-BLOOM-04），用于户外与场地照明。了解应用场景、系统匹配与产品资料。",
+    "descriptionEn": "ANTHRISE Tiered Landscape Light Head  (AE-L-BLOOM-04) for outdoor lighting and site illumination. Explore applications, system matching and product documents.",
     "tags": [
       "Garden & Landscape",
       "Specifications pending"
@@ -23204,8 +23204,8 @@
         "status": "catalogue"
       }
     ],
-    "descriptionEs": "Iluminación para jardines, senderos y espacios exteriores residenciales. Seleccione ubicación, cobertura y modo de funcionamiento para el modelo exacto.",
-    "descriptionRu": "Освещение садов, дорожек и придомовых открытых пространств. Место монтажа, покрытие и режим выбирают для конкретной модели."
+    "descriptionEs": "ANTHRISE Cabezal de luminaria paisajística escalonada (AE-L-BLOOM-04) para iluminación exterior y de espacios. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Ступенчатая головка ландшафтного светильника (AE-L-BLOOM-04) для наружного и объектного освещения. Области применения, согласование и документация."
   },
   {
     "id": "preassembled16",
@@ -23215,10 +23215,10 @@
     "num": "ANTHRISE / PRE-ASSEMBLED BATTERIES",
     "en": "Pre-assembled 16kWh Battery",
     "zh": "16kWh 预组装箱式电池",
-    "descriptionEn": "A factory-assembled LiFePO4 battery for residential solar storage and backup through a matched external inverter. Cells are fitted within the enclosure; commissioning, inverter settings and installation remain project-specific.",
-    "descriptionZh": "面向住宅光伏配储与备电的预组装磷酸铁锂箱式电池配置，电芯在箱内完成组装，需搭配适配的外置逆变器；安装、调试与逆变器设置按项目确认。",
-    "descriptionEs": "Batería LiFePO4 preensamblada propuesta para autoconsumo y respaldo residencial con un inversor externo compatible. Las celdas se montan en la caja; la instalación y puesta en marcha dependen del proyecto.",
-    "descriptionRu": "Проектная предварительно собранная АКБ LiFePO4 для домашней солнечной системы и резерва с совместимым внешним инвертором. Ячейки установлены в корпусе; монтаж и настройка определяются проектом.",
+    "descriptionEn": "ANTHRISE Pre-assembled 16kWh Battery (AE-E-READY-16) for solar storage and backup power. Listed configuration: 16S / 51.2 V / 314 Ah / 16.0768 kWh; LiFePO4. Explore applications, system matching and product documents.",
+    "descriptionZh": "ANTHRISE 16kWh 预组装箱式电池（AE-E-READY-16），用于光伏配储与备用电源。目录配置：16S / 51.2 V / 314 Ah / 16.0768 kWh; LiFePO4。了解应用场景、系统匹配与产品资料。",
+    "descriptionEs": "ANTHRISE Batería preensamblada de 16 kWh (AE-E-READY-16) para almacenamiento solar y respaldo. Configuración: 16S / 51.2 V / 314 Ah / 16.0768 kWh; LiFePO4. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE Предварительно собранная АКБ 16 кВт·ч (AE-E-READY-16) для солнечного накопления и резерва. Конфигурация: 16S / 51.2 V / 314 Ah / 16.0768 kWh; LiFePO4. Области применения, согласование и документация.",
     "tags": [
       "16S",
       "LiFePO4",
@@ -24064,10 +24064,10 @@
       "面向深循环用能: 适用于房车生活、船用辅助设备及离网光伏，按充电器与负载匹配电池"
     ],
     "supplyStatus": "catalogue",
-    "descriptionEn": "1.28 kWh of nominal energy with intelligent BMS protection, Bluetooth battery insight and low-temperature charging protection for mobile and off-grid living.",
-    "descriptionZh": "标称电量 1.28kWh，结合智能 BMS 保护、蓝牙电池信息与低温充电保护，服务移动生活和离网用能。",
-    "descriptionEs": "1.28 kWh nominales con BMS inteligente, información por Bluetooth y protección de carga a baja temperatura para uso móvil y aislado.",
-    "descriptionRu": "Номинальная энергия 1.28 кВт·ч, интеллектуальная BMS, Bluetooth и защита заряда на холоде для мобильного и автономного питания."
+    "descriptionEn": "ANTHRISE 12.8V 100Ah LiFePO4 Battery (AE-E-SEED-12V100) for solar storage and backup power. Listed configuration: 12.8 V; 100 Ah. Explore applications, system matching and product documents.",
+    "descriptionZh": "ANTHRISE 12.8V 100Ah 磷酸铁锂电池（AE-E-SEED-12V100），用于光伏配储与备用电源。目录配置：12.8 V; 100 Ah。了解应用场景、系统匹配与产品资料。",
+    "descriptionEs": "ANTHRISE Batería LiFePO4 12.8 V 100 Ah (AE-E-SEED-12V100) para almacenamiento solar y respaldo. Configuración: 12.8 V; 100 Ah. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE АКБ LiFePO4 12.8 В 100 А·ч (AE-E-SEED-12V100) для солнечного накопления и резерва. Конфигурация: 12.8 V; 100 Ah. Области применения, согласование и документация."
   },
   {
     "id": "seed12_150",
@@ -24531,10 +24531,10 @@
       "面向深循环用能: 适用于房车生活、船用辅助设备及离网光伏，按充电器与负载匹配电池"
     ],
     "supplyStatus": "catalogue",
-    "descriptionEn": "1.92 kWh of nominal energy with intelligent BMS protection, Bluetooth battery insight and low-temperature charging protection for mobile and off-grid living.",
-    "descriptionZh": "标称电量 1.92kWh，结合智能 BMS 保护、蓝牙电池信息与低温充电保护，服务移动生活和离网用能。",
-    "descriptionEs": "1.92 kWh nominales con BMS inteligente, información por Bluetooth y protección de carga a baja temperatura para uso móvil y aislado.",
-    "descriptionRu": "Номинальная энергия 1.92 кВт·ч, интеллектуальная BMS, Bluetooth и защита заряда на холоде для мобильного и автономного питания."
+    "descriptionEn": "ANTHRISE 12.8V 150Ah LiFePO4 Battery (AE-E-SEED-12V150) for solar storage and backup power. Listed configuration: 12.8 V; 150 Ah. Explore applications, system matching and product documents.",
+    "descriptionZh": "ANTHRISE 12.8V 150Ah 磷酸铁锂电池（AE-E-SEED-12V150），用于光伏配储与备用电源。目录配置：12.8 V; 150 Ah。了解应用场景、系统匹配与产品资料。",
+    "descriptionEs": "ANTHRISE Batería LiFePO4 12.8 V 150 Ah (AE-E-SEED-12V150) para almacenamiento solar y respaldo. Configuración: 12.8 V; 150 Ah. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE АКБ LiFePO4 12.8 В 150 А·ч (AE-E-SEED-12V150) для солнечного накопления и резерва. Конфигурация: 12.8 V; 150 Ah. Области применения, согласование и документация."
   },
   {
     "id": "seed12_200",
@@ -24998,10 +24998,10 @@
       "面向深循环用能: 适用于房车生活、船用辅助设备及离网光伏，按充电器与负载匹配电池"
     ],
     "supplyStatus": "catalogue",
-    "descriptionEn": "2.56 kWh of nominal energy with intelligent BMS protection, Bluetooth battery insight and low-temperature charging protection for mobile and off-grid living.",
-    "descriptionZh": "标称电量 2.56kWh，结合智能 BMS 保护、蓝牙电池信息与低温充电保护，服务移动生活和离网用能。",
-    "descriptionEs": "2.56 kWh nominales con BMS inteligente, información por Bluetooth y protección de carga a baja temperatura para uso móvil y aislado.",
-    "descriptionRu": "Номинальная энергия 2.56 кВт·ч, интеллектуальная BMS, Bluetooth и защита заряда на холоде для мобильного и автономного питания."
+    "descriptionEn": "ANTHRISE 12.8V 200Ah LiFePO4 Battery (AE-E-SEED-12V200) for solar storage and backup power. Listed configuration: 12.8 V; 200 Ah. Explore applications, system matching and product documents.",
+    "descriptionZh": "ANTHRISE 12.8V 200Ah 磷酸铁锂电池（AE-E-SEED-12V200），用于光伏配储与备用电源。目录配置：12.8 V; 200 Ah。了解应用场景、系统匹配与产品资料。",
+    "descriptionEs": "ANTHRISE Batería LiFePO4 12.8 V 200 Ah (AE-E-SEED-12V200) para almacenamiento solar y respaldo. Configuración: 12.8 V; 200 Ah. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE АКБ LiFePO4 12.8 В 200 А·ч (AE-E-SEED-12V200) для солнечного накопления и резерва. Конфигурация: 12.8 V; 200 Ah. Области применения, согласование и документация."
   },
   {
     "id": "seed12_300",
@@ -25465,10 +25465,10 @@
       "面向深循环用能: 适用于房车生活、船用辅助设备及离网光伏，按充电器与负载匹配电池"
     ],
     "supplyStatus": "catalogue",
-    "descriptionEn": "3.84 kWh of nominal energy with intelligent BMS protection, Bluetooth battery insight and low-temperature charging protection for mobile and off-grid living.",
-    "descriptionZh": "标称电量 3.84kWh，结合智能 BMS 保护、蓝牙电池信息与低温充电保护，服务移动生活和离网用能。",
-    "descriptionEs": "3.84 kWh nominales con BMS inteligente, información por Bluetooth y protección de carga a baja temperatura para uso móvil y aislado.",
-    "descriptionRu": "Номинальная энергия 3.84 кВт·ч, интеллектуальная BMS, Bluetooth и защита заряда на холоде для мобильного и автономного питания."
+    "descriptionEn": "ANTHRISE 12.8V 300Ah LiFePO4 Battery (AE-E-SEED-12V300) for solar storage and backup power. Listed configuration: 12.8 V; 300 Ah. Explore applications, system matching and product documents.",
+    "descriptionZh": "ANTHRISE 12.8V 300Ah 磷酸铁锂电池（AE-E-SEED-12V300），用于光伏配储与备用电源。目录配置：12.8 V; 300 Ah。了解应用场景、系统匹配与产品资料。",
+    "descriptionEs": "ANTHRISE Batería LiFePO4 12.8 V 300 Ah (AE-E-SEED-12V300) para almacenamiento solar y respaldo. Configuración: 12.8 V; 300 Ah. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE АКБ LiFePO4 12.8 В 300 А·ч (AE-E-SEED-12V300) для солнечного накопления и резерва. Конфигурация: 12.8 V; 300 Ah. Области применения, согласование и документация."
   },
   {
     "id": "seed24_100",
@@ -25932,10 +25932,10 @@
       "面向深循环用能: 适用于房车生活、船用辅助设备及离网光伏，按充电器与负载匹配电池"
     ],
     "supplyStatus": "catalogue",
-    "descriptionEn": "2.56 kWh of nominal energy with intelligent BMS protection, Bluetooth battery insight and low-temperature charging protection for mobile and off-grid living.",
-    "descriptionZh": "标称电量 2.56kWh，结合智能 BMS 保护、蓝牙电池信息与低温充电保护，服务移动生活和离网用能。",
-    "descriptionEs": "2.56 kWh nominales con BMS inteligente, información por Bluetooth y protección de carga a baja temperatura para uso móvil y aislado.",
-    "descriptionRu": "Номинальная энергия 2.56 кВт·ч, интеллектуальная BMS, Bluetooth и защита заряда на холоде для мобильного и автономного питания."
+    "descriptionEn": "ANTHRISE 25.6V 100Ah LiFePO4 Battery (AE-E-SEED-24V100) for solar storage and backup power. Listed configuration: 25.6 V; 100 Ah. Explore applications, system matching and product documents.",
+    "descriptionZh": "ANTHRISE 25.6V 100Ah 磷酸铁锂电池（AE-E-SEED-24V100），用于光伏配储与备用电源。目录配置：25.6 V; 100 Ah。了解应用场景、系统匹配与产品资料。",
+    "descriptionEs": "ANTHRISE Batería LiFePO4 25.6 V 100 Ah (AE-E-SEED-24V100) para almacenamiento solar y respaldo. Configuración: 25.6 V; 100 Ah. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE АКБ LiFePO4 25.6 В 100 А·ч (AE-E-SEED-24V100) для солнечного накопления и резерва. Конфигурация: 25.6 V; 100 Ah. Области применения, согласование и документация."
   },
   {
     "id": "seed24_150",
@@ -26399,10 +26399,10 @@
       "面向深循环用能: 适用于房车生活、船用辅助设备及离网光伏，按充电器与负载匹配电池"
     ],
     "supplyStatus": "catalogue",
-    "descriptionEn": "3.84 kWh of nominal energy with intelligent BMS protection, Bluetooth battery insight and low-temperature charging protection for mobile and off-grid living.",
-    "descriptionZh": "标称电量 3.84kWh，结合智能 BMS 保护、蓝牙电池信息与低温充电保护，服务移动生活和离网用能。",
-    "descriptionEs": "3.84 kWh nominales con BMS inteligente, información por Bluetooth y protección de carga a baja temperatura para uso móvil y aislado.",
-    "descriptionRu": "Номинальная энергия 3.84 кВт·ч, интеллектуальная BMS, Bluetooth и защита заряда на холоде для мобильного и автономного питания."
+    "descriptionEn": "ANTHRISE 25.6V 150Ah LiFePO4 Battery (AE-E-SEED-24V150) for solar storage and backup power. Listed configuration: 25.6 V; 150 Ah. Explore applications, system matching and product documents.",
+    "descriptionZh": "ANTHRISE 25.6V 150Ah 磷酸铁锂电池（AE-E-SEED-24V150），用于光伏配储与备用电源。目录配置：25.6 V; 150 Ah。了解应用场景、系统匹配与产品资料。",
+    "descriptionEs": "ANTHRISE Batería LiFePO4 25.6 V 150 Ah (AE-E-SEED-24V150) para almacenamiento solar y respaldo. Configuración: 25.6 V; 150 Ah. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE АКБ LiFePO4 25.6 В 150 А·ч (AE-E-SEED-24V150) для солнечного накопления и резерва. Конфигурация: 25.6 V; 150 Ah. Области применения, согласование и документация."
   },
   {
     "id": "seed24_200",
@@ -26866,10 +26866,10 @@
       "面向深循环用能: 适用于房车生活、船用辅助设备及离网光伏，按充电器与负载匹配电池"
     ],
     "supplyStatus": "catalogue",
-    "descriptionEn": "5.12 kWh of nominal energy with intelligent BMS protection, Bluetooth battery insight and low-temperature charging protection for mobile and off-grid living.",
-    "descriptionZh": "标称电量 5.12kWh，结合智能 BMS 保护、蓝牙电池信息与低温充电保护，服务移动生活和离网用能。",
-    "descriptionEs": "5.12 kWh nominales con BMS inteligente, información por Bluetooth y protección de carga a baja temperatura para uso móvil y aislado.",
-    "descriptionRu": "Номинальная энергия 5.12 кВт·ч, интеллектуальная BMS, Bluetooth и защита заряда на холоде для мобильного и автономного питания."
+    "descriptionEn": "ANTHRISE 25.6V 200Ah LiFePO4 Battery (AE-E-SEED-24V200) for solar storage and backup power. Listed configuration: 25.6 V; 200 Ah. Explore applications, system matching and product documents.",
+    "descriptionZh": "ANTHRISE 25.6V 200Ah 磷酸铁锂电池（AE-E-SEED-24V200），用于光伏配储与备用电源。目录配置：25.6 V; 200 Ah。了解应用场景、系统匹配与产品资料。",
+    "descriptionEs": "ANTHRISE Batería LiFePO4 25.6 V 200 Ah (AE-E-SEED-24V200) para almacenamiento solar y respaldo. Configuración: 25.6 V; 200 Ah. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE АКБ LiFePO4 25.6 В 200 А·ч (AE-E-SEED-24V200) для солнечного накопления и резерва. Конфигурация: 25.6 V; 200 Ah. Области применения, согласование и документация."
   },
   {
     "id": "seed24_300",
@@ -27333,9 +27333,9 @@
       "面向深循环用能: 适用于房车生活、船用辅助设备及离网光伏，按充电器与负载匹配电池"
     ],
     "supplyStatus": "catalogue",
-    "descriptionEn": "7.68 kWh of nominal energy with intelligent BMS protection, Bluetooth battery insight and low-temperature charging protection for mobile and off-grid living.",
-    "descriptionZh": "标称电量 7.68kWh，结合智能 BMS 保护、蓝牙电池信息与低温充电保护，服务移动生活和离网用能。",
-    "descriptionEs": "7.68 kWh nominales con BMS inteligente, información por Bluetooth y protección de carga a baja temperatura para uso móvil y aislado.",
-    "descriptionRu": "Номинальная энергия 7.68 кВт·ч, интеллектуальная BMS, Bluetooth и защита заряда на холоде для мобильного и автономного питания."
+    "descriptionEn": "ANTHRISE 25.6V 300Ah LiFePO4 Battery (AE-E-SEED-24V300) for solar storage and backup power. Listed configuration: 25.6 V; 300 Ah. Explore applications, system matching and product documents.",
+    "descriptionZh": "ANTHRISE 25.6V 300Ah 磷酸铁锂电池（AE-E-SEED-24V300），用于光伏配储与备用电源。目录配置：25.6 V; 300 Ah。了解应用场景、系统匹配与产品资料。",
+    "descriptionEs": "ANTHRISE Batería LiFePO4 25.6 V 300 Ah (AE-E-SEED-24V300) para almacenamiento solar y respaldo. Configuración: 25.6 V; 300 Ah. Consulte aplicaciones, integración y documentación.",
+    "descriptionRu": "ANTHRISE АКБ LiFePO4 25.6 В 300 А·ч (AE-E-SEED-24V300) для солнечного накопления и резерва. Конфигурация: 25.6 V; 300 Ah. Области применения, согласование и документация."
   }
 ]
