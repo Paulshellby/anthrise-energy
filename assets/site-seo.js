@@ -1,6 +1,6 @@
 (function(){
 'use strict';
-const origin='https://paulshellby.github.io/anthrise-energy/',legal='深圳市昂旭启元科技有限公司';
+const origin='https://anthrise-tech.com/',legal='深圳市昂旭启元科技有限公司';
 const params=new URLSearchParams(location.search),defaults=window.ANTHRISE_PAGE||{};
 const lang=['en','zh','es','ru'].includes(params.get('lang'))?params.get('lang'):(defaults.lang||(document.documentElement.lang==='zh-CN'?'zh':document.documentElement.lang)||'en');
 const rawId=params.get('id')||params.get('model')||defaults.id;const id=rawId==='diy16s'?'preassembled16':rawId;const product=(window.ANTHRISE_PRODUCTS||[]).find(p=>p.id===id);
