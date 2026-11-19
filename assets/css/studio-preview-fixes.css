@@ -1,0 +1,41 @@
+/* Local integration repairs; leave the exported design intact. */
+.campus-hotspots:has(.campus-hotspot.is-open) {
+  z-index: 30;
+  overflow: visible;
+}
+@media (max-width: 640px) {
+  .hero-campus-sticky .campus-canvas-host,
+  .hero-campus-sticky .campus-hotspots {
+    top: 136px;
+    bottom: auto;
+    height: calc(54svh - 136px);
+    min-height: 220px;
+  }
+  .stage-top-bar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+  .stage-progress-pill { min-width: 0; }
+  .stage-progress-bar { display: none; }
+  .stage-progress-label { overflow: hidden; text-overflow: ellipsis; }
+  .stage-top-actions { flex-shrink: 0; }
+  .stage-util-btn, .stage-close-btn { white-space: nowrap; padding: 7px 9px; }
+  .stage-hall-sign { display: none; }
+  .stage-plinth-stage { width: 70vw; height: 120px; }
+  .stage-product-detail {
+    top: 72px;
+    grid-template-rows: minmax(180px, 31vh) minmax(0, 1fr);
+    gap: 12px;
+  }
+  .stage-detail-visual { min-height: 0; padding: 0 6px; }
+  .stage-detail-visual-stage { min-height: 0; overflow: hidden; }
+  .stage-detail-img { max-height: 100%; max-width: 90%; }
+  .stage-detail-thumbs {
+    width: 100%; flex: 0 0 48px; flex-wrap: nowrap;
+    justify-content: flex-start; overflow-x: auto; gap: 6px; margin-top: 6px;
+  }
+  .stage-detail-thumb { flex: 0 0 auto; padding: 4px 6px; }
+  .stage-detail-thumb img { width: 24px; height: 24px; }
+  .stage-detail-panel { min-height: 0; }
+}

@@ -1,0 +1,19 @@
+/* Product-first refinement. All effects respect the existing stage lifecycle. */
+.products-stage[data-category-open="true"] .stage-risey-track{display:none!important}
+body:has(#products-stage:not([hidden])[data-category-open="true"]) .risey-companion-layer{visibility:hidden!important;pointer-events:none!important}
+.codex-plinth-brand{position:absolute;left:50%;top:45%;width:24%;height:auto;transform:translate(-50%,-50%) scaleY(.52);opacity:.62;mix-blend-mode:multiply;pointer-events:none;z-index:1}
+.stage-plinth-cross,.stage-plinth-inner-ring{opacity:.14}
+.stage-turntable-figure{overflow:visible!important;background:none!important}
+.stage-turntable-figure img{width:100%;height:100%;object-fit:contain;opacity:1!important;filter:drop-shadow(0 7px 7px rgba(28,48,40,.12));}
+.stage-turntable-item.is-back .stage-turntable-chip{opacity:.9}
+.stage-turntable-chip{max-width:200px;white-space:normal;line-height:1.22;text-wrap:balance;font-size:.72rem;min-height:28px;display:flex;align-items:center;justify-content:center;padding:5px 9px;background:rgba(255,255,255,.94)}
+.stage-turntable-viewport{isolation:isolate;overflow:visible}
+.stage-plinth-stage{width:min(86vw,1050px);height:clamp(210px,31vh,290px)}
+.stage-turntable-shadow{opacity:.26}
+.stage-hall-sign{color:#557168;letter-spacing:.18em}
+.stage-showroom-hall{background:radial-gradient(ellipse at 50% 25%,#fff 0%,#edf4f1 48%,#dce7e1 100%)}
+.stage-turntable-topbar{min-height:36px}
+.stage-ring-pager{font-variant-numeric:tabular-nums}
+@media(max-width:1024px){.stage-plinth-stage{width:86vw}.stage-products-header{gap:10px}.stage-turntable-chip{max-width:150px}}
+@media(max-width:640px){.stage-plinth-stage{width:82vw;height:145px}.stage-turntable-chip{max-width:108px;font-size:.63rem}.codex-plinth-brand{width:30%}.stage-turntable-viewport{min-height:230px}.stage-turntable-topbar{gap:6px}.stage-turntable-hint{font-size:.68rem}.stage-pager-label{font-size:.67rem}.stage-focal-name{white-space:normal;font-size:.85rem}.stage-focal-model{font-size:.62rem}}
+@media(prefers-reduced-motion:reduce){.stage-turntable-items{animation:none!important}}
