@@ -1,0 +1,96 @@
+(() => {
+  'use strict';
+  if (window.__anthriseShellLoaded) return;
+  window.__anthriseShellLoaded = true;
+  const version = '20261119-shell3';
+  const paths = { en: '/', zh: '/home-zh.html', es: '/home-es.html', ru: '/home-ru.html' };
+  const locale = () => {
+    const value = document.documentElement.lang.split('-')[0];
+    return Object.hasOwn(paths, value) ? value : 'en';
+  };
+  const labels = {
+    en: ['About', 'Products', 'Solutions', 'Selection tools', 'Partnership', 'Choose language'],
+    zh: ['关于我们', '产品', '解决方案', '选型工具', '合作', '选择语言'],
+    es: ['Empresa', 'Productos', 'Soluciones', 'Selección', 'Colaboración', 'Elegir idioma'],
+    ru: ['О компании', 'Продукция', 'Решения', 'Подбор', 'Партнёрство', 'Выбрать язык'],
+  };
+  function routeProducts() { location.assign(paths[locale()] + '#products'); }
+  // Capture before the retired menu controller can expand its product taxonomy.
+  document.addEventListener('click', event => {
+    const target = event.target.closest('header summary[aria-controls="mega-products"],header [data-nav-category],header a[href$="#products"]');
+    if (!target || target.hasAttribute('data-open-products-stage')) return;
+    event.preventDefault(); event.stopImmediatePropagation(); routeProducts();
+  }, true);
+  document.addEventListener('keydown', event => {
+    if (!['Enter', ' '].includes(event.key) || !event.target.matches('header summary[aria-controls="mega-products"]')) return;
+    event.preventDefault(); event.stopImmediatePropagation(); routeProducts();
+  }, true);
+  function init(data) {
+    const headerActions = document.querySelector('.site-header .header-actions');
+    if (headerActions && !document.getElementById('localeToggle')) {
+      const picker = document.createElement('details');
+      picker.className = 'site-language-picker';
+      picker.innerHTML = '<summary>' + data.globe + '<span class="site-language-code"></span><span aria-hidden="true">⌄</span></summary><nav aria-label="Languages"><a href="/" lang="en">English</a><a href="/home-zh.html" lang="zh-Hans">简体中文</a><a href="/home-es.html" lang="es">Español</a><a href="/home-ru.html" lang="ru">Русский</a></nav>';
+      headerActions.prepend(picker);
+      document.addEventListener('click', event => { if (!picker.contains(event.target)) picker.open = false; });
+      document.addEventListener('keydown', event => { if (event.key === 'Escape' && picker.open) { picker.open = false; picker.querySelector('summary').focus(); } });
+    }
+    const retiredFooter = document.querySelector('footer:not(.site-footer)');
+    if (retiredFooter) retiredFooter.outerHTML = data.footer;
+    document.querySelectorAll('footer .lang-switch,footer .language-switch,footer .locale-picker').forEach(node => node.remove());
+    const isCompanyPage = location.pathname.endsWith('/official-site.html');
+    let lastLocale;
+    function sync() {
+      const lang = locale(), copy = labels[lang], home = paths[lang];
+      const picker = document.querySelector('.site-language-picker');
+      if (picker) {
+        picker.querySelector('.site-language-code').textContent = { en: 'EN', zh: '中', es: 'ES', ru: 'RU' }[lang];
+        picker.querySelector('summary').setAttribute('aria-label', copy[5]);
+        picker.querySelectorAll('a').forEach(a => { if (a.pathname === home) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+      }
+      if (isCompanyPage && lastLocale !== lang) {
+        const previous = document.querySelector('.site-inquiry-shell');
+        const values = previous ? [...previous.querySelectorAll('input,select,textarea')].map(node => [node.id, node.value]) : [];
+        if (previous) previous.remove();
+        document.querySelector('footer.site-footer')?.insertAdjacentHTML('beforebegin', data.contacts[lang] || data.contacts.en);
+        for (const [id, value] of values) { const node = document.getElementById(id); if (node) node.value = value; }
+        const old = document.getElementById('inquiry'); if (old) old.hidden = true;
+      }
+      document.querySelectorAll('.site-footer .footer-company').forEach(node => { node.textContent = lang === 'zh' ? '深圳市昂旭启元科技有限公司 · 深圳' : 'Anthrise Technology · Shenzhen'; });
+      const destinations = ['/official-site.html?lang=' + lang + '#about', home + '#products', home + '#stories', '/official-site.html?lang=' + lang + '#calculator', home + '#project-inquiry'];
+      document.querySelectorAll('.site-footer .footer-nav a').forEach((a, index) => { a.href = destinations[index]; a.textContent = copy[index]; });
+      document.querySelectorAll('a[href*="official-site.html"]').forEach(a => {
+        const url = new URL(a.href, location.href); if (url.origin !== location.origin) return;
+        if (url.hash === '#products') a.href = home + '#products';
+        else { url.searchParams.set('lang', lang); a.href = url.pathname + url.search + url.hash; }
+      });
+      if (isCompanyPage) document.querySelectorAll('a[href="#inquiry"]').forEach(a => a.href = '#project-inquiry');
+      document.querySelectorAll('.site-inquiry-shell .contact-row dd').forEach(dd => {
+        if (lang === 'zh' && dd.textContent.includes('Office 2285')) dd.innerHTML = '中国广东省深圳市龙华区大浪街道水围社区华盛路49号2层2285室<br>邮编：518109';
+      });
+      lastLocale = lang;
+    }
+    sync();
+    const footer = document.querySelector('footer.site-footer');
+    if (footer && 'IntersectionObserver' in window) new IntersectionObserver(entries => {
+      document.body.classList.toggle('site-footer-in-view', entries[0].isIntersecting);
+    }).observe(footer);
+    new MutationObserver(sync).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    // Legacy pages retain their established controls; the new contact form prepares a mail draft.
+    if (isCompanyPage) document.addEventListener('submit', event => {
+      if (!event.target.matches('.site-inquiry-shell #inquiry-form')) return;
+      event.preventDefault(); const form = event.target;
+      if (!form.reportValidity()) return;
+      const name = form.querySelector('#inq-name').value.trim(), email = form.querySelector('#inq-email').value.trim(), notes = form.querySelector('#inq-message').value.trim();
+      if (!name || !email || !notes) return;
+      const topic = form.querySelector('#inq-topic').selectedOptions[0].textContent;
+      const body = `Name: ${name}\nEmail: ${email}\nApplication: ${topic}\n\n${notes}`;
+      location.href = 'mailto:sales@anthrise-tech.com?subject=' + encodeURIComponent('Anthrise project inquiry — ' + topic) + '&body=' + encodeURIComponent(body);
+      form.querySelector('#form-feedback').textContent = locale() === 'zh' ? '已准备询盘邮件，请在邮箱应用中确认并发送。' : 'Review and send the draft in your email app.';
+    });
+  }
+  const dataScript = document.createElement('script');
+  dataScript.src = '/assets/site-shell-data.js?v=' + version;
+  dataScript.onload = () => { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => init(window.ANTHRISE_SHELL_DATA), { once: true }); else init(window.ANTHRISE_SHELL_DATA); };
+  document.head.append(dataScript);
+})();
