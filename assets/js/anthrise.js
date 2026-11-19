@@ -85,7 +85,7 @@
   const campusFallbackTitle = document.getElementById('campus-fallback-title');
   const campusFallbackDesc = document.getElementById('campus-fallback-desc');
 
-  let currentLang = 'en';
+  let currentLang = docEl.lang.startsWith('zh') ? 'zh' : 'en';
   const sceneState = {
     time: 'day',
     targetTime: 'day',
@@ -141,7 +141,7 @@
 
   function syncSceneCopyUI() {
     const dict = SCENE_I18N[currentLang] || SCENE_I18N.en;
-    docEl.lang = currentLang === 'zh' ? 'zh-Hans' : 'en';
+    docEl.lang = currentLang === 'zh' ? 'zh-Hans' : (docEl.dataset.siteLocale || 'en');
     if (sceneDayLabel) sceneDayLabel.textContent = dict.dayBtn;
     if (sceneNightLabel) sceneNightLabel.textContent = dict.nightBtn;
     if (sceneFlowLabel) {
@@ -4277,4 +4277,12 @@
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());
   }
+
+  // Old homepage catalogue anchors now open the interactive product stage.
+  document.querySelectorAll('a[href="#products"]').forEach(anchor=>{
+    if(anchor.hasAttribute('data-open-products-stage'))return;
+    anchor.addEventListener('click',event=>{event.preventDefault();openProductsStage(anchor);},{signal});
+  });
+  if(location.hash==='#products')requestAnimationFrame(()=>openProductsStage());
+  window.addEventListener('hashchange',()=>{if(location.hash==='#products')openProductsStage();},{signal});
 })();

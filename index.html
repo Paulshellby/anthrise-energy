@@ -57,7 +57,7 @@
     <link rel="preload" as="image" href="/assets/images/risey-run-r.png" />
     <link rel="preload" as="image" href="/assets/images/risey-run-l.png" />
 
-    <link rel="stylesheet" href="/assets/css/anthrise.css?v=20261119-codex1" />
+    <link rel="stylesheet" href="/assets/css/anthrise.css?v=20261119-campus-home2" />
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -93,9 +93,9 @@
         ]
       }
     </script>
-  <link rel="stylesheet" href="/assets/css/studio-preview-fixes.css?v=20261119-codex1">
+  <link rel="stylesheet" href="/assets/css/studio-preview-fixes.css?v=20261119-campus-home2">
 <meta name="referrer" content="strict-origin-when-cross-origin" />
-<link rel="stylesheet" href="/assets/css/codex-refinement.css?v=20261119-codex1">
+<link rel="stylesheet" href="/assets/css/codex-refinement.css?v=20261119-campus-home2">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; object-src 'none'; base-uri 'self'">
 </head>
 
@@ -172,7 +172,7 @@
               </button>
               <div class="nav-dropdown" id="menu-solutions" hidden>
                 <a href="#stories" class="dropdown-link" data-close-nav>Energy in everyday life</a>
-                <a href="/official-site.html#scenes" class="dropdown-link">Home energy</a>
+                <a href="#hero-section" class="dropdown-link">Home energy</a>
                 <a href="/bess-project.html" class="dropdown-link">Business energy &amp; BESS</a>
                 <a href="/products/origAEV2500-en.html" class="dropdown-link">Outdoor &amp; off-grid</a>
               </div>
@@ -255,7 +255,7 @@
           </div>
           <div class="mobile-nav-group">
             <p class="mobile-group-label">Solutions</p>
-            <a href="/official-site.html#scenes">Home energy</a>
+            <a href="#hero-section">Home energy</a>
             <a href="/bess-project.html">Business energy</a>
             <a href="/products/origAEV2500-en.html">Outdoor &amp; off-grid</a>
           </div>
@@ -269,7 +269,7 @@
       </div>
     </header>
 
-    <main id="main-content">
+    <main id="main-content"><span id="products" aria-hidden="true"></span>
       <!-- Interactive 3D Clean Energy Campus Hero (3 Connected Spatial Zones: Home, Commercial, Off-Grid) -->
       <section
         class="hero hero-campus-scroll"
@@ -473,7 +473,7 @@
 
           <div class="stories-track" role="list">
             <article class="story-card" role="listitem" data-reveal-card>
-              <a href="/official-site.html#scenes" class="story-link">
+              <a href="#hero-section" class="story-link">
                 <div class="story-media">
                   <img
                     src="/assets/images/story-home.jpg"
@@ -542,139 +542,7 @@
       </section>
 
       <!-- Restrained Product Strip (Actual Product Photos & Localized URLs) -->
-      <section class="products-section" id="products" aria-labelledby="products-heading">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <p class="section-kicker">Core hardware</p>
-              <h2 class="section-title" id="products-heading">Products across the system</h2>
-            </div>
-            <div class="section-actions-inline">
-              <button type="button" class="text-link stage-launch-link" data-open-products-stage>
-                Interactive series stage <span aria-hidden="true">&#8594;</span>
-              </button>
-              <a href="/official-site.html#products" class="text-link">
-                View full catalog <span aria-hidden="true">&#8594;</span>
-              </a>
-            </div>
-          </div>
 
-          <div class="product-strip" role="list">
-            <a
-              href="/products/ess16-en.html"
-              data-href-en="/products/ess16-en.html"
-              data-href-zh="/products/ess16-zh.html"
-              class="product-tile"
-              role="listitem"
-            >
-              <div class="product-thumb">
-                <img
-                  src="/assets/images/prod-battery.jpg"
-                  alt="Anthrise home battery energy storage unit"
-                  width="324"
-                  height="440"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="product-meta">
-                <span class="product-cat">Energy storage</span>
-                <h3 class="product-name">Home Battery</h3>
-              </div>
-            </a>
-
-            <a
-              href="/products/hybrid20-en.html"
-              data-href-en="/products/hybrid20-en.html"
-              data-href-zh="/products/hybrid20-zh.html"
-              class="product-tile"
-              role="listitem"
-            >
-              <div class="product-thumb">
-                <img
-                  src="/assets/images/prod-inverter.jpg"
-                  alt="Anthrise wall-mounted hybrid inverter"
-                  width="332"
-                  height="262"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="product-meta">
-                <span class="product-cat">Power conversion</span>
-                <h3 class="product-name">Hybrid Inverter</h3>
-              </div>
-            </a>
-
-            <a
-              href="/products/origAEV2500-en.html"
-              class="product-tile"
-              role="listitem"
-            >
-              <div class="product-thumb">
-                <img
-                  src="/assets/images/prod-portable.jpg"
-                  alt="Anthrise portable power station"
-                  width="325"
-                  height="230"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="product-meta">
-                <span class="product-cat">Mobile power</span>
-                <h3 class="product-name">Portable Power Station</h3>
-              </div>
-            </a>
-
-            <a
-              href="/products/origAER400-en.html"
-              data-href-en="/products/origAER400-en.html"
-              data-href-zh="/products/origAER400-zh.html"
-              class="product-tile"
-              role="listitem"
-            >
-              <div class="product-thumb">
-                <img
-                  src="/assets/images/prod-solar.jpg"
-                  alt="Anthrise photovoltaic solar panel"
-                  width="600"
-                  height="600"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="product-meta">
-                <span class="product-cat">Solar generation</span>
-                <h3 class="product-name">Photovoltaic Panel</h3>
-              </div>
-            </a>
-
-            <a
-              href="/products/jcLight27-en.html"
-              data-href-en="/products/jcLight27-en.html"
-              data-href-zh="/products/jcLight27-zh.html"
-              class="product-tile"
-              role="listitem"
-            >
-              <div class="product-thumb">
-                <img
-                  src="/assets/images/prod-light.jpg"
-                  alt="Anthrise LED solar street light"
-                  width="600"
-                  height="600"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="product-meta">
-                <span class="product-cat">Outdoor lighting</span>
-                <h3 class="product-name">Solar Light</h3>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
 
       <!-- Project Inquiry & Direct Contact Section (Preserved Downstream Integration) -->
       <section class="inquiry-section" id="project-inquiry" aria-labelledby="inquiry-heading">
@@ -1654,8 +1522,8 @@
       </div>
     </div>
 
-    <script src="/assets/js/showroom-catalog.js?v=20261119-codex1" defer></script>
-    <script src="/assets/js/anthrise.js?v=20261119-codex1" defer></script>
-    <script type="module" src="/assets/js/campus.bundle.js?v=20261119-codex1"></script>
+    <script src="/assets/js/showroom-catalog.js?v=20261119-campus-home2" defer></script>
+    <script src="/assets/js/anthrise.js?v=20261119-campus-home2" defer></script>
+    <script type="module" src="/assets/js/campus.bundle.js?v=20261119-campus-home2"></script>
   </body>
 </html>
