@@ -36,13 +36,13 @@ export interface CampusMountOptions {
 }
 
 const DAY_BG = new THREE.Color(0xdde8eb);
-const NIGHT_BG = new THREE.Color(0x162632);
+const NIGHT_BG = new THREE.Color(0x06152f);
 const DAY_SUN = new THREE.Color(0xfff5e4);
-const NIGHT_MOON = new THREE.Color(0x9bc2ef);
+const NIGHT_MOON = new THREE.Color(0x729ce6);
 const DAY_HEMI_SKY = new THREE.Color(0xe6f3ff);
-const NIGHT_HEMI_SKY = new THREE.Color(0x4b7094);
+const NIGHT_HEMI_SKY = new THREE.Color(0x224a88);
 const DAY_HEMI_GND = new THREE.Color(0xb6c5bc);
-const NIGHT_HEMI_GND = new THREE.Color(0x1d2e36);
+const NIGHT_HEMI_GND = new THREE.Color(0x080f27);
 
 export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBridge; dispose: () => void } {
   const { heroSection, stickyViewport, canvasHost, hotspotsHost, fallbackView } = opts;
@@ -164,13 +164,37 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
 
   const camera = new THREE.PerspectiveCamera(40, 16 / 9, 0.4, 220);
 
+  let needsRender = true;
+  const onAssetReady = () => { if (!disposed) needsRender = true; };
   const textures = createCampusTextures(renderer);
-  const world = createCampusWorld(textures);
+  const world = createCampusWorld(textures, onAssetReady);
   scene.add(world.root);
-  const detailLayer = createDetailLayer(world.root,textures);
+  const detailLayer = createDetailLayer(world.root,textures,onAssetReady);
 
   const flowSystem = createEnergyFlowSystem();
   scene.add(flowSystem.group);
+
+  // Physical lights are expensive on software GPUs. Keep accurate range/decay,
+  // but allocate a bounded set nearest the inspected zone; hardware desktop keeps all.
+  const localLights: (THREE.PointLight | THREE.SpotLight)[] = [];
+  scene.traverse((object: THREE.Object3D) => {
+    if (object instanceof THREE.PointLight || object instanceof THREE.SpotLight) localLights.push(object);
+  });
+  const lightBudget = isSoftwareGl ? 4 : isMobile ? 6 : localLights.length;
+  heroSection.dataset.lightingQuality = lightBudget < localLights.length ? 'balanced' : 'full';
+  const zoneLightCenters: Record<CampusZoneId, THREE.Vector3> = {
+    overview: new THREE.Vector3(-2, 1, 4),
+    home: new THREE.Vector3(-11.5, 1, 2),
+    commercial: new THREE.Vector3(18.5, 1, -7.8),
+    offgrid: new THREE.Vector3(18, 1, 19.2),
+  };
+  const lampPosition = new THREE.Vector3();
+  const applyLightBudget = () => {
+    const center = zoneLightCenters[currentZone];
+    const ranked = localLights.map((light) => ({light, distance: light.getWorldPosition(lampPosition).distanceToSquared(center)}));
+    ranked.sort((a, b) => a.distance - b.distance);
+    ranked.forEach(({light}, index) => { light.visible = index < lightBudget; });
+  };
 
   const cameraRig = createCameraRig(camera);
 
@@ -182,8 +206,6 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
     onInspectProduct: (skuId) => opts.onInspectProduct?.(skuId),
     onInquireProduct: (h) => opts.onInquireProduct?.(h),
   });
-
-  let needsRender = true;
 
   const syncRendererSize = () => {
     if (!renderer) return;
@@ -217,19 +239,24 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
     bgColor.copy(DAY_BG).lerp(NIGHT_BG, n);
     fog.color.copy(bgColor);
     fog.density = THREE.MathUtils.lerp(0.0068, 0.0076, n);
-    scene.environmentIntensity = THREE.MathUtils.lerp(0.5, 0.25, n);
+    scene.environmentIntensity = THREE.MathUtils.lerp(0.5, 0.065, n);
+    renderer!.toneMappingExposure = THREE.MathUtils.lerp(1.02, 0.9, n);
 
     keyLight.color.copy(DAY_SUN).lerp(NIGHT_MOON, n);
-    keyLight.intensity = THREE.MathUtils.lerp(2.1, 0.85, n);
+    keyLight.intensity = THREE.MathUtils.lerp(2.1, 0.26, n);
 
     hemiLight.color.copy(DAY_HEMI_SKY).lerp(NIGHT_HEMI_SKY, n);
     hemiLight.groundColor.copy(DAY_HEMI_GND).lerp(NIGHT_HEMI_GND, n);
-    hemiLight.intensity = THREE.MathUtils.lerp(0.92, 0.64, n);
+    hemiLight.intensity = THREE.MathUtils.lerp(0.92, 0.18, n);
 
-    rimLight.intensity = THREE.MathUtils.lerp(0.45, 0.36, n);
-    world.setNightFactor(n);
-    detailLayer.setNightFactor(n);
-    flowSystem.setState(n, isReducedMotion, motionPaused);
+    rimLight.intensity = THREE.MathUtils.lerp(0.45, 0.1, n);
+    const lampNight = targetTime === 'night' ? n : 0;
+    world.setNightFactor(lampNight);
+    detailLayer.setNightFactor(lampNight);
+    applyLightBudget();
+    // Operating mode is discrete: a requested night scene immediately disables PV packets,
+    // even while architectural lighting is still cross-fading.
+    flowSystem.setState(targetNight, isReducedMotion, motionPaused);
   };
 
   const setZone = (zone: CampusZoneId, instant = false) => {
@@ -266,6 +293,7 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
       currentZone = zone;
       opts.onZoneChange?.(zone);
     }
+    applyLightBudget();
     needsRender = true;
   };
 
@@ -274,11 +302,18 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
   let lastPtrX = 0;
   let lastPtrY = 0;
   let dragDistance = 0;
+  let activePointer: number | null = null;
+  const originalTabIndex = canvasHost.getAttribute('tabindex');
+  canvasHost.tabIndex = 0;
+  canvasHost.setAttribute('aria-keyshortcuts', 'ArrowLeft ArrowRight ArrowUp ArrowDown Home Escape');
 
   const onPointerDown = (e: PointerEvent) => {
     if (e.button !== 0 && e.pointerType === 'mouse') return;
-    if ((e.target as Element)?.closest('.campus-hotspot, .campus-hud, button, a')) return;
+    if (activePointer !== null || (e.target as Element)?.closest('.campus-hotspot, .campus-hud, button, a')) return;
     isDragging = true;
+    activePointer = e.pointerId;
+    canvasHost.setPointerCapture(e.pointerId);
+    canvasHost.focus({ preventScroll: true });
     dragDistance = 0;
     lastPtrX = e.clientX;
     lastPtrY = e.clientY;
@@ -286,7 +321,7 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
   };
 
   const onPointerMove = (e: PointerEvent) => {
-    if (!isDragging) return;
+    if (!isDragging || e.pointerId !== activePointer) return;
     const dx = e.clientX - lastPtrX;
     const dy = e.clientY - lastPtrY;
     lastPtrX = e.clientX;
@@ -296,9 +331,11 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
     needsRender = true;
   };
 
-  const onPointerUp = () => {
-    if (!isDragging) return;
+  const onPointerUp = (e: PointerEvent) => {
+    if (!isDragging || e.pointerId !== activePointer) return;
     isDragging = false;
+    activePointer = null;
+    if (canvasHost.hasPointerCapture(e.pointerId)) canvasHost.releasePointerCapture(e.pointerId);
     canvasHost.classList.remove('is-dragging');
     if (dragDistance > 6) {
       // Suppress accidental clicks right after orbiting
@@ -309,7 +346,25 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
     }
   };
 
+  const onStageKeyDown = (e: KeyboardEvent) => {
+    // Never intercept page-level keys or inputs / buttons / links.
+    if (e.target !== canvasHost || e.altKey || e.ctrlKey || e.metaKey) return;
+    const offsets: Record<string, [number, number]> = {
+      ArrowLeft: [-0.045, 0], ArrowRight: [0.045, 0],
+      ArrowUp: [0, -0.025], ArrowDown: [0, 0.025],
+    };
+    if (offsets[e.key]) cameraRig.setOrbitOffset(...offsets[e.key]);
+    else if (e.key === 'Home') cameraRig.resetOrbit();
+    else if (e.key === 'Escape') hotspots.closeAll();
+    else return;
+    e.preventDefault();
+    needsRender = true;
+  };
+
   canvasHost.addEventListener('pointerdown', onPointerDown);
+  canvasHost.addEventListener('pointercancel', onPointerUp);
+  canvasHost.addEventListener('lostpointercapture', onPointerUp);
+  canvasHost.addEventListener('keydown', onStageKeyDown);
   window.addEventListener('pointermove', onPointerMove, { passive: true });
   window.addEventListener('pointerup', onPointerUp, { passive: true });
 
@@ -367,7 +422,8 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
 
   const onReducedMotionChange = (ev: MediaQueryListEvent) => {
     isReducedMotion = ev.matches;
-    flowSystem.setState(nightBlend, isReducedMotion, motionPaused);
+    flowSystem.setState(targetNight, isReducedMotion, motionPaused);
+    needsRender = true;
   };
   reducedQuery.addEventListener('change', onReducedMotionChange);
 
@@ -394,7 +450,7 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
     // Smooth Day / Night lighting cross-transition (~0.95s)
     let nightMoving = false;
     if (Math.abs(nightBlend - targetNight) > 0.002) {
-      if (isReducedMotion || motionPaused) {
+      if (isReducedMotion || motionPaused || isSoftwareGl) {
         nightBlend = targetNight;
       } else {
         const lambda = 1 - Math.exp(-3.6 * dt);
@@ -408,15 +464,13 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
     cameraRig.setScrollProgress(u);
     const cameraMoved = cameraRig.update(dt, viewWidth / Math.max(1, viewHeight), isReducedMotion);
     const flowAnimating = flowVisible && !isReducedMotion && !motionPaused;
-    const vehicleAnimating = !isReducedMotion && !motionPaused;
-    detailLayer.update(dt,!vehicleAnimating);
     if (flowAnimating) {
       flowSystem.update(dt);
-    } else if (needsRender && flowVisible) {
+    } else if ((needsRender || nightMoving) && flowVisible) {
       flowSystem.update(0);
     }
 
-    if (needsRender || nightMoving || cameraMoved || flowAnimating || vehicleAnimating || frameCount < 2) {
+    if (needsRender || nightMoving || cameraMoved || flowAnimating || frameCount < 2) {
       lastRenderMs = now;
       needsRender = false;
       renderer!.render(scene, camera);
@@ -447,6 +501,11 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
     setTime: (time: SceneTime, instant = false) => {
       targetTime = time;
       targetNight = time === 'night' ? 1 : 0;
+      flowSystem.setState(targetNight, isReducedMotion, motionPaused);
+      if (time === 'day') {
+        world.setNightFactor(0);
+        detailLayer.setNightFactor(0);
+      }
       if (instant || isReducedMotion) {
         nightBlend = targetNight;
         applyAtmosphere(nightBlend);
@@ -460,7 +519,7 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
     },
     setMotionPaused: (paused: boolean) => {
       motionPaused = paused;
-      flowSystem.setState(nightBlend, isReducedMotion, motionPaused);
+      flowSystem.setState(targetNight, isReducedMotion, motionPaused);
       needsRender = true;
     },
     setZone,
@@ -491,6 +550,13 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
       window.clearTimeout(initWatchdog);
       if (rafId) window.cancelAnimationFrame(rafId);
       canvasHost.removeEventListener('pointerdown', onPointerDown);
+      canvasHost.removeEventListener('pointercancel', onPointerUp);
+      canvasHost.removeEventListener('lostpointercapture', onPointerUp);
+      canvasHost.removeEventListener('keydown', onStageKeyDown);
+      if (activePointer !== null && canvasHost.hasPointerCapture(activePointer)) canvasHost.releasePointerCapture(activePointer);
+      canvasHost.removeAttribute('aria-keyshortcuts');
+      if (originalTabIndex === null) canvasHost.removeAttribute('tabindex');
+      else canvasHost.setAttribute('tabindex', originalTabIndex);
       window.removeEventListener('pointermove', onPointerMove);
       window.removeEventListener('pointerup', onPointerUp);
       window.removeEventListener('scroll', onScroll);

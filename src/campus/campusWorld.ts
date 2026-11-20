@@ -1,6 +1,7 @@
 import {createHardwareFactory} from './productHardware';
 import {createCampusRoad,ROAD_WIDTH} from './roadLayout';
 import {createCableHarness} from './cableRoutes';
+import { createHomeRefinement } from './homeRefinement';
 import * as THREE from 'three';
 import { TextureBundle } from './textures';
 
@@ -88,10 +89,10 @@ function makeProductFaceplate(
   return mesh;
 }
 
-export function createCampusWorld(textures: TextureBundle): CampusWorld {
+export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => void): CampusWorld {
   const root = new THREE.Group();
   root.name = 'AnthriseEnergyCampus';
-  const hardware=createHardwareFactory();
+  const hardware=createHardwareFactory(onAssetReady);
   const harness=createCableHarness(terrainHeightAt(21,15.2));root.add(harness.group);
 
   const geometries: THREE.BufferGeometry[] = [];
@@ -220,7 +221,6 @@ export function createCampusWorld(textures: TextureBundle): CampusWorld {
   // Night-reactive emissive & practical lighting lists
   const warmGlowMats: THREE.MeshStandardMaterial[] = [];
   const solarLampMats: THREE.MeshStandardMaterial[] = [];
-  const poolGlowMats: THREE.MeshBasicMaterial[] = [];
   const practicalLights: { light: THREE.PointLight; maxIntensity: number }[] = [];
 
   // -------------------------------------------------------------------------
@@ -325,7 +325,9 @@ export function createCampusWorld(textures: TextureBundle): CampusWorld {
   zone01.position.set(-11.5, 0, 2.0);
   root.add(zone01);
 
-  const homePad = makeRoundedPad(17.4, 12.6, 0.24, 0.7, plinthMat);
+  // Top including bevel is 0.25 m, below the unchanged battery contact plane (0.258 m).
+  const homePad = makeRoundedPad(17.4, 12.6, 0.20, 0.7, plinthMat);
+  homePad.name = 'HomeFootingPad';
   homePad.position.set(0, 0, 0.2);
   zone01.add(homePad);
   geometries.push(homePad.geometry);
@@ -351,12 +353,8 @@ export function createCampusWorld(textures: TextureBundle): CampusWorld {
   homeBody.position.set(0, 0.26, -0.3);
   zone01.add(homeBody);
 
-  // Left technical wing solid core
-  const leftWing = new THREE.Mesh(trackGeo(new THREE.BoxGeometry(5.2, 3.5, 5.4)), wallWarmMat);
-  leftWing.position.set(-3.4, 1.75, 0);
-  leftWing.castShadow = true;
-  leftWing.receiveShadow = true;
-  homeBody.add(leftWing);
+  // The technical wing is now a hollow shell with real window / mounting recess openings.
+  // Added below through homeRefinement; the original equipment transforms remain unchanged.
 
   // Living room cutaway enclosure: Back wall + right end wall + floor + ceiling slab + front dark steel frame
   const livingFloor = new THREE.Mesh(trackGeo(new THREE.BoxGeometry(7.2, 0.14, 5.2)), timberMat);
@@ -462,10 +460,10 @@ export function createCampusWorld(textures: TextureBundle): CampusWorld {
   lampShade.position.set(2.9, 2.95, 0.2);
   homeBody.add(lampShade);
 
-  const homeInteriorLight = new THREE.PointLight(0xffb866, 0.0, 12, 1.6);
+  const homeInteriorLight = new THREE.PointLight(0xffc78b, 0.0, 9, 2);
   homeInteriorLight.position.set(2.9, 2.65, 0.2);
   homeBody.add(homeInteriorLight);
-  practicalLights.push({ light: homeInteriorLight, maxIntensity: 6.5 });
+  practicalLights.push({ light: homeInteriorLight, maxIntensity: 32 });
 
   // Architectural Pitched Solar Roof (Slopes cleanly toward front-south camera)
   const roofGroup = new THREE.Group();
@@ -478,8 +476,9 @@ export function createCampusWorld(textures: TextureBundle): CampusWorld {
   mainRoofDeck.castShadow = true;
   mainRoofDeck.receiveShadow = true;
   roofGroup.add(mainRoofDeck);
+  const homeRefinement = createHomeRefinement(homeBody, roofGroup, mainRoofDeck, textures);
 
-  // 8 Rooftop PV Modules (2 rows x 4 cols) mounted above roof surface
+  // 8 rooftop modules share the slate deck's slope and sit above visible mounting rails.
   for (let r = 0; r < 2; r++) {
     for (let c = 0; c < 4; c++) {
       const panelFrame = new THREE.Mesh(trackGeo(new THREE.BoxGeometry(2.55, 0.08, 1.9)), aluminumMat);
@@ -488,9 +487,14 @@ export function createCampusWorld(textures: TextureBundle): CampusWorld {
       panelGlass.position.y = 0.045;
       const pvUnit = new THREE.Group();
       pvUnit.add(panelFrame, panelGlass);
-      pvUnit.rotation.x = 0.22;
-      pvUnit.position.set(-4.2 + c * 2.8, 0.72 + (r === 0 ? 0.26 : -0.22), r === 0 ? -1.05 : 1.15);
-      roofGroup.add(pvUnit);
+      pvUnit.name = 'HomePVModule';
+      pvUnit.position.set(-4.2 + c * 2.8, 0.29, r === 0 ? -1.15 : 1.05);
+      for (const x of [-1.22, 1.22]) {
+        const clamp = new THREE.Mesh(trackGeo(new THREE.BoxGeometry(0.045, 0.09, 0.11)), aluminumMat);
+        clamp.position.set(x, 0.01, 0.58);
+        pvUnit.add(clamp);
+      }
+      homeRefinement.roofMount.add(pvUnit);
     }
   }
 
@@ -539,10 +543,10 @@ export function createCampusWorld(textures: TextureBundle): CampusWorld {
   courtyardSolarCap.position.set(7.1, 2.0, 4.4);
   zone01.add(courtyardSolarCap);
 
-  const courtyardPoint = new THREE.PointLight(0xffcb78, 0.0, 8, 1.8);
+  const courtyardPoint = new THREE.PointLight(0xffcb78, 0.0, 6.5, 2);
   courtyardPoint.position.set(7.1, 1.75, 4.4);
   zone01.add(courtyardPoint);
-  practicalLights.push({ light: courtyardPoint, maxIntensity: 3.4 });
+  practicalLights.push({ light: courtyardPoint, maxIntensity: 18 });
 
   // -------------------------------------------------------------------------
   // 4. Zone 02: COMMERCIAL & INDUSTRIAL (19.0, 0, -7.0)
@@ -599,10 +603,10 @@ export function createCampusWorld(textures: TextureBundle): CampusWorld {
     ciBuilding.add(col);
   });
 
-  const ciOfficeLight = new THREE.PointLight(0xffcb7f, 0.0, 14, 1.5);
+  const ciOfficeLight = new THREE.PointLight(0xffcb7f, 0.0, 11, 2);
   ciOfficeLight.position.set(4.8, 3.0, 4.5);
   ciBuilding.add(ciOfficeLight);
-  practicalLights.push({ light: ciOfficeLight, maxIntensity: 5.5 });
+  practicalLights.push({ light: ciOfficeLight, maxIntensity: 40 });
 
   // Rooftop HVAC Chiller / AHU Units (Clearly visible loads)
   [-4.6, -2.1].forEach((hx) => {
@@ -682,25 +686,10 @@ export function createCampusWorld(textures: TextureBundle): CampusWorld {
     diffuser.position.set(lx, 4.31, lz - 0.32);
     zone02.add(diffuser);
 
-    const roadPoint = new THREE.PointLight(0xffdfb0, 0.0, 13, 1.7);
+    const roadPoint = new THREE.PointLight(0xffdfb0, 0.0, 13, 2);
     roadPoint.position.set(lx, 4.0, lz - 0.3);
     zone02.add(roadPoint);
-    practicalLights.push({ light: roadPoint, maxIntensity: 5.5 });
-
-    // Subtle ground illumination pool at night
-    const poolMat = trackMat(
-      new THREE.MeshBasicMaterial({
-        color: 0xffe19c,
-        transparent: true,
-        opacity: 0.0,
-        depthWrite: false,
-      })
-    );
-    poolGlowMats.push(poolMat);
-    const pool = new THREE.Mesh(trackGeo(new THREE.CircleGeometry(2.6, 24)), poolMat);
-    pool.rotation.x = -Math.PI / 2;
-    pool.position.set(lx, 0.08, lz - 0.5);
-    zone02.add(pool);
+    practicalLights.push({ light: roadPoint, maxIntensity: 80 });
   });
 
   // -------------------------------------------------------------------------
@@ -777,10 +766,10 @@ export function createCampusWorld(textures: TextureBundle): CampusWorld {
   campLantern.position.set(0.8, 2.6, 0.6);
   zone03.add(campLantern);
 
-  const cabinLight = new THREE.PointLight(0xffbe66, 0.0, 10, 1.7);
+  const cabinLight = new THREE.PointLight(0xffbe66, 0.0, 8, 2);
   cabinLight.position.set(0.8, 2.45, 0.6);
   zone03.add(cabinLight);
-  practicalLights.push({ light: cabinLight, maxIntensity: 4.8 });
+  practicalLights.push({ light: cabinLight, maxIntensity: 28 });
 
   // Ground-Mounted Off-Grid Solar Array Rack (AE-SK1) beside the deck
   const offRackGroup = new THREE.Group();
@@ -853,24 +842,10 @@ export function createCampusWorld(textures: TextureBundle): CampusWorld {
   splitLuminaire.position.set(4.65, 3.88, 1.3);
   zone03.add(splitLuminaire);
 
-  const splitStreetLight = new THREE.PointLight(0xffd788, 0.0, 14, 1.6);
+  const splitStreetLight = new THREE.PointLight(0xffd788, 0.0, 14, 2);
   splitStreetLight.position.set(4.65, 3.65, 1.3);
   zone03.add(splitStreetLight);
-  practicalLights.push({ light: splitStreetLight, maxIntensity: 6.2 });
-
-  const splitPoolMat = trackMat(
-    new THREE.MeshBasicMaterial({
-      color: 0xffd98a,
-      transparent: true,
-      opacity: 0.0,
-      depthWrite: false,
-    })
-  );
-  poolGlowMats.push(splitPoolMat);
-  const splitPool = new THREE.Mesh(trackGeo(new THREE.CircleGeometry(2.5, 24)), splitPoolMat);
-  splitPool.rotation.x = -Math.PI / 2;
-  splitPool.position.set(4.65, 0.05, 1.3);
-  zone03.add(splitPool);
+  practicalLights.push({ light: splitStreetLight, maxIntensity: 75 });
 
   // -------------------------------------------------------------------------
   // 6. Instanced Architectural Landscaping (Trees, Shrubs, Limestone Rocks)
@@ -957,22 +932,18 @@ export function createCampusWorld(textures: TextureBundle): CampusWorld {
   const setNightFactor = (nightFactor: number) => {
     const n = THREE.MathUtils.clamp(nightFactor, 0, 1);
 
-    warmGlowMats.forEach((m, idx) => {
-      const base = idx === 2 ? 0.35 : 0.12;
-      m.emissiveIntensity = THREE.MathUtils.lerp(base, 1.35, n);
+    warmGlowMats.forEach((m) => {
+      m.emissiveIntensity = 1.35 * n;
     });
 
     solarLampMats.forEach((m) => {
-      m.emissiveIntensity = THREE.MathUtils.lerp(0.05, 1.9, n);
-    });
-
-    poolGlowMats.forEach((m) => {
-      m.opacity = THREE.MathUtils.lerp(0.0, 0.22, n);
+      m.emissiveIntensity = 1.9 * n;
     });
 
     practicalLights.forEach((entry) => {
       entry.light.intensity = entry.maxIntensity * n;
     });
+    homeRefinement.setNightFactor(n);
   };
 
   setNightFactor(0);
@@ -982,6 +953,7 @@ export function createCampusWorld(textures: TextureBundle): CampusWorld {
     terrainHeightAt,
     setNightFactor,
     dispose: () => {
+      homeRefinement.dispose();
       hardware.dispose();harness.dispose();
       geometries.forEach((g) => g.dispose());
       materials.forEach((m) => m.dispose());

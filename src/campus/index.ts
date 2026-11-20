@@ -142,9 +142,7 @@ function initCampusHero(): void {
   wrappedBridge.setTime(activeTime, true);
   wrappedBridge.setLanguage(activeLang);
   syncZoneHud();
-  // Energy paths are part of the initial campus demonstration.
-  const flowToggle = document.getElementById('scene-flow-toggle');
-  if (flowToggle instanceof HTMLButtonElement && flowToggle.getAttribute('aria-pressed') !== 'true') flowToggle.click();
+  // Energy flow starts hidden. Only the existing button / public bridge may enable it.
 
   window.addEventListener('beforeunload', () => {
     mounted.dispose();

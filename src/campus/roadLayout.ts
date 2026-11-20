@@ -1,8 +1,7 @@
 import * as THREE from 'three';
 export const ROAD_WIDTH=4.4;
-export const LANE_OFFSET=1.04;
 export function createCampusRoad(){
- // The road, markings and both vehicle lanes share this one surveyed centerline.
+ // Concept landscape road and markings share this centerline; no survey or vehicle route is implied.
  return new THREE.CatmullRomCurve3([
   [-85,0,10.6],[-28,0,10.6],[-15,0,10.8],[-5,0,10.3],[5,0,7.3],[15,0,4.9],[26,0,4.6],[35,0,8.8],[85,0,12.8],
  ].map(p=>new THREE.Vector3(p[0],p[1],p[2])),false,'centripetal');

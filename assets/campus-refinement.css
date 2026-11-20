@@ -1,0 +1,58 @@
+/* First-region campus refinement only. Parent owns page mounting; no product / Risey styles. */
+#hero-section .campus-canvas-host {
+  touch-action: pan-y;
+}
+#hero-section .campus-canvas-host:focus-visible {
+  outline: 3px solid #007f68;
+  outline-offset: -5px;
+}
+#hero-section .campus-zone-btn:focus-visible,
+#hero-section .campus-pin:focus-visible,
+#hero-section .campus-popover :is(button, a):focus-visible,
+#hero-section .campus-control-dock :is(button, a):focus-visible {
+  outline: 3px solid #007f68;
+  outline-offset: 3px;
+}
+#hero-section[data-scene-time="night"] :is(.campus-canvas-host, .campus-zone-btn, .campus-pin):focus-visible,
+#hero-section[data-scene-time="night"] .campus-popover :is(button, a):focus-visible,
+#hero-section[data-scene-time="night"] .campus-control-dock :is(button, a):focus-visible {
+  outline-color: #80eacb;
+}
+#hero-section .campus-zone-card,
+#hero-section .campus-nav-cluster,
+#hero-section .campus-control-dock {
+  min-width: 0;
+  box-sizing: border-box;
+}
+#hero-section .campus-popover {
+  box-sizing: border-box;
+  max-width: calc(100vw - 32px);
+  max-height: var(--pop-max-height, min(420px, 52svh));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+#hero-section .campus-pop-usage {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #hero-section .campus-hud-top { left: 14px; right: 14px; gap: 12px; }
+  #hero-section .campus-zone-card { max-width: 330px; }
+  #hero-section .campus-zone-bar { justify-content: flex-end; }
+}
+@media (max-width: 768px) {
+  #hero-section .campus-zone-card { padding: 8px 10px; }
+  #hero-section .campus-zone-title { font-size: 0.92rem; }
+  #hero-section .campus-zone-note { font-size: 0.72rem; line-height: 1.4; }
+  #hero-section .campus-zone-bar { width: 100%; box-sizing: border-box; scrollbar-width: thin; }
+  #hero-section .campus-zone-btn { min-height: 34px; flex-shrink: 0; }
+  #hero-section .campus-popover { width: 268px; max-height: var(--pop-max-height, 240px); }
+  #hero-section .campus-pop-actions { flex-wrap: wrap; }
+  #hero-section .campus-control-dock { max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #hero-section :is(.campus-zone-card, .campus-zone-bar, .campus-zone-btn, .campus-popover, .campus-pin) {
+    transition: none;
+    animation: none;
+  }
+}

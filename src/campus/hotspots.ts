@@ -60,10 +60,17 @@ export function createHotspotController(
     pop.classList.remove('hotspot-popover-below');
 
     const cRect = container.getBoundingClientRect();
-    const pRect = pop.getBoundingClientRect();
-    if (!cRect.width || !pRect.width) return;
+    if (!cRect.width) return;
 
     const pad = 12;
+    const anchorY = entry.rootEl.getBoundingClientRect().top;
+    const above = anchorY - 22 - cRect.top - pad;
+    const below = cRect.bottom - pad - anchorY - 22;
+    const useBelow = above < Math.min(280, pop.scrollHeight) && below > above;
+    pop.classList.toggle('hotspot-popover-below', useBelow);
+    pop.style.setProperty('--pop-max-height', `${Math.max(80, Math.min(420, useBelow ? below : above))}px`);
+    const pRect = pop.getBoundingClientRect();
+    if (!pRect.width) return;
     let dx = 0;
     if (pRect.left < cRect.left + pad) {
       dx = cRect.left + pad - pRect.left;
@@ -72,10 +79,6 @@ export function createHotspotController(
     }
     if (Math.abs(dx) > 0.5) {
       pop.style.setProperty('--pop-shift-x', `${dx.toFixed(1)}px`);
-    }
-
-    if (pRect.top < cRect.top + pad) {
-      pop.classList.add('hotspot-popover-below');
     }
   };
 
@@ -117,6 +120,9 @@ export function createHotspotController(
     const popEl = document.createElement('div');
     popEl.className = 'campus-popover';
     popEl.hidden = true;
+    popEl.id = `campus-popover-${def.id}`;
+    popEl.setAttribute('role', 'region');
+    pinBtn.setAttribute('aria-controls', popEl.id);
 
     const headerRow = document.createElement('div');
     headerRow.className = 'campus-pop-head';
@@ -234,6 +240,7 @@ export function createHotspotController(
       const { def } = e;
       e.tagEl.textContent = def.title[lang];
       e.pinBtn.setAttribute('aria-label', def.title[lang]);
+      e.popEl.setAttribute('aria-label', def.title[lang]);
       e.kickerEl.textContent = def.kicker[lang];
       e.titleEl.textContent = def.title[lang];
       e.usageEl.textContent = def.usage[lang];
@@ -256,6 +263,15 @@ export function createHotspotController(
     }
   };
   document.addEventListener('click', onOutsideClick);
+  const onHotspotKeyDown = (ev: KeyboardEvent) => {
+    if (ev.key !== 'Escape' || !openId) return;
+    const entry = entries.find(e => e.def.id === openId);
+    closeAll();
+    entry?.pinBtn.focus({ preventScroll: true });
+    ev.preventDefault();
+    ev.stopPropagation();
+  };
+  container.addEventListener('keydown', onHotspotKeyDown);
 
   const updateProjection = (
     camera: THREE.PerspectiveCamera,
@@ -308,6 +324,7 @@ export function createHotspotController(
     getOpenId: () => openId,
     dispose: () => {
       document.removeEventListener('click', onOutsideClick);
+      container.removeEventListener('keydown', onHotspotKeyDown);
       container.innerHTML = '';
     },
   };

@@ -1,0 +1,1280 @@
+{
+  "routes": [
+    {
+      "path": "/bess-project.html",
+      "title": "BESS Project Inquiry | Anthrise Technology"
+    },
+    {
+      "path": "/energy-zh.html",
+      "title": "储能与逆变器产品选型 | 深圳市昂旭启元科技有限公司"
+    },
+    {
+      "path": "/energy.html",
+      "title": "Energy Storage & Inverter Selection | ANTHRISE"
+    },
+    {
+      "path": "/home-es.html",
+      "title": "Anthrise Technology | Campus 3D de energía limpia"
+    },
+    {
+      "path": "/home-ru.html",
+      "title": "Anthrise Technology | 3D-парк чистой энергии"
+    },
+    {
+      "path": "/home-zh.html",
+      "title": "深圳市昂旭启元科技有限公司 | 3D 清洁能源园区与互动产品展厅"
+    },
+    {
+      "path": "/",
+      "title": "Anthrise Technology — Clean Energy Storage, Solar & Lighting"
+    },
+    {
+      "path": "/lighting-zh.html",
+      "title": "太阳能与工程照明 | 深圳市昂旭启元科技有限公司"
+    },
+    {
+      "path": "/lighting.html",
+      "title": "Solar & Commercial Lighting | ANTHRISE"
+    },
+    {
+      "path": "/official-site.html",
+      "title": "LiFePO4 Battery Storage, Solar & Lighting | ANTHRISE"
+    },
+    {
+      "path": "/product.html",
+      "title": "Product details | ANTHRISE"
+    },
+    {
+      "path": "/products/balconyBess-en.html",
+      "title": "Balcony Energy Storage System | AE-E-BALCONY | Anthrise Technology"
+    },
+    {
+      "path": "/products/balconyBess-es.html",
+      "title": "Sistema de almacenamiento para balcón | AE-E-BALCONY | Anthrise Technology"
+    },
+    {
+      "path": "/products/balconyBess-ru.html",
+      "title": "Балконная система накопления энергии | AE-E-BALCONY | Anthrise Technology"
+    },
+    {
+      "path": "/products/balconyBess-zh.html",
+      "title": "阳台储能系统 | AE-E-BALCONY | Anthrise Technology"
+    },
+    {
+      "path": "/products/diy16s-en.html",
+      "title": "Pre-assembled battery | ANTHRISE"
+    },
+    {
+      "path": "/products/diy16s-es.html",
+      "title": "Pre-assembled battery | ANTHRISE"
+    },
+    {
+      "path": "/products/diy16s-ru.html",
+      "title": "Pre-assembled battery | ANTHRISE"
+    },
+    {
+      "path": "/products/diy16s-zh.html",
+      "title": "Pre-assembled battery | ANTHRISE"
+    },
+    {
+      "path": "/products/ess10-en.html",
+      "title": "5–10kWh Compact Storage | AE-E-DAWN-05 | Anthrise Technology"
+    },
+    {
+      "path": "/products/ess10-es.html",
+      "title": "Almacenamiento compacto de 5-10 kWh | AE-E-DAWN-05 | Anthrise Technology"
+    },
+    {
+      "path": "/products/ess10-ru.html",
+      "title": "Компактный накопитель 5-10 кВт·ч | AE-E-DAWN-05 | Anthrise Technology"
+    },
+    {
+      "path": "/products/ess10-zh.html",
+      "title": "5–10kWh 紧凑型储能 | AE-E-DAWN-05 | Anthrise Technology"
+    },
+    {
+      "path": "/products/ess16-en.html",
+      "title": "16kWh Home Storage | AE-E-DAWN-16 | Anthrise Technology"
+    },
+    {
+      "path": "/products/ess16-es.html",
+      "title": "Almacenamiento residencial de 16 kWh | AE-E-DAWN-16 | Anthrise Technology"
+    },
+    {
+      "path": "/products/ess16-ru.html",
+      "title": "Домашний накопитель 16 кВт·ч | AE-E-DAWN-16 | Anthrise Technology"
+    },
+    {
+      "path": "/products/ess16-zh.html",
+      "title": "16kWh 家用储能 | AE-E-DAWN-16 | Anthrise Technology"
+    },
+    {
+      "path": "/products/floodLighting-en.html",
+      "title": "Solar Flood & Security Lighting · Collection | AE-L-GUARD-CN | Anthrise Technology"
+    },
+    {
+      "path": "/products/floodLighting-es.html",
+      "title": "Proyectores solares y alumbrado de seguridad · Colección | AE-L-GUARD-CN | Anthrise Technology"
+    },
+    {
+      "path": "/products/floodLighting-ru.html",
+      "title": "Солнечные прожекторы и охранное освещение · Коллекция | AE-L-GUARD-CN | Anthrise Technology"
+    },
+    {
+      "path": "/products/floodLighting-zh.html",
+      "title": "太阳能投光灯 / 安防灯 · 系列概览 | AE-L-GUARD-CN | Anthrise Technology"
+    },
+    {
+      "path": "/products/gardenLighting-en.html",
+      "title": "Solar Garden & Wall Lighting · Collection | AE-L-BLOOM-CN | Anthrise Technology"
+    },
+    {
+      "path": "/products/gardenLighting-es.html",
+      "title": "Iluminación solar de jardín y pared · Colección | AE-L-BLOOM-CN | Anthrise Technology"
+    },
+    {
+      "path": "/products/gardenLighting-ru.html",
+      "title": "Солнечное садовое и настенное освещение · Коллекция | AE-L-BLOOM-CN | Anthrise Technology"
+    },
+    {
+      "path": "/products/gardenLighting-zh.html",
+      "title": "太阳能庭院灯 / 壁灯 · 系列概览 | AE-L-BLOOM-CN | Anthrise Technology"
+    },
+    {
+      "path": "/products/hybrid12-en.html",
+      "title": "12 kW Hybrid Inverter | AE-I-HYBRID-12K | Anthrise Technology"
+    },
+    {
+      "path": "/products/hybrid12-es.html",
+      "title": "Inversor híbrido de 12 kW | AE-I-HYBRID-12K | Anthrise Technology"
+    },
+    {
+      "path": "/products/hybrid12-ru.html",
+      "title": "Гибридный инвертор 12 кВт | AE-I-HYBRID-12K | Anthrise Technology"
+    },
+    {
+      "path": "/products/hybrid12-zh.html",
+      "title": "12 kW 混网逆变器 | AE-I-HYBRID-12K | Anthrise Technology"
+    },
+    {
+      "path": "/products/hybrid20-en.html",
+      "title": "20 kW Hybrid Inverter | AE-I-HYBRID-20K | Anthrise Technology"
+    },
+    {
+      "path": "/products/hybrid20-es.html",
+      "title": "Inversor híbrido de 20 kW | AE-I-HYBRID-20K | Anthrise Technology"
+    },
+    {
+      "path": "/products/hybrid20-ru.html",
+      "title": "Гибридный инвертор 20 кВт | AE-I-HYBRID-20K | Anthrise Technology"
+    },
+    {
+      "path": "/products/hybrid20-zh.html",
+      "title": "20 kW 混网逆变器 | AE-I-HYBRID-20K | Anthrise Technology"
+    },
+    {
+      "path": "/products/hybrid50-en.html",
+      "title": "50 kW Hybrid Inverter | AE-I-HYBRID-50K | Anthrise Technology"
+    },
+    {
+      "path": "/products/hybrid50-es.html",
+      "title": "Inversor híbrido de 50 kW | AE-I-HYBRID-50K | Anthrise Technology"
+    },
+    {
+      "path": "/products/hybrid50-ru.html",
+      "title": "Гибридный инвертор 50 кВт | AE-I-HYBRID-50K | Anthrise Technology"
+    },
+    {
+      "path": "/products/hybrid50-zh.html",
+      "title": "50 kW 混网逆变器 | AE-I-HYBRID-50K | Anthrise Technology"
+    },
+    {
+      "path": "/products/hybrid6-en.html",
+      "title": "6 kW Hybrid Inverter | AE-I-HYBRID-6K | Anthrise Technology"
+    },
+    {
+      "path": "/products/hybrid6-es.html",
+      "title": "Inversor híbrido de 6 kW | AE-I-HYBRID-6K | Anthrise Technology"
+    },
+    {
+      "path": "/products/hybrid6-ru.html",
+      "title": "Гибридный инвертор 6 кВт | AE-I-HYBRID-6K | Anthrise Technology"
+    },
+    {
+      "path": "/products/hybrid6-zh.html",
+      "title": "6 kW 混网逆变器 | AE-I-HYBRID-6K | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight01-en.html",
+      "title": "Solar Motion Flood Light · 3-Head | AE-L-GUARD-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight01-es.html",
+      "title": "Proyector solar triple con sensor de movimiento | AE-L-GUARD-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight01-ru.html",
+      "title": "Трёхсекционный солнечный прожектор с датчиком движения | AE-L-GUARD-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight01-zh.html",
+      "title": "三头太阳能感应投光灯 | AE-L-GUARD-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight02-en.html",
+      "title": "PIR Motion Sensor Wall Light | AE-L-GUARD-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight02-es.html",
+      "title": "Luminaria de pared con sensor PIR | AE-L-GUARD-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight02-ru.html",
+      "title": "Настенный светильник с датчиком PIR | AE-L-GUARD-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight02-zh.html",
+      "title": "太阳能PIR感应壁灯 | AE-L-GUARD-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight04-en.html",
+      "title": "Outdoor Wall Lantern · Solar / AC | AE-L-AURA-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight04-es.html",
+      "title": "Farol de pared exterior · Solar / CA | AE-L-AURA-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight04-ru.html",
+      "title": "Уличный настенный фонарь · Солнце / AC | AE-L-AURA-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight04-zh.html",
+      "title": "户外装饰壁灯 · 太阳能 / 市电 | AE-L-AURA-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight06-en.html",
+      "title": "Solar Garden Stake Light · 8-Pack | AE-L-BLOOM-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight06-es.html",
+      "title": "Luminarias solares de jardín · Juego de 8 | AE-L-BLOOM-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight06-ru.html",
+      "title": "Солнечные садовые светильники · Набор 8 шт. | AE-L-BLOOM-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight06-zh.html",
+      "title": "太阳能花园插地灯 · 8只装 | AE-L-BLOOM-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight07-en.html",
+      "title": "Solar Flood Security Light · 30W | AE-L-GUARD-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight07-es.html",
+      "title": "Proyector solar de seguridad de 30 W | AE-L-GUARD-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight07-ru.html",
+      "title": "Солнечный охранный прожектор 30 Вт | AE-L-GUARD-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight07-zh.html",
+      "title": "太阳能泛光安防灯 · 30W | AE-L-GUARD-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight08-en.html",
+      "title": "Solar Garden Spike Spotlight | AE-L-BLOOM-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight08-es.html",
+      "title": "Foco solar de jardín con estaca | AE-L-BLOOM-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight08-ru.html",
+      "title": "Солнечный садовый прожектор на колышке | AE-L-BLOOM-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight08-zh.html",
+      "title": "太阳能景观插地聚光灯 | AE-L-BLOOM-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight09-en.html",
+      "title": "All-in-One Solar Street Light | AE-L-GUARD-05 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight09-es.html",
+      "title": "Luminaria vial solar integrada | AE-L-GUARD-05 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight09-ru.html",
+      "title": "Моноблочный солнечный уличный светильник | AE-L-GUARD-05 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight09-zh.html",
+      "title": "一体化太阳能路灯 | AE-L-GUARD-05 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight10-en.html",
+      "title": "Up-Down Solar Wall Light | AE-L-GUARD-04 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight10-es.html",
+      "title": "Luminaria solar de pared de doble haz | AE-L-GUARD-04 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight10-ru.html",
+      "title": "Солнечный настенный светильник с двусторонним светом | AE-L-GUARD-04 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight10-zh.html",
+      "title": "上下出光太阳能壁灯 | AE-L-GUARD-04 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight11-en.html",
+      "title": "Solar Edison String Lights | AE-L-AURA-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight11-es.html",
+      "title": "Guirnalda solar de bombillas Edison | AE-L-AURA-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight11-ru.html",
+      "title": "Солнечная гирлянда с лампами Эдисона | AE-L-AURA-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight11-zh.html",
+      "title": "太阳能爱迪生复古串灯 | AE-L-AURA-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight13-en.html",
+      "title": "Solar Portable Camping Lantern | AE-L-ROAM-05 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight13-es.html",
+      "title": "Farol solar portátil para camping | AE-L-ROAM-05 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight13-ru.html",
+      "title": "Портативный солнечный фонарь для кемпинга | AE-L-ROAM-05 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight13-zh.html",
+      "title": "太阳能手提露营灯 | AE-L-ROAM-05 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight14-en.html",
+      "title": "Solar Bug Zapper Light | AE-L-ROAM-06 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight14-es.html",
+      "title": "Luminaria solar antimosquitos | AE-L-ROAM-06 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight14-ru.html",
+      "title": "Солнечный светильник для уничтожения насекомых | AE-L-ROAM-06 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight14-zh.html",
+      "title": "太阳能灭蚊灯 | AE-L-ROAM-06 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight15-en.html",
+      "title": "Solar Indoor Wall Light (Split Panel) | AE-L-ROAM-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight15-es.html",
+      "title": "Luminaria solar de pared interior con panel separado | AE-L-ROAM-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight15-ru.html",
+      "title": "Солнечный внутренний настенный светильник с отдельной панелью | AE-L-ROAM-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight15-zh.html",
+      "title": "太阳能室内壁灯（分体式） | AE-L-ROAM-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight16-en.html",
+      "title": "Solar Emergency LED Bulb (E27 / B22) | AE-L-ROAM-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight16-es.html",
+      "title": "Bombilla solar de emergencia E27 / B22 | AE-L-ROAM-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight16-ru.html",
+      "title": "Солнечная аварийная лампа E27 / B22 | AE-L-ROAM-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight16-zh.html",
+      "title": "太阳能应急LED灯泡（E27 / B22） | AE-L-ROAM-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight17-en.html",
+      "title": "Solar Home Lighting Kit (2 Lights) | AE-L-ROAM-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight17-es.html",
+      "title": "Kit solar de iluminación doméstica · 2 luces | AE-L-ROAM-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight17-ru.html",
+      "title": "Комплект солнечного домашнего освещения · 2 лампы | AE-L-ROAM-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight17-zh.html",
+      "title": "太阳能家庭照明套装 | AE-L-ROAM-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight18-en.html",
+      "title": "Solar Ceiling Fan with Light | AE-L-ROAM-04 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight18-es.html",
+      "title": "Ventilador solar de techo con luz | AE-L-ROAM-04 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight18-ru.html",
+      "title": "Солнечный потолочный вентилятор со светом | AE-L-ROAM-04 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight18-zh.html",
+      "title": "太阳能吊扇灯 | AE-L-ROAM-04 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight19-en.html",
+      "title": "Solar Flame Torch Light | AE-L-AURA-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight19-es.html",
+      "title": "Antorcha solar de efecto llama | AE-L-AURA-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight19-ru.html",
+      "title": "Солнечный факел с эффектом пламени | AE-L-AURA-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight19-zh.html",
+      "title": "太阳能仿真火焰灯 | AE-L-AURA-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight20-en.html",
+      "title": "Solar Fairy Copper Wire String Lights | AE-L-AURA-04 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight20-es.html",
+      "title": "Guirnalda solar de alambre de cobre | AE-L-AURA-04 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight20-ru.html",
+      "title": "Солнечная гирлянда на медной проволоке | AE-L-AURA-04 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight20-zh.html",
+      "title": "太阳能萤火虫铜线灯串 | AE-L-AURA-04 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight21-en.html",
+      "title": "Solar Umbrella Light | AE-L-AURA-05 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight21-es.html",
+      "title": "Luminaria solar para sombrilla | AE-L-AURA-05 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight21-ru.html",
+      "title": "Солнечный светильник для зонта | AE-L-AURA-05 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight21-zh.html",
+      "title": "太阳能太阳伞灯 | AE-L-AURA-05 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight22-en.html",
+      "title": "Solar Outdoor Floor Lamp | AE-L-AURA-06 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight22-es.html",
+      "title": "Lámpara solar de pie para exterior | AE-L-AURA-06 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight22-ru.html",
+      "title": "Солнечный напольный уличный светильник | AE-L-AURA-06 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight22-zh.html",
+      "title": "太阳能户外落地氛围灯 | AE-L-AURA-06 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight23-en.html",
+      "title": "Solar Portable Work Light | AE-L-ROAM-07 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight23-es.html",
+      "title": "Luminaria solar portátil de trabajo | AE-L-ROAM-07 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight23-ru.html",
+      "title": "Портативный солнечный рабочий светильник | AE-L-ROAM-07 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight23-zh.html",
+      "title": "太阳能便携工地作业灯 | AE-L-ROAM-07 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight24-en.html",
+      "title": "Solar Power Bank Lantern Pro | AE-L-ROAM-08 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight24-es.html",
+      "title": "Farol solar con batería externa Pro | AE-L-ROAM-08 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight24-ru.html",
+      "title": "Солнечный фонарь с пауэрбанком Pro | AE-L-ROAM-08 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight24-zh.html",
+      "title": "太阳能充电宝露营灯Pro | AE-L-ROAM-08 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight25-en.html",
+      "title": "Solar Warning Beacon Light | AE-L-GUARD-07 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight25-es.html",
+      "title": "Baliza solar de advertencia | AE-L-GUARD-07 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight25-ru.html",
+      "title": "Солнечный сигнальный маяк | AE-L-GUARD-07 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight25-zh.html",
+      "title": "太阳能警示信号灯 | AE-L-GUARD-07 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight26-en.html",
+      "title": "Solar Flag Pole Light | AE-L-GUARD-08 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight26-es.html",
+      "title": "Luminaria solar para mástil de bandera | AE-L-GUARD-08 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight26-ru.html",
+      "title": "Солнечная подсветка флагштока | AE-L-GUARD-08 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight26-zh.html",
+      "title": "太阳能旗杆投光灯 | AE-L-GUARD-08 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight27-en.html",
+      "title": "Split Solar Street Light | AE-L-GUARD-06 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight27-es.html",
+      "title": "Luminaria vial solar con panel separado | AE-L-GUARD-06 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight27-ru.html",
+      "title": "Солнечный уличный светильник с отдельной панелью | AE-L-GUARD-06 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight27-zh.html",
+      "title": "分体式太阳能路灯 | AE-L-GUARD-06 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight28-en.html",
+      "title": "Solar Courtyard Column Light (1-2m) | AE-L-BLOOM-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight28-es.html",
+      "title": "Luminaria solar de columna para patio | AE-L-BLOOM-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight28-ru.html",
+      "title": "Солнечный столбовой светильник для двора | AE-L-BLOOM-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight28-zh.html",
+      "title": "太阳能庭院柱灯（1-2m） | AE-L-BLOOM-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight29-en.html",
+      "title": "Solar Pool Float Light | AE-L-AURA-07 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight29-es.html",
+      "title": "Luminaria solar flotante para piscina | AE-L-AURA-07 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight29-ru.html",
+      "title": "Плавающий солнечный светильник для бассейна | AE-L-AURA-07 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight29-zh.html",
+      "title": "太阳能泳池浮水灯 | AE-L-AURA-07 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight30-en.html",
+      "title": "Emergency UFO Rechargeable Light | AE-L-ROAM-09 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight30-es.html",
+      "title": "Luminaria recargable de emergencia UFO | AE-L-ROAM-09 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight30-ru.html",
+      "title": "Аккумуляторный аварийный светильник UFO | AE-L-ROAM-09 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight30-zh.html",
+      "title": "充电应急飞碟灯 | AE-L-ROAM-09 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight31-en.html",
+      "title": "AC LED Floodlight (50-1000W) | AE-L-BEAM-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight31-es.html",
+      "title": "Proyector LED de CA | AE-L-BEAM-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight31-ru.html",
+      "title": "Сетевой светодиодный прожектор | AE-L-BEAM-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight31-zh.html",
+      "title": "AC LED投光灯（50-1000W） | AE-L-BEAM-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight32-en.html",
+      "title": "UFO High Bay Light (100-300W) | AE-L-BEAM-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight32-es.html",
+      "title": "Luminaria industrial UFO de gran altura | AE-L-BEAM-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight32-ru.html",
+      "title": "Промышленный светильник UFO для высоких помещений | AE-L-BEAM-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight32-zh.html",
+      "title": "UFO工矿灯（100-300W） | AE-L-BEAM-02 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight33-en.html",
+      "title": "AC Street Light (50-100W) | AE-L-BEAM-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight33-es.html",
+      "title": "Luminaria vial de CA | AE-L-BEAM-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight33-ru.html",
+      "title": "Сетевой уличный светильник | AE-L-BEAM-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/jcLight33-zh.html",
+      "title": "AC路灯头（50-100W） | AE-L-BEAM-03 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEADC-en.html",
+      "title": "AE-A-DC · DC-DC Car Chargers | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEADC-es.html",
+      "title": "AE-A-DC · Cargadores de vehículo CC-CC | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEADC-ru.html",
+      "title": "AE-A-DC · Автомобильные зарядные устройства DC-DC | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEADC-zh.html",
+      "title": "车载 DC-DC 充电器 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEAINV-en.html",
+      "title": "Pure Sine Wave Inverters | AE-I-UTILITY-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEAINV-es.html",
+      "title": "Inversores de onda sinusoidal pura | AE-I-UTILITY-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEAINV-ru.html",
+      "title": "Инверторы с чистой синусоидой | AE-I-UTILITY-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEAINV-zh.html",
+      "title": "纯正弦波逆变器 | AE-I-UTILITY-01 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEAMPPT-en.html",
+      "title": "AE-A-MPPT · MPPT Charge Controllers | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEAMPPT-es.html",
+      "title": "AE-A-MPPT · Controladores de carga MPPT | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEAMPPT-ru.html",
+      "title": "AE-A-MPPT · Контроллеры заряда MPPT | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEAMPPT-zh.html",
+      "title": "MPPT 充电控制器 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAER100-en.html",
+      "title": "AE-R100 · 100W Foldable | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAER100-es.html",
+      "title": "AE-R100 · Panel solar plegable de 100 W | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAER100-ru.html",
+      "title": "AE-R100 · Складная солнечная панель 100 Вт | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAER100-zh.html",
+      "title": "Ray 100W 折叠太阳能板 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAER200-en.html",
+      "title": "AE-R200 · 200W Foldable | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAER200-es.html",
+      "title": "AE-R200 · Panel solar plegable de 200 W | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAER200-ru.html",
+      "title": "AE-R200 · Складная солнечная панель 200 Вт | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAER200-zh.html",
+      "title": "Ray 200W 折叠太阳能板 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAER400-en.html",
+      "title": "AE-R400 · 400W Rigid | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAER400-es.html",
+      "title": "AE-R400 · Panel solar rígido de 400 W | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAER400-ru.html",
+      "title": "AE-R400 · Жёсткая солнечная панель 400 Вт | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAER400-zh.html",
+      "title": "Ray 400W 固定式组件 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAER60-en.html",
+      "title": "AE-R60 · 60W Foldable | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAER60-es.html",
+      "title": "AE-R60 · Panel solar plegable de 60 W | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAER60-ru.html",
+      "title": "AE-R60 · Складная солнечная панель 60 Вт | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAER60-zh.html",
+      "title": "Ray 60W 折叠太阳能板 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAESK1-en.html",
+      "title": "AE-SK1 · Solar Generator Bundle | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAESK1-es.html",
+      "title": "AE-SK1 · Kit de generación solar | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAESK1-ru.html",
+      "title": "AE-SK1 · Комплект солнечного питания | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAESK1-zh.html",
+      "title": "太阳能发电机组合套装 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV1000-en.html",
+      "title": "Mid-Range Workhorse Portable Power Station | AE-E-VOLT-1000 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV1000-es.html",
+      "title": "Estación portátil de capacidad intermedia | AE-E-VOLT-1000 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV1000-ru.html",
+      "title": "Портативная электростанция среднего класса | AE-E-VOLT-1000 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV1000-zh.html",
+      "title": "Volt 1000 中容量便携电源 | AE-E-VOLT-1000 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV1500-en.html",
+      "title": "Large-Capacity Portable Power Station | AE-E-VOLT-1500 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV1500-es.html",
+      "title": "Estación portátil de gran capacidad | AE-E-VOLT-1500 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV1500-ru.html",
+      "title": "Портативная электростанция большой ёмкости | AE-E-VOLT-1500 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV1500-zh.html",
+      "title": "Volt 1500 大容量电源 | AE-E-VOLT-1500 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV200-en.html",
+      "title": "Ultra-Compact Portable Power Station | AE-E-VOLT-200 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV200-es.html",
+      "title": "Estación portátil ultracompacta | AE-E-VOLT-200 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV200-ru.html",
+      "title": "Ультракомпактная электростанция | AE-E-VOLT-200 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV200-zh.html",
+      "title": "Volt 200 轻量便携电源 | AE-E-VOLT-200 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV2500-en.html",
+      "title": "Professional Portable Power Station | AE-E-VOLT-2500 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV2500-es.html",
+      "title": "Estación portátil profesional | AE-E-VOLT-2500 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV2500-ru.html",
+      "title": "Профессиональная портативная электростанция | AE-E-VOLT-2500 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV2500-zh.html",
+      "title": "Volt 2500 专业储能电源 | AE-E-VOLT-2500 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV500-en.html",
+      "title": "Compact All-Rounder Portable Power Station | AE-E-VOLT-500 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV500-es.html",
+      "title": "Estación portátil compacta | AE-E-VOLT-500 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV500-ru.html",
+      "title": "Компактная портативная электростанция | AE-E-VOLT-500 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEV500-zh.html",
+      "title": "Volt 500 户外便携电源 | AE-E-VOLT-500 | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEVP-en.html",
+      "title": "Modular Expandable Portable Power Station | AE-E-VOLT-PRO | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEVP-es.html",
+      "title": "Estación portátil modular ampliable | AE-E-VOLT-PRO | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEVP-ru.html",
+      "title": "Модульная расширяемая электростанция | AE-E-VOLT-PRO | Anthrise Technology"
+    },
+    {
+      "path": "/products/origAEVP-zh.html",
+      "title": "Volt Pro 模块化便携电源 | AE-E-VOLT-PRO | Anthrise Technology"
+    },
+    {
+      "path": "/products/preassembled16-en.html",
+      "title": "Pre-assembled 16kWh Battery | AE-E-READY-16 | Anthrise Technology"
+    },
+    {
+      "path": "/products/preassembled16-es.html",
+      "title": "Batería preensamblada de 16 kWh | AE-E-READY-16 | Anthrise Technology"
+    },
+    {
+      "path": "/products/preassembled16-ru.html",
+      "title": "Предварительно собранная АКБ 16 кВт·ч | AE-E-READY-16 | Anthrise Technology"
+    },
+    {
+      "path": "/products/preassembled16-zh.html",
+      "title": "16kWh 预组装箱式电池 | AE-E-READY-16 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed12_100-en.html",
+      "title": "12.8V 100Ah LiFePO4 Battery | AE-E-SEED-12V100 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed12_100-es.html",
+      "title": "Batería LiFePO4 12.8 V 100 Ah | AE-E-SEED-12V100 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed12_100-ru.html",
+      "title": "АКБ LiFePO4 12.8 В 100 А·ч | AE-E-SEED-12V100 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed12_100-zh.html",
+      "title": "12.8V 100Ah 磷酸铁锂电池 | AE-E-SEED-12V100 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed12_150-en.html",
+      "title": "12.8V 150Ah LiFePO4 Battery | AE-E-SEED-12V150 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed12_150-es.html",
+      "title": "Batería LiFePO4 12.8 V 150 Ah | AE-E-SEED-12V150 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed12_150-ru.html",
+      "title": "АКБ LiFePO4 12.8 В 150 А·ч | AE-E-SEED-12V150 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed12_150-zh.html",
+      "title": "12.8V 150Ah 磷酸铁锂电池 | AE-E-SEED-12V150 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed12_200-en.html",
+      "title": "12.8V 200Ah LiFePO4 Battery | AE-E-SEED-12V200 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed12_200-es.html",
+      "title": "Batería LiFePO4 12.8 V 200 Ah | AE-E-SEED-12V200 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed12_200-ru.html",
+      "title": "АКБ LiFePO4 12.8 В 200 А·ч | AE-E-SEED-12V200 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed12_200-zh.html",
+      "title": "12.8V 200Ah 磷酸铁锂电池 | AE-E-SEED-12V200 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed12_300-en.html",
+      "title": "12.8V 300Ah LiFePO4 Battery | AE-E-SEED-12V300 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed12_300-es.html",
+      "title": "Batería LiFePO4 12.8 V 300 Ah | AE-E-SEED-12V300 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed12_300-ru.html",
+      "title": "АКБ LiFePO4 12.8 В 300 А·ч | AE-E-SEED-12V300 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed12_300-zh.html",
+      "title": "12.8V 300Ah 磷酸铁锂电池 | AE-E-SEED-12V300 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed24_100-en.html",
+      "title": "25.6V 100Ah LiFePO4 Battery | AE-E-SEED-24V100 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed24_100-es.html",
+      "title": "Batería LiFePO4 25.6 V 100 Ah | AE-E-SEED-24V100 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed24_100-ru.html",
+      "title": "АКБ LiFePO4 25.6 В 100 А·ч | AE-E-SEED-24V100 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed24_100-zh.html",
+      "title": "25.6V 100Ah 磷酸铁锂电池 | AE-E-SEED-24V100 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed24_150-en.html",
+      "title": "25.6V 150Ah LiFePO4 Battery | AE-E-SEED-24V150 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed24_150-es.html",
+      "title": "Batería LiFePO4 25.6 V 150 Ah | AE-E-SEED-24V150 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed24_150-ru.html",
+      "title": "АКБ LiFePO4 25.6 В 150 А·ч | AE-E-SEED-24V150 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed24_150-zh.html",
+      "title": "25.6V 150Ah 磷酸铁锂电池 | AE-E-SEED-24V150 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed24_200-en.html",
+      "title": "25.6V 200Ah LiFePO4 Battery | AE-E-SEED-24V200 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed24_200-es.html",
+      "title": "Batería LiFePO4 25.6 V 200 Ah | AE-E-SEED-24V200 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed24_200-ru.html",
+      "title": "АКБ LiFePO4 25.6 В 200 А·ч | AE-E-SEED-24V200 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed24_200-zh.html",
+      "title": "25.6V 200Ah 磷酸铁锂电池 | AE-E-SEED-24V200 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed24_300-en.html",
+      "title": "25.6V 300Ah LiFePO4 Battery | AE-E-SEED-24V300 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed24_300-es.html",
+      "title": "Batería LiFePO4 25.6 V 300 Ah | AE-E-SEED-24V300 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed24_300-ru.html",
+      "title": "АКБ LiFePO4 25.6 В 300 А·ч | AE-E-SEED-24V300 | Anthrise Technology"
+    },
+    {
+      "path": "/products/seed24_300-zh.html",
+      "title": "25.6V 300Ah 磷酸铁锂电池 | AE-E-SEED-24V300 | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_ascend-en.html",
+      "title": "High-Voltage Modular Battery Stack | AE-E-ASCEND | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_ascend-es.html",
+      "title": "Batería modular de alta tensión | AE-E-ASCEND | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_ascend-ru.html",
+      "title": "Высоковольтная модульная батарея | AE-E-ASCEND | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_ascend-zh.html",
+      "title": "高压模块化堆叠电池 | AE-E-ASCEND | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_beacon-en.html",
+      "title": "Three-Phase Grid-Tied PV Inverter | AE-I-BEACON | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_beacon-es.html",
+      "title": "Inversor fotovoltaico trifásico de red | AE-I-BEACON | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_beacon-ru.html",
+      "title": "Трёхфазный сетевой фотоэлектрический инвертор | AE-I-BEACON | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_beacon-zh.html",
+      "title": "三相并网光伏逆变器 | AE-I-BEACON | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_horizon-en.html",
+      "title": "Commercial & Industrial ESS Cabinet | AE-E-HORIZON | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_horizon-es.html",
+      "title": "Armario de almacenamiento comercial e industrial | AE-E-HORIZON | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_horizon-ru.html",
+      "title": "Промышленный шкаф накопления энергии | AE-E-HORIZON | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_horizon-zh.html",
+      "title": "工商业储能柜 | AE-E-HORIZON | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_orbit1-en.html",
+      "title": "HV Single-Phase Hybrid Inverter | AE-I-ORBIT | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_orbit1-es.html",
+      "title": "Inversor híbrido monofásico de alta tensión | AE-I-ORBIT | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_orbit1-ru.html",
+      "title": "Однофазный высоковольтный гибридный инвертор | AE-I-ORBIT | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_orbit1-zh.html",
+      "title": "高压单相混合逆变器 | AE-I-ORBIT | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_orbit3-en.html",
+      "title": "HV Three-Phase Hybrid Inverter | AE-I-ORBITT | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_orbit3-es.html",
+      "title": "Inversor híbrido trifásico de alta tensión | AE-I-ORBITT | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_orbit3-ru.html",
+      "title": "Трёхфазный высоковольтный гибридный инвертор | AE-I-ORBITT | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_orbit3-zh.html",
+      "title": "高压三相混合逆变器 | AE-I-ORBITT | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_pulse-en.html",
+      "title": "LV Single-Phase Hybrid Inverter | AE-I-PULSE | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_pulse-es.html",
+      "title": "Inversor híbrido monofásico de baja tensión | AE-I-PULSE | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_pulse-ru.html",
+      "title": "Однофазный низковольтный гибридный инвертор | AE-I-PULSE | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_pulse-zh.html",
+      "title": "低压单相混合逆变器 | AE-I-PULSE | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_pulse3-en.html",
+      "title": "LV Three-Phase Hybrid Inverter | AE-I-PULSET | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_pulse3-es.html",
+      "title": "Inversor híbrido trifásico de baja tensión | AE-I-PULSET | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_pulse3-ru.html",
+      "title": "Трёхфазный низковольтный гибридный инвертор | AE-I-PULSET | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_pulse3-zh.html",
+      "title": "低压三相混合逆变器 | AE-I-PULSET | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_rise-en.html",
+      "title": "LV Floor-Standing & Expandable ESS | AE-E-RISE | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_rise-es.html",
+      "title": "Almacenamiento de baja tensión de suelo ampliable | AE-E-RISE | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_rise-ru.html",
+      "title": "Расширяемый напольный низковольтный накопитель | AE-E-RISE | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_rise-zh.html",
+      "title": "低压落地式扩容储能 | AE-E-RISE | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_root-en.html",
+      "title": "51.2V Rack-Mount ESS | AE-E-ROOT | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_root-es.html",
+      "title": "Almacenamiento de 51,2 V para rack | AE-E-ROOT | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_root-ru.html",
+      "title": "Стоечный накопитель 51,2 В | AE-E-ROOT | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_root-zh.html",
+      "title": "51.2V 机架式电池 | AE-E-ROOT | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_seed12-en.html",
+      "title": "12V Deep Cycle LiFePO₄ Battery | AE-E-SEED | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_seed12-es.html",
+      "title": "Batería LiFePO4 de ciclo profundo de 12 V | AE-E-SEED | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_seed12-ru.html",
+      "title": "Тяговая батарея LiFePO4 12 В | AE-E-SEED | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_seed12-zh.html",
+      "title": "12V Deep Cycle 磷酸铁锂电池 | AE-E-SEED | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_seed24-en.html",
+      "title": "25.6V Deep Cycle LiFePO₄ Battery | AE-E-SEED | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_seed24-es.html",
+      "title": "Batería LiFePO4 de ciclo profundo de 25,6 V | AE-E-SEED | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_seed24-ru.html",
+      "title": "Тяговая батарея LiFePO4 25,6 В | AE-E-SEED | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_seed24-zh.html",
+      "title": "25.6V Deep Cycle 磷酸铁锂电池 | AE-E-SEED | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_trail-en.html",
+      "title": "Single-Phase Off-Grid Inverter | AE-I-TRAIL | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_trail-es.html",
+      "title": "Inversor monofásico aislado | AE-I-TRAIL | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_trail-ru.html",
+      "title": "Однофазный автономный инвертор | AE-I-TRAIL | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_trail-zh.html",
+      "title": "单相离网逆变器 | AE-I-TRAIL | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_union-en.html",
+      "title": "All-in-One Energy System | AE-E-UNION | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_union-es.html",
+      "title": "Sistema energético integrado | AE-E-UNION | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_union-ru.html",
+      "title": "Интегрированная энергетическая система | AE-E-UNION | Anthrise Technology"
+    },
+    {
+      "path": "/products/series_union-zh.html",
+      "title": "逆变储能一体机 | AE-E-UNION | Anthrise Technology"
+    },
+    {
+      "path": "/products/tieredLandscape-en.html",
+      "title": "Tiered Landscape Light Head · Selection Reference | AE-L-BLOOM-04 | Anthrise Technology"
+    },
+    {
+      "path": "/products/tieredLandscape-es.html",
+      "title": "Cabezal paisajístico · Referencia de selección | AE-L-BLOOM-04 | Anthrise Technology"
+    },
+    {
+      "path": "/products/tieredLandscape-ru.html",
+      "title": "Ландшафтный светильник · Вариант для подбора | AE-L-BLOOM-04 | Anthrise Technology"
+    },
+    {
+      "path": "/products/tieredLandscape-zh.html",
+      "title": "叠层景观灯头 · 选型参考 | AE-L-BLOOM-04 | Anthrise Technology"
+    }
+  ]
+}

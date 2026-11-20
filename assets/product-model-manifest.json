@@ -1,0 +1,4576 @@
+{
+  "schemaVersion": 1,
+  "auditedAt": "2026-11-20T06:53:28.768Z",
+  "sourceRepository": "Paulshellby/anthrise-energy",
+  "baseCommit": "476132c45a6c5262715efe096c9282c0f8412871",
+  "productDataSource": "assets/product-catalog.js",
+  "categoryCounts": {
+    "storage": 25,
+    "solar": 18,
+    "lighting": 33
+  },
+  "modelAssets": [],
+  "auditNote": "Gallery labels follow the active catalogue. Existing pictures, including design illustrations and detail crops, are not a complete ordered turntable sequence. No model has been accepted as a geometrically accurate product model.",
+  "products": [
+    {
+      "productId": "ess16",
+      "modelCode": "AE-E-DAWN-16",
+      "imageUrls": [
+        "assets/product-views/ess16-view-1.webp",
+        "assets/product-views/ess16-view-2.webp",
+        "assets/product-views/ess16-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/ess16-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/ess16-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "正面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/ess16-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side view",
+            "侧面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/ess16-en.html",
+        "zh": "/products/ess16-zh.html",
+        "es": "/products/ess16-es.html",
+        "ru": "/products/ess16-ru.html"
+      }
+    },
+    {
+      "productId": "series_ascend",
+      "modelCode": "AE-E-ASCEND",
+      "imageUrls": [
+        "assets/product-views/series_ascend-view-1.webp",
+        "assets/product-views/series_ascend-view-2.webp",
+        "assets/product-views/series_ascend-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/series_ascend-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_ascend-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "正面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_ascend-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side view",
+            "侧面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "design-illustration",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/series_ascend-en.html",
+        "zh": "/products/series_ascend-zh.html",
+        "es": "/products/series_ascend-es.html",
+        "ru": "/products/series_ascend-ru.html"
+      }
+    },
+    {
+      "productId": "balconyBess",
+      "modelCode": "AE-E-BALCONY",
+      "imageUrls": [
+        "assets/product-views/balconyBess-view-1.webp",
+        "assets/product-views/balconyBess-view-2.webp",
+        "assets/product-views/balconyBess-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/balconyBess-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/balconyBess-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "正面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/balconyBess-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side view",
+            "侧面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/balconyBess-en.html",
+        "zh": "/products/balconyBess-zh.html",
+        "es": "/products/balconyBess-es.html",
+        "ru": "/products/balconyBess-ru.html"
+      }
+    },
+    {
+      "productId": "ess10",
+      "modelCode": "AE-E-DAWN-05",
+      "imageUrls": [
+        "assets/product-views-v2/ess10-view-1.webp",
+        "assets/product-views-v2/ess10-view-2.webp",
+        "assets/product-views-v2/ess10-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/ess10-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/ess10-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/ess10-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/ess10-en.html",
+        "zh": "/products/ess10-zh.html",
+        "es": "/products/ess10-es.html",
+        "ru": "/products/ess10-ru.html"
+      }
+    },
+    {
+      "productId": "hybrid6",
+      "modelCode": "AE-I-HYBRID-6K",
+      "imageUrls": [
+        "assets/product-views-v2/hybrid6-view-1.webp",
+        "assets/product-views-v2/hybrid6-view-2.webp",
+        "assets/product-views-v2/hybrid6-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/hybrid6-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/hybrid6-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/hybrid6-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/hybrid6-en.html",
+        "zh": "/products/hybrid6-zh.html",
+        "es": "/products/hybrid6-es.html",
+        "ru": "/products/hybrid6-ru.html"
+      }
+    },
+    {
+      "productId": "hybrid12",
+      "modelCode": "AE-I-HYBRID-12K",
+      "imageUrls": [
+        "assets/product-views-v2/hybrid12-view-1.webp",
+        "assets/product-views-v2/hybrid12-view-2.webp",
+        "assets/product-views-v2/hybrid12-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/hybrid12-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/hybrid12-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/hybrid12-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/hybrid12-en.html",
+        "zh": "/products/hybrid12-zh.html",
+        "es": "/products/hybrid12-es.html",
+        "ru": "/products/hybrid12-ru.html"
+      }
+    },
+    {
+      "productId": "hybrid20",
+      "modelCode": "AE-I-HYBRID-20K",
+      "imageUrls": [
+        "assets/product-views-v2/hybrid20-view-1.webp",
+        "assets/product-views-v2/hybrid20-view-2.webp",
+        "assets/product-views-v2/hybrid20-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/hybrid20-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/hybrid20-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/hybrid20-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/hybrid20-en.html",
+        "zh": "/products/hybrid20-zh.html",
+        "es": "/products/hybrid20-es.html",
+        "ru": "/products/hybrid20-ru.html"
+      }
+    },
+    {
+      "productId": "hybrid50",
+      "modelCode": "AE-I-HYBRID-50K",
+      "imageUrls": [
+        "assets/product-views-v2/hybrid50-view-1.webp",
+        "assets/product-views-v2/hybrid50-view-2.webp",
+        "assets/product-views-v2/hybrid50-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/hybrid50-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/hybrid50-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/hybrid50-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/hybrid50-en.html",
+        "zh": "/products/hybrid50-zh.html",
+        "es": "/products/hybrid50-es.html",
+        "ru": "/products/hybrid50-ru.html"
+      }
+    },
+    {
+      "productId": "origAEV200",
+      "modelCode": "AE-E-VOLT-200",
+      "imageUrls": [
+        "assets/product-views/origAEV200-view-1.webp",
+        "assets/product-views-v2/origAEV200-view-2.webp",
+        "assets/product-views-v2/origAEV200-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/origAEV200-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAEV200-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAEV200-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/origAEV200-en.html",
+        "zh": "/products/origAEV200-zh.html",
+        "es": "/products/origAEV200-es.html",
+        "ru": "/products/origAEV200-ru.html"
+      }
+    },
+    {
+      "productId": "origAEV500",
+      "modelCode": "AE-E-VOLT-500",
+      "imageUrls": [
+        "assets/product-views-v2/origAEV500-view-1.webp",
+        "assets/product-views-v2/origAEV500-view-2.webp",
+        "assets/product-views-v2/origAEV500-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/origAEV500-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAEV500-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAEV500-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/origAEV500-en.html",
+        "zh": "/products/origAEV500-zh.html",
+        "es": "/products/origAEV500-es.html",
+        "ru": "/products/origAEV500-ru.html"
+      }
+    },
+    {
+      "productId": "origAEV1000",
+      "modelCode": "AE-E-VOLT-1000",
+      "imageUrls": [
+        "assets/product-views-v2/origAEV1000-view-1.webp",
+        "assets/product-views-v2/origAEV1000-view-2.webp",
+        "assets/product-views-v2/origAEV1000-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/origAEV1000-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAEV1000-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAEV1000-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/origAEV1000-en.html",
+        "zh": "/products/origAEV1000-zh.html",
+        "es": "/products/origAEV1000-es.html",
+        "ru": "/products/origAEV1000-ru.html"
+      }
+    },
+    {
+      "productId": "origAEV1500",
+      "modelCode": "AE-E-VOLT-1500",
+      "imageUrls": [
+        "assets/product-views/origAEV1500-view-1.webp",
+        "assets/product-views-v2/origAEV1500-view-2.webp",
+        "assets/product-views-v2/origAEV1500-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/origAEV1500-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAEV1500-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAEV1500-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/origAEV1500-en.html",
+        "zh": "/products/origAEV1500-zh.html",
+        "es": "/products/origAEV1500-es.html",
+        "ru": "/products/origAEV1500-ru.html"
+      }
+    },
+    {
+      "productId": "origAEV2500",
+      "modelCode": "AE-E-VOLT-2500",
+      "imageUrls": [
+        "assets/product-views-v2/origAEV2500-view-1.webp",
+        "assets/product-views-v2/origAEV2500-view-2.webp",
+        "assets/product-views-v2/origAEV2500-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/origAEV2500-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAEV2500-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAEV2500-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/origAEV2500-en.html",
+        "zh": "/products/origAEV2500-zh.html",
+        "es": "/products/origAEV2500-es.html",
+        "ru": "/products/origAEV2500-ru.html"
+      }
+    },
+    {
+      "productId": "origAEVP",
+      "modelCode": "AE-E-VOLT-PRO",
+      "imageUrls": [
+        "assets/product-views/origAEVP-view-1.webp",
+        "assets/product-views/origAEVP-view-2.webp",
+        "assets/product-views/origAEVP-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/origAEVP-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/origAEVP-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "正面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/origAEVP-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side view",
+            "侧面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "design-illustration",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/origAEVP-en.html",
+        "zh": "/products/origAEVP-zh.html",
+        "es": "/products/origAEVP-es.html",
+        "ru": "/products/origAEVP-ru.html"
+      }
+    },
+    {
+      "productId": "origAER60",
+      "modelCode": "AE-R60",
+      "imageUrls": [
+        "assets/product-views/origAER60-view-1.webp",
+        "assets/product-views-v2/origAER60-view-2.webp",
+        "assets/product-views-v2/origAER60-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/origAER60-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAER60-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAER60-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/origAER60-en.html",
+        "zh": "/products/origAER60-zh.html",
+        "es": "/products/origAER60-es.html",
+        "ru": "/products/origAER60-ru.html"
+      }
+    },
+    {
+      "productId": "origAER100",
+      "modelCode": "AE-R100",
+      "imageUrls": [
+        "assets/product-views/origAER100-view-1.webp",
+        "assets/product-views-v2/origAER100-view-2.webp",
+        "assets/product-views-v2/origAER100-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/origAER100-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAER100-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAER100-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/origAER100-en.html",
+        "zh": "/products/origAER100-zh.html",
+        "es": "/products/origAER100-es.html",
+        "ru": "/products/origAER100-ru.html"
+      }
+    },
+    {
+      "productId": "origAER200",
+      "modelCode": "AE-R200",
+      "imageUrls": [
+        "assets/product-views/origAER200-view-1.webp",
+        "assets/product-views-v2/origAER200-view-2.webp",
+        "assets/product-views-v2/origAER200-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/origAER200-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAER200-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAER200-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/origAER200-en.html",
+        "zh": "/products/origAER200-zh.html",
+        "es": "/products/origAER200-es.html",
+        "ru": "/products/origAER200-ru.html"
+      }
+    },
+    {
+      "productId": "origAER400",
+      "modelCode": "AE-R400",
+      "imageUrls": [
+        "assets/product-views/origAER400-view-1.webp",
+        "assets/product-views-v2/origAER400-view-2.webp",
+        "assets/product-views-v2/origAER400-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/origAER400-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAER400-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAER400-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/origAER400-en.html",
+        "zh": "/products/origAER400-zh.html",
+        "es": "/products/origAER400-es.html",
+        "ru": "/products/origAER400-ru.html"
+      }
+    },
+    {
+      "productId": "origAESK1",
+      "modelCode": "AE-SK1",
+      "imageUrls": [
+        "assets/product-views/origAESK1-view-1.webp",
+        "assets/product-views/origAESK1-view-2.webp",
+        "assets/product-views/origAESK1-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/origAESK1-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/origAESK1-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "正面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/origAESK1-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side view",
+            "侧面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "design-illustration",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/origAESK1-en.html",
+        "zh": "/products/origAESK1-zh.html",
+        "es": "/products/origAESK1-es.html",
+        "ru": "/products/origAESK1-ru.html"
+      }
+    },
+    {
+      "productId": "origAEAMPPT",
+      "modelCode": "AE-A-MPPT",
+      "imageUrls": [
+        "assets/product-views/origAEAMPPT-view-1.webp",
+        "assets/product-views/origAEAMPPT-view-2.webp",
+        "assets/product-views/origAEAMPPT-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/origAEAMPPT-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/origAEAMPPT-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/origAEAMPPT-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "design-illustration",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/origAEAMPPT-en.html",
+        "zh": "/products/origAEAMPPT-zh.html",
+        "es": "/products/origAEAMPPT-es.html",
+        "ru": "/products/origAEAMPPT-ru.html"
+      }
+    },
+    {
+      "productId": "origAEAINV",
+      "modelCode": "AE-I-UTILITY-01",
+      "imageUrls": [
+        "assets/product-views-v2/origAEAINV-view-1.webp",
+        "assets/product-views-v2/origAEAINV-view-2.webp",
+        "assets/product-views-v2/origAEAINV-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/origAEAINV-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAEAINV-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAEAINV-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/origAEAINV-en.html",
+        "zh": "/products/origAEAINV-zh.html",
+        "es": "/products/origAEAINV-es.html",
+        "ru": "/products/origAEAINV-ru.html"
+      }
+    },
+    {
+      "productId": "origAEADC",
+      "modelCode": "AE-A-DC",
+      "imageUrls": [
+        "assets/product-views/origAEADC-view-1.webp",
+        "assets/product-views-v2/origAEADC-view-2.webp",
+        "assets/product-views-v2/origAEADC-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/origAEADC-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAEADC-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/origAEADC-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/origAEADC-en.html",
+        "zh": "/products/origAEADC-zh.html",
+        "es": "/products/origAEADC-es.html",
+        "ru": "/products/origAEADC-ru.html"
+      }
+    },
+    {
+      "productId": "gardenLighting",
+      "modelCode": "AE-L-BLOOM-CN",
+      "imageUrls": [
+        "assets/product-views/gardenLighting-view-1.webp",
+        "assets/product-views-v2/gardenLighting-view-2.webp",
+        "assets/product-views-v2/gardenLighting-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/gardenLighting-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/gardenLighting-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/gardenLighting-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/gardenLighting-en.html",
+        "zh": "/products/gardenLighting-zh.html",
+        "es": "/products/gardenLighting-es.html",
+        "ru": "/products/gardenLighting-ru.html"
+      }
+    },
+    {
+      "productId": "floodLighting",
+      "modelCode": "AE-L-GUARD-CN",
+      "imageUrls": [
+        "assets/product-views/floodLighting-view-1.webp",
+        "assets/product-views-v2/floodLighting-view-2.webp",
+        "assets/product-views-v2/floodLighting-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/floodLighting-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/floodLighting-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/floodLighting-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/floodLighting-en.html",
+        "zh": "/products/floodLighting-zh.html",
+        "es": "/products/floodLighting-es.html",
+        "ru": "/products/floodLighting-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight01",
+      "modelCode": "AE-L-GUARD-01",
+      "imageUrls": [
+        "assets/product-views/jcLight01-view-1.webp",
+        "assets/product-views-v2/jcLight01-view-2.webp",
+        "assets/product-views-v2/jcLight01-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight01-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight01-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight01-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight01-en.html",
+        "zh": "/products/jcLight01-zh.html",
+        "es": "/products/jcLight01-es.html",
+        "ru": "/products/jcLight01-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight02",
+      "modelCode": "AE-L-GUARD-02",
+      "imageUrls": [
+        "assets/product-views/jcLight02-view-1.webp",
+        "assets/product-views-v2/jcLight02-view-2.webp",
+        "assets/product-views-v2/jcLight02-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight02-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight02-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight02-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight02-en.html",
+        "zh": "/products/jcLight02-zh.html",
+        "es": "/products/jcLight02-es.html",
+        "ru": "/products/jcLight02-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight07",
+      "modelCode": "AE-L-GUARD-03",
+      "imageUrls": [
+        "assets/product-views/jcLight07-view-1.webp",
+        "assets/product-views-v2/jcLight07-view-2.webp",
+        "assets/product-views-v2/jcLight07-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight07-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight07-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight07-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight07-en.html",
+        "zh": "/products/jcLight07-zh.html",
+        "es": "/products/jcLight07-es.html",
+        "ru": "/products/jcLight07-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight10",
+      "modelCode": "AE-L-GUARD-04",
+      "imageUrls": [
+        "assets/product-views-v2/jcLight10-view-1.webp",
+        "assets/product-views-v2/jcLight10-view-2.webp",
+        "assets/product-views-v2/jcLight10-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/jcLight10-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight10-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight10-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight10-en.html",
+        "zh": "/products/jcLight10-zh.html",
+        "es": "/products/jcLight10-es.html",
+        "ru": "/products/jcLight10-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight09",
+      "modelCode": "AE-L-GUARD-05",
+      "imageUrls": [
+        "assets/product-views-v2/jcLight09-view-1.webp",
+        "assets/product-views-v2/jcLight09-view-2.webp",
+        "assets/product-views-v2/jcLight09-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/jcLight09-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight09-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight09-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight09-en.html",
+        "zh": "/products/jcLight09-zh.html",
+        "es": "/products/jcLight09-es.html",
+        "ru": "/products/jcLight09-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight27",
+      "modelCode": "AE-L-GUARD-06",
+      "imageUrls": [
+        "assets/product-views/jcLight27-view-1.webp",
+        "assets/product-views-v2/jcLight27-view-2.webp",
+        "assets/product-views-v2/jcLight27-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight27-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight27-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight27-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight27-en.html",
+        "zh": "/products/jcLight27-zh.html",
+        "es": "/products/jcLight27-es.html",
+        "ru": "/products/jcLight27-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight25",
+      "modelCode": "AE-L-GUARD-07",
+      "imageUrls": [
+        "assets/product-views/jcLight25-view-1.webp",
+        "assets/product-views-v2/jcLight25-view-2.webp",
+        "assets/product-views-v2/jcLight25-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight25-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight25-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight25-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight25-en.html",
+        "zh": "/products/jcLight25-zh.html",
+        "es": "/products/jcLight25-es.html",
+        "ru": "/products/jcLight25-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight26",
+      "modelCode": "AE-L-GUARD-08",
+      "imageUrls": [
+        "assets/product-views/jcLight26-view-1.webp",
+        "assets/product-views-v2/jcLight26-view-2.webp",
+        "assets/product-views-v2/jcLight26-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight26-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight26-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight26-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight26-en.html",
+        "zh": "/products/jcLight26-zh.html",
+        "es": "/products/jcLight26-es.html",
+        "ru": "/products/jcLight26-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight28",
+      "modelCode": "AE-L-BLOOM-01",
+      "imageUrls": [
+        "assets/product-views/jcLight28-view-1.webp",
+        "assets/product-views-v2/jcLight28-view-2.webp",
+        "assets/product-views-v2/jcLight28-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight28-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight28-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight28-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight28-en.html",
+        "zh": "/products/jcLight28-zh.html",
+        "es": "/products/jcLight28-es.html",
+        "ru": "/products/jcLight28-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight06",
+      "modelCode": "AE-L-BLOOM-02",
+      "imageUrls": [
+        "assets/product-views/jcLight06-view-1.webp",
+        "assets/product-views-v2/jcLight06-view-2.webp",
+        "assets/product-views-v2/jcLight06-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight06-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight06-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight06-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight06-en.html",
+        "zh": "/products/jcLight06-zh.html",
+        "es": "/products/jcLight06-es.html",
+        "ru": "/products/jcLight06-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight08",
+      "modelCode": "AE-L-BLOOM-03",
+      "imageUrls": [
+        "assets/product-views/jcLight08-view-1.webp",
+        "assets/product-views-v2/jcLight08-view-2.webp",
+        "assets/product-views-v2/jcLight08-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight08-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight08-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight08-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight08-en.html",
+        "zh": "/products/jcLight08-zh.html",
+        "es": "/products/jcLight08-es.html",
+        "ru": "/products/jcLight08-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight04",
+      "modelCode": "AE-L-AURA-01",
+      "imageUrls": [
+        "assets/product-views/jcLight04-view-1.webp",
+        "assets/product-views-v2/jcLight04-view-2.webp",
+        "assets/product-views-v2/jcLight04-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight04-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight04-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight04-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight04-en.html",
+        "zh": "/products/jcLight04-zh.html",
+        "es": "/products/jcLight04-es.html",
+        "ru": "/products/jcLight04-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight11",
+      "modelCode": "AE-L-AURA-02",
+      "imageUrls": [
+        "assets/product-views/jcLight11-view-1.webp",
+        "assets/product-views-v2/jcLight11-view-2.webp",
+        "assets/product-views-v2/jcLight11-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight11-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight11-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight11-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight11-en.html",
+        "zh": "/products/jcLight11-zh.html",
+        "es": "/products/jcLight11-es.html",
+        "ru": "/products/jcLight11-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight19",
+      "modelCode": "AE-L-AURA-03",
+      "imageUrls": [
+        "assets/product-views-v2/jcLight19-view-1.webp",
+        "assets/product-views-v2/jcLight19-view-2.webp",
+        "assets/product-views-v2/jcLight19-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/jcLight19-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight19-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight19-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight19-en.html",
+        "zh": "/products/jcLight19-zh.html",
+        "es": "/products/jcLight19-es.html",
+        "ru": "/products/jcLight19-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight20",
+      "modelCode": "AE-L-AURA-04",
+      "imageUrls": [
+        "assets/product-views/jcLight20-view-1.webp",
+        "assets/product-views-v2/jcLight20-view-2.webp",
+        "assets/product-views-v2/jcLight20-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight20-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight20-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight20-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight20-en.html",
+        "zh": "/products/jcLight20-zh.html",
+        "es": "/products/jcLight20-es.html",
+        "ru": "/products/jcLight20-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight21",
+      "modelCode": "AE-L-AURA-05",
+      "imageUrls": [
+        "assets/product-views/jcLight21-view-1.webp",
+        "assets/product-views-v2/jcLight21-view-2.webp",
+        "assets/product-views-v2/jcLight21-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight21-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight21-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight21-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight21-en.html",
+        "zh": "/products/jcLight21-zh.html",
+        "es": "/products/jcLight21-es.html",
+        "ru": "/products/jcLight21-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight22",
+      "modelCode": "AE-L-AURA-06",
+      "imageUrls": [
+        "assets/product-views/jcLight22-view-1.webp",
+        "assets/product-views-v2/jcLight22-view-2.webp",
+        "assets/product-views-v2/jcLight22-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight22-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight22-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight22-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight22-en.html",
+        "zh": "/products/jcLight22-zh.html",
+        "es": "/products/jcLight22-es.html",
+        "ru": "/products/jcLight22-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight29",
+      "modelCode": "AE-L-AURA-07",
+      "imageUrls": [
+        "assets/product-views/jcLight29-view-1.webp",
+        "assets/product-views-v2/jcLight29-view-2.webp",
+        "assets/product-views-v2/jcLight29-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight29-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight29-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight29-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight29-en.html",
+        "zh": "/products/jcLight29-zh.html",
+        "es": "/products/jcLight29-es.html",
+        "ru": "/products/jcLight29-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight15",
+      "modelCode": "AE-L-ROAM-01",
+      "imageUrls": [
+        "assets/product-views/jcLight15-view-1.webp",
+        "assets/product-views-v2/jcLight15-view-2.webp",
+        "assets/product-views-v2/jcLight15-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight15-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight15-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight15-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight15-en.html",
+        "zh": "/products/jcLight15-zh.html",
+        "es": "/products/jcLight15-es.html",
+        "ru": "/products/jcLight15-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight16",
+      "modelCode": "AE-L-ROAM-02",
+      "imageUrls": [
+        "assets/product-views/jcLight16-view-1.webp",
+        "assets/product-views-v2/jcLight16-view-2.webp",
+        "assets/product-views-v2/jcLight16-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight16-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight16-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight16-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight16-en.html",
+        "zh": "/products/jcLight16-zh.html",
+        "es": "/products/jcLight16-es.html",
+        "ru": "/products/jcLight16-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight17",
+      "modelCode": "AE-L-ROAM-03",
+      "imageUrls": [
+        "assets/product-views/jcLight17-view-1.webp",
+        "assets/product-views-v2/jcLight17-view-2.webp",
+        "assets/product-views-v2/jcLight17-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight17-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight17-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight17-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight17-en.html",
+        "zh": "/products/jcLight17-zh.html",
+        "es": "/products/jcLight17-es.html",
+        "ru": "/products/jcLight17-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight18",
+      "modelCode": "AE-L-ROAM-04",
+      "imageUrls": [
+        "assets/product-views/jcLight18-view-1.webp",
+        "assets/product-views-v2/jcLight18-view-2.webp",
+        "assets/product-views-v2/jcLight18-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight18-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight18-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight18-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight18-en.html",
+        "zh": "/products/jcLight18-zh.html",
+        "es": "/products/jcLight18-es.html",
+        "ru": "/products/jcLight18-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight13",
+      "modelCode": "AE-L-ROAM-05",
+      "imageUrls": [
+        "assets/product-views/jcLight13-view-1.webp",
+        "assets/product-views-v2/jcLight13-view-2.webp",
+        "assets/product-views-v2/jcLight13-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight13-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight13-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight13-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight13-en.html",
+        "zh": "/products/jcLight13-zh.html",
+        "es": "/products/jcLight13-es.html",
+        "ru": "/products/jcLight13-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight14",
+      "modelCode": "AE-L-ROAM-06",
+      "imageUrls": [
+        "assets/product-views/jcLight14-view-1.webp",
+        "assets/product-views-v2/jcLight14-view-2.webp",
+        "assets/product-views-v2/jcLight14-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight14-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight14-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight14-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight14-en.html",
+        "zh": "/products/jcLight14-zh.html",
+        "es": "/products/jcLight14-es.html",
+        "ru": "/products/jcLight14-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight23",
+      "modelCode": "AE-L-ROAM-07",
+      "imageUrls": [
+        "assets/product-views/jcLight23-view-1.webp",
+        "assets/product-views-v2/jcLight23-view-2.webp",
+        "assets/product-views-v2/jcLight23-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight23-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight23-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight23-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight23-en.html",
+        "zh": "/products/jcLight23-zh.html",
+        "es": "/products/jcLight23-es.html",
+        "ru": "/products/jcLight23-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight24",
+      "modelCode": "AE-L-ROAM-08",
+      "imageUrls": [
+        "assets/product-views/jcLight24-view-1.webp",
+        "assets/product-views-v2/jcLight24-view-2.webp",
+        "assets/product-views-v2/jcLight24-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight24-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight24-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight24-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight24-en.html",
+        "zh": "/products/jcLight24-zh.html",
+        "es": "/products/jcLight24-es.html",
+        "ru": "/products/jcLight24-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight30",
+      "modelCode": "AE-L-ROAM-09",
+      "imageUrls": [
+        "assets/product-views/jcLight30-view-1.webp",
+        "assets/product-views-v2/jcLight30-view-2.webp",
+        "assets/product-views-v2/jcLight30-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight30-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight30-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight30-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight30-en.html",
+        "zh": "/products/jcLight30-zh.html",
+        "es": "/products/jcLight30-es.html",
+        "ru": "/products/jcLight30-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight31",
+      "modelCode": "AE-L-BEAM-01",
+      "imageUrls": [
+        "assets/product-views/jcLight31-view-1.webp",
+        "assets/product-views-v2/jcLight31-view-2.webp",
+        "assets/product-views-v2/jcLight31-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight31-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight31-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight31-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight31-en.html",
+        "zh": "/products/jcLight31-zh.html",
+        "es": "/products/jcLight31-es.html",
+        "ru": "/products/jcLight31-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight32",
+      "modelCode": "AE-L-BEAM-02",
+      "imageUrls": [
+        "assets/product-views/jcLight32-view-1.webp",
+        "assets/product-views-v2/jcLight32-view-2.webp",
+        "assets/product-views-v2/jcLight32-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight32-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight32-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight32-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight32-en.html",
+        "zh": "/products/jcLight32-zh.html",
+        "es": "/products/jcLight32-es.html",
+        "ru": "/products/jcLight32-ru.html"
+      }
+    },
+    {
+      "productId": "jcLight33",
+      "modelCode": "AE-L-BEAM-03",
+      "imageUrls": [
+        "assets/product-views/jcLight33-view-1.webp",
+        "assets/product-views-v2/jcLight33-view-2.webp",
+        "assets/product-views-v2/jcLight33-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/jcLight33-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight33-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/jcLight33-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/jcLight33-en.html",
+        "zh": "/products/jcLight33-zh.html",
+        "es": "/products/jcLight33-es.html",
+        "ru": "/products/jcLight33-ru.html"
+      }
+    },
+    {
+      "productId": "series_seed12",
+      "modelCode": "AE-E-SEED",
+      "imageUrls": [
+        "assets/product-views/series_seed12-view-1.webp",
+        "assets/product-views/series_seed12-view-2.webp",
+        "assets/product-views/series_seed12-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/series_seed12-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_seed12-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "正面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_seed12-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side view",
+            "侧面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/series_seed12-en.html",
+        "zh": "/products/series_seed12-zh.html",
+        "es": "/products/series_seed12-es.html",
+        "ru": "/products/series_seed12-ru.html"
+      }
+    },
+    {
+      "productId": "series_seed24",
+      "modelCode": "AE-E-SEED",
+      "imageUrls": [
+        "assets/product-views/series_seed24-view-1.webp",
+        "assets/product-views/series_seed24-view-2.webp",
+        "assets/product-views/series_seed24-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/series_seed24-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_seed24-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "正面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_seed24-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side view",
+            "侧面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/series_seed24-en.html",
+        "zh": "/products/series_seed24-zh.html",
+        "es": "/products/series_seed24-es.html",
+        "ru": "/products/series_seed24-ru.html"
+      }
+    },
+    {
+      "productId": "series_root",
+      "modelCode": "AE-E-ROOT",
+      "imageUrls": [
+        "assets/product-views-v2/series_root-view-1.webp",
+        "assets/product-views-v2/series_root-view-2.webp",
+        "assets/product-views-v2/series_root-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/series_root-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/series_root-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/series_root-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/series_root-en.html",
+        "zh": "/products/series_root-zh.html",
+        "es": "/products/series_root-es.html",
+        "ru": "/products/series_root-ru.html"
+      }
+    },
+    {
+      "productId": "series_rise",
+      "modelCode": "AE-E-RISE",
+      "imageUrls": [
+        "assets/product-views/series_rise-view-1.webp",
+        "assets/product-views/series_rise-view-2.webp",
+        "assets/product-views/series_rise-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/series_rise-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_rise-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "正面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_rise-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side view",
+            "侧面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "design-illustration",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/series_rise-en.html",
+        "zh": "/products/series_rise-zh.html",
+        "es": "/products/series_rise-es.html",
+        "ru": "/products/series_rise-ru.html"
+      }
+    },
+    {
+      "productId": "series_horizon",
+      "modelCode": "AE-E-HORIZON",
+      "imageUrls": [
+        "assets/product-views/series_horizon-view-1.webp",
+        "assets/product-views/series_horizon-view-2.webp",
+        "assets/product-views/series_horizon-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/series_horizon-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_horizon-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Detail view",
+            "细节视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_horizon-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Detail view",
+            "细节视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/series_horizon-en.html",
+        "zh": "/products/series_horizon-zh.html",
+        "es": "/products/series_horizon-es.html",
+        "ru": "/products/series_horizon-ru.html"
+      }
+    },
+    {
+      "productId": "series_union",
+      "modelCode": "AE-E-UNION",
+      "imageUrls": [
+        "assets/product-views-v2/series_union-view-1.webp",
+        "assets/product-views-v2/series_union-view-2.webp",
+        "assets/product-views-v2/series_union-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/series_union-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/series_union-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "完整正面视角",
+            "Vista frontal",
+            "Вид спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views-v2/series_union-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side-front view",
+            "完整侧前视角",
+            "Vista lateral frontal",
+            "Вид сбоку и спереди"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/series_union-en.html",
+        "zh": "/products/series_union-zh.html",
+        "es": "/products/series_union-es.html",
+        "ru": "/products/series_union-ru.html"
+      }
+    },
+    {
+      "productId": "series_pulse",
+      "modelCode": "AE-I-PULSE",
+      "imageUrls": [
+        "assets/product-views/series_pulse-view-1.webp",
+        "assets/product-views/series_pulse-view-2.webp",
+        "assets/product-views/series_pulse-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/series_pulse-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_pulse-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "正面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_pulse-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side view",
+            "侧面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "design-illustration",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/series_pulse-en.html",
+        "zh": "/products/series_pulse-zh.html",
+        "es": "/products/series_pulse-es.html",
+        "ru": "/products/series_pulse-ru.html"
+      }
+    },
+    {
+      "productId": "series_pulse3",
+      "modelCode": "AE-I-PULSET",
+      "imageUrls": [
+        "assets/product-views/series_pulse3-view-1.webp",
+        "assets/product-views/series_pulse3-view-2.webp",
+        "assets/product-views/series_pulse3-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/series_pulse3-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_pulse3-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "正面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_pulse3-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side view",
+            "侧面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "design-illustration",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/series_pulse3-en.html",
+        "zh": "/products/series_pulse3-zh.html",
+        "es": "/products/series_pulse3-es.html",
+        "ru": "/products/series_pulse3-ru.html"
+      }
+    },
+    {
+      "productId": "series_orbit1",
+      "modelCode": "AE-I-ORBIT",
+      "imageUrls": [
+        "assets/product-views-v2/series_orbit1-view-1.webp",
+        "assets/product-views/series_orbit1-view-2.webp",
+        "assets/product-views/series_orbit1-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/series_orbit1-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_orbit1-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "正面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_orbit1-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side view",
+            "侧面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "design-illustration",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/series_orbit1-en.html",
+        "zh": "/products/series_orbit1-zh.html",
+        "es": "/products/series_orbit1-es.html",
+        "ru": "/products/series_orbit1-ru.html"
+      }
+    },
+    {
+      "productId": "series_orbit3",
+      "modelCode": "AE-I-ORBITT",
+      "imageUrls": [
+        "assets/product-views-v2/series_orbit3-view-1.webp",
+        "assets/product-views/series_orbit3-view-2.webp",
+        "assets/product-views/series_orbit3-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/series_orbit3-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_orbit3-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "正面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_orbit3-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side view",
+            "侧面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "design-illustration",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/series_orbit3-en.html",
+        "zh": "/products/series_orbit3-zh.html",
+        "es": "/products/series_orbit3-es.html",
+        "ru": "/products/series_orbit3-ru.html"
+      }
+    },
+    {
+      "productId": "series_trail",
+      "modelCode": "AE-I-TRAIL",
+      "imageUrls": [
+        "assets/product-views/series_trail-view-1.webp",
+        "assets/product-views/series_trail-view-2.webp",
+        "assets/product-views/series_trail-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/series_trail-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_trail-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "正面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_trail-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side view",
+            "侧面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "design-illustration",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/series_trail-en.html",
+        "zh": "/products/series_trail-zh.html",
+        "es": "/products/series_trail-es.html",
+        "ru": "/products/series_trail-ru.html"
+      }
+    },
+    {
+      "productId": "series_beacon",
+      "modelCode": "AE-I-BEACON",
+      "imageUrls": [
+        "assets/product-views-v2/series_beacon-view-1.webp",
+        "assets/product-views/series_beacon-view-2.webp",
+        "assets/product-views/series_beacon-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views-v2/series_beacon-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Complete product",
+            "完整产品",
+            "Producto completo",
+            "Изделие целиком"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_beacon-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "正面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/series_beacon-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side view",
+            "侧面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "design-illustration",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/series_beacon-en.html",
+        "zh": "/products/series_beacon-zh.html",
+        "es": "/products/series_beacon-es.html",
+        "ru": "/products/series_beacon-ru.html"
+      }
+    },
+    {
+      "productId": "tieredLandscape",
+      "modelCode": "AE-L-BLOOM-04",
+      "imageUrls": [
+        "assets/product-views/tieredLandscape-view-1.webp",
+        "assets/product-views/tieredLandscape-view-2.webp",
+        "assets/product-views/tieredLandscape-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/tieredLandscape-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/tieredLandscape-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "正面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/tieredLandscape-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side view",
+            "侧面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/tieredLandscape-en.html",
+        "zh": "/products/tieredLandscape-zh.html",
+        "es": "/products/tieredLandscape-es.html",
+        "ru": "/products/tieredLandscape-ru.html"
+      }
+    },
+    {
+      "productId": "preassembled16",
+      "modelCode": "AE-E-READY-16",
+      "imageUrls": [
+        "assets/product-views/preassembled16-view-1.webp",
+        "assets/product-views/preassembled16-view-2.webp",
+        "assets/product-views/preassembled16-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/preassembled16-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Primary view",
+            "主视角",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/preassembled16-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Front view",
+            "正面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/preassembled16-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Side view",
+            "侧面视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/preassembled16-en.html",
+        "zh": "/products/preassembled16-zh.html",
+        "es": "/products/preassembled16-es.html",
+        "ru": "/products/preassembled16-ru.html"
+      }
+    },
+    {
+      "productId": "seed12_100",
+      "modelCode": "AE-E-SEED-12V100",
+      "imageUrls": [
+        "assets/product-views/seed12_100-view-1.webp",
+        "assets/product-views/seed12_100-view-2.webp",
+        "assets/product-views/seed12_100-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/seed12_100-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/seed12_100-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/seed12_100-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/seed12_100-en.html",
+        "zh": "/products/seed12_100-zh.html",
+        "es": "/products/seed12_100-es.html",
+        "ru": "/products/seed12_100-ru.html"
+      }
+    },
+    {
+      "productId": "seed12_150",
+      "modelCode": "AE-E-SEED-12V150",
+      "imageUrls": [
+        "assets/product-views/seed12_150-view-1.webp",
+        "assets/product-views/seed12_150-view-2.webp",
+        "assets/product-views/seed12_150-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/seed12_150-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/seed12_150-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/seed12_150-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/seed12_150-en.html",
+        "zh": "/products/seed12_150-zh.html",
+        "es": "/products/seed12_150-es.html",
+        "ru": "/products/seed12_150-ru.html"
+      }
+    },
+    {
+      "productId": "seed12_200",
+      "modelCode": "AE-E-SEED-12V200",
+      "imageUrls": [
+        "assets/product-views/seed12_200-view-1.webp",
+        "assets/product-views/seed12_200-view-2.webp",
+        "assets/product-views/seed12_200-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/seed12_200-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/seed12_200-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/seed12_200-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/seed12_200-en.html",
+        "zh": "/products/seed12_200-zh.html",
+        "es": "/products/seed12_200-es.html",
+        "ru": "/products/seed12_200-ru.html"
+      }
+    },
+    {
+      "productId": "seed12_300",
+      "modelCode": "AE-E-SEED-12V300",
+      "imageUrls": [
+        "assets/product-views/seed12_300-view-1.webp",
+        "assets/product-views/seed12_300-view-2.webp",
+        "assets/product-views/seed12_300-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/seed12_300-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/seed12_300-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/seed12_300-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/seed12_300-en.html",
+        "zh": "/products/seed12_300-zh.html",
+        "es": "/products/seed12_300-es.html",
+        "ru": "/products/seed12_300-ru.html"
+      }
+    },
+    {
+      "productId": "seed24_100",
+      "modelCode": "AE-E-SEED-24V100",
+      "imageUrls": [
+        "assets/product-views/seed24_100-view-1.webp",
+        "assets/product-views/seed24_100-view-2.webp",
+        "assets/product-views/seed24_100-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/seed24_100-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/seed24_100-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/seed24_100-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/seed24_100-en.html",
+        "zh": "/products/seed24_100-zh.html",
+        "es": "/products/seed24_100-es.html",
+        "ru": "/products/seed24_100-ru.html"
+      }
+    },
+    {
+      "productId": "seed24_150",
+      "modelCode": "AE-E-SEED-24V150",
+      "imageUrls": [
+        "assets/product-views/seed24_150-view-1.webp",
+        "assets/product-views/seed24_150-view-2.webp",
+        "assets/product-views/seed24_150-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/seed24_150-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/seed24_150-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/seed24_150-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/seed24_150-en.html",
+        "zh": "/products/seed24_150-zh.html",
+        "es": "/products/seed24_150-es.html",
+        "ru": "/products/seed24_150-ru.html"
+      }
+    },
+    {
+      "productId": "seed24_200",
+      "modelCode": "AE-E-SEED-24V200",
+      "imageUrls": [
+        "assets/product-views/seed24_200-view-1.webp",
+        "assets/product-views/seed24_200-view-2.webp",
+        "assets/product-views/seed24_200-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/seed24_200-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/seed24_200-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/seed24_200-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/seed24_200-en.html",
+        "zh": "/products/seed24_200-zh.html",
+        "es": "/products/seed24_200-es.html",
+        "ru": "/products/seed24_200-ru.html"
+      }
+    },
+    {
+      "productId": "seed24_300",
+      "modelCode": "AE-E-SEED-24V300",
+      "imageUrls": [
+        "assets/product-views/seed24_300-view-1.webp",
+        "assets/product-views/seed24_300-view-2.webp",
+        "assets/product-views/seed24_300-view-3.webp"
+      ],
+      "modelUrl": null,
+      "turntableFrames": null,
+      "modelSource": "No identified local GLB/GLTF/FBX/OBJ product file. src/campus/productHardware.ts provides unverified illustrative exterior meshes only.",
+      "verifiedViews": [
+        {
+          "url": "assets/product-views/seed24_300-view-1.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/seed24_300-view-2.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        },
+        {
+          "url": "assets/product-views/seed24_300-view-3.webp",
+          "fileExists": true,
+          "catalogueLabel": [
+            "Product view",
+            "产品视图",
+            "Vista del producto",
+            "Вид изделия"
+          ],
+          "verification": "Local file existence and catalogue association only; angle/geometry not manufacturer-verified."
+        }
+      ],
+      "knownMissingGeometry": [
+        "No verified full 360-degree geometry or complete ordered turntable sequence",
+        "Rear connections, terminal locations and mounting hardware require manufacturer drawings",
+        "No accepted calibrated material/textures or dimensional model"
+      ],
+      "visualStatus": "catalogue-gallery-unverified-geometry",
+      "displayMode": "gallery",
+      "localizedUrls": {
+        "en": "/products/seed24_300-en.html",
+        "zh": "/products/seed24_300-zh.html",
+        "es": "/products/seed24_300-es.html",
+        "ru": "/products/seed24_300-ru.html"
+      }
+    }
+  ]
+}

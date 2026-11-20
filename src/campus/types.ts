@@ -66,8 +66,8 @@ export const ZONE_META: Record<CampusZoneId, ZoneMeta> = {
       zh: '家庭能源',
     },
     subtitle: {
-      en: 'Rooftop PV, hybrid inverter, 16 kWh battery, utility meter & cutaway everyday appliances.',
-      zh: '屋顶光伏、混合逆变器、16 kWh 家用储能、电表配电箱与室内家电负载。',
+      en: 'First-region concept: detailed roof, glazing & installations. Hardware is illustrative, enlarged and not manufacturer CAD.',
+      zh: '首轮区域概念验证：细化屋面、窗框与安装承托；硬件为放大示意，非厂家 CAD。',
     },
     noteDay: {
       en: 'Day: Roof PV feeds hybrid inverter, home loads & 16 kWh battery',
@@ -198,8 +198,8 @@ export const CAMPUS_HOTSPOTS: HotspotDef[] = [
     kicker: { en: 'Power conversion · AE-I-HYBRID-6K', zh: '混合逆变器 · AE-I-HYBRID-6K' },
     title: { en: '6 kW LV Hybrid Inverter', zh: '6 kW 低压混合逆变器' },
     usage: {
-      en: '6 kW / 40–60 V / up to 135 A battery current. The 51.2 V battery catalogue lists 200 A discharge. CAN/RS-485 protocol profile and final system approval require confirmation.',
-      zh: '6 kW / 40–60 V / 电池充放电上限 135 A；51.2 V 电池目录标注放电 200 A。CAN/RS-485 协议配置和最终系统匹配仍需确认。',
+      en: '6 kW / 40–60 V / 135 A max. Catalogue W×D×H: 330×228×433 mm; this enlarged mesh is not to scale. Rear ports, mounting template, CAN/RS-485 profile and final battery compatibility require confirmation.',
+      zh: '6 kW / 40–60 V / 上限 135 A；目录宽×深×高 330×228×433 mm，当前网格为放大示意。后背接口、安装孔图、CAN/RS-485 协议与最终电池匹配待确认。',
     },
   },
   {
@@ -216,8 +216,8 @@ export const CAMPUS_HOTSPOTS: HotspotDef[] = [
     kicker: { en: 'Home storage · AE-E-DAWN-16', zh: '户用储能 · AE-E-DAWN-16' },
     title: { en: '16 kWh Home Storage', zh: '16 kWh 储能电池' },
     usage: {
-      en: '51.2V LiFePO4 residential unit storing surplus daytime solar energy through the hybrid inverter for evening household loads.',
-      zh: '51.2V 磷酸铁锂户用储能单元，由混合逆变器协调日间蓄能与夜间住宅供电。',
+      en: '51.2 V LiFePO4 storage. Catalogue W×D×H: 480×235×874 mm, 120 kg net. The original enlarged wheeled mesh preserves cable anchors; it is not manufacturer CAD. Rear connectors, caster load rating and installation clearances await verified drawings.',
+      zh: '51.2 V 磷酸铁锂储能；目录宽×深×高 480×235×874 mm，净重 120 kg。保留原放大脚轮网格及管线锚点，非厂家 CAD；后背接口、脚轮承重与安装净距需真实图纸核实。',
     },
   },
   {
@@ -454,7 +454,7 @@ export const CAMPUS_UI_COPY = {
     viewSpecs: 'View specifications',
     inquireSetup: 'Discuss this setup',
     visitZone: 'Explore this zone',
-    dragHint: 'Scroll to tour · Drag to orbit',
+    dragHint: 'Scroll / drag to explore · Focus scene: arrow keys · Home resets view',
     fallbackTitle: '3D preview unavailable in this browser context',
     fallbackDesc: 'Use the section links below to browse Anthrise residential, commercial, and off-grid products.',
   },
@@ -484,7 +484,7 @@ export const CAMPUS_UI_COPY = {
     viewSpecs: '查看产品参数',
     inquireSetup: '咨询该方案',
     visitZone: '进入该区域',
-    dragHint: '下滑漫游园区 · 拖拽微调视角',
+    dragHint: '下滑 / 拖拽探索 · 场景聚焦后用方向键 · Home 复位视角',
     fallbackTitle: '当前环境暂不支持实时 3D 渲染',
     fallbackDesc: '您可通过下方入口浏览 Anthrise 家庭、工商业及偏远离网产品与方案。',
   },

@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "browserTest": false,
+  "lights": 12,
+  "warmLampMaterials": 9,
+  "staticCars": 3,
+  "roofTiles": 338,
+  "sceneTriangles": 262436,
+  "pvTracksChecked": 7,
+  "sameDayNightSpace": true,
+  "batteryPosition": [
+    -14.25,
+    0.26,
+    4.68
+  ],
+  "inverterPosition": [
+    -15.8,
+    2.21,
+    4.6
+  ],
+  "checks": [
+    "day lights and warm emitters exactly zero",
+    "night physical distance / decay",
+    "three static cars, no update",
+    "real roof / shell / window / PV mounts",
+    "original battery / inverter anchors",
+    "both side-cooling cabinets retained",
+    "night PV packets off",
+    "flow hidden / shown / paused / reduced-motion",
+    "stage keyboard / pointer-cancel source guard"
+  ]
+}

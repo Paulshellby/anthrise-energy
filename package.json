@@ -1,6 +1,12 @@
 {
   "name": "anthrise-energy-website",
   "private": true,
-  "scripts": {"build:campus": "node scripts/build-campus.cjs"},
-  "devDependencies": {"esbuild": "0.25.0", "three": "0.187.0"}
+  "scripts": {
+    "build:campus": "node scripts/build-campus.cjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.0",
+    "three": "0.187.0"
+  },
+  "packageManager": "npm@10.9.9"
 }

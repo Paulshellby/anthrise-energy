@@ -1,13 +1,13 @@
 import {createHardwareFactory} from './productHardware';
-import {createCampusRoad,ROAD_WIDTH,LANE_OFFSET} from './roadLayout';
+import {createCampusRoad,ROAD_WIDTH} from './roadLayout';
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 import { terrainHeightAt } from './campusWorld';
 import type { TextureBundle } from './textures';
 
 // A separate detail layer keeps the exported equipment topology and product anchors intact.
-export function createDetailLayer(parent:THREE.Group,textures:TextureBundle){
- const hardware=createHardwareFactory();
+export function createDetailLayer(parent:THREE.Group,textures:TextureBundle,onAssetReady?:()=>void){
+ const hardware=createHardwareFactory(onAssetReady);
  const root=new THREE.Group();root.name='ArchitecturalDetailLayer';parent.add(root);
  const geometries:THREE.BufferGeometry[]=[],materials:THREE.Material[]=[],extraTextures:THREE.Texture[]=[];
  const g=<T extends THREE.BufferGeometry>(x:T):T=>{geometries.push(x);return x;};
@@ -16,21 +16,21 @@ export function createDetailLayer(parent:THREE.Group,textures:TextureBundle){
  const stone=mat(0xd8d5c9,.88),trim=mat(0x263a36,.36,.4),wood=mat(0x8f6745,.85),concrete=mat(0xbebfb5,.9);
  const glass=m(new THREE.MeshPhysicalMaterial({color:0x6f949c,roughness:.18,metalness:.25,transparent:true,opacity:.64,envMapIntensity:1.2}));
  const white=mat(0xf2f1e8,.64),black=mat(0x202825,.54,.25),bark=mat(0x685345,.95);
- const glow=m(new THREE.MeshStandardMaterial({color:0xffedc3,emissive:0xffb963,emissiveIntensity:.12,roughness:.6}));
+ const glow=m(new THREE.MeshStandardMaterial({color:0xffedc3,emissive:0xffb963,emissiveIntensity:0,roughness:.6}));
  const geoBox=g(new THREE.BoxGeometry(1,1,1));
  function box(to:THREE.Object3D,x:number,y:number,z:number,w:number,h:number,d:number,material:THREE.Material,round=false){
   const mesh=new THREE.Mesh(round?g(new RoundedBoxGeometry(w,h,d,2,Math.min(w,h,d)*.12)):geoBox,material);
   if(!round)mesh.scale.set(w,h,d);mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;to.add(mesh);return mesh;
  }
  function cylinderBetween(to:THREE.Object3D,a:THREE.Vector3,b:THREE.Vector3,r:number,material:THREE.Material){
-  const v=b.clone().sub(a),mesh=new THREE.Mesh(g(new THREE.CylinderGeometry(r*.74,r,v.length(),7)),material);
+  const v=b.clone().sub(a),mesh=new THREE.Mesh(g(new THREE.CylinderGeometry(r*.74,r,v.length(),14)),material);
   mesh.position.copy(a).add(b).multiplyScalar(.5);mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),v.normalize());mesh.castShadow=true;to.add(mesh);return mesh;
  }
  function tube(to:THREE.Object3D,points:THREE.Vector3[],radius:number,material:THREE.Material){
   const curve=new THREE.CatmullRomCurve3(points);const mesh=new THREE.Mesh(g(new THREE.TubeGeometry(curve,48,radius,6,false)),material);to.add(mesh);return mesh;
  }
  const loader=new THREE.TextureLoader();
- const logo=loader.load('/assets/brand/anthrise-official.png');logo.colorSpace=THREE.SRGBColorSpace;extraTextures.push(logo);
+ const logo=loader.load('/assets/brand/anthrise-official.png',onAssetReady);logo.colorSpace=THREE.SRGBColorSpace;extraTextures.push(logo);
  const logoMat=m(new THREE.MeshStandardMaterial({map:logo,color:0xffffff,roughness:.65,metalness:0}));
  // Office is a branded architectural concept, not a representation of actual property.
  const office=new THREE.Group();office.position.set(.8,terrainHeightAt(.8,-12.8)+.1,-12.8);office.name='AnthriseConceptOffice';root.add(office);
@@ -59,14 +59,14 @@ export function createDetailLayer(parent:THREE.Group,textures:TextureBundle){
  for(let i=0;i<4;i++)box(office,-3.3+i*2.1,8.7,-.8,1.7,.08,2.5,m(new THREE.MeshStandardMaterial({map:textures.solarPanel,roughness:.25,metalness:.3})));
  // Architectural joins, window reveals, gutters and solar framing around the original house.
  const home=new THREE.Group();home.position.set(-11.5,.26,1.7);root.add(home);
- for(let y=.4;y<3.5;y+=.52)box(home,-3.4,y,2.715,5.12,.022,.025,concrete);
- for(let x=-5.5;x<-1;x+=1.1)box(home,x,1.75,2.72,.022,3.3,.025,concrete);
+ for(const y of [.42,.94,2.98,3.49])box(home,-3.4,y,2.715,5.12,.012,.025,concrete);
+ for(const x of [-5.5,-3.15,-2.05,-.95])box(home,x,1.75,2.72,.012,3.3,.025,concrete);
  for(const x of [-.76,2.8,6.2]){
   box(home,x,1.55,2.5,.045,3.02,.04,white);
   box(home,x,1.1,2.55,.04,.38,.04,trim);
  }
- for(let i=0;i<22;i++)box(home,-5.8+i*.55,3.75,2.76,.2,.09,.35,wood);
- tube(home,[new THREE.Vector3(-6,3.65,2.8),new THREE.Vector3(-6,2.8,2.8),new THREE.Vector3(-6,.2,2.8)],.065,trim);
+ const gutterEnd=new THREE.Vector3(-6.3,4.23-.11*Math.cos(.22)-3.29*Math.sin(.22),.1-.11*Math.sin(.22)+3.29*Math.cos(.22));
+ tube(home,[gutterEnd,new THREE.Vector3(-6.3,3.1,2.85),new THREE.Vector3(-6.3,.2,2.85)],.055,trim);
  const fridgeFront=box(home,-.05,1.08,-1.29,.91,2,.03,white);box(home,.29,1.2,-1.25,.04,.65,.07,trim);box(home,-.05,1.4,-1.24,.85,.018,.03,trim);
  const stove=box(home,5.15,.65,-1.6,1.25,1.15,.8,wood);box(home,5.15,1.25,-1.6,1.35,.08,.9,stone);
  for(let i=0;i<2;i++){
@@ -84,7 +84,7 @@ export function createDetailLayer(parent:THREE.Group,textures:TextureBundle){
   box(ci,x,5.65,1,1.5,.45,1.2,concrete);
   for(let i=0;i<9;i++)box(ci,x-.6+i*.15,5.91,1,.04,.025,1,trim);
  }
- // Road edging follows exactly the same centerline as the base road and vehicles.
+ // Road edging follows the base road mesh. Vehicles do not reference this curve.
  const roadCurve=createCampusRoad();
  const edgeMat=mat(0xc8c6b9,.9),paint=m(new THREE.MeshBasicMaterial({color:0xe6e4d6}));
  for(const side of [-1,1]){
@@ -118,7 +118,7 @@ export function createDetailLayer(parent:THREE.Group,textures:TextureBundle){
  const leafTex=new THREE.CanvasTexture(leafCanvas);leafTex.colorSpace=THREE.SRGBColorSpace;extraTextures.push(leafTex);
  const leafMat=m(new THREE.MeshStandardMaterial({map:leafTex,transparent:false,alphaTest:.5,side:THREE.DoubleSide,color:0x638b3b,roughness:.9}));
  const leavesPer=window.innerWidth<=768?130:240;
- const leaves=new THREE.InstancedMesh(g(new THREE.PlaneGeometry(.28,.49)),leafMat,treeCoords.length*leavesPer);leaves.castShadow=false;
+ const leaves=new THREE.InstancedMesh(g(new THREE.PlaneGeometry(.28,.49,2,3)),leafMat,treeCoords.length*leavesPer);leaves.castShadow=false;
  const dummy=new THREE.Object3D();let leafIndex=0;
  const rand=(n:number)=>{const v=Math.sin(n*78.233+11.73)*43758.5453;return v-Math.floor(v);};
  treeCoords.forEach(([x,z,scale],ti)=>{
@@ -161,7 +161,10 @@ export function createDetailLayer(parent:THREE.Group,textures:TextureBundle){
  const lid=box(camp,.65,1.49,-.1,.8,.52,.035,trim);lid.rotation.x=-.16;
  box(camp,.65,1.08,.12,.8,.03,.5,trim);
  box(camp,.65,1.49,-.075,.68,.4,.008,m(new THREE.MeshStandardMaterial({color:0xadc9d1,emissive:0x7da8a5,emissiveIntensity:.24})));
- const lantern=new THREE.Mesh(g(new THREE.CylinderGeometry(.11,.11,.32,16)),glow);lantern.position.set(1.08,1.26,.1);camp.add(lantern);
+ const lantern=new THREE.Mesh(g(new THREE.CylinderGeometry(.11,.11,.32,24)),glow);lantern.name='CampLantern';lantern.position.set(1.08,1.26,.1);camp.add(lantern);
+ const campLight=new THREE.PointLight(0xffc17b,0,5.5,2);campLight.name='CampLantern-Practical';campLight.position.set(1.08,1.32,.1);camp.add(campLight);
+ const lanternCap=new THREE.Mesh(g(new THREE.CylinderGeometry(.13,.13,.035,24)),black);lanternCap.position.set(1.08,1.44,.1);camp.add(lanternCap);
+ const lanternHandle=new THREE.Mesh(g(new THREE.TorusGeometry(.105,.011,8,24,Math.PI)),trim);lanternHandle.position.set(1.08,1.46,.1);camp.add(lanternHandle);
  for(let k=0;k<2;k++){
   const panel=box(camp,-2.05-k*.85,.6,1,.8,.045,1.3,m(new THREE.MeshStandardMaterial({map:textures.solarPanel,roughness:.28,metalness:.25})));panel.rotation.x=.58;
  }
@@ -170,36 +173,23 @@ export function createDetailLayer(parent:THREE.Group,textures:TextureBundle){
  const tent=new THREE.Group();tent.position.set(4,0,1.5);camp.add(tent);
  const tentMat=mat(0xb4a078,.9),tentGeo=g(new THREE.ConeGeometry(1.5,1.9,4,1,true));const fly=new THREE.Mesh(tentGeo,tentMat);fly.position.y=.95;fly.rotation.y=Math.PI/4;fly.scale.z=1.45;tent.add(fly);
  cylinderBetween(tent,new THREE.Vector3(-1.2,0,.8),new THREE.Vector3(0,1.9,0),.025,trim);cylinderBetween(tent,new THREE.Vector3(1.2,0,.8),new THREE.Vector3(0,1.9,0),.025,trim);
- // Recognisable vehicles, constrained to two lanes on the road curve.
+ // Three permanently parked cars. Fixed pad coordinates only: no paths, lanes, speeds or wheel updates.
  const wheelsGeo=g(new THREE.CylinderGeometry(.22,.22,.14,16)),wheelMat=mat(0x242827,.95);
  const wheelHub=mat(0xb6bfc1,.25,.8),windshield=mat(0x29444e,.16,.35);
- const roadLength=roadCurve.getLength();
- const cars:{group:THREE.Group,wheels:THREE.Mesh[],phase:number,dir:number,speed:number}[]=[];
- [0xdce4df,0x244b40,0x6d7b87,0xaeb4b5].forEach((color,i)=>{
-  const car=new THREE.Group();car.name='MovingVehicle'+i;
+ const headlamp=mat(0xdbe5df,.24,.15);
+ const parking=[{x:-17.2,z:8.0,y:.24,yaw:Math.PI/2,color:0xdce4df},{x:26.5,z:-.4,y:.28,yaw:0,color:0x244b40},{x:28.5,z:-.4,y:.28,yaw:0,color:0x8796a3}];
+ parking.forEach(({x,z,y,yaw,color},i)=>{
+  const car=new THREE.Group();car.name='StaticParkedVehicle'+i;
   box(car,0,.47,0,1.04,.44,2.35,mat(color,.27,.55),true);box(car,0,.88,-.12,.9,.53,1.35,windshield,true);
   box(car,0,1.12,-.12,.91,.06,1.1,mat(color,.27,.55),true);
   for(const z of [-.7,.52])box(car,0,.88,z,.92,.035,.045,trim);
   for(const x of [-.52,.52])box(car,x,.86,-.12,.035,.53,.08,trim);
-  const wheels:THREE.Mesh[]=[];
   for(const x of [-.51,.51])for(const z of [-.76,.76]){
-   const wheel=new THREE.Mesh(wheelsGeo,wheelMat);wheel.rotation.z=Math.PI/2;wheel.position.set(x,.25,z);car.add(wheel);wheels.push(wheel);
+   const wheel=new THREE.Mesh(wheelsGeo,wheelMat);wheel.rotation.z=Math.PI/2;wheel.position.set(x,.25,z);car.add(wheel);
    const hub=new THREE.Mesh(g(new THREE.CylinderGeometry(.11,.11,.151,12)),wheelHub);hub.rotation.z=Math.PI/2;hub.position.copy(wheel.position);car.add(hub);
   }
-  for(const x of [-.34,.34]){box(car,x,.56,1.18,.2,.1,.03,glow);box(car,x,.56,-1.18,.2,.1,.03,mat(0x984338,.35));}
-  root.add(car);cars.push({group:car,wheels,phase:[.21,.36,.62,.79][i],dir:i%2===0?1:-1,speed:1.9});
+  for(const x of [-.34,.34]){box(car,x,.56,1.18,.2,.1,.03,headlamp);box(car,x,.56,-1.18,.2,.1,.03,mat(0x984338,.35));}
+  car.position.set(x,y,z);car.rotation.y=yaw;root.add(car);
  });
- let time=0,night=0;
- const update=(dt:number,paused=false)=>{
-  if(!paused)time+=Math.max(0,dt);
-  const tangent=new THREE.Vector3(),normal=new THREE.Vector3();
-  for(const car of cars){
-   const u=((car.phase+car.dir*time*car.speed/roadLength)%1+1)%1,p=roadCurve.getPointAt(u);
-   roadCurve.getTangentAt(u,tangent);normal.set(-tangent.z,0,tangent.x).normalize();p.addScaledVector(normal,car.dir*LANE_OFFSET);p.y=terrainHeightAt(p.x,p.z)+.09;
-   car.group.position.copy(p);car.group.rotation.y=Math.atan2(tangent.x,tangent.z)+(car.dir===1?0:Math.PI);
-   car.wheels.forEach(w=>{w.rotation.x=-car.dir*time*car.speed/.22;});
-  }
- };
- update(0,true);
- return {root,update,setNightFactor(n:number){night=n;glow.emissiveIntensity=.03+n*1.4;},dispose(){hardware.dispose();geometries.forEach(x=>x.dispose());materials.forEach(x=>x.dispose());extraTextures.forEach(x=>x.dispose());}};
+ return {root,setNightFactor(factor:number){const n=THREE.MathUtils.clamp(factor,0,1);glow.emissiveIntensity=n*1.4;campLight.intensity=n*16;},dispose(){hardware.dispose();geometries.forEach(x=>x.dispose());materials.forEach(x=>x.dispose());extraTextures.forEach(x=>x.dispose());root.removeFromParent();}};
 }

@@ -17,7 +17,7 @@ interface ConduitSpec {
 
 interface ActiveTrack {
   spec: ConduitSpec;
-  curve: THREE.CatmullRomCurve3;
+  curve: THREE.CurvePath<THREE.Vector3>;
   tube: THREE.Mesh;
   tubeMat: THREE.MeshBasicMaterial;
   staticArrows: THREE.InstancedMesh;
@@ -331,6 +331,7 @@ export function createEnergyFlowSystem(): EnergyFlowSystem {
 
   const totalPackets = specs.reduce((acc, s) => acc + s.packetCount, 0);
   const packetInstanced = new THREE.InstancedMesh(packetGeo, packetMat, totalPackets);
+  packetInstanced.name = 'EnergyFlowPackets';
   packetInstanced.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
   group.add(packetInstanced);
 
@@ -350,6 +351,7 @@ export function createEnergyFlowSystem(): EnergyFlowSystem {
       opacity: 0.9,
     });
     const tube = new THREE.Mesh(tubeGeo, tubeMat);
+    tube.name = `FlowConduit-${spec.id}`;
     group.add(tube);
 
     // Static directional arrowheads shown when reduced motion or flow paused
@@ -360,6 +362,7 @@ export function createEnergyFlowSystem(): EnergyFlowSystem {
     });
     const arrowCount = Math.max(1, spec.packetCount);
     const staticArrows = new THREE.InstancedMesh(arrowGeo, arrowMat, arrowCount);
+    staticArrows.name = `FlowArrows-${spec.id}`;
     for (let a = 0; a < arrowCount; a++) {
       const t = (a + 0.5) / arrowCount;
       curve.getPointAt(t, pPos);
