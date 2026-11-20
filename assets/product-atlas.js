@@ -230,6 +230,8 @@
     const mainImage = $('#atlas-main-image');
     const sidebar = $('.atlas-sidebar');
     const detail = $('.atlas-details');
+    // Keep the reference's lower-right image-inspection card always reachable.
+    detail.querySelector('.atlas-detail-actions').before($('.atlas-closeup'));
     const featuredTabs = $('.atlas-featured');
     const narrow = window.matchMedia('(max-width: 1100px)');
 
@@ -499,6 +501,14 @@
     const documentPanel = document.getElementById('documentPanel');
     if (documentPanel) new MutationObserver(normalizeExistingLinks).observe(documentPanel, { childList: true, subtree: true });
     showImage(0);
+    // Share a framing state without changing catalogue data or the default complete view.
+    const requestedZoom = Number(params.get('atlas-zoom'));
+    if (params.get('atlas-mode') === 'focus' || (params.has('atlas-zoom') && Number.isFinite(requestedZoom))) {
+      requestAnimationFrame(() => {
+        if (params.get('atlas-mode') === 'focus') setFocus(true);
+        if (params.has('atlas-zoom') && Number.isFinite(requestedZoom)) setZoom(requestedZoom / 100);
+      });
+    }
 
     // Consume the parent-generated provenance manifest, but do not activate 3D without a renderer.
     fetch(new URL('assets/product-model-manifest.json', document.baseURI).href, { credentials: 'same-origin' })

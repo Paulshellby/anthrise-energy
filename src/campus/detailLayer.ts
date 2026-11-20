@@ -4,6 +4,7 @@ import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 import { terrainHeightAt } from './campusWorld';
 import type { TextureBundle } from './textures';
+import { tagPracticalLight } from './lightingBudget';
 
 // A separate detail layer keeps the exported equipment topology and product anchors intact.
 export function createDetailLayer(parent:THREE.Group,textures:TextureBundle,onAssetReady?:()=>void){
@@ -14,7 +15,9 @@ export function createDetailLayer(parent:THREE.Group,textures:TextureBundle,onAs
  const m=<T extends THREE.Material>(x:T):T=>{materials.push(x);return x;};
  const mat=(color:number,roughness=.75,metalness=0)=>m(new THREE.MeshStandardMaterial({color,roughness,metalness}));
  const stone=mat(0xd8d5c9,.88),trim=mat(0x263a36,.36,.4),wood=mat(0x8f6745,.85),concrete=mat(0xbebfb5,.9);
- const glass=m(new THREE.MeshPhysicalMaterial({color:0x6f949c,roughness:.18,metalness:.25,transparent:true,opacity:.64,envMapIntensity:1.2}));
+ // This shared material belongs only to the existing concept-office facade / entrance.
+ const officeDayGlass=new THREE.Color(0x668590),officeNightGlass=new THREE.Color(0xb39978);
+ const glass=m(new THREE.MeshPhysicalMaterial({color:officeDayGlass,roughness:.12,metalness:.08,transparent:true,opacity:.68,envMapIntensity:.95,emissive:0xffbd75,emissiveIntensity:0}));
  const white=mat(0xf2f1e8,.64),black=mat(0x202825,.54,.25),bark=mat(0x685345,.95);
  const glow=m(new THREE.MeshStandardMaterial({color:0xffedc3,emissive:0xffb963,emissiveIntensity:0,roughness:.6}));
  const geoBox=g(new THREE.BoxGeometry(1,1,1));
@@ -160,9 +163,11 @@ export function createDetailLayer(parent:THREE.Group,textures:TextureBundle,onAs
  const portableModel=hardware.portable();portableModel.position.set(-.5,1.06,0);camp.add(portableModel);
  const lid=box(camp,.65,1.49,-.1,.8,.52,.035,trim);lid.rotation.x=-.16;
  box(camp,.65,1.08,.12,.8,.03,.5,trim);
- box(camp,.65,1.49,-.075,.68,.4,.008,m(new THREE.MeshStandardMaterial({color:0xadc9d1,emissive:0x7da8a5,emissiveIntensity:.24})));
+ const campScreen=m(new THREE.MeshStandardMaterial({color:0xadc9d1,emissive:0x7da8a5,emissiveIntensity:0}));
+ box(camp,.65,1.49,-.075,.68,.4,.008,campScreen);
  const lantern=new THREE.Mesh(g(new THREE.CylinderGeometry(.11,.11,.32,24)),glow);lantern.name='CampLantern';lantern.position.set(1.08,1.26,.1);camp.add(lantern);
  const campLight=new THREE.PointLight(0xffc17b,0,5.5,2);campLight.name='CampLantern-Practical';campLight.position.set(1.08,1.32,.1);camp.add(campLight);
+ tagPracticalLight(campLight,'offgrid',1);
  const lanternCap=new THREE.Mesh(g(new THREE.CylinderGeometry(.13,.13,.035,24)),black);lanternCap.position.set(1.08,1.44,.1);camp.add(lanternCap);
  const lanternHandle=new THREE.Mesh(g(new THREE.TorusGeometry(.105,.011,8,24,Math.PI)),trim);lanternHandle.position.set(1.08,1.46,.1);camp.add(lanternHandle);
  for(let k=0;k<2;k++){
@@ -171,7 +176,7 @@ export function createDetailLayer(parent:THREE.Group,textures:TextureBundle,onAs
  tube(camp,[new THREE.Vector3(-2.1,.24,1.45),new THREE.Vector3(-1.5,.1,1.6),new THREE.Vector3(-.035,.2,.6),new THREE.Vector3(-.035,1.34,0)],.024,black);
  tube(camp,[new THREE.Vector3(-.4,1.28,.313),new THREE.Vector3(.05,1.14,.4),new THREE.Vector3(.6,1.13,.3)],.018,black);
  const tent=new THREE.Group();tent.position.set(4,0,1.5);camp.add(tent);
- const tentMat=mat(0xb4a078,.9),tentGeo=g(new THREE.ConeGeometry(1.5,1.9,4,1,true));const fly=new THREE.Mesh(tentGeo,tentMat);fly.position.y=.95;fly.rotation.y=Math.PI/4;fly.scale.z=1.45;tent.add(fly);
+ const tentMat=m(new THREE.MeshStandardMaterial({color:0xb4a078,roughness:.9,emissive:0xb87535,emissiveIntensity:0})),tentGeo=g(new THREE.ConeGeometry(1.5,1.9,4,1,true));const fly=new THREE.Mesh(tentGeo,tentMat);fly.position.y=.95;fly.rotation.y=Math.PI/4;fly.scale.z=1.45;tent.add(fly);
  cylinderBetween(tent,new THREE.Vector3(-1.2,0,.8),new THREE.Vector3(0,1.9,0),.025,trim);cylinderBetween(tent,new THREE.Vector3(1.2,0,.8),new THREE.Vector3(0,1.9,0),.025,trim);
  // Three permanently parked cars. Fixed pad coordinates only: no paths, lanes, speeds or wheel updates.
  const wheelsGeo=g(new THREE.CylinderGeometry(.22,.22,.14,16)),wheelMat=mat(0x242827,.95);
@@ -191,5 +196,18 @@ export function createDetailLayer(parent:THREE.Group,textures:TextureBundle,onAs
   for(const x of [-.34,.34]){box(car,x,.56,1.18,.2,.1,.03,headlamp);box(car,x,.56,-1.18,.2,.1,.03,mat(0x984338,.35));}
   car.position.set(x,y,z);car.rotation.y=yaw;root.add(car);
  });
- return {root,setNightFactor(factor:number){const n=THREE.MathUtils.clamp(factor,0,1);glow.emissiveIntensity=n*1.4;campLight.intensity=n*16;},dispose(){hardware.dispose();geometries.forEach(x=>x.dispose());materials.forEach(x=>x.dispose());extraTextures.forEach(x=>x.dispose());root.removeFromParent();}};
+ return {
+  root,
+  setNightFactor(factor:number){
+   const n=THREE.MathUtils.clamp(factor,0,1);
+   glass.color.copy(officeDayGlass).lerp(officeNightGlass,n);
+   glass.opacity=THREE.MathUtils.lerp(.68,.88,n);
+   glass.emissiveIntensity=n*.95;
+   glow.emissiveIntensity=n*1.8;
+   tentMat.emissiveIntensity=n*.18;
+   campScreen.emissiveIntensity=n*.24;
+   campLight.intensity=n*16;
+  },
+  dispose(){hardware.dispose();geometries.forEach(x=>x.dispose());materials.forEach(x=>x.dispose());extraTextures.forEach(x=>x.dispose());root.removeFromParent();}
+ };
 }

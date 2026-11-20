@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "objectsCompared": 1185,
+  "allWorldGeometryAndTransformsUnchanged": true,
+  "allLightPhysicalParametersUnchanged": true,
+  "allHotspotDefinitionsUnchanged": true,
+  "oldOverviewPitchDegrees": 31.201459871007653
+}

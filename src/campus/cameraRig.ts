@@ -13,9 +13,10 @@ const WAYPOINTS: Waypoint[] = [
   {
     id: 'overview',
     progress: 0.0,
-    pos: new THREE.Vector3(2.8, 28.8, 52.0),
-    target: new THREE.Vector3(5.6, -0.2, 4.2),
-    fov: 39,
+    // Lower architectural overview: retain all zone anchors while opening a sky band.
+    pos: new THREE.Vector3(3.0, 19.0, 55.0),
+    target: new THREE.Vector3(5.6, 4.3, 4.2),
+    fov: 41,
   },
   {
     id: 'home',

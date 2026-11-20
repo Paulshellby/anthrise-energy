@@ -4,6 +4,7 @@ import {createCableHarness} from './cableRoutes';
 import { createHomeRefinement } from './homeRefinement';
 import * as THREE from 'three';
 import { TextureBundle } from './textures';
+import { tagPracticalLight } from './lightingBudget';
 
 export interface CampusWorld {
   root: THREE.Group;
@@ -111,7 +112,7 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
   const meadowMat = trackMat(
     new THREE.MeshStandardMaterial({
       map: textures.grassGround,
-      color: 0x9db784,
+      color: 0x769562,
       roughness: 0.94,
       metalness: 0.0,
     })
@@ -162,13 +163,13 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
   );
   const glassMat = trackMat(
     new THREE.MeshPhysicalMaterial({
-      color: 0xdff2f6,
-      roughness: 0.08,
-      metalness: 0.05,
+      color: 0x97b7c4,
+      roughness: 0.12,
+      metalness: 0.08,
       transparent: true,
-      opacity: 0.34,
+      opacity: 0.4,
       ior: 1.48,
-      reflectivity: 0.7,
+      reflectivity: 0.55,
     })
   );
   const pvSurfaceMat = trackMat(
@@ -219,7 +220,7 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
   );
 
   // Night-reactive emissive & practical lighting lists
-  const warmGlowMats: THREE.MeshStandardMaterial[] = [];
+  const warmGlowMats: { material: THREE.MeshStandardMaterial; intensity: number }[] = [];
   const solarLampMats: THREE.MeshStandardMaterial[] = [];
   const practicalLights: { light: THREE.PointLight; maxIntensity: number }[] = [];
 
@@ -441,7 +442,7 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
       roughness: 0.25,
     })
   );
-  warmGlowMats.push(tvGlowMat);
+  warmGlowMats.push({ material: tvGlowMat, intensity: 0.32 });
   const tvScreen = new THREE.Mesh(trackGeo(new THREE.BoxGeometry(0.08, 0.9, 1.48)), tvGlowMat);
   tvScreen.position.set(6.08, 1.45, 0.1);
   homeBody.add(tvScreen);
@@ -455,12 +456,14 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
       roughness: 0.35,
     })
   );
-  warmGlowMats.push(homeLampGlowMat);
+  warmGlowMats.push({ material: homeLampGlowMat, intensity: 1.65 });
   const lampShade = new THREE.Mesh(trackGeo(new THREE.CylinderGeometry(0.18, 0.42, 0.28, 18)), homeLampGlowMat);
   lampShade.position.set(2.9, 2.95, 0.2);
   homeBody.add(lampShade);
 
   const homeInteriorLight = new THREE.PointLight(0xffc78b, 0.0, 9, 2);
+  homeInteriorLight.name = 'HomeInterior-Practical';
+  tagPracticalLight(homeInteriorLight, 'home', 0);
   homeInteriorLight.position.set(2.9, 2.65, 0.2);
   homeBody.add(homeInteriorLight);
   practicalLights.push({ light: homeInteriorLight, maxIntensity: 32 });
@@ -544,6 +547,8 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
   zone01.add(courtyardSolarCap);
 
   const courtyardPoint = new THREE.PointLight(0xffcb78, 0.0, 6.5, 2);
+  courtyardPoint.name = 'HomeCourtyard-Practical';
+  tagPracticalLight(courtyardPoint, 'home', 1);
   courtyardPoint.position.set(7.1, 1.75, 4.4);
   zone01.add(courtyardPoint);
   practicalLights.push({ light: courtyardPoint, maxIntensity: 18 });
@@ -581,7 +586,7 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
       roughness: 0.72,
     })
   );
-  warmGlowMats.push(officeCoreMat);
+  warmGlowMats.push({ material: officeCoreMat, intensity: 0.92 });
   const officeInnerCore = new THREE.Mesh(trackGeo(new THREE.BoxGeometry(7.0, 4.2, 7.0)), officeCoreMat);
   officeInnerCore.position.set(4.8, 2.2, 0);
   ciBuilding.add(officeInnerCore);
@@ -604,6 +609,8 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
   });
 
   const ciOfficeLight = new THREE.PointLight(0xffcb7f, 0.0, 11, 2);
+  ciOfficeLight.name = 'CommercialOffice-Practical';
+  tagPracticalLight(ciOfficeLight, 'commercial', 0);
   ciOfficeLight.position.set(4.8, 3.0, 4.5);
   ciBuilding.add(ciOfficeLight);
   practicalLights.push({ light: ciOfficeLight, maxIntensity: 40 });
@@ -658,7 +665,7 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
     [-1.2, 8.8],
     [7.2, 8.6],
   ];
-  roadLightCoords.forEach(([lx, lz]) => {
+  roadLightCoords.forEach(([lx, lz], index) => {
     const mast = new THREE.Mesh(trackGeo(new THREE.CylinderGeometry(0.09, 0.13, 4.4, 10)), darkSteelMat);
     mast.position.set(lx, 2.2, lz);
     mast.castShadow = true;
@@ -687,6 +694,8 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
     zone02.add(diffuser);
 
     const roadPoint = new THREE.PointLight(0xffdfb0, 0.0, 13, 2);
+    roadPoint.name = `SpineRoad-${index + 1}-Practical`;
+    tagPracticalLight(roadPoint, 'road', index);
     roadPoint.position.set(lx, 4.0, lz - 0.3);
     zone02.add(roadPoint);
     practicalLights.push({ light: roadPoint, maxIntensity: 80 });
@@ -743,7 +752,7 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
       roughness: 0.25,
     })
   );
-  warmGlowMats.push(laptopGlowMat);
+  warmGlowMats.push({ material: laptopGlowMat, intensity: 0.4 });
   const laptopScreen = new THREE.Mesh(trackGeo(new THREE.BoxGeometry(0.54, 0.36, 0.04)), laptopGlowMat);
   laptopScreen.position.set(1.4, 1.24, -0.88);
   laptopScreen.rotation.x = -0.15;
@@ -761,12 +770,14 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
       roughness: 0.28,
     })
   );
-  warmGlowMats.push(lanternMat);
+  warmGlowMats.push({ material: lanternMat, intensity: 1.8 });
   const campLantern = new THREE.Mesh(trackGeo(new THREE.CylinderGeometry(0.14, 0.16, 0.28, 12)), lanternMat);
   campLantern.position.set(0.8, 2.6, 0.6);
   zone03.add(campLantern);
 
   const cabinLight = new THREE.PointLight(0xffbe66, 0.0, 8, 2);
+  cabinLight.name = 'OffgridCabin-Practical';
+  tagPracticalLight(cabinLight, 'offgrid', 0);
   cabinLight.position.set(0.8, 2.45, 0.6);
   zone03.add(cabinLight);
   practicalLights.push({ light: cabinLight, maxIntensity: 28 });
@@ -843,6 +854,8 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
   zone03.add(splitLuminaire);
 
   const splitStreetLight = new THREE.PointLight(0xffd788, 0.0, 14, 2);
+  splitStreetLight.name = 'OffgridTrail-Practical';
+  tagPracticalLight(splitStreetLight, 'offgrid', 2);
   splitStreetLight.position.set(4.65, 3.65, 1.3);
   zone03.add(splitStreetLight);
   practicalLights.push({ light: splitStreetLight, maxIntensity: 75 });
@@ -932,8 +945,8 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
   const setNightFactor = (nightFactor: number) => {
     const n = THREE.MathUtils.clamp(nightFactor, 0, 1);
 
-    warmGlowMats.forEach((m) => {
-      m.emissiveIntensity = 1.35 * n;
+    warmGlowMats.forEach(({ material, intensity }) => {
+      material.emissiveIntensity = intensity * n;
     });
 
     solarLampMats.forEach((m) => {

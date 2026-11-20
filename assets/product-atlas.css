@@ -14,17 +14,17 @@ body.anthrise-atlas-page .locale summary:focus-visible { outline-color: #007F68;
 body.anthrise-atlas-page > .wrap { padding-top: 28px; }
 
 .product-atlas {
-  --atlas-bg: #F6F3EB;
-  --atlas-panel: #FFFCF6;
-  --atlas-line: #E1E0D8;
-  --atlas-ink: #16263A;
-  --atlas-muted: #63717A;
+  --atlas-bg: #F8F6EA;
+  --atlas-panel: #FCFBF3;
+  --atlas-line: #DEDFD2;
+  --atlas-ink: #1B2923;
+  --atlas-muted: #677269;
   --atlas-accent: #007F68;
-  --atlas-tint: #E4EFE9;
+  --atlas-tint: #E8EDDF;
   --atlas-header-height: 80px;
   position: relative;
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr) 360px;
+  grid-template-columns: 200px minmax(0, 1fr) 340px;
   width: 100%;
   height: calc(100vh - var(--atlas-header-height));
   height: calc(100dvh - var(--atlas-header-height));
@@ -286,3 +286,42 @@ body.anthrise-atlas-page > .wrap { padding-top: 28px; }
 @media (prefers-reduced-motion: reduce) {
   .product-atlas *, .product-atlas *::before, .product-atlas *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Visual-reference refinement: retain controls, release height to the real product. */
+.product-atlas .atlas-stage {
+  background: radial-gradient(ellipse at 54% 48%, #FDFCF5, #F8F6EA 78%);
+}
+.product-atlas .atlas-stage[data-studio="dark"] {
+  background: radial-gradient(ellipse at 56% 45%, #26364A, #111A2B 76%);
+}
+@media (min-width: 761px) {
+  .product-atlas .atlas-featured-tab { flex-basis: 136px; min-height: 64px; padding: 8px; }
+  .product-atlas .atlas-featured-tab img { width: 30px; height: 44px; }
+  .product-atlas .atlas-featured-tab small { margin-top: 4px; }
+  .product-atlas .atlas-center { gap: 8px; padding-top: 16px; padding-bottom: 12px; }
+  .product-atlas:not(.is-focus) .atlas-image-viewport { inset: 34px 6px 50px 59px; }
+  .product-atlas .atlas-image-frame img { padding: 3px 4px; }
+  .product-atlas:not(.is-focus) .atlas-tools { bottom: 56px; }
+  .product-atlas .atlas-view-tabs button { min-height: 61px; padding: 4px 5px; }
+  .product-atlas .atlas-view-tabs img { height: 31px; }
+  .product-atlas .atlas-view-tabs span { margin-top: 3px; }
+  .product-atlas .atlas-detail-scroll h1 { font-size: 40px; }
+  .product-atlas[data-lang="zh"] .atlas-detail-scroll h1 { font-size: 34px; }
+  .product-atlas .atlas-details {
+    margin: 14px 14px 14px 0; padding: 18px 17px 14px;
+    border: 1px solid var(--atlas-line); border-radius: 9px;
+  }
+}
+@media (min-width: 1101px) {
+  .product-atlas:not(.is-focus) .atlas-center-top { display: none; }
+  .product-atlas .atlas-sidebar { padding-top: 18px; }
+  .product-atlas .atlas-sidebar-heading h2 { font-size: 25px; }
+  .product-atlas .atlas-category-buttons button { padding-left: 7px; padding-right: 7px; }
+}
+
+.product-atlas .atlas-details > .atlas-closeup {
+  flex-shrink: 0; min-height: 72px; margin-top: 12px; padding: 8px 10px;
+}
+.product-atlas .atlas-details > .atlas-closeup img { width: 40px; height: 50px; flex-basis: 40px; }
+.product-atlas .atlas-details > .atlas-closeup strong { font-size: 12px; margin-bottom: 3px; }
+.product-atlas .atlas-details > .atlas-closeup small { font-size: 9px; }

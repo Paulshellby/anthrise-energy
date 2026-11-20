@@ -14,14 +14,14 @@ global.document = { createElement: () => ({ width: 64, height: 128, getContext: 
 const originalLoad = THREE.TextureLoader.prototype.load;
 THREE.TextureLoader.prototype.load = function (_, onLoad) { const texture = new THREE.Texture(); if (onLoad) onLoad(texture); return texture; };
 const code = esbuild.buildSync({
-  stdin: { contents: "export {createCampusWorld} from './src/campus/campusWorld'; export {createDetailLayer} from './src/campus/detailLayer'; export {createEnergyFlowSystem} from './src/campus/energyFlow'; export {CAMPUS_HOTSPOTS} from './src/campus/types';", resolveDir: process.cwd(), loader: 'ts' },
+  stdin: { contents: "export {createCampusWorld} from './src/campus/campusWorld'; export {createDetailLayer} from './src/campus/detailLayer'; export {createEnergyFlowSystem} from './src/campus/energyFlow'; export {CAMPUS_HOTSPOTS} from './src/campus/types'; export {selectPracticalLights,applyPracticalLightBudget} from './src/campus/lightingBudget'; export {createCameraRig} from './src/campus/cameraRig'; export {createAtmosphericSky} from './src/campus/atmosphericSky';", resolveDir: process.cwd(), loader: 'ts' },
   bundle: true, write: false, platform: 'node', format: 'cjs', packages: 'external', logLevel: 'silent',
 }).outputFiles[0].text;
 const mod = new Module(path.join(process.cwd(), 'src/campus/.in-memory-validation.cjs'), module);
 mod.filename = mod.id;
 mod.paths = Module._nodeModulePaths(process.cwd());
 mod._compile(code, mod.filename);
-const { createCampusWorld, createDetailLayer, createEnergyFlowSystem, CAMPUS_HOTSPOTS } = mod.exports;
+const { createCampusWorld, createDetailLayer, createEnergyFlowSystem, CAMPUS_HOTSPOTS, selectPracticalLights, applyPracticalLightBudget, createCameraRig, createAtmosphericSky } = mod.exports;
 const texture = new THREE.Texture();
 const textures = { solarPanel: texture, limestoneWall: texture, roadAsphalt: texture, grassGround: texture, timberDeck: texture, productTextures: new Map() };
 const world = createCampusWorld(textures);
@@ -39,6 +39,58 @@ world.setNightFactor(1); details.setNightFactor(1);
 assert.deepEqual(snapshot(), daySpace, 'Day / night must change no object transforms');
 assert(lamps.every(light => light.intensity > 0 && light.distance > 0 && light.decay === 2));
 assert(warmMaterials.every(m => m.emissiveIntensity > 0));
+assert.equal(lamps.length, 12, 'No added or removed physical lights');
+assert.deepEqual(lamps.map(light => light.distance).sort((a,b) => a-b), [4.6,4.6,5.5,6.5,7.5,7.5,8,9,11,13,13,14]);
+assert(lamps.every(light => !light.castShadow), 'No extra local shadow maps');
+root.updateMatrixWorld(true);
+const budgetSnapshot = lamps.map(light => [light.intensity,light.distance,light.decay,...light.getWorldPosition(new THREE.Vector3()).toArray()]);
+const budgetReport = {};
+for (const budget of [4,6,12]) {
+  applyPracticalLightBudget(lamps,'overview',budget);
+  const selected = lamps.filter(light => light.visible);
+  assert.equal(selected.length,budget);
+  const regions = new Set(selected.map(light => light.userData.lightingRegion));
+  assert(['home','road','commercial','offgrid'].every(region => regions.has(region)));
+  if (budget === 6) {
+    assert.equal(selected.filter(light => light.userData.lightingRegion === 'road').length,2);
+    assert(selected.some(light => light.name === 'HomeCourtyard-Practical'));
+  }
+  budgetReport[budget] = selected.map(light => light.name);
+}
+const zoneCenters = {home:new THREE.Vector3(-11.5,1,2),commercial:new THREE.Vector3(18.5,1,-7.8),offgrid:new THREE.Vector3(18,1,19.2)};
+for (const [zone,center] of Object.entries(zoneCenters)) {
+  const nearest = lamps.slice().sort((a,b) => a.getWorldPosition(new THREE.Vector3()).distanceToSquared(center)-b.getWorldPosition(new THREE.Vector3()).distanceToSquared(center));
+  assert.deepEqual(selectPracticalLights(lamps,zone,4),nearest.slice(0,4), 'Local zones retain nearest-first budget');
+}
+assert.deepEqual(lamps.map(light => [light.intensity,light.distance,light.decay,...light.getWorldPosition(new THREE.Vector3()).toArray()]),budgetSnapshot);
+applyPracticalLightBudget(lamps,'overview',12);
+const conceptOffice = root.getObjectByName('AnthriseConceptOffice');
+const officeWindowMaterials = conceptOffice.children.filter(mesh => mesh.material?.transparent && mesh.material.emissive?.r > mesh.material.emissive?.b).map(mesh => mesh.material);
+assert(officeWindowMaterials.length >= 2 && officeWindowMaterials.every(material => material.emissiveIntensity > 0));
+const sky = createAtmosphericSky();
+assert.equal(sky.mesh.material.depthWrite,false);
+assert.equal(sky.mesh.material.depthTest,false);
+assert.equal(sky.mesh.castShadow,false);
+assert(THREE.ShaderChunk.colorspace_fragment, 'Existing Three.js supports the sky color-space shader chunk');
+const skyTriangles = sky.mesh.geometry.index.count / 3;
+assert(skyTriangles <= 256, 'Low-cost sky, not a reconstructed environment');
+sky.setNightFactor(1);
+assert(sky.mesh.material.uniforms.zenith.value.b > sky.mesh.material.uniforms.zenith.value.r);
+const camera = new THREE.PerspectiveCamera(40,1440/830,.4,220);
+const rig = createCameraRig(camera);
+rig.snapToProgress(0,1440/830);
+camera.updateMatrixWorld(true);
+const overviewPitchDegrees = THREE.MathUtils.radToDeg(Math.atan2(camera.position.y-4.3,Math.hypot(camera.position.x-5.6,camera.position.z-4.2)));
+assert(overviewPitchDegrees < 20 && camera.fov / 2 > overviewPitchDegrees, 'Lower overview leaves a visible sky band');
+for (const [name,position] of [['home',[-11.5,2,2]],['commercial',[19,2,-7]],['offgrid',[21,2,15.2]],['office',[.8,4,-12.8]]]) {
+  const projected = new THREE.Vector3(...position).project(camera);
+  assert(Math.abs(projected.x) < .92 && Math.abs(projected.y) < .88, `${name} stays inside the landscape overview`);
+}
+const cameraBeforeDrag = camera.position.clone();
+rig.setOrbitOffset(.1,.03);rig.update(.1,1440/830,true);
+assert(camera.position.distanceTo(cameraBeforeDrag) > .1, 'Dragging changes the real perspective camera');
+rig.resetOrbit();rig.update(.1,1440/830,true);
+assert(camera.position.distanceTo(cameraBeforeDrag) < .00001);
 const cars = all().filter(o => /^StaticParkedVehicle/.test(o.name));
 assert.equal(cars.length, 3);
 assert.equal(details.update, undefined, 'No vehicle animation callback');
@@ -91,10 +143,14 @@ const sceneSource = fs.readFileSync('src/campus/CampusScene.ts', 'utf8');
 assert(!/vehicleAnimating|detailLayer\.update/.test(sceneSource));
 assert(/setPointerCapture/.test(sceneSource) && /pointercancel/.test(sceneSource));
 assert(/e\.target !== canvasHost/.test(sceneSource), 'Arrow keys are stage-local');
+assert(/if \(instant \|\| isReducedMotion \|\| motionPaused \|\| isSoftwareGl\)/.test(sceneSource), 'Software GPU switches atmosphere immediately');
+assert.equal((sceneSource.match(/castShadow = true/g)||[]).length,1, 'Still only one directional shadow map');
+assert(!/EffectComposer|UnrealBloomPass|postprocessing/.test(sceneSource));
 assert(!fs.readFileSync('src/campus/index.ts', 'utf8').includes('flowToggle.click'));
 world.setNightFactor(0); details.setNightFactor(0);
 assert(lamps.every(light => light.intensity === 0) && warmMaterials.every(m => m.emissiveIntensity === 0));
 const triangles = all().filter(o => o.isMesh).reduce((sum, mesh) => sum + (mesh.geometry.index ? mesh.geometry.index.count / 3 : mesh.geometry.getAttribute('position').count / 3) * (mesh.isInstancedMesh ? mesh.count : 1), 0);
-console.log(JSON.stringify({ status: 'passed', browserTest: false, lights: lamps.length, warmLampMaterials: warmMaterials.length, staticCars: cars.length, roofTiles: 338, sceneTriangles: triangles, pvTracksChecked: pvIds.length, sameDayNightSpace: true, batteryPosition: batteryPosition.toArray(), inverterPosition: inverterPosition.toArray(), checks: ['day lights and warm emitters exactly zero', 'night physical distance / decay', 'three static cars, no update', 'real roof / shell / window / PV mounts', 'original battery / inverter anchors', 'both side-cooling cabinets retained', 'night PV packets off', 'flow hidden / shown / paused / reduced-motion', 'stage keyboard / pointer-cancel source guard'] }, null, 2));
+console.log(JSON.stringify({ status: 'passed', browserTest: false, lights: lamps.length, warmLampMaterials: warmMaterials.length, staticCars: cars.length, roofTiles: 338, sceneTriangles: triangles, skyTriangles, overviewPitchDegrees, lightBudgets: budgetReport, pvTracksChecked: pvIds.length, sameDayNightSpace: true, batteryPosition: batteryPosition.toArray(), inverterPosition: inverterPosition.toArray(), checks: ['day lights and warm emitters exactly zero', 'night physical distance / decay', '4/6/all overview budgets cover every region', 'local-zone budgets remain nearest-first', 'budget changes preserve range / decay / intensity / position', 'concept-office warm windows independent of physical light budget', 'lower overview keeps zones inside frame and opens sky', 'real camera drag / reset', 'single directional shadow map and no costly post-processing', 'software GPU immediate atmosphere', 'three static cars, no update', 'real roof / shell / window / PV mounts', 'original battery / inverter anchors', 'both side-cooling cabinets retained', 'night PV packets off', 'flow hidden / shown / paused / reduced-motion', 'stage keyboard / pointer-cancel source guard'] }, null, 2));
+sky.dispose();
 flow.dispose(); details.dispose(); world.dispose(); texture.dispose();
 THREE.TextureLoader.prototype.load = originalLoad;

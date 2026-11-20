@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import type { TextureBundle } from './textures';
+import { tagPracticalLight } from './lightingBudget';
 
 /** First-region architectural concept. No CAD, rear connector or drilling template is implied. */
 export function createHomeRefinement(
@@ -22,7 +23,7 @@ export function createHomeRefinement(
   const frame = material(0x273b3e, 0.34, 0.55);
   const silver = material(0xaebbbe, 0.34, 0.72);
   const timber = mat(new THREE.MeshStandardMaterial({ color: 0xc9a57e, map: textures.timberDeck, roughness: 0.84 }));
-  const glass = mat(new THREE.MeshPhysicalMaterial({ color: 0xb5d5df, roughness: 0.13, metalness: 0.08, transparent: true, opacity: 0.48, ior: 1.48, side: THREE.DoubleSide }));
+  const glass = mat(new THREE.MeshPhysicalMaterial({ color: 0x9bbbc7, roughness: 0.13, metalness: 0.08, transparent: true, opacity: 0.48, ior: 1.48, side: THREE.DoubleSide, emissive: 0xffc184, emissiveIntensity: 0 }));
   const tile = material(0x485c69, 0.83, 0.12);
   const unitBox = geo(new THREE.BoxGeometry(1, 1, 1));
   function box(parent: THREE.Object3D, name: string, x: number, y: number, z: number, w: number, h: number, d: number, surface: THREE.Material) {
@@ -178,6 +179,7 @@ export function createHomeRefinement(
     box(root, 'WallSconceDiffuser', x, 2.325, 2.91, 0.18, 0.018, 0.22, glow);
     const light = new THREE.SpotLight(0xffc887, 0, 7.5, 0.82, 0.55, 2);
     light.name = 'HomeWallSconce-Practical'; light.position.set(x, 2.3, 2.96);
+    tagPracticalLight(light, 'home', 2);
     light.target.position.set(x, 0, 3.9); root.add(light, light.target);
     lights.push({ light, intensity: 38 });
   }
@@ -189,6 +191,7 @@ export function createHomeRefinement(
     box(root, 'PathBollardPVCap', x, 0.77, z, 0.2, 0.035, 0.2, pv);
     const light = new THREE.PointLight(0xffce90, 0, 4.6, 2);
     light.name = 'AutonomousPathBollard-Practical'; light.position.set(x, 0.64, z);
+    tagPracticalLight(light, 'home', 3);
     root.add(light); lights.push({ light, intensity: 9 });
   }
   return {
@@ -197,6 +200,7 @@ export function createHomeRefinement(
     setNightFactor(nightFactor: number) {
       const n = THREE.MathUtils.clamp(nightFactor, 0, 1);
       glow.emissiveIntensity = 1.65 * n;
+      glass.emissiveIntensity = 0.38 * n;
       lights.forEach(({ light, intensity }) => { light.intensity = intensity * n; });
     },
     dispose() {

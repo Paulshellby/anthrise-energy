@@ -7,6 +7,8 @@ import { createEnergyFlowSystem } from './energyFlow';
 import { createHotspotController } from './hotspots';
 import { createCampusTextures } from './textures';
 import { CampusZoneId, HotspotDef, LangCode, SceneTime, ZONE_META } from './types';
+import { createAtmosphericSky } from './atmosphericSky';
+import { applyPracticalLightBudget } from './lightingBudget';
 
 export interface CampusBridge {
   setTime: (time: SceneTime, instant?: boolean) => void;
@@ -35,14 +37,14 @@ export interface CampusMountOptions {
   onInquireProduct?: (hotspot: HotspotDef) => void;
 }
 
-const DAY_BG = new THREE.Color(0xdde8eb);
-const NIGHT_BG = new THREE.Color(0x06152f);
-const DAY_SUN = new THREE.Color(0xfff5e4);
-const NIGHT_MOON = new THREE.Color(0x729ce6);
-const DAY_HEMI_SKY = new THREE.Color(0xe6f3ff);
-const NIGHT_HEMI_SKY = new THREE.Color(0x224a88);
-const DAY_HEMI_GND = new THREE.Color(0xb6c5bc);
-const NIGHT_HEMI_GND = new THREE.Color(0x080f27);
+const DAY_BG = new THREE.Color(0xd5e4e9);
+const NIGHT_BG = new THREE.Color(0x1c3456);
+const DAY_SUN = new THREE.Color(0xfff2dd);
+const NIGHT_MOON = new THREE.Color(0x8ba9e0);
+const DAY_HEMI_SKY = new THREE.Color(0xd7ebff);
+const NIGHT_HEMI_SKY = new THREE.Color(0x486b9e);
+const DAY_HEMI_GND = new THREE.Color(0x89977b);
+const NIGHT_HEMI_GND = new THREE.Color(0x17233c);
 
 export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBridge; dispose: () => void } {
   const { heroSection, stickyViewport, canvasHost, hotspotsHost, fallbackView } = opts;
@@ -120,31 +122,33 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
 
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.02;
+  renderer.toneMappingExposure = 0.98;
   renderer.setPixelRatio(isSoftwareGl ? 1 : Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2));
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
   const scene = new THREE.Scene();
   const bgColor = DAY_BG.clone();
-  const fog = new THREE.FogExp2(bgColor.getHex(), 0.0068);
+  const fog = new THREE.FogExp2(bgColor.getHex(), 0.009);
   scene.background = bgColor;
   scene.fog = fog;
+  const sky = createAtmosphericSky();
+  scene.add(sky.mesh);
 
   // Mandatory Studio IBL via RoomEnvironment PMREM so metallic enclosures & glass never crush black
   const pmrem = new THREE.PMREMGenerator(renderer);
   const roomEnv = new RoomEnvironment();
   envRT = pmrem.fromScene(roomEnv, 0.04);
   scene.environment = envRT.texture;
-  scene.environmentIntensity = 0.5;
+  scene.environmentIntensity = 0.36;
   roomEnv.dispose();
   pmrem.dispose();
 
   // Calibrated Three-Point Architectural Lighting
-  const hemiLight = new THREE.HemisphereLight(DAY_HEMI_SKY.getHex(), DAY_HEMI_GND.getHex(), 0.92);
+  const hemiLight = new THREE.HemisphereLight(DAY_HEMI_SKY.getHex(), DAY_HEMI_GND.getHex(), 0.76);
   scene.add(hemiLight);
 
-  const keyLight = new THREE.DirectionalLight(DAY_SUN.getHex(), 2.1);
+  const keyLight = new THREE.DirectionalLight(DAY_SUN.getHex(), 2.35);
   keyLight.position.set(28, 36, 22);
   keyLight.castShadow = true;
   keyLight.shadow.mapSize.set(isSoftwareGl || isMobile ? 1024 : 2048, isSoftwareGl || isMobile ? 1024 : 2048);
@@ -158,7 +162,7 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
   keyLight.shadow.normalBias = 0.025;
   scene.add(keyLight);
 
-  const rimLight = new THREE.DirectionalLight(0xcbe3ee, 0.45);
+  const rimLight = new THREE.DirectionalLight(0xcbe3ee, 0.28);
   rimLight.position.set(-28, 16, -24);
   scene.add(rimLight);
 
@@ -174,26 +178,16 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
   const flowSystem = createEnergyFlowSystem();
   scene.add(flowSystem.group);
 
-  // Physical lights are expensive on software GPUs. Keep accurate range/decay,
-  // but allocate a bounded set nearest the inspected zone; hardware desktop keeps all.
+  // Physical lights keep the original count/range/decay. Overview shares the 4/6
+  // budget across regions; inspected zones remain nearest-first; desktop keeps all.
   const localLights: (THREE.PointLight | THREE.SpotLight)[] = [];
   scene.traverse((object: THREE.Object3D) => {
     if (object instanceof THREE.PointLight || object instanceof THREE.SpotLight) localLights.push(object);
   });
   const lightBudget = isSoftwareGl ? 4 : isMobile ? 6 : localLights.length;
   heroSection.dataset.lightingQuality = lightBudget < localLights.length ? 'balanced' : 'full';
-  const zoneLightCenters: Record<CampusZoneId, THREE.Vector3> = {
-    overview: new THREE.Vector3(-2, 1, 4),
-    home: new THREE.Vector3(-11.5, 1, 2),
-    commercial: new THREE.Vector3(18.5, 1, -7.8),
-    offgrid: new THREE.Vector3(18, 1, 19.2),
-  };
-  const lampPosition = new THREE.Vector3();
   const applyLightBudget = () => {
-    const center = zoneLightCenters[currentZone];
-    const ranked = localLights.map((light) => ({light, distance: light.getWorldPosition(lampPosition).distanceToSquared(center)}));
-    ranked.sort((a, b) => a.distance - b.distance);
-    ranked.forEach(({light}, index) => { light.visible = index < lightBudget; });
+    applyPracticalLightBudget(localLights, currentZone, lightBudget);
   };
 
   const cameraRig = createCameraRig(camera);
@@ -237,19 +231,20 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
 
   const applyAtmosphere = (n: number) => {
     bgColor.copy(DAY_BG).lerp(NIGHT_BG, n);
+    sky.setNightFactor(n);
     fog.color.copy(bgColor);
-    fog.density = THREE.MathUtils.lerp(0.0068, 0.0076, n);
-    scene.environmentIntensity = THREE.MathUtils.lerp(0.5, 0.065, n);
-    renderer!.toneMappingExposure = THREE.MathUtils.lerp(1.02, 0.9, n);
+    fog.density = THREE.MathUtils.lerp(0.009, 0.008, n);
+    scene.environmentIntensity = THREE.MathUtils.lerp(0.36, 0.12, n);
+    renderer!.toneMappingExposure = THREE.MathUtils.lerp(0.98, 0.96, n);
 
     keyLight.color.copy(DAY_SUN).lerp(NIGHT_MOON, n);
-    keyLight.intensity = THREE.MathUtils.lerp(2.1, 0.26, n);
+    keyLight.intensity = THREE.MathUtils.lerp(2.35, 0.46, n);
 
     hemiLight.color.copy(DAY_HEMI_SKY).lerp(NIGHT_HEMI_SKY, n);
     hemiLight.groundColor.copy(DAY_HEMI_GND).lerp(NIGHT_HEMI_GND, n);
-    hemiLight.intensity = THREE.MathUtils.lerp(0.92, 0.18, n);
+    hemiLight.intensity = THREE.MathUtils.lerp(0.76, 0.34, n);
 
-    rimLight.intensity = THREE.MathUtils.lerp(0.45, 0.1, n);
+    rimLight.intensity = THREE.MathUtils.lerp(0.28, 0.16, n);
     const lampNight = targetTime === 'night' ? n : 0;
     world.setNightFactor(lampNight);
     detailLayer.setNightFactor(lampNight);
@@ -377,6 +372,7 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
     if (nextZone !== currentZone) {
       currentZone = nextZone;
       opts.onZoneChange?.(nextZone);
+      applyLightBudget();
     }
     needsRender = true;
   };
@@ -506,7 +502,7 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
         world.setNightFactor(0);
         detailLayer.setNightFactor(0);
       }
-      if (instant || isReducedMotion) {
+      if (instant || isReducedMotion || motionPaused || isSoftwareGl) {
         nightBlend = targetNight;
         applyAtmosphere(nightBlend);
       }
@@ -570,6 +566,7 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
       flowSystem.dispose();
       detailLayer.dispose();
       world.dispose();
+      sky.dispose();
       textures.dispose();
       envRT?.dispose();
       renderer?.dispose();
