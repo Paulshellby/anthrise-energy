@@ -1,0 +1,110 @@
+{
+  "license": "CC0 1.0",
+  "licenseUrl": "https://docs.ambientcg.com/license/",
+  "sets": [
+    {
+      "kind": "plaster",
+      "asset": "Plaster001",
+      "source": "https://ambientcg.com/view?id=Plaster001",
+      "download": "https://ambientcg.com/get?file=Plaster001_1K-JPG.zip",
+      "archiveSha256": "944b4831016e42ace4a89422e4e7190912ca2f7fed6f561354c48ec7bb54d3a4",
+      "maps": [
+        {
+          "type": "Color",
+          "path": "assets/materials/home/plaster-color.jpg",
+          "width": 1024,
+          "height": 1024,
+          "sha256": "22efe503670e6ec1e6b421bab2db32ddd6eeda0d1acd1629443a35a37a417b99"
+        },
+        {
+          "type": "NormalGL",
+          "path": "assets/materials/home/plaster-normalgl.jpg",
+          "width": 1024,
+          "height": 1024,
+          "sha256": "e6c2fde445566d6f4af30b383a76c22bec83a892c035dc648063d69ced31aa0b"
+        },
+        {
+          "type": "Roughness",
+          "path": "assets/materials/home/plaster-roughness.jpg",
+          "width": 1024,
+          "height": 1024,
+          "sha256": "f620f3b08977f3b378c5168fcfcff9ebb478f37094d1b7760322be7458d4dd95"
+        }
+      ]
+    },
+    {
+      "kind": "timber",
+      "asset": "Wood079",
+      "source": "https://ambientcg.com/view?id=Wood079",
+      "download": "https://ambientcg.com/get?file=Wood079_1K-JPG.zip",
+      "archiveSha256": "9c2ee67ff487914da0603b5605ac437c8df1611b8731ddbc912b487a6dbb0c4f",
+      "maps": [
+        {
+          "type": "AmbientOcclusion",
+          "path": "assets/materials/home/timber-ambientocclusion.jpg",
+          "width": 1024,
+          "height": 1024,
+          "sha256": "4f234d5de54bd9effbda196ce3bc2a201d0428e5e3ca09b840d44c1437afa64a"
+        },
+        {
+          "type": "Color",
+          "path": "assets/materials/home/timber-color.jpg",
+          "width": 1024,
+          "height": 1024,
+          "sha256": "6b51ccb2569087856107c98953d27631d5c17fdbf49d8834ee23ef48867ec25a"
+        },
+        {
+          "type": "NormalGL",
+          "path": "assets/materials/home/timber-normalgl.jpg",
+          "width": 1024,
+          "height": 1024,
+          "sha256": "f4cde1c8f2b41e726ad61b332359633b5e8357fce47507dea084a4d3380ddb1a"
+        },
+        {
+          "type": "Roughness",
+          "path": "assets/materials/home/timber-roughness.jpg",
+          "width": 1024,
+          "height": 1024,
+          "sha256": "9de0100845785416deb0cfdaf87d3169c1e3f14e82deeb6c9e1fdcd7c3dbb111"
+        }
+      ]
+    },
+    {
+      "kind": "paving",
+      "asset": "PavingStones128",
+      "source": "https://ambientcg.com/view?id=PavingStones128",
+      "download": "https://ambientcg.com/get?file=PavingStones128_1K-JPG.zip",
+      "archiveSha256": "0a507f47fa86318ded7c128c1b7548ac5d6a50ae233905c2015dc2f704ac0d35",
+      "maps": [
+        {
+          "type": "AmbientOcclusion",
+          "path": "assets/materials/home/paving-ambientocclusion.jpg",
+          "width": 1024,
+          "height": 1024,
+          "sha256": "6d0908bb169b43f87a9929def15f2c95ba9788161bcc21e9d407e70c9a4606c4"
+        },
+        {
+          "type": "Color",
+          "path": "assets/materials/home/paving-color.jpg",
+          "width": 1024,
+          "height": 1024,
+          "sha256": "640bdbb8709e0a4d28201919479f809269a8812e099084e8d24dd17c9cbbc7bb"
+        },
+        {
+          "type": "NormalGL",
+          "path": "assets/materials/home/paving-normalgl.jpg",
+          "width": 1024,
+          "height": 1024,
+          "sha256": "35f745ed939bb6a8f5f0fedf6572beb72411da305bfdffa39f05cbc858d27080"
+        },
+        {
+          "type": "Roughness",
+          "path": "assets/materials/home/paving-roughness.jpg",
+          "width": 1024,
+          "height": 1024,
+          "sha256": "437d0eeaed462daed4544dbcdab3883fa66a56a7c4881a5fa27f349df7c9d08f"
+        }
+      ]
+    }
+  ]
+}

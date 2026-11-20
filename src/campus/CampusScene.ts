@@ -24,6 +24,7 @@ export interface CampusBridge {
     flowVisible: boolean;
     activeZone: CampusZoneId;
   };
+  getReviewState?: () => Record<string, unknown>;
 }
 
 export interface CampusMountOptions {
@@ -123,9 +124,9 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 0.98;
-  renderer.setPixelRatio(isSoftwareGl ? 1 : Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2));
+  renderer.setPixelRatio(isSoftwareGl ? 0.85 : Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2));
   renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.shadowMap.type = isSoftwareGl ? THREE.PCFShadowMap : THREE.PCFSoftShadowMap;
 
   const scene = new THREE.Scene();
   const bgColor = DAY_BG.clone();
@@ -160,7 +161,7 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
   keyLight.shadow.camera.bottom = -34;
   keyLight.shadow.bias = -0.0004;
   keyLight.shadow.normalBias = 0.025;
-  scene.add(keyLight);
+  scene.add(keyLight, keyLight.target);
 
   const rimLight = new THREE.DirectionalLight(0xcbe3ee, 0.28);
   rimLight.position.set(-28, 16, -24);
@@ -170,7 +171,7 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
 
   let needsRender = true;
   const onAssetReady = () => { if (!disposed) needsRender = true; };
-  const textures = createCampusTextures(renderer);
+  const textures = createCampusTextures(renderer, onAssetReady, isSoftwareGl ? 1 : 4);
   const world = createCampusWorld(textures, onAssetReady);
   scene.add(world.root);
   const detailLayer = createDetailLayer(world.root,textures,onAssetReady);
@@ -186,8 +187,26 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
   });
   const lightBudget = isSoftwareGl ? 4 : isMobile ? 6 : localLights.length;
   heroSection.dataset.lightingQuality = lightBudget < localLights.length ? 'balanced' : 'full';
+  let shadowFocusZone: CampusZoneId | null = null;
   const applyLightBudget = () => {
     applyPracticalLightBudget(localLights, currentZone, lightBudget);
+    if (shadowFocusZone !== currentZone) {
+      shadowFocusZone = currentZone;
+      const home = currentZone === 'home';
+      const center = home ? new THREE.Vector3(-11.5, 1, 2) : new THREE.Vector3();
+      keyLight.target.position.copy(center);
+      keyLight.position.copy(center).add(new THREE.Vector3(28, 36, 22));
+      keyLight.target.updateMatrixWorld(true);
+      const shadowCamera = keyLight.shadow.camera;
+      shadowCamera.left = home ? -12 : -36;
+      shadowCamera.right = home ? 12 : 36;
+      shadowCamera.top = home ? 10 : 34;
+      shadowCamera.bottom = home ? -10 : -34;
+      shadowCamera.updateProjectionMatrix();
+      keyLight.shadow.normalBias = home ? 0.009 : 0.025;
+      keyLight.shadow.needsUpdate = true;
+      heroSection.dataset.shadowFocus = home ? 'home-contact' : 'campus';
+    }
   };
 
   const cameraRig = createCameraRig(camera);
@@ -213,6 +232,24 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
 
   syncRendererSize();
 
+  let immediateDrawQueued = false;
+  let lastDrawCamera: number[] = [];
+  const drawFrame = () => {
+    renderer!.render(scene, camera);
+    hotspots.updateProjection(camera, viewWidth, viewHeight, currentZone);
+    lastDrawCamera = camera.position.toArray();
+  };
+  const scheduleImmediateDraw = () => {
+    if (immediateDrawQueued) return;
+    immediateDrawQueued = true;
+    queueMicrotask(() => {
+      immediateDrawQueued = false;
+      if (disposed) return;
+      drawFrame(); needsRender = false;
+    });
+  };
+  textures.homePbrReady?.then(scheduleImmediateDraw);
+
   // Scroll Progress Binding (Continuous scroll drive without trapping wheel events)
   let manualOverrideZone: CampusZoneId | null = null;
   let lastScrollProgress = 0;
@@ -224,7 +261,7 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
     if (totalScrollable <= 40) {
       return manualOverrideZone ? ZONE_META[manualOverrideZone].progress : lastScrollProgress;
     }
-    const u = THREE.MathUtils.clamp(-rect.top / totalScrollable, 0, 1);
+    const u = THREE.MathUtils.clamp((70 - rect.top) / totalScrollable, 0, 1);
     lastScrollProgress = u;
     return u;
   };
@@ -270,7 +307,7 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
       const targetScrollY = Math.max(0, heroTopDoc + meta.progress * totalScrollable);
       if (instant || isReducedMotion) {
         window.scrollTo({ top: targetScrollY, behavior: 'auto' });
-        cameraRig.snapToProgress(meta.progress, viewWidth / viewHeight);
+        cameraRig.snapToProgress(computeScrollProgress(), viewWidth / viewHeight);
       } else {
         window.scrollTo({ top: targetScrollY, behavior: 'smooth' });
       }
@@ -290,6 +327,7 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
     }
     applyLightBudget();
     needsRender = true;
+    if (instant) scheduleImmediateDraw();
   };
 
   // Drag-to-orbit pointer controls with 6px click-vs-drag guard & zero wheel capture
@@ -469,8 +507,7 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
     if (needsRender || nightMoving || cameraMoved || flowAnimating || frameCount < 2) {
       lastRenderMs = now;
       needsRender = false;
-      renderer!.render(scene, camera);
-      hotspots.updateProjection(camera, viewWidth, viewHeight, currentZone);
+      drawFrame();
       frameCount++;
       if (!ready && frameCount >= 2) {
         ready = true;
@@ -484,8 +521,7 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
   // Initial synchronous frame render
   applyAtmosphere(0);
   cameraRig.snapToProgress(computeScrollProgress(), viewWidth / Math.max(1, viewHeight));
-  renderer.render(scene, camera);
-  hotspots.updateProjection(camera, viewWidth, viewHeight, currentZone);
+  drawFrame();
   ready = true;
   window.clearTimeout(initWatchdog);
   heroSection.dataset.webglState = 'active';
@@ -507,6 +543,7 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
         applyAtmosphere(nightBlend);
       }
       needsRender = true;
+      if (instant || isSoftwareGl) scheduleImmediateDraw();
     },
     setFlowVisible: (visible: boolean) => {
       flowVisible = visible;
@@ -537,6 +574,20 @@ export function mountCampusScene(opts: CampusMountOptions): { bridge: CampusBrid
       flowVisible,
       activeZone: currentZone,
     }),
+    getReviewState: () => {
+      const pbr = Object.values(textures.homePbr || {}).flatMap(set => [set.color,set.normal,set.roughness,...(set.ao?[set.ao]:[])]);
+      const imageWidth = (texture: THREE.Texture) => (texture.image as {width?:number}|undefined)?.width || 0;
+      const materialMaps: unknown[] = [];
+      world.root.getObjectByName('HomeTechnicalWing-RealOpenings')?.traverse(object => {
+        if (!(object instanceof THREE.Mesh)) return;
+        const material = object.material as THREE.MeshStandardMaterial;
+        if (material.map) materialMaps.push({name:object.name,width:imageWidth(material.map),version:material.map.version});
+      });
+      return {cameraPosition:camera.position.toArray(),cameraQuaternion:camera.quaternion.toArray(),fov:camera.fov,aspect:camera.aspect,
+        lastDrawCamera,canvas:[canvas.width,canvas.height],gpu:gpuRenderer,loadedPbrMaps:pbr.filter(texture=>imageWidth(texture)>0).length,
+        totalPbrMaps:pbr.length,technicalWallMaps:materialMaps,renderCalls:renderer!.info.render.calls,
+        lights:localLights.map(light=>({name:light.name,visible:light.visible,intensity:light.intensity})),nightBlend};
+    },
   };
 
   return {

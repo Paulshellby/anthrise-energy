@@ -1,11 +1,20 @@
 import * as THREE from 'three';
 
+export interface PbrTextureSet {
+  color: THREE.Texture;
+  normal: THREE.Texture;
+  roughness: THREE.Texture;
+  ao?: THREE.Texture;
+}
+
 export interface TextureBundle {
   solarPanel: THREE.CanvasTexture;
   limestoneWall: THREE.CanvasTexture;
   roadAsphalt: THREE.CanvasTexture;
   grassGround: THREE.CanvasTexture;
   timberDeck: THREE.CanvasTexture;
+  homePbr?: { plaster: PbrTextureSet; timber: PbrTextureSet; paving: PbrTextureSet };
+  homePbrReady?: Promise<void>;
   productTextures: Map<string, THREE.Texture>;
   dispose: () => void;
 }
@@ -155,8 +164,8 @@ function createTimberTexture(maxAniso: number): THREE.CanvasTexture {
   return configureColorTexture(tex, maxAniso, 2, 2);
 }
 
-export function createCampusTextures(renderer: THREE.WebGLRenderer): TextureBundle {
-  const maxAniso = Math.min(renderer.capabilities.getMaxAnisotropy(), 4);
+export function createCampusTextures(renderer: THREE.WebGLRenderer, onAssetReady?: () => void, anisotropyLimit = 4): TextureBundle {
+  const maxAniso = Math.min(renderer.capabilities.getMaxAnisotropy(), 4, anisotropyLimit);
   const solarPanel = createSolarPanelTexture(maxAniso);
   const limestoneWall = createLimestoneTexture(maxAniso);
   const roadAsphalt = createRoadAsphaltTexture(maxAniso);
@@ -189,12 +198,37 @@ export function createCampusTextures(renderer: THREE.WebGLRenderer): TextureBund
     productTextures.set(src, tex);
   });
 
+  const pbrTextures: THREE.Texture[] = [];
+  const pbrReady: Promise<void>[] = [];
+  const loadPbrMap = (kind: string, channel: string, color = false) => {
+    let markReady: () => void = () => {};
+    pbrReady.push(new Promise<void>(resolve => { markReady = resolve; }));
+    const texture = loader.load('/assets/materials/home/' + kind + '-' + channel + '.jpg', () => {
+      markReady(); onAssetReady?.();
+    });
+    texture.colorSpace = color ? THREE.SRGBColorSpace : THREE.NoColorSpace;
+    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+    texture.repeat.set(1, 1);
+    texture.anisotropy = maxAniso;
+    pbrTextures.push(texture);
+    return texture;
+  };
+  const loadPbrSet = (kind: string, withAo = false): PbrTextureSet => ({
+    color: loadPbrMap(kind, 'color', true), normal: loadPbrMap(kind, 'normalgl'),
+    roughness: loadPbrMap(kind, 'roughness'),
+    ...(withAo ? { ao: loadPbrMap(kind, 'ambientocclusion') } : {})
+  });
+  const homePbr = { plaster: loadPbrSet('plaster'), timber: loadPbrSet('timber', true), paving: loadPbrSet('paving', true) };
+  const homePbrReady = Promise.all(pbrReady).then(() => { onAssetReady?.(); });
+
   return {
     solarPanel,
     limestoneWall,
     roadAsphalt,
     grassGround,
     timberDeck,
+    homePbr,
+    homePbrReady,
     productTextures,
     dispose: () => {
       solarPanel.dispose();
@@ -204,6 +238,7 @@ export function createCampusTextures(renderer: THREE.WebGLRenderer): TextureBund
       timberDeck.dispose();
       productTextures.forEach((t) => t.dispose());
       productTextures.clear();
+      pbrTextures.forEach(t => t.dispose());
     },
   };
 }

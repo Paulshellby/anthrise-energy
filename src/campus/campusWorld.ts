@@ -2,6 +2,9 @@ import {createHardwareFactory} from './productHardware';
 import {createCampusRoad,ROAD_WIDTH} from './roadLayout';
 import {createCableHarness} from './cableRoutes';
 import { createHomeRefinement } from './homeRefinement';
+import { createHomeInstallation } from './homeInstallation';
+import { createCommercialArchitectureDetail } from './commercialArchitectureDetail';
+import { createOffgridArchitectureDetail } from './offgridArchitectureDetail';
 import * as THREE from 'three';
 import { TextureBundle } from './textures';
 import { tagPracticalLight } from './lightingBudget';
@@ -502,8 +505,9 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
   }
 
   // External Residential Equipment: Hybrid Inverter + 16 kWh Battery on unobstructed left-front wall!
-  const residentialInverter=hardware.inverter(false);residentialInverter.position.set(-4.3,1.95,2.9);homeBody.add(residentialInverter);
-  const residentialBattery=hardware.battery();residentialBattery.position.set(-2.75,0,2.98);homeBody.add(residentialBattery);
+  const residentialInverter=hardware.inverter(false,true);residentialInverter.position.set(-4.3,1.95,2.9);homeBody.add(residentialInverter);
+  const residentialBattery=hardware.battery(true);residentialBattery.position.set(-2.75,0,2.98);homeBody.add(residentialBattery);
+  const homeInstallation=createHomeInstallation(homeBody,residentialBattery,residentialInverter,textures);
 
   // Grid Utility Pole + Overhead Service Drop + Wall Utility Meter & AC Distribution Panel (Left Exterior)
   const utilityPole = new THREE.Mesh(trackGeo(new THREE.CylinderGeometry(0.14, 0.19, 6.6, 12)), utilityPoleMat);
@@ -941,6 +945,10 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
   rocks.instanceMatrix.needsUpdate = true;
   // Superseded by detailed mineral boulders in detailLayer.
 
+  // Extend the accepted home entity-detail approach without moving existing zones/devices.
+  const commercialArchitecture = createCommercialArchitectureDetail(root, textures);
+  const offgridArchitecture = createOffgridArchitectureDetail(root, textures);
+
   // Night Reactivity Update
   const setNightFactor = (nightFactor: number) => {
     const n = THREE.MathUtils.clamp(nightFactor, 0, 1);
@@ -966,6 +974,9 @@ export function createCampusWorld(textures: TextureBundle, onAssetReady?: () => 
     terrainHeightAt,
     setNightFactor,
     dispose: () => {
+      commercialArchitecture.dispose();
+      offgridArchitecture.dispose();
+      homeInstallation.dispose();
       homeRefinement.dispose();
       hardware.dispose();harness.dispose();
       geometries.forEach((g) => g.dispose());

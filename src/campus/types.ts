@@ -66,8 +66,8 @@ export const ZONE_META: Record<CampusZoneId, ZoneMeta> = {
       zh: '家庭能源',
     },
     subtitle: {
-      en: 'First-region concept: detailed roof, glazing & installations. Hardware is illustrative, enlarged and not manufacturer CAD.',
-      zh: '首轮区域概念验证：细化屋面、窗框与安装承托；硬件为放大示意，非厂家 CAD。',
+      en: 'Home quality sample: physical facade, planting and PBR materials. Battery/inverter envelopes follow catalogue sizes; ports and brackets remain unverified.',
+      zh: '家庭质量样例：实体结构、细叶植物与 PBR 材质；电池/逆变器包络按目录尺寸校准，接口与挂架仍待核验。',
     },
     noteDay: {
       en: 'Day: Roof PV feeds hybrid inverter, home loads & 16 kWh battery',
@@ -188,7 +188,7 @@ export const CAMPUS_HOTSPOTS: HotspotDef[] = [
     id: 'home-inverter',
     zone: 'home',
     kind: 'product',
-    worldPos: [-15.8, 3.18, 4.72],
+    worldPos: [-15.8, 2.52, 4.78],
     skuId: 'hybrid6',
     modelCode: 'AE-I-HYBRID-6K',
     img: '/assets/images/products/hybrid6.png',
@@ -198,15 +198,15 @@ export const CAMPUS_HOTSPOTS: HotspotDef[] = [
     kicker: { en: 'Power conversion · AE-I-HYBRID-6K', zh: '混合逆变器 · AE-I-HYBRID-6K' },
     title: { en: '6 kW LV Hybrid Inverter', zh: '6 kW 低压混合逆变器' },
     usage: {
-      en: '6 kW / 40–60 V / 135 A max. Catalogue W×D×H: 330×228×433 mm; this enlarged mesh is not to scale. Rear ports, mounting template, CAN/RS-485 profile and final battery compatibility require confirmation.',
-      zh: '6 kW / 40–60 V / 上限 135 A；目录宽×深×高 330×228×433 mm，当前网格为放大示意。后背接口、安装孔图、CAN/RS-485 协议与最终电池匹配待确认。',
+      en: '6 kW / 40–60 V / 135 A max. Envelope calibrated to catalogue W×D×H 330×228×433 mm, not manufacturer CAD. Architectural support and conduits do not establish rear port locations, bracket geometry or final battery compatibility.',
+      zh: '6 kW / 40–60 V / 上限 135 A；包络已按目录宽×深×高 330×228×433 mm 校准，非厂家 CAD。建筑支撑和线管不代表已核验的背部端口、挂架孔位或最终电池兼容性。',
     },
   },
   {
     id: 'home-battery',
     zone: 'home',
     kind: 'product',
-    worldPos: [-14.25, 1.4, 4.95],
+    worldPos: [-14.25, 1.28, 4.86],
     skuId: 'ess16',
     modelCode: 'AE-E-DAWN-16',
     img: '/assets/images/stage-battery.png',
@@ -216,8 +216,8 @@ export const CAMPUS_HOTSPOTS: HotspotDef[] = [
     kicker: { en: 'Home storage · AE-E-DAWN-16', zh: '户用储能 · AE-E-DAWN-16' },
     title: { en: '16 kWh Home Storage', zh: '16 kWh 储能电池' },
     usage: {
-      en: '51.2 V LiFePO4 storage. Catalogue W×D×H: 480×235×874 mm, 120 kg net. The original enlarged wheeled mesh preserves cable anchors; it is not manufacturer CAD. Rear connectors, caster load rating and installation clearances await verified drawings.',
-      zh: '51.2 V 磷酸铁锂储能；目录宽×深×高 480×235×874 mm，净重 120 kg。保留原放大脚轮网格及管线锚点，非厂家 CAD；后背接口、脚轮承重与安装净距需真实图纸核实。',
+      en: '51.2 V LiFePO4, 120 kg net. Envelope calibrated to catalogue W×D×H 480×235×874 mm; wheels contact a physical paver. This is not manufacturer CAD. Rear service routing, caster/slab capacity and installation clearances require verified drawings.',
+      zh: '51.2 V 磷酸铁锂，净重 120 kg。包络已按目录宽×深×高 480×235×874 mm 校准，脚轮接触实体垫石。非厂家 CAD；后部服务走线、脚轮/地基承载与安装净距仍需真实图纸核实。',
     },
   },
   {

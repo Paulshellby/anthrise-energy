@@ -25,7 +25,20 @@ export function createHardwareFactory(onAssetReady?: () => void){
  function logoOn(parent:THREE.Object3D,x:number,y:number,z:number,w:number){const face=new THREE.Mesh(geo(new THREE.PlaneGeometry(w,w/5.28)),logoMat);face.position.set(x,y,z);parent.add(face);}
  function wave(parent:THREE.Object3D,points:number[][],radius:number,mat:THREE.Material){const curve=new THREE.CatmullRomCurve3(points.map(p=>new THREE.Vector3(...p as [number,number,number])));const mesh=new THREE.Mesh(geo(new THREE.TubeGeometry(curve,24,radius,5,false)),mat);parent.add(mesh);}
  function screws(parent:THREE.Object3D,w:number,h:number,z:number){for(const x of [-w/2+.035,w/2-.035])for(const y of [-h/2+.035,h/2-.035])cylinder(parent,x,y,z,.009,.007,metal,'z');}
- function battery(){
+ function calibrateCatalogueEnvelope(p:THREE.Group,dimensions:{width:number,depth:number,height:number},floorMounted=false){
+  // A dimensional envelope is not a rear-interface drawing or manufacturer CAD.
+  p.children.filter(child=>child.name.startsWith('Unverified')).forEach(child=>child.removeFromParent());
+  const shape=new THREE.Group();shape.name='CatalogueCalibratedShape';
+  [...p.children].forEach(child=>shape.add(child));p.add(shape);shape.updateMatrixWorld(true);
+  const bounds=new THREE.Box3().setFromObject(shape),size=bounds.getSize(new THREE.Vector3()),center=bounds.getCenter(new THREE.Vector3());
+  shape.scale.set(dimensions.width/1000/size.x,dimensions.height/1000/size.y,dimensions.depth/1000/size.z);
+  shape.position.set(-center.x*shape.scale.x,floorMounted?-bounds.min.y*shape.scale.y-.002:-center.y*shape.scale.y,-center.z*shape.scale.z);
+  p.userData.modelStatus='catalogue-size-calibrated illustrative mesh; rear interfaces and installation template unverified';
+  p.userData.isManufacturerCad=false;p.userData.dimensionCalibrationSource='/assets/product-catalog.js';
+  p.userData.catalogueDimensionsMm=dimensions;p.userData.scaleCalibrated=true;
+  return p;
+ }
+ function battery(toCatalogueScale=false){
   const p=new THREE.Group();p.name='MeshProduct-ess16';
   p.userData.modelStatus='illustrative-enlarged; rear ports and fixing details unverified';
   p.userData.catalogueDimensionsMm={width:480,depth:235,height:874};
@@ -41,13 +54,13 @@ export function createHardwareFactory(onAssetReady?: () => void){
    for(let j=0;j<17;j++)box(p,x,.4+j*.017,0,.009,.006,.21,dark);
   }
   for(const x of [-.32,.32])for(const z of [-.14,.14]){
-   box(p,x,.13,z,.1,.1,.1,metal,.01);cylinder(p,x,.065,z,.067,.065,rubber,'x');
+   box(p,x,.13,z,.1,.1,.1,metal,.01);cylinder(p,x,.065,z,.067,.065,rubber,'x').name='BatteryCasterWheel';
   }
-  for(const [x,mat] of [[-.465,red],[-.465,dark]] as const)cylinder(p,x,1.5,mat===red?-.085:.085,.025,.03,mat,'x');
-  box(p,-.465,1.39,0,.02,.035,.05,dark,.002);
-  return p;
+  for(const [x,mat] of [[-.465,red],[-.465,dark]] as const)cylinder(p,x,1.5,mat===red?-.085:.085,.025,.03,mat,'x').name='UnverifiedBatteryPowerTerminal';
+  box(p,-.465,1.39,0,.02,.035,.05,dark,.002).name='UnverifiedBatteryDataPort';
+  return toCatalogueScale?calibrateCatalogueEnvelope(p,{width:480,depth:235,height:874},true):p;
  }
- function inverter(large=false){
+ function inverter(large=false,toCatalogueScale=false){
   const p=new THREE.Group();p.name=large?'MeshProduct-hybrid50':'MeshProduct-hybrid6';const w=large?1.32:.9,h=large?1.42:1.18,d=large?.52:.54;
   p.userData.modelStatus='illustrative-enlarged; original port topology unverified';
   if(!large)p.userData.catalogueDimensionsMm={width:330,depth:228,height:433};
@@ -58,10 +71,10 @@ export function createHardwareFactory(onAssetReady?: () => void){
   logoOn(p,-w*.07,h*.32,d/2+.025,w*.43);
   for(const x of [-w/2-.004,w/2+.004])for(let i=0;i<15;i++)box(p,x,-h*.37+i*h*.051,-.03,.009,.012,d*.7,dark);
   for(let i=0;i<6;i++){
-   const x=-w*.34+i*w*.136;cylinder(p,x,-h/2-.045,.05,.025,.1,i===0?red:dark);
-   cylinder(p,x,-h/2-.1,.05,.019,.03,metal);
+   const x=-w*.34+i*w*.136;cylinder(p,x,-h/2-.045,.05,.025,.1,i===0?red:dark).name='UnverifiedInverterPort';
+   cylinder(p,x,-h/2-.1,.05,.019,.03,metal).name='UnverifiedInverterCableGland';
   }
-  screws(p,w*.95,h*.96,d/2+.028);return p;
+  screws(p,w*.95,h*.96,d/2+.028);return !large&&toCatalogueScale?calibrateCatalogueEnvelope(p,{width:330,depth:228,height:433}):p;
  }
  function cabinet(){
   const p=new THREE.Group();p.name='MeshProduct-horizon';box(p,0,1.36,0,1.22,2.35,1.05,white,.035);

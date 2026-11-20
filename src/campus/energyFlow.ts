@@ -343,7 +343,7 @@ export function createEnergyFlowSystem(): EnergyFlowSystem {
   const colorScratch = new THREE.Color();
 
   specs.forEach((spec) => {
-    const curve = routeCurve(spec.points);
+    const curve = routeCurve(spec.points, spec.id.startsWith('z1-') ? 0.065 : 0);
     const tubeGeo = new THREE.TubeGeometry(curve, Math.max(12, spec.points.length * 10), 0.012, 7, false);
     const tubeMat = new THREE.MeshBasicMaterial({
       color: FLOW_COLORS[spec.kind],

@@ -141,6 +141,13 @@ function initCampusHero(): void {
   // Initial sync
   wrappedBridge.setTime(activeTime, true);
   wrappedBridge.setLanguage(activeLang);
+  const reviewParams = new URLSearchParams(window.location.search);
+  const reviewTime = reviewParams.get('campus-time');
+  if (reviewTime === 'day' || reviewTime === 'night') wrappedBridge.setTime(reviewTime, true);
+  const reviewZone = reviewParams.get('campus-zone');
+  if (['overview','home','commercial','offgrid'].includes(reviewZone || '')) {
+    wrappedBridge.setZone(reviewZone as CampusZoneId, true);
+  }
   syncZoneHud();
   // Energy flow starts hidden. Only the existing button / public bridge may enable it.
 

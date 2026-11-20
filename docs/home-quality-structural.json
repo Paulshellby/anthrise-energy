@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "browserTest": false,
+  "lights": 12,
+  "warmLampMaterials": 12,
+  "staticCars": 3,
+  "roofTiles": 338,
+  "sceneTriangles": 322526,
+  "skyTriangles": 224,
+  "overviewPitchDegrees": 16.11886124707955,
+  "lightBudgets": {
+    "4": [
+      "HomeInterior-Practical",
+      "CommercialOffice-Practical",
+      "SpineRoad-1-Practical",
+      "OffgridCabin-Practical"
+    ],
+    "6": [
+      "HomeInterior-Practical",
+      "HomeCourtyard-Practical",
+      "CommercialOffice-Practical",
+      "SpineRoad-1-Practical",
+      "SpineRoad-2-Practical",
+      "OffgridCabin-Practical"
+    ],
+    "12": [
+      "HomeInterior-Practical",
+      "HomeWallSconce-Practical",
+      "HomeWallSconce-Practical",
+      "AutonomousPathBollard-Practical",
+      "AutonomousPathBollard-Practical",
+      "HomeCourtyard-Practical",
+      "CommercialOffice-Practical",
+      "SpineRoad-1-Practical",
+      "SpineRoad-2-Practical",
+      "OffgridCabin-Practical",
+      "OffgridTrail-Practical",
+      "CampLantern-Practical"
+    ]
+  },
+  "pvTracksChecked": 7,
+  "sameDayNightSpace": true,
+  "batteryPosition": [
+    -14.25,
+    0.26,
+    4.68
+  ],
+  "inverterPosition": [
+    -15.8,
+    2.21,
+    4.6
+  ],
+  "checks": [
+    "day lights and warm emitters exactly zero",
+    "night physical distance / decay",
+    "4/6/all overview budgets cover every region",
+    "local-zone budgets remain nearest-first",
+    "budget changes preserve range / decay / intensity / position",
+    "concept-office warm windows independent of physical light budget",
+    "lower overview keeps zones inside frame and opens sky",
+    "real camera drag / reset",
+    "single directional shadow map and no costly post-processing",
+    "software GPU immediate atmosphere",
+    "three static cars, no update",
+    "real roof / shell / window / PV mounts",
+    "original battery / inverter anchors",
+    "both side-cooling cabinets retained",
+    "night PV packets off",
+    "flow hidden / shown / paused / reduced-motion",
+    "stage keyboard / pointer-cancel source guard"
+  ]
+}

@@ -40,6 +40,10 @@
       document.getElementById('scene-btn-' + reviewTime)?.click();
       window.ANTHRISE_CAMPUS?.setTime(reviewTime, true);
     }
+    const reviewZone = new URLSearchParams(location.search).get('campus-zone');
+    if (['overview', 'home', 'commercial', 'offgrid'].includes(reviewZone)) {
+      window.ANTHRISE_CAMPUS?.setZone(reviewZone, true);
+    }
     // Do not restore the retired Application Stories cards to fix old links.
     repairRetiredStoryLinks();
     window.addEventListener('anthrise:language-ready', () => queueMicrotask(repairRetiredStoryLinks));
