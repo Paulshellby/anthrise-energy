@@ -2,7 +2,10 @@
   'use strict';
   if (window.__anthriseShellLoaded) return;
   window.__anthriseShellLoaded = true;
-  const version = '20261120-refine1';
+  if (!window.__anthriseUnifiedRisey && !document.querySelector('script[data-unified-risey]')) {
+    const companionScript=document.createElement('script');companionScript.src='/assets/risey-companion.js?v=20261120-risey2';companionScript.dataset.unifiedRisey='';document.head.append(companionScript);
+  }
+  const version = '20261120-risey2';
   const paths = { en: '/', zh: '/home-zh.html', es: '/home-es.html', ru: '/home-ru.html' };
   const locale = () => {
     if (window.ANTHRISE_I18N) return window.ANTHRISE_I18N.language;
@@ -74,7 +77,7 @@
     }
     sync();
     window.addEventListener('anthrise:language-ready',sync);
-    const languageScript=document.createElement('script');languageScript.src='/assets/global-languages.js?v=20261120-refine1';document.head.append(languageScript);
+    const languageScript=document.createElement('script');languageScript.src='/assets/global-languages.js?v=20261120-risey2';document.head.append(languageScript);
     const footer = document.querySelector('footer.site-footer');
     if (footer && 'IntersectionObserver' in window) new IntersectionObserver(entries => {
       document.body.classList.toggle('site-footer-in-view', entries[0].isIntersecting);

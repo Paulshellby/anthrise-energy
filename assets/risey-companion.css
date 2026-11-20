@@ -1,0 +1,33 @@
+html.unified-risey .risey-companion-layer,html.unified-risey #risey,html.unified-risey .floating-inquiry,html.unified-risey .whatsapp-quick{display:none!important}
+.risey-shared-contacts{position:fixed;right:24px;bottom:74px;z-index:106;display:grid;gap:8px}
+.risey-shared-contacts a{display:grid;place-items:center;width:46px;height:46px;background:white;border:1px solid #d6e6df;border-radius:13px;color:#005b48;box-shadow:0 4px 18px #173b3210}
+.risey-shared-contacts a:first-child{background:#006f58;color:white;border-color:#006f58}
+.risey-shared-contacts svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#risey-unified{position:fixed;left:0;top:0;z-index:105;aspect-ratio:420/492;pointer-events:none;color:#143d32;font-size:14px;line-height:1.5;will-change:transform}
+.risey-unified-actor{position:relative;display:block;width:100%;height:100%;border:0;padding:0;background:transparent;cursor:pointer;pointer-events:auto;border-radius:20px}
+.risey-unified-actor:focus-visible{outline:3px solid #008b70;outline-offset:3px}
+.risey-unified-idle{width:100%;height:100%;object-fit:contain;pointer-events:none;animation:risey-breathe 4s ease-in-out infinite;transform-origin:45% 94%}
+.risey-electric-ball{display:none;position:absolute;width:82%;aspect-ratio:1;left:9%;bottom:5%;filter:drop-shadow(0 0 9px #00dcbc99)}
+.risey-electric-ball img{width:100%;height:100%;object-fit:contain;animation:risey-spin .27s linear infinite}
+#risey-unified[style*="--roll-direction: -1"] .risey-electric-ball img{animation-direction:reverse}
+.risey-electric-arc{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:#20ffe0;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 3px #00b59d);animation:risey-arcs .16s steps(2) infinite;pointer-events:none}
+.risey-electric-ball:before{content:"";position:absolute;inset:2%;border:2px solid #71ffe2;border-left-color:transparent;border-radius:50%;box-shadow:0 0 12px #00ddbd66;animation:risey-spin .38s linear infinite}
+.risey-electric-ball:after{content:"";position:absolute;left:-30%;top:32%;width:65%;height:30%;background:linear-gradient(90deg,transparent,#58ffdc77);clip-path:polygon(0 40%,75% 0,60% 35%,100% 45%,35% 100%,48% 58%);z-index:-1}
+.risey-electric-shoes{position:absolute;left:22%;bottom:4%;width:34%;height:11%;opacity:.8;pointer-events:none}
+.risey-electric-shoes .risey-electric-arc{stroke-width:3;animation:risey-shoe-spark 3.4s steps(1) infinite}
+#risey-unified[data-state="rolling"] .risey-unified-idle,#risey-unified[data-state="rolling"] .risey-electric-shoes{visibility:hidden}
+#risey-unified[data-state="rolling"] .risey-electric-ball{display:block}
+#risey-unified[data-state="rolling"] .risey-unified-actor{pointer-events:none}
+#risey-unified-menu{position:absolute;box-sizing:border-box;width:270px;max-width:calc(100vw - 24px);max-height:calc(100dvh - 160px);overflow:auto;background:#fff;border:1px solid #c7dfd7;border-radius:18px;padding:16px;box-shadow:0 14px 40px #173b3326;pointer-events:auto;text-align:left;font-family:inherit}
+#risey-unified-menu[hidden]{display:none}
+#risey-unified-menu strong{font-size:18px}
+#risey-unified-menu a,#risey-unified-menu button{display:block;text-decoration:none;background:#f3f8f5;border:1px solid #d5e5de;color:#164638;border-radius:10px;padding:10px 12px;margin:7px 0;width:100%;font:inherit;text-align:left;cursor:pointer;box-sizing:border-box}
+#risey-unified-menu :focus-visible{outline:3px solid #009a7a;outline-offset:2px}
+html.stage-open #risey-unified,body:has(#products-stage:not([hidden])) #risey-unified{visibility:hidden;pointer-events:none}
+#risey-unified.is-paused *{animation-play-state:paused!important}
+@keyframes risey-spin{to{transform:rotate(360deg)}}
+@keyframes risey-breathe{50%{transform:translateY(-1.5px) scaleY(1.006)}}
+@keyframes risey-arcs{50%{opacity:.45;transform:rotate(12deg)}}
+@keyframes risey-shoe-spark{0%,87%,100%{opacity:0}88%,92%,96%{opacity:1}90%,94%{opacity:.3}}
+@media(max-width:640px){body.site-footer-in-view #risey-unified{visibility:hidden}#risey-unified-menu{width:245px}}
+@media(prefers-reduced-motion:reduce){#risey-unified *{animation:none!important}.risey-electric-shoes{display:none}}

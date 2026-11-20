@@ -3099,6 +3099,7 @@
   }
 
   function isRunInteractive() {
+    if (window.__anthriseUnifiedRisey) return false;
     return (
       !followDisabled &&
       finePointerQuery.matches &&
@@ -3315,6 +3316,7 @@
   }
 
   function scheduleIdleDance(delayOverrideMs = null) {
+    if (window.__anthriseUnifiedRisey) return;
     if (state.danceTimerId) {
       window.clearTimeout(state.danceTimerId);
       state.danceTimerId = 0;
