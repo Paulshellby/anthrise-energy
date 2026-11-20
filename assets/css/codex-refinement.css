@@ -17,3 +17,12 @@ body:has(#products-stage:not([hidden])[data-category-open="true"]) .risey-compan
 @media(max-width:1024px){.stage-plinth-stage{width:86vw}.stage-products-header{gap:10px}.stage-turntable-chip{max-width:150px}}
 @media(max-width:640px){.stage-plinth-stage{width:82vw;height:145px}.stage-turntable-chip{max-width:108px;font-size:.63rem}.codex-plinth-brand{width:30%}.stage-turntable-viewport{min-height:230px}.stage-turntable-topbar{gap:6px}.stage-turntable-hint{font-size:.68rem}.stage-pager-label{font-size:.67rem}.stage-focal-name{white-space:normal;font-size:.85rem}.stage-focal-model{font-size:.62rem}}
 @media(prefers-reduced-motion:reduce){.stage-turntable-items{animation:none!important}}
+.campus-control-dock{width:max-content!important;max-width:100%;margin-right:auto;background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;justify-content:flex-start!important;gap:12px!important;backdrop-filter:none!important}
+.campus-control-dock .hero-control-group{gap:10px;flex-wrap:wrap}
+.campus-control-dock .hero-control-group:empty{display:none}
+.campus-control-dock .scene-flow-btn,.campus-control-dock .motion-toggle-btn,.campus-control-dock .risey-follow-btn{box-shadow:0 3px 12px #153b3314}
+.stage-turntable-figure img{filter:drop-shadow(0 9px 7px rgba(28,48,40,.13));transition:none}
+.stage-turntable-chip{font-size:.75rem;min-height:32px}
+.stage-detail-img{object-fit:contain;background:transparent!important;filter:drop-shadow(0 12px 12px #173b341c)}
+@media(max-width:640px){.campus-control-dock{gap:8px!important}.campus-control-dock .hero-control-group{gap:6px}.campus-hud-bottom{right:12px!important;left:12px!important}.stage-turntable-chip{font-size:.62rem}}
+@media(max-width:640px){.campus-hud-bottom{width:auto!important;left:auto!important;right:auto!important;background:transparent!important;border-top:0}}

@@ -2,9 +2,10 @@
   'use strict';
   if (window.__anthriseShellLoaded) return;
   window.__anthriseShellLoaded = true;
-  const version = '20261119-shell3';
+  const version = '20261120-refine1';
   const paths = { en: '/', zh: '/home-zh.html', es: '/home-es.html', ru: '/home-ru.html' };
   const locale = () => {
+    if (window.ANTHRISE_I18N) return window.ANTHRISE_I18N.language;
     const value = document.documentElement.lang.split('-')[0];
     return Object.hasOwn(paths, value) ? value : 'en';
   };
@@ -14,7 +15,8 @@
     es: ['Empresa', 'Productos', 'Soluciones', 'Selección', 'Colaboración', 'Elegir idioma'],
     ru: ['О компании', 'Продукция', 'Решения', 'Подбор', 'Партнёрство', 'Выбрать язык'],
   };
-  function routeProducts() { location.assign(paths[locale()] + '#products'); }
+  const homeFor = lang => window.ANTHRISE_I18N?.home(lang) || paths[lang] || '/';
+  function routeProducts() { location.assign(homeFor(locale()) + '#products'); }
   // Capture before the retired menu controller can expand its product taxonomy.
   document.addEventListener('click', event => {
     const target = event.target.closest('header summary[aria-controls="mega-products"],header [data-nav-category],header a[href$="#products"]');
@@ -41,10 +43,10 @@
     const isCompanyPage = location.pathname.endsWith('/official-site.html');
     let lastLocale;
     function sync() {
-      const lang = locale(), copy = labels[lang], home = paths[lang];
+      const lang = locale(), copy = labels[lang] || labels.en, home = homeFor(lang);
       const picker = document.querySelector('.site-language-picker');
       if (picker) {
-        picker.querySelector('.site-language-code').textContent = { en: 'EN', zh: '中', es: 'ES', ru: 'RU' }[lang];
+        picker.querySelector('.site-language-code').textContent = { en: 'EN', zh: '中', es: 'ES', ru: 'RU' }[lang] || lang.toUpperCase();
         picker.querySelector('summary').setAttribute('aria-label', copy[5]);
         picker.querySelectorAll('a').forEach(a => { if (a.pathname === home) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
       }
@@ -71,6 +73,8 @@
       lastLocale = lang;
     }
     sync();
+    window.addEventListener('anthrise:language-ready',sync);
+    const languageScript=document.createElement('script');languageScript.src='/assets/global-languages.js?v=20261120-refine1';document.head.append(languageScript);
     const footer = document.querySelector('footer.site-footer');
     if (footer && 'IntersectionObserver' in window) new IntersectionObserver(entries => {
       document.body.classList.toggle('site-footer-in-view', entries[0].isIntersecting);

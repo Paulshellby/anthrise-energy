@@ -30,4 +30,4 @@ function apply(){
 apply();window.AnthriseSEO={origin,relative};
 })();
 
-;(()=>{const css=document.createElement("link");css.rel="stylesheet";css.href="/assets/site-shell.css?v=20261119-shell3";document.head.append(css);const script=document.createElement("script");script.src="/assets/site-shell.js?v=20261119-shell3";document.head.append(script);})();
+;(()=>{const css=document.createElement("link");css.rel="stylesheet";css.href="/assets/site-shell.css?v=20261120-refine1";document.head.append(css);const script=document.createElement("script");script.src="/assets/site-shell.js?v=20261120-refine1";document.head.append(script);})();

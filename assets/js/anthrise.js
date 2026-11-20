@@ -809,7 +809,7 @@
     }
   }
 
-  const getShelfCapacity = () => window.innerWidth <= 640 ? 3 : window.innerWidth <= 1024 ? 5 : 6;
+  const getShelfCapacity = () => window.innerWidth <= 1024 ? 3 : 4;
   const getShelfRanges = (total) => {
     const pages = Math.max(1, Math.ceil(total / getShelfCapacity()));
     return Array.from({length:pages}, (_,i) => ({start:Math.floor(i*total/pages),end:Math.floor((i+1)*total/pages)}));
@@ -1281,8 +1281,8 @@
       ry = plinthRect.height * 0.41;
     }
 
-    const baseH = window.innerWidth <= 640 ? clamp(fh * 0.36, 90, 136) : clamp(fh * 0.4, 130, 190);
-    const baseW = window.innerWidth <= 640 ? 112 : clamp(baseH * 1.18, 155, 210);
+    const baseH = window.innerWidth <= 640 ? 112 : window.innerWidth <= 1024 ? 142 : 186;
+    const baseW = window.innerWidth <= 640 ? 98 : window.innerWidth <= 1024 ? 142 : 180;
 
     if (stagePlinthDial) {
       stagePlinthDial.style.setProperty('--plinth-deg', `${((tt.theta * 180) / Math.PI).toFixed(2)}deg`);
@@ -1307,7 +1307,7 @@
       const pairedMobile = window.innerWidth <= 640 && count === 2;
       const x = pairedMobile ? cx + (idx === 0 ? -1 : 1) * rx * 0.62 : cx + sinA * rx;
       const y = pairedMobile ? cy + ry * 0.55 + cosA * 9 : cy + cosA * ry;
-      const sc = 0.62 + Math.pow(depthT, 1.25) * 0.43;
+      const sc = 0.9 + depthT * 0.08;
       const op = 1;
       const zIdx = 12 + Math.round(depthT * 120);
 

@@ -1,0 +1,6 @@
+{
+  "name": "anthrise-energy-website",
+  "private": true,
+  "scripts": {"build:campus": "node scripts/build-campus.cjs"},
+  "devDependencies": {"esbuild": "0.25.0", "three": "0.187.0"}
+}
