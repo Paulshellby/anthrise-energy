@@ -3099,7 +3099,6 @@
   }
 
   function isRunInteractive() {
-    if (window.__anthriseUnifiedRisey) return false;
     return (
       !followDisabled &&
       finePointerQuery.matches &&
@@ -3316,7 +3315,6 @@
   }
 
   function scheduleIdleDance(delayOverrideMs = null) {
-    if (window.__anthriseUnifiedRisey) return;
     if (state.danceTimerId) {
       window.clearTimeout(state.danceTimerId);
       state.danceTimerId = 0;
@@ -3640,7 +3638,13 @@
     state.tDecelEnd = state.tRunEnd + decelDur;
     state.tSettleEnd = state.tDecelEnd + settleDur;
 
-    if (riseyMover) riseyMover.classList.add('is-running');
+    if (riseyMover) {
+      // Curl only for a blank-area click. Navigation and returning retain the
+      // original directional running, anticipation and settling choreography.
+      riseyMover.dataset.motion = purpose === 'roam' ? 'rolling' : purpose;
+      riseyMover.style.setProperty('--roll-direction', state.runDir);
+      riseyMover.classList.add('is-running');
+    }
 
     // Coordinated failsafe <= 1.2s guarantees UI never stalls
     const failsafeMs = clamp(Math.round(state.tDecelEnd + 220), 600, 1180);
@@ -3775,6 +3779,11 @@
     window.location.assign(anchor.href);
   }
 
+  // A canvas orbit drag is not a click-to-roll gesture.
+  let companionPointerDown = null;
+  document.addEventListener('pointerdown', event => {
+    companionPointerDown = { x: event.clientX, y: event.clientY };
+  }, { passive: true, signal });
   // Click-to-Run Intercept (Desktop fine pointer + follow enabled + stage closed)
   document.addEventListener(
     'click',
@@ -3794,6 +3803,7 @@
 
       if (
         event.defaultPrevented ||
+        (companionPointerDown && Math.hypot(event.clientX - companionPointerDown.x, event.clientY - companionPointerDown.y) > 8) ||
         event.detail === 0 ||
         event.button !== 0 ||
         event.ctrlKey ||
@@ -3807,7 +3817,7 @@
 
       if (
         target.closest(
-          'input, textarea, select, option, label, form, #inquiry-form, #inquiry-social-list, #hero-section, #campus-canvas-host, .campus-hotspot, .campus-popover, .campus-zone-bar, .campus-zone-btn, #hero-control-bar, .hero-motion-toggles, #risey-actor-btn, #risey-assistant-menu, #motion-toggle, #risey-follow-toggle, #back-to-top, .mobile-menu-toggle, .lang-btn, .floating-controls, .nav-trigger, [data-open-products-stage], #products-stage'
+          'input, textarea, select, option, label, form, #inquiry-form, #inquiry-social-list, .campus-hud-card, .campus-hotspot, .campus-popover, .campus-zone-bar, .campus-zone-btn, #hero-control-bar, .hero-motion-toggles, #risey-actor-btn, #risey-assistant-menu, #motion-toggle, #risey-follow-toggle, #back-to-top, .mobile-menu-toggle, .lang-btn, .floating-controls, .nav-trigger, [data-open-products-stage], #products-stage'
         )
       ) {
         return;

@@ -4,11 +4,18 @@
   if (window.__anthriseUnifiedRisey) return;
   window.__anthriseUnifiedRisey = true;
   const boot = () => {
-    const style=document.createElement('link');style.rel='stylesheet';style.href='/assets/risey-companion.css?v=20261120-risey2';document.head.append(style);
+    const style=document.createElement('link');style.rel='stylesheet';style.href='/assets/risey-companion.css?v=20261120-actions3';document.head.append(style);
+    const arc='<svg class="risey-electric-arc" viewBox="0 0 100 100" aria-hidden="true"><path d="M8 54 25 48 19 62 42 47 37 60 63 43 57 58 82 47 75 64 95 55"/><path d="m23 18-9 16 13-3-8 17M80 69l9 7-12 4 6 13"/></svg>';
+    const originalActor=document.getElementById('risey-actor-btn');
+    if (originalActor) {
+      // Enhance the existing rig/controller; do not replace its idle, gaze,
+      // blinking, tail, dances, directional run, menu or stage choreography.
+      originalActor.insertAdjacentHTML('beforeend','<span class="risey-electric-shoes" aria-hidden="true">'+arc+'</span><span class="risey-electric-ball" aria-hidden="true"><img src="/assets/images/risey-curl-ball-v2.webp" alt="" draggable="false">'+arc+'</span>');
+      return;
+    }
     document.documentElement.classList.add('unified-risey');
     const reduce=matchMedia('(prefers-reduced-motion: reduce)');
     const host=document.createElement('aside');host.id='risey-unified';host.dataset.state='idle';
-    const arc='<svg class="risey-electric-arc" viewBox="0 0 100 100" aria-hidden="true"><path d="M8 54 25 48 19 62 42 47 37 60 63 43 57 58 82 47 75 64 95 55"/><path d="m23 18-9 16 13-3-8 17M80 69l9 7-12 4 6 13"/></svg>';
     host.innerHTML='<button class="risey-unified-actor" aria-controls="risey-unified-menu" aria-expanded="false"><img class="risey-unified-idle" src="/assets/images/risey-compact-idle.png" alt="Risey" draggable="false"><span class="risey-electric-shoes">'+arc+'</span><span class="risey-electric-ball"><img src="/assets/images/risey-curl-ball-v2.webp" alt="" draggable="false">'+arc+'</span></button><section id="risey-unified-menu" role="dialog" aria-label="Risey" hidden><strong>Risey</strong><nav></nav><button data-risey-pause></button><button data-risey-close></button></section>';
     document.body.append(host);
     if (!document.querySelector('.floating-controls')) {

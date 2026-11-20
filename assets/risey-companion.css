@@ -15,6 +15,11 @@ html.unified-risey .risey-companion-layer,html.unified-risey #risey,html.unified
 .risey-electric-ball:after{content:"";position:absolute;left:-30%;top:32%;width:65%;height:30%;background:linear-gradient(90deg,transparent,#58ffdc77);clip-path:polygon(0 40%,75% 0,60% 35%,100% 45%,35% 100%,48% 58%);z-index:-1}
 .risey-electric-shoes{position:absolute;left:22%;bottom:4%;width:34%;height:11%;opacity:.8;pointer-events:none}
 .risey-electric-shoes .risey-electric-arc{stroke-width:3;animation:risey-shoe-spark 3.4s steps(1) infinite}
+#risey-mover.is-running[data-motion="rolling"] .risey-rig,#risey-mover.is-running[data-motion="rolling"] .risey-sprite-viewport,#risey-mover.is-running[data-motion="rolling"] .risey-dance-viewport,#risey-mover.is-running[data-motion="rolling"] .risey-fallback{visibility:hidden!important}
+#risey-mover.is-running[data-motion="rolling"] .risey-electric-ball{display:block}
+#risey-mover.is-running .risey-electric-shoes{visibility:hidden}
+#risey-mover[style*="--roll-direction: -1"] .risey-electric-ball img{animation-direction:reverse}
+body:has(#risey-follow-toggle[aria-pressed="true"]) .risey-electric-shoes,body:has(#motion-toggle[aria-pressed="true"]) .risey-electric-shoes{display:none}
 #risey-unified[data-state="rolling"] .risey-unified-idle,#risey-unified[data-state="rolling"] .risey-electric-shoes{visibility:hidden}
 #risey-unified[data-state="rolling"] .risey-electric-ball{display:block}
 #risey-unified[data-state="rolling"] .risey-unified-actor{pointer-events:none}
