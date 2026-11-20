@@ -9,6 +9,17 @@
     model: ['Model', '型号', 'Modelo', 'Модель']
   };
   const locale = ['en', 'zh', 'es', 'ru'].includes(lang) ? lang : 'en';
+  // Campus inspection opens the exact catalogue SKU in the shared atlas.
+  // Unknown/non-product hotspots retain the original stage fallback.
+  window.__anthriseOpenAtlasProduct = skuId => {
+    const items = (window.ANTHRISE_SHOWROOM_CATALOG || []).flatMap(category => category.items || []);
+    const product = items.find(item => item.id === skuId);
+    if (!product) return false;
+    const currentLanguage = document.documentElement.lang.split('-')[0];
+    const detailLanguage = ['en', 'zh', 'es', 'ru'].includes(currentLanguage) ? currentLanguage : 'en';
+    location.assign('/products/' + encodeURIComponent(product.id) + '-' + detailLanguage + '.html');
+    return true;
+  };
   function repairRetiredStoryLinks() {
     document.querySelectorAll('a[href]').forEach(link => {
       let url;

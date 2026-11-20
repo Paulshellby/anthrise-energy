@@ -6,6 +6,7 @@ declare global {
     ANTHRISE_CAMPUS?: CampusBridge;
     __anthriseGetLang?: () => LangCode;
     __anthriseOpenStageProduct?: (skuId: string) => void;
+    __anthriseOpenAtlasProduct?: (skuId: string) => boolean;
     __anthrisePrefillInquiry?: (topic: string, modelCode: string, label: string) => void;
   }
 }
@@ -62,6 +63,7 @@ function initCampusHero(): void {
   };
 
   const handleInspectProduct = (skuId: string) => {
+    if (window.__anthriseOpenAtlasProduct?.(skuId)) return;
     if (typeof window.__anthriseOpenStageProduct === 'function') {
       window.__anthriseOpenStageProduct(skuId);
       return;
