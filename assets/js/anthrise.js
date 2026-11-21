@@ -1769,6 +1769,7 @@
   }
 
   function openProductDetail(item, slotIdx, sourceImgEl = null) {
+    if(item && window.__anthriseOpenAtlasProduct?.(item.id)) return;
     if (!stageProductDetail || !detailStageImg || !item) return;
 
     stageState.detail.token += 1;
@@ -2457,7 +2458,7 @@
     }
   }
 
-  function openProductsStage(triggerEl = null) {
+  function openProductsStage(triggerEl = null) { if(window.__anthriseOpenProductOrbits) return window.__anthriseOpenProductOrbits();
     if (!productsStage) return;
     closeAllDropdowns();
     closeAllHotspots();

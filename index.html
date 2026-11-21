@@ -97,8 +97,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 <link rel="stylesheet" href="/assets/css/codex-refinement.css?v=20261120-refine1">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; object-src 'none'; base-uri 'self'">
-<link rel="stylesheet" href="/assets/site-shell.css?v=20261120-actions3">
-</head>
+<link rel="stylesheet" href="/assets/site-shell.css?v=20261121-live1">
+<link rel="stylesheet" href="/assets/experience/reference-scene.css?v=20261121-live1"><link rel="stylesheet" href="/assets/experience/atlas.css?v=20261121-live1"></head>
 
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -172,7 +172,7 @@
                 </svg>
               </button>
               <div class="nav-dropdown" id="menu-solutions" hidden>
-                <a href="#stories" class="dropdown-link" data-close-nav>Energy in everyday life</a>
+                <a href="/solutions.html" class="dropdown-link" data-close-nav>Energy in everyday life</a>
                 <a href="#hero-section" class="dropdown-link">Home energy</a>
                 <a href="/bess-project.html" class="dropdown-link">Business energy &amp; BESS</a>
                 <a href="/products/origAEV2500-en.html" class="dropdown-link">Outdoor &amp; off-grid</a>
@@ -272,65 +272,18 @@
 
     <main id="main-content"><span id="products" aria-hidden="true"></span>
       <!-- Interactive 3D Clean Energy Campus Hero (3 Connected Spatial Zones: Home, Commercial, Off-Grid) -->
-      <section
-        class="hero hero-campus-scroll"
-        id="hero-section"
-        aria-labelledby="hero-heading"
-        data-scene-time="day"
-        data-flow-visible="false"
-        data-active-zone="overview"
-        data-webgl-state="loading"
-      >
-        <h1 class="visually-hidden" id="hero-heading">
-          Anthrise Technology — Interactive 3D Clean Energy Campus
-        </h1>
-
-        <div class="hero-scene-viewport hero-campus-sticky" id="hero-scene-viewport">
-          <!-- WebGL 3D Canvas Target -->
-          <div class="campus-canvas-host" id="campus-canvas-host" aria-label="Interactive 3D clean energy campus"></div>
-
-          <!-- Projected 3D Equipment & Zone Hotspots -->
-          <div class="campus-hotspots" id="campus-hotspots" aria-label="Interactive campus zones and equipment"></div>
-
-          <!-- Top HUD Row: Zone Narrative (Top-Left) + Zone Navigation Tabs (Top-Right) -->
-          <div class="campus-hud-top">
-            <div class="campus-zone-card" id="campus-zone-card">
-              <div class="campus-zone-kicker">
-                <span class="campus-zone-num" id="campus-zone-num">00</span>
-                <h2 class="campus-zone-title" id="campus-zone-title">Clean Energy Campus</h2>
-              </div>
-              <p class="campus-zone-subtitle" id="campus-zone-subtitle">
-                Scroll or choose a zone to explore residential, commercial, and off-grid energy architectures in one landscape.
-              </p>
-              <p class="campus-zone-note" id="campus-zone-note">
-                Day: Solar generation &amp; storage charging
-              </p>
-            </div>
-
-            <div class="campus-nav-cluster">
-              <nav class="campus-zone-bar" aria-label="Campus zones">
-                <button type="button" class="campus-zone-btn is-active" data-campus-zone="overview" aria-pressed="true">
-                  <span class="campus-zone-label">Overview</span>
-                </button>
-                <button type="button" class="campus-zone-btn" data-campus-zone="home" aria-pressed="false">
-                  <span class="campus-zone-label">01 Home Energy</span>
-                </button>
-                <button type="button" class="campus-zone-btn" data-campus-zone="commercial" aria-pressed="false">
-                  <span class="campus-zone-label">02 Commercial</span>
-                </button>
-                <button type="button" class="campus-zone-btn" data-campus-zone="offgrid" aria-pressed="false">
-                  <span class="campus-zone-label">03 Off-Grid</span>
-                </button>
-              </nav>
-              <p class="campus-drag-hint" id="campus-drag-hint">Scroll to tour · Drag to orbit</p>
-            </div>
-          </div>
-
-          <!-- Bottom Floating Control Dock (Padded Right to Clear Fixed Companion Risey) -->
-          <div class="campus-hud-bottom">
-            
-
-            <div class="hero-control-bar campus-control-dock" id="hero-control-bar">
+      <section id="hero-section" class="hero reference-campus" data-scene-time="day" data-flow-visible="false" data-family="all" aria-labelledby="hero-heading">
+<h1 id="hero-heading" class="visually-hidden">Anthrise 昼夜能源园区交互预览</h1>
+<div class="reference-toolbar campus-hud-card"><div class="reference-title"><span class="reference-badge">交互预览</span><strong>Anthrise 能源园区</strong></div><nav aria-label="产品分类" class="reference-families"><button data-family="all" aria-pressed="true">全部</button><button data-family="storage" aria-pressed="false">储能</button><button data-family="solar" aria-pressed="false">光伏与逆变器</button><button data-family="lighting" aria-pressed="false">太阳能照明</button></nav></div>
+<div class="reference-viewport" id="hero-scene-viewport" tabindex="0" aria-label="园区场景，可用缩放按钮放大后拖动查看，点击产品热点查看详情">
+<div class="reference-plane" id="reference-plane"><img class="reference-image reference-day" src="/assets/experience/campus-day.png" width="1672" height="941" alt="白天园区，所有道路和庭院灯具关闭" fetchpriority="high" draggable="false"><img class="reference-image reference-night" src="/assets/experience/campus-night.png" width="1672" height="941" alt="夜间园区，路灯、庭院灯、壁灯和露营灯亮起" draggable="false">
+<svg id="reference-overlay" viewBox="0 0 1672 941" aria-hidden="true"><defs><filter id="flow-glow"><feGaussianBlur stdDeviation="2"/></filter></defs><g id="reference-flows"></g></svg>
+<div id="reference-hotspots"></div></div>
+<div class="reference-zoom campus-hud-card" role="group" aria-label="场景缩放"><button data-zoom="in" aria-label="放大场景">＋</button><button data-zoom="out" aria-label="缩小场景">−</button><button data-zoom="reset">全景</button></div>
+<aside class="reference-popover campus-popover" id="reference-popover" aria-labelledby="reference-product-title" hidden></aside>
+<div class="reference-scene-note campus-hud-card"><span id="reference-time-dot"></span><span id="reference-time-note" role="status">白天 · 光伏供能与储能充电 · 灯具关闭</span></div>
+</div>
+<div class="reference-bottom campus-hud-card"><div class="hero-control-bar campus-control-dock" id="hero-control-bar">
               <div class="hero-control-group">
                 <div class="scene-time-switch" role="group" aria-label="Switch scene between day and night">
                   <button
@@ -384,8 +337,8 @@
 
               <div class="hero-control-actions">
                 <div class="hero-quick-links">
-                  
-                  
+
+
                 </div>
 
                 <div class="hero-motion-toggles">
@@ -422,33 +375,9 @@
                   </button>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <!-- Graceful Non-WebGL Fallback Card -->
-          <div class="campus-fallback-view" id="campus-fallback-view" hidden>
-            <img
-              src="/assets/images/hero-scene-day.jpg"
-              alt="Anthrise Technology clean energy residential and commercial systems overview"
-              width="1600"
-              height="900"
-              class="campus-fallback-img"
-            />
-            <div class="campus-fallback-card">
-              <p class="section-kicker">Anthrise Clean Energy Campus</p>
-              <h2 id="campus-fallback-title">Explore residential, commercial &amp; off-grid systems</h2>
-              <p id="campus-fallback-desc">
-                Real-time 3D rendering is paused or unavailable in this browser context. Browse full specifications and hardware below.
-              </p>
-              <div class="campus-fallback-links">
-                <button type="button" class="btn-compact-primary" data-open-products-stage>Products</button>
-                <a href="#products" class="btn-compact-secondary">Product showcase</a>
-                <a href="#project-inquiry" class="btn-compact-secondary">Discuss your project</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </div><nav class="reference-zones" aria-label="应用场景"><button data-focus="overview" aria-pressed="true">园区全景</button><button data-focus="home" aria-pressed="false">家庭</button><button data-focus="business" aria-pressed="false">工商业</button><button data-focus="offgrid" aria-pressed="false">离网与便携</button><button data-focus="lighting" aria-pressed="false">照明</button></nav></div>
+<p class="reference-caption">概念应用场景 · 点击产品圆点查看真实型号 · 放大后拖动查看细节</p>
+</section>
 
       <!-- Restrained Product Strip (Actual Product Photos & Localized URLs) -->
 
@@ -633,7 +562,7 @@
         <nav class="footer-nav" aria-label="Footer navigation">
           <a href="/official-site.html#about">About</a>
           <a href="#products">Products</a>
-          <a href="#stories">Solutions</a>
+          <a href="/solutions.html">Solutions</a>
           <a href="/official-site.html#calculator">Selection tools</a>
           <a href="#project-inquiry">Partnership</a>
         </nav>
@@ -1428,9 +1357,9 @@
       </div>
     </div>
 
-    <script src="/assets/js/showroom-catalog.js?v=20261120-actions3" defer></script>
-    <script src="/assets/js/anthrise.js?v=20261120-actions3" defer></script>
-    <script type="module" src="/assets/js/campus.bundle.js?v=20261120-refine1"></script>
-  <script src="/assets/site-shell.js?v=20261120-actions3" defer></script>
-</body>
+    <script src="/assets/js/showroom-catalog.js?v=20261121-live1" defer></script>
+    <script src="/assets/experience/products.js?v=20261121-live1" defer></script><script src="/assets/experience/reference-scene.js?v=20261121-live1" defer></script><script src="/assets/js/anthrise.js?v=20261121-live1" defer></script>
+
+  <script src="/assets/site-shell.js?v=20261121-live1" defer></script>
+<script src="/assets/experience/detail-catalog.js?v=20261121-live1" defer></script><script src="/assets/experience/atlas.bundle.js?v=20261121-live1" defer></script><script src="/assets/experience/structure.js?v=20261121-live1" defer></script></body>
 </html>

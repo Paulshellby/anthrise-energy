@@ -1,0 +1,81 @@
+import './product-orbits.js';
+// Photograph-only product gallery; category sphere animation is independent.
+(() => {
+ 'use strict';
+ const products=window.ATLAS_PRODUCTS||[],byId=new Map(products.map(p=>[p.id,p]));
+ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ let selected,lang='zh',category='all',query='',imageIndex=0,zoom=1,focusMode=false,returnFocus;
+ const copy=(zh,en)=>lang==='zh'?zh:en,title=p=>lang==='zh'?p.zh:p.en;
+ const inCategory=(p,id)=>id==='all'||(id==='storage'?['storage','portable'].includes(p.category):id==='solar'?['solar','inverter'].includes(p.category):p.category===id);
+ const matches=p=>inCategory(p,category)&&(!query||[p.zh,p.en,p.modelCode].join(' ').toLowerCase().includes(query));
+ const filtered=()=>products.filter(matches);
+ const views=p=>p.showroomViews||p.gallery.slice(0,3).map((src,i)=>({src,labelZh:['主视图','正面视图','侧面视图'][i],labelEn:['Main view','Front view','Side view'][i]}));
+ const specs=p=>(p.specs||[]).filter(s=>!/certification|market_compliance/.test(s.key));
+ const dialog=document.createElement('section');dialog.id='atlas';dialog.className='atlas atlas-showroom';dialog.hidden=true;dialog.setAttribute('role','dialog');dialog.setAttribute('aria-modal','true');dialog.setAttribute('aria-labelledby','atlas-title');
+ dialog.innerHTML=`<header class="atlas-head"><div class="atlas-brand"><img src="/assets/brand/anthrise-official.png" alt="Anthrise"><span>PRODUCT SHOWROOM</span></div><div class="atlas-head-actions"><input class="atlas-search" type="search" aria-label="搜索产品" placeholder="搜索型号、产品…"><button data-action="language" aria-label="切换中英文">中 / EN</button><button data-action="close">返回园区 ×</button></div></header><nav class="atlas-side" aria-label="产品分类"></nav><main class="atlas-center"><div class="atlas-cards" aria-label="选择产品"></div><div class="atlas-stage" tabindex="0" aria-label="展厅产品展示，左右方向键切换产品"><div class="atlas-room" aria-hidden="true"></div><div class="atlas-podium" aria-hidden="true"><svg viewBox="0 0 900 210"><defs><linearGradient id="disc-side" x2="0" y2="1"><stop stop-color="#b7c3bd"/><stop offset="1" stop-color="#7b8d84"/></linearGradient><radialGradient id="disc-top" cy=".3" r=".8"><stop stop-color="#fff"/><stop offset="1" stop-color="#e2eeea"/></radialGradient><filter id="disc-shadow"><feGaussianBlur stdDeviation="9"/></filter></defs><ellipse cx="450" cy="175" rx="397" ry="18" fill="#334d3f" opacity=".17" filter="url(#disc-shadow)"/><path d="M35 82 C35 -22 865 -22 865 82 L865 115 C865 219 35 219 35 115Z" fill="url(#disc-side)"/><ellipse cx="450" cy="82" rx="415" ry="77" fill="url(#disc-top)" stroke="#fff" stroke-width="3"/><ellipse cx="450" cy="82" rx="404" ry="69" fill="none" stroke="#a7c8bc" stroke-width="1.1" opacity=".7"/></svg><img class="atlas-podium-logo" src="/assets/brand/anthrise-official.png" alt=""></div><div class="atlas-display"><img class="atlas-photo" alt="" draggable="false"></div><button class="atlas-switch atlas-switch-prev" data-action="previous" aria-label="上一款产品"><b>‹</b><span></span></button><button class="atlas-switch atlas-switch-next" data-action="next" aria-label="下一款产品"><b>›</b><span></span></button><div class="atlas-tools"><button data-action="in" aria-label="放大产品">＋</button><button data-action="out" aria-label="缩小产品">−</button><button data-action="reset" aria-label="复位产品大小">↺</button><button data-action="focus" aria-label="专注查看">⛶</button></div><span class="atlas-model-badge"></span><div class="atlas-product-counter" aria-live="polite"></div></div><div class="atlas-bottom"><div class="atlas-views" role="group" aria-label="三张产品视角图"></div><p class="atlas-help"></p></div></main><aside class="atlas-panel"></aside>`;
+ dialog.classList.add('atlas-plain');
+ dialog.querySelectorAll('.atlas-room,.atlas-podium').forEach(e=>e.remove());
+ dialog.querySelector('.atlas-brand span').textContent='PRODUCT ATLAS';
+ dialog.querySelector('.atlas-stage').setAttribute('aria-label','产品图片展示，左右方向键切换产品');
+ document.body.append(dialog);const $=s=>dialog.querySelector(s),photo=$('.atlas-photo');
+ function navigation(){
+  const cats=[['all','全部产品','All products'],['storage','储能系统','Energy storage'],['solar','光伏与逆变器','Solar & inverters'],['lighting','太阳能照明','Solar lighting']];
+  $('.atlas-side').innerHTML='<small>EXPLORE ANTHRISE</small>'+cats.map(([id,zh,en])=>'<button class="atlas-category" data-category="'+id+'" aria-pressed="'+(category===id)+'">'+copy(zh,en)+'<span>'+products.filter(p=>inCategory(p,id)).length+'</span></button>').join('')+'<div class="atlas-side-note"><b>Energy,<br>on display.</b>'+copy('探索储能、光伏与太阳能照明。','Explore energy storage, solar and lighting.')+'</div>';
+  $('.atlas-cards').innerHTML=filtered().map(p=>'<button class="atlas-card" data-product="'+esc(p.id)+'" aria-current="'+(p.id===selected?.id)+'" title="'+esc(title(p))+'"><img loading="lazy" src="/'+esc(p.image)+'" alt=""><span>'+esc(title(p))+'</span></button>').join('')||'<p class="atlas-cards-empty">'+copy('没有匹配产品，请尝试其他型号。','No matching products.')+'</p>';
+  $('.atlas-side').innerHTML='<button data-action="up" class="atlas-up">‹ '+copy('返回上一级','Back to categories')+'</button>';
+  neighbours();
+ }
+ function neighbours(){
+  const list=filtered(),i=list.findIndex(p=>p.id===selected?.id),valid=i>=0&&list.length>1;
+  for(const [action,offset] of [['previous',-1],['next',1]]){const b=$('[data-action="'+action+'"]'),p=valid?list[(i+offset+list.length)%list.length]:null;b.disabled=!p;b.querySelector('span').textContent=p?title(p):'';b.title=p?copy(action==='previous'?'上一款：':'下一款：',action==='previous'?'Previous: ':'Next: ')+title(p):'';b.setAttribute('aria-label',b.title||copy('没有其他产品','No other products'))}
+  $('.atlas-product-counter').textContent=i>=0?String(i+1).padStart(2,'0')+' / '+String(list.length).padStart(2,'0'):copy('请选择搜索结果中的产品','Select a matching product');
+ }
+ function panel(){
+  if(!selected)return;const p=selected,idx=lang==='zh'?1:0,ss=specs(p),special=p.id==='ess16'||p.id==='preassembled16';
+  const rows=a=>a.map(s=>'<div><dt>'+esc(s.label[idx]||s.label[0])+'</dt><dd>'+esc(s.value[idx]||s.value[0])+'</dd></div>').join('');
+  const energy=p.heroTitleEnergy||(special?'16kWh':null),name=p.heroTitleZh?copy(p.heroTitleZh,p.heroTitleEn):special?copy(p.id==='ess16'?'家用储能':'预组装箱式电池',p.id==='ess16'?'Home Storage':'Preassembled Battery'):title(p);
+  const heading=energy?'<strong>'+esc(energy)+'</strong><span>'+esc(name)+'</span>':esc(name);
+  $('.atlas-panel').innerHTML='<div><p class="atlas-eyebrow">'+esc(p.modelCode||'ANTHRISE')+'</p><h2 id="atlas-title">'+heading+'</h2><div class="atlas-tags">'+(p.tags||[]).slice(0,3).map(t=>'<span>'+esc(t)+'</span>').join('')+'</div></div><p class="atlas-intro">'+esc(copy(p.descriptionZh||'',p.descriptionEn||''))+'</p><section class="atlas-specs"><h3>'+copy('配置一览','Key specifications')+'</h3><dl>'+rows(ss.slice(0,5))+'</dl>'+(ss.length>5?'<details><summary>'+copy('查看完整目录参数','All specifications')+'</summary><dl>'+rows(ss.slice(5))+'</dl></details>':'')+'</section>'+(special||p.brandedIllustration?'<p class="atlas-reference-note">'+(p.brandedIllustration?copy('产品图为 Anthrise 品牌外观示意；参数按所提供资料整理，最终供货配置及型号待确认。','Anthrise brand appearance illustrations. Reference specifications and final supply configuration require confirmation.'):copy('外观按最新参考图展示。原目录参数与新箱体适配待复核。','Latest supplied appearance. Catalogue specification fit requires review.'))+'</p>':'')+'<div class="atlas-detail-card"><img src="/'+esc(p.image)+'" alt=""><span><b>'+copy('三张视角，完整呈现','Three views, one product')+'</b><small>'+copy('点击下方缩略图切换视角','Select a thumbnail to change the view')+'</small></span></div><div class="atlas-actions"><a href="mailto:sales@anthrise-tech.com?subject='+encodeURIComponent('Product enquiry: '+p.modelCode)+'">'+copy('沟通产品需求','Discuss this product')+'</a><button data-action="download">'+copy('导出配置','Export specifications')+'</button></div><p class="atlas-status">'+copy('系统匹配与供货配置按项目确认。','System matching and availability require project confirmation.')+'</p>';
+  $('[data-action="close"]').textContent=copy('返回园区 ×','Back to campus ×');
+ }
+ function showImage(index){
+  const a=views(selected);imageIndex=Math.max(0,Math.min(a.length-1,index));zoom=1;photo.style.transform='';const v=a[imageIndex];
+  photo.src='/'+v.src;photo.alt=title(selected)+' · '+copy(v.labelZh,v.labelEn);photo.classList.remove('is-entering');void photo.offsetWidth;photo.classList.add('is-entering');
+  $('.atlas-views').innerHTML=a.map((v,i)=>'<button data-image-index="'+i+'" aria-pressed="'+(i===imageIndex)+'"><img src="/'+esc(v.src)+'" alt=""><span>'+esc(copy(v.labelZh,v.labelEn))+'</span></button>').join('');
+  $('.atlas-model-badge').textContent=copy(v.labelZh,v.labelEn)+' · '+(imageIndex+1)+' / 3';
+  $('.atlas-help').textContent=v.supplied?copy('用户提供的俯瞰接口图 · 可放大查看','Supplied top interface view · Zoom to inspect'):v.generated?copy('外观视角示意 · 可放大查看','Illustrative product view · Zoom to inspect'):copy('点击三张缩略图切换视角 · 左右按钮切换产品','Select a thumbnail for another view · Use side buttons for other products');
+  dialog.dataset.viewKind=v.supplied?'interface':'product';
+ }
+ function select(id){
+  const p=byId.get(id);if(!p)return;selected=p;imageIndex=0;zoom=1;navigation();panel();showImage(0);$('.atlas-panel').scrollTop=0;
+  const active=$('.atlas-card[aria-current="true"]'),cards=$('.atlas-cards');if(active)cards.scrollLeft=Math.max(0,active.offsetLeft-cards.offsetLeft-(cards.clientWidth-active.offsetWidth)/2);
+  const url=new URL(location.href);url.searchParams.set('product',id);history.replaceState(null,'',url);
+ }
+ function step(offset){const list=filtered(),i=list.findIndex(p=>p.id===selected?.id);if(i>=0&&list.length>1)select(list[(i+offset+list.length)%list.length].id)}
+ function open(id){
+  if(!byId.has(id))return false;
+  if(dialog.hidden){returnFocus=document.activeElement;dialog.hidden=false;window.ANTHRISE_CAMPUS?.setSuspended(true);document.querySelectorAll('body > :not(.atlas):not(script):not(style):not(link)').forEach(e=>{if(!e.inert){e.dataset.atlasInert='';e.inert=true}})}
+  if(!matches(byId.get(id))){category='all';query='';$('.atlas-search').value=''}select(id);$('[data-action="close"]').focus({preventScroll:true});return true;
+ }
+ function close(){dialog.hidden=true;document.querySelectorAll('[data-atlas-inert]').forEach(e=>{e.inert=false;delete e.dataset.atlasInert});window.ANTHRISE_CAMPUS?.setSuspended(false);focusMode=false;dialog.classList.remove('is-focus');const url=new URL(location.href);url.searchParams.delete('product');history.replaceState(null,'',url);if(returnFocus?.isConnected)returnFocus.focus({preventScroll:true})}
+ function magnify(f){zoom=Math.max(.7,Math.min(2.8,zoom*f));photo.style.transform='scale('+zoom+')'}
+ dialog.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;e.stopPropagation();
+  if(b.dataset.product){select(b.dataset.product);return}if(b.dataset.category){category=b.dataset.category;const list=filtered();if(list.length&&!list.includes(selected))select(list[0].id);else navigation();return}
+  if(b.dataset.imageIndex!==undefined){showImage(Number(b.dataset.imageIndex));return}
+  const a=b.dataset.action;if(a==='up'){close();window.__anthriseOpenProductOrbits();return}if(a==='previous')step(-1);else if(a==='next')step(1);else if(a==='close')close();else if(a==='language'){lang=lang==='zh'?'en':'zh';navigation();panel();showImage(imageIndex)}
+  else if(a==='in')magnify(1.18);else if(a==='out')magnify(1/1.18);else if(a==='reset'){zoom=1;photo.style.transform=''}
+  else if(a==='focus'){focusMode=!focusMode;dialog.classList.toggle('is-focus',focusMode);b.setAttribute('aria-label',copy(focusMode?'退出专注查看':'专注查看',focusMode?'Exit focus':'Focus view'))}
+  else if(a==='download'){const text=[title(selected),selected.modelCode,...specs(selected).map(s=>s.label[lang==='zh'?1:0]+': '+s.value[lang==='zh'?1:0]),'',copy('配置按实际项目确认。','Configuration requires project confirmation.')].join('\n'),url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download=(selected.modelCode||selected.id)+'-specifications.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+ });
+ $('.atlas-search').addEventListener('input',e=>{query=e.target.value.trim().toLowerCase();navigation()});
+ $('.atlas-stage').addEventListener('dblclick',e=>{if(!e.target.closest('button')){zoom=1;photo.style.transform=''}});
+ let touch;$('.atlas-stage').addEventListener('pointerdown',e=>{if(e.pointerType==='touch'&&!e.target.closest('button'))touch={x:e.clientX,y:e.clientY}});$('.atlas-stage').addEventListener('pointerup',e=>{if(!touch)return;const dx=e.clientX-touch.x,dy=e.clientY-touch.y;touch=null;if(zoom===1&&Math.abs(dx)>65&&Math.abs(dx)>Math.abs(dy)*1.5)step(dx<0?1:-1)});$('.atlas-stage').addEventListener('pointercancel',()=>touch=null);
+ dialog.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){e.preventDefault();if(focusMode){focusMode=false;dialog.classList.remove('is-focus')}else close()}
+  if(!e.target.closest('input,textarea,summary')){if(e.key==='ArrowLeft'){e.preventDefault();step(-1)}if(e.key==='ArrowRight'){e.preventDefault();step(1)}if(['1','2','3'].includes(e.key))showImage(Number(e.key)-1);if(e.key==='+')magnify(1.18);if(e.key==='-')magnify(1/1.18);if(e.key==='0'){zoom=1;photo.style.transform=''}}
+  if(e.key==='Tab'){const a=[...dialog.querySelectorAll('button:not([disabled]),a,input,[tabindex="0"]')].filter(n=>n.getClientRects().length),first=a[0],last=a.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}
+ });
+ window.__anthriseOpenAtlasProduct=open;window.ATLAS_PREVIEW={open,close,getState:()=>({id:selected?.id,mode:'photos',imageIndex,viewCount:selected?views(selected).length:0,zoom,focus:focusMode,rotationEnabled:false,filteredIds:filtered().map(p=>p.id)})};
+ function connect(){if(window.ANTHRISE_PAGE?.lang)lang=window.ANTHRISE_PAGE.lang==='zh'?'zh':'en';const original=window.__anthriseOpenStageProduct;if(original&&!original.atlasWrapped){const wrapper=id=>open(id)||original(id);wrapper.atlasWrapped=true;window.__anthriseOpenStageProduct=wrapper}const id=new URL(location.href).searchParams.get('product')||window.ANTHRISE_PAGE?.id;if(id&&byId.has(id))open(id);if(window.ANTHRISE_PAGE)$('[data-action="close"]').addEventListener('click',()=>location.assign(lang==='zh'?'/home-zh.html':'/'))}
+ if(document.readyState==='complete')connect();else window.addEventListener('load',connect,{once:true});
+})();
