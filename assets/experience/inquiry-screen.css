@@ -1,0 +1,34 @@
+/* A complete contact screen, with a restrained plum-grey and warm khaki palette. */
+html:has(body.campus-home){scroll-snap-type:y proximity;scroll-padding-top:0}
+.campus-home #hero-section,.campus-home #project-inquiry{scroll-snap-align:start}
+html:has(.campus-home .inquiry-form:focus-within){scroll-snap-type:none}
+#project-inquiry.inquiry-section{--contact-ink:#352e39;--contact-muted:#665d69;--contact-accent:#695169;--contact-line:#8b75882b;box-sizing:border-box;width:100%;min-height:100svh;display:flex;align-items:center;position:relative;isolation:isolate;margin:0;padding:calc(var(--header-h,76px) + 28px) 0 48px;scroll-margin-top:0;color:var(--contact-ink);background:radial-gradient(ellipse at 0% 6%,#a18aa440,transparent 60%),radial-gradient(ellipse at 100% 100%,#aa8f6040,transparent 62%),linear-gradient(125deg,#e6dfe8 0%,#eee7de 50%,#d1c3a6 100%)}
+#project-inquiry>.inquiry-grid{width:min(1280px,calc(100% - 96px));margin-inline:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:clamp(36px,5vw,76px);align-items:center}
+#project-inquiry .inquiry-info{min-width:0}
+#project-inquiry .section-kicker{color:#74586d;font-size:12px;font-weight:650;letter-spacing:.13em;margin:0 0 14px}
+#project-inquiry .section-title{color:var(--contact-ink);font-size:clamp(34px,3.4vw,50px);line-height:1.25;letter-spacing:-.025em;margin:0 0 20px}
+#project-inquiry .inquiry-lead{color:var(--contact-muted);font-size:15px;line-height:1.85;max-width:44ch;margin:0 0 24px}
+#project-inquiry .contact-list{border-color:var(--contact-line);padding-top:22px;gap:15px}
+#project-inquiry .contact-row{grid-template-columns:80px minmax(0,1fr);gap:14px;font-size:14px;line-height:1.8}
+#project-inquiry .contact-row dt{color:var(--contact-muted);font-size:13px}
+#project-inquiry .contact-row dd{color:var(--contact-ink);overflow-wrap:anywhere}
+#project-inquiry .contact-row a{color:var(--contact-ink)}
+#project-inquiry .contact-row a:hover{color:#795578}
+#project-inquiry .inquiry-social-block{margin-top:24px;padding-top:20px;border-color:var(--contact-line)}
+#project-inquiry .inquiry-social-label{color:var(--contact-muted);font-size:12px;margin:0 0 12px}
+#project-inquiry .inquiry-social-btn{border-color:#99839645;background:#ffffffb3;color:var(--contact-accent);box-shadow:0 3px 12px #57405806}
+#project-inquiry .inquiry-social-btn:hover{border-color:#80637d;background:#fff;color:#533f56}
+#project-inquiry .inquiry-form{min-width:0;margin:0;padding:32px;display:grid;gap:20px;background:#ffffffd9;border:1px solid #ffffffbd;border-radius:22px;box-shadow:0 20px 70px #55404f12}
+#project-inquiry .inquiry-form label{color:#4e4352;font-size:14px}
+#project-inquiry .inquiry-form input,#project-inquiry .inquiry-form select,#project-inquiry .inquiry-form textarea{box-sizing:border-box;width:100%;min-width:0;background:#faf8f9;border:1px solid #d8cfd8;border-radius:10px;color:var(--contact-ink);padding:13px 14px;font:inherit;font-size:15px;outline-offset:3px}
+#project-inquiry .inquiry-form input::placeholder,#project-inquiry .inquiry-form textarea::placeholder{color:#827a84;opacity:1}
+#project-inquiry .inquiry-form input:focus,#project-inquiry .inquiry-form select:focus,#project-inquiry .inquiry-form textarea:focus{outline:2px solid #987b96;border-color:#987b96}
+#project-inquiry .inquiry-form textarea{min-height:150px;resize:vertical}
+#project-inquiry .inquiry-form .btn-primary{background:var(--contact-accent);color:#fff;border:1px solid var(--contact-accent);border-radius:10px;padding:14px 22px;min-height:48px;font-weight:600;box-shadow:0 5px 18px #69516918}
+#project-inquiry .inquiry-form .btn-primary:hover{background:#57415a;border-color:#57415a}
+#project-inquiry .form-feedback{color:var(--contact-muted);font-size:13px;line-height:1.6;margin:0}
+@media(min-width:961px) and (max-height:780px){#project-inquiry.inquiry-section{padding-top:calc(var(--header-h,72px) + 20px);padding-bottom:30px}#project-inquiry .section-title{font-size:36px;margin-bottom:14px}#project-inquiry .inquiry-lead{font-size:14px;margin-bottom:18px}#project-inquiry .contact-list{gap:11px;padding-top:16px}#project-inquiry .inquiry-social-block{margin-top:18px;padding-top:15px}#project-inquiry .inquiry-form{padding:26px;gap:16px}#project-inquiry .inquiry-form textarea{min-height:125px}}
+@media(max-width:960px){#project-inquiry.inquiry-section{padding:calc(var(--header-h,70px) + 28px) 0 40px}#project-inquiry>.inquiry-grid{width:calc(100% - 48px);grid-template-columns:1fr;gap:34px}#project-inquiry .inquiry-lead{max-width:60ch}#project-inquiry .section-title{font-size:36px}#project-inquiry .inquiry-form{padding:26px}}
+@media(max-width:640px){#project-inquiry.inquiry-section{padding-top:calc(var(--header-h,62px) + 24px);padding-bottom:32px}#project-inquiry>.inquiry-grid{width:calc(100% - 36px);gap:30px}#project-inquiry .section-title{font-size:32px}#project-inquiry .inquiry-lead{font-size:14px}#project-inquiry .contact-row{grid-template-columns:64px minmax(0,1fr);gap:10px;font-size:13px}#project-inquiry .contact-list{gap:12px}#project-inquiry .inquiry-form{padding:22px 18px;gap:17px;border-radius:17px}#project-inquiry .form-row-two{grid-template-columns:1fr}#project-inquiry .inquiry-form input,#project-inquiry .inquiry-form select,#project-inquiry .inquiry-form textarea{font-size:16px}#project-inquiry .inquiry-social-list{flex-wrap:wrap}}
+/* The company page has an existing 90px root scroll inset; cancel it for this screen. */
+#project-inquiry.site-inquiry-shell{scroll-margin-top:-90px}

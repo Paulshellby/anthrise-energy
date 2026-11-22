@@ -1,5 +1,5 @@
 {
-  "version": "20261122-campus1",
+  "version": "20261122-inquiry1",
   "date": "2026-11-22",
   "products": 77,
   "entry": "one centered transparent sphere; previous/next category; no mascot intro",
@@ -24,5 +24,7 @@
   "timeZone": "Asia/Shanghai",
   "automaticDayNight": true,
   "dayStarts": "06:00",
-  "nightStarts": "18:00"
+  "nightStarts": "18:00",
+  "inquiryScreen": "full viewport on desktop; responsive form on mobile",
+  "inquiryPalette": "muted plum-grey to warm khaki gradient"
 }
