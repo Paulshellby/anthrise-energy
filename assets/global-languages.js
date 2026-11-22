@@ -1,7 +1,7 @@
 /* One site-wide locale, one globe control, static local translation packs. */
 (() => {
  'use strict';
- if(window.ANTHRISE_I18N?.version==='20261122-locale1')return;
+ if(window.ANTHRISE_I18N?.version==='20261122-floor16')return;
  const config=window.ANTHRISE_LOCALE_CONFIG;if(!config)return;
  const names=config.names,aliases=config.aliases,normalize=s=>String(s??'').replace(/\s+/g,' ').trim();
  const normalizeLocale=code=>({ 'zh-CN':'zh','zh-Hans':'zh','zh-TW':'zh-Hant','pt':'pt-BR','tl':'fil','iw':'he' }[code]||code);
@@ -18,7 +18,7 @@
  function home(code=language){return nativePaths[code]||'/?lang='+encodeURIComponent(code)}
  function targetFor(code){const url=new URL(location.href);if(/^\/(?:index\.html|home-(?:zh|es|ru)\.html)?$/.test(url.pathname))url.pathname=nativePaths[code]||'/';else if(url.pathname.startsWith('/products/'))url.pathname=url.pathname.replace(/-(?:[a-z]{2,3}|zh-Hant|pt-BR)\.html$/,'-'+(nativePaths[code]?code:'en')+'.html');url.searchParams.set('lang',code);return url.pathname+url.search+url.hash}
  function changeLanguage(code){if(!Object.hasOwn(names,code))return;try{localStorage.setItem('anthrise_language',code);localStorage.setItem('anthrise_lang',code)}catch{}if(code===language){document.querySelectorAll('.site-language-picker').forEach(p=>p.open=false);apply();return}location.assign(targetFor(code))}
- const api={version:'20261122-locale1',language,home,languages:Object.keys(names),t:text,text,changeLanguage,ready:readyPromise,get isReady(){return ready},getCoverage};window.ANTHRISE_I18N=api;
+ const api={version:'20261122-floor16',language,home,languages:Object.keys(names),t:text,text,changeLanguage,ready:readyPromise,get isReady(){return ready},getCoverage};window.ANTHRISE_I18N=api;
  try{localStorage.setItem('anthrise_language',language);localStorage.setItem('anthrise_lang',language)}catch{}
  document.documentElement.dataset.siteLocale=language;document.documentElement.translate=false;
  const excluded='script,style,textarea,code,pre,template,.brand-subtext,.global-language-panel,.site-language-picker summary,[data-no-translate]';
@@ -43,6 +43,6 @@
  document.addEventListener('click',event=>{const choice=event.target.closest('a[data-language]');if(choice){event.preventDefault();event.stopImmediatePropagation();changeLanguage(choice.dataset.language);return}document.querySelectorAll('.site-language-picker').forEach(p=>{if(!p.contains(event.target))p.open=false})},true);
  document.addEventListener('invalid',event=>{const field=event.target;if(!field.setCustomValidity)return;field.setCustomValidity(text(field.validity.valueMissing?'Please complete this field.':field.validity.typeMismatch?'Please enter a valid email address.':'Please enter a valid value.'))},true);document.addEventListener('input',event=>{if(event.target.setCustomValidity)event.target.setCustomValidity('')},true);
  document.addEventListener('keydown',event=>{if(event.key==='Escape')document.querySelectorAll('.site-language-picker[open]').forEach(p=>{p.open=false;p.querySelector('summary').focus()})});
- function start(){if(started)return;started=true;removeLocalControls();mountPicker();enforceLanguage();observer=new MutationObserver(records=>{if(records.some(r=>r.target.nodeType===Node.ELEMENT_NODE&&r.target.matches?.('.site-language-picker summary')))return;queue()});observer.observe(document.body,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:[...attributes,'href']});new MutationObserver(()=>{enforceLanguage();queue()}).observe(document.documentElement,{attributes:true,attributeFilter:['lang','dir']});const script=document.createElement('script');script.src='/assets/i18n/'+encodeURIComponent(language)+'.js?v=20261122-locale1';script.onload=()=>{pack=window.ANTHRISE_TRANSLATIONS?.[language]||{};ready=true;mountPicker();apply();resolveReady(api);window.dispatchEvent(new Event('anthrise:language-ready'));queue()};script.onerror=()=>{console.error('Local language pack could not load:',language)};document.head.append(script)}
+ function start(){if(started)return;started=true;removeLocalControls();mountPicker();enforceLanguage();observer=new MutationObserver(records=>{if(records.some(r=>r.target.nodeType===Node.ELEMENT_NODE&&r.target.matches?.('.site-language-picker summary')))return;queue()});observer.observe(document.body,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:[...attributes,'href']});new MutationObserver(()=>{enforceLanguage();queue()}).observe(document.documentElement,{attributes:true,attributeFilter:['lang','dir']});const script=document.createElement('script');script.src='/assets/i18n/'+encodeURIComponent(language)+'.js?v=20261122-floor16';script.onload=()=>{pack=window.ANTHRISE_TRANSLATIONS?.[language]||{};ready=true;mountPicker();apply();resolveReady(api);window.dispatchEvent(new Event('anthrise:language-ready'));queue()};script.onerror=()=>{console.error('Local language pack could not load:',language)};document.head.append(script)}
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();

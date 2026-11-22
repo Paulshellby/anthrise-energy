@@ -1,10 +1,10 @@
 {
-  "version": "20261122-locale1",
+  "version": "20261122-floor16",
   "date": "2026-11-22",
   "products": 77,
   "entry": "one centered transparent sphere; previous/next category; no mascot intro",
   "vehicleAnimation": false,
-  "productRotation": false,
+  "productRotation": "ess16 reference exterior only; all other products remain photos",
   "cardInteraction": "single click: enlarged preview; double click: direct detail",
   "detailEntryAnimation": false,
   "legacyMascotIntroduction": "removed controller, timeline, listeners, markup, styles and preload references",
@@ -33,5 +33,17 @@
   "globalLanguages": 30,
   "localeControl": "one shared globe; persistent across pages and product details",
   "translationRuntime": "local static packs; dynamic content and form validation",
-  "productLocaleToggle": false
+  "productLocaleToggle": false,
+  "ess16": {
+    "source": "2026-11-22 supplied images and specification table",
+    "gallery": 3,
+    "voltage": 51.2,
+    "capacityAh": 300,
+    "energyKWh": 15.36,
+    "widthMm": 500,
+    "depthMm": 270,
+    "heightMm": 700,
+    "cycleCondition": "≥8000 @ 0.5°C, 70% SOH",
+    "rotation": "reference-based exterior visualization"
+  }
 }
