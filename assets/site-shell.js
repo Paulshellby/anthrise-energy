@@ -5,7 +5,7 @@
   if (!window.__anthriseUnifiedRisey && !document.querySelector('script[data-unified-risey]')) {
     const companionScript=document.createElement('script');companionScript.src='/assets/risey-companion.js?v=20261120-actions3';companionScript.dataset.unifiedRisey='';document.head.append(companionScript);
   }
-  const version = '20261120-actions3';
+  const version = '20261122-telegram1';
   const paths = { en: '/', zh: '/home-zh.html', es: '/home-es.html', ru: '/home-ru.html' };
   const locale = () => {
     if (window.ANTHRISE_I18N) return window.ANTHRISE_I18N.language;
@@ -47,8 +47,7 @@
       document.addEventListener('click', event => { if (!picker.contains(event.target)) picker.open = false; });
       document.addEventListener('keydown', event => { if (event.key === 'Escape' && picker.open) { picker.open = false; picker.querySelector('summary').focus(); } });
     }
-    const retiredFooter = document.querySelector('footer:not(.site-footer)');
-    if (retiredFooter) retiredFooter.outerHTML = data.footer;
+    document.querySelectorAll('footer.site-footer,footer.footer').forEach(footer => footer.remove());
     document.querySelectorAll('footer .lang-switch,footer .language-switch,footer .locale-picker').forEach(node => node.remove());
     const isCompanyPage = location.pathname.endsWith('/official-site.html');
     let lastLocale;
@@ -64,13 +63,12 @@
         const previous = document.querySelector('.site-inquiry-shell');
         const values = previous ? [...previous.querySelectorAll('input,select,textarea')].map(node => [node.id, node.value]) : [];
         if (previous) previous.remove();
-        document.querySelector('footer.site-footer')?.insertAdjacentHTML('beforebegin', data.contacts[lang] || data.contacts.en);
+        const contactAnchor=document.getElementById('site-contact-anchor');
+        if(contactAnchor)contactAnchor.insertAdjacentHTML('beforebegin',data.contacts[lang]||data.contacts.en);
+        else document.body.insertAdjacentHTML('beforeend',data.contacts[lang]||data.contacts.en);
         for (const [id, value] of values) { const node = document.getElementById(id); if (node) node.value = value; }
         const old = document.getElementById('inquiry'); if (old) old.hidden = true;
       }
-      document.querySelectorAll('.site-footer .footer-company').forEach(node => { node.textContent = lang === 'zh' ? '深圳市昂旭启元科技有限公司 · 深圳' : 'Anthrise Technology · Shenzhen'; });
-      const destinations = ['/official-site.html?lang=' + lang + '#about', home + '#products', '/solutions.html?lang=' + lang, '/selection-tools.html?lang=' + lang, home + '#project-inquiry'];
-      document.querySelectorAll('.site-footer .footer-nav a').forEach((a, index) => { a.href = destinations[index]; a.textContent = copy[index]; });
       document.querySelectorAll('a[href*="official-site.html"]').forEach(a => {
         const url = new URL(a.href, location.href); if (url.origin !== location.origin) return;
         if (url.hash === '#products') a.href = home + '#products';
@@ -85,7 +83,7 @@
     sync();
     window.addEventListener('anthrise:language-ready',sync);
     const languageScript=document.createElement('script');languageScript.src='/assets/global-languages.js?v=20261120-actions3';document.head.append(languageScript);
-    const footer = document.querySelector('footer.site-footer');
+    const footer = document.querySelector('.site-inquiry-shell, #project-inquiry');
     if (footer && 'IntersectionObserver' in window) new IntersectionObserver(entries => {
       document.body.classList.toggle('site-footer-in-view', entries[0].isIntersecting);
     }).observe(footer);

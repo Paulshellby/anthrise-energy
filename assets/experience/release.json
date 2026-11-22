@@ -1,5 +1,5 @@
 {
-  "version": "20261122-pages1",
+  "version": "20261122-telegram1",
   "date": "2026-11-22",
   "products": 77,
   "entry": "one centered transparent sphere; previous/next category; no mascot intro",
@@ -15,5 +15,7 @@
     "Plan your system section"
   ],
   "solutions": "standalone illustrated scenarios page",
-  "selectionTools": "standalone combined sizing and runtime; shared parameters; inquiry prefill"
+  "selectionTools": "standalone combined sizing and runtime; shared parameters; inquiry prefill",
+  "footerBrandNavigationBar": false,
+  "telegramContact": "https://t.me/Solarsolution178"
 }
