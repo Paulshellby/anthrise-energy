@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
 // Exterior references only. Face photos preserve supplied labels; no inferred electrical specifications.
 export async function createBoxExterior(model,renderer,id,isDisposed){
- const pre=id==='preassembled16',w=.44,d=pre?.741:.74,h=pre?.272:.51,folder='/assets/experience/'+(pre?'preassembled16-model':'home32-model')+'/';
+ const pre=id==='preassembled16',w=.44,d=pre?.741:.74,h=pre?.272:.51,folder='/assets/experience/'+(pre?'preassembled16-model-v3':'home32-model-v3')+'/';
  const names=pre?['front','back','right','left','top','bottom']:['front','right'];
  async function load(name){const img=await new Promise((resolve,reject)=>{const image=new Image();image.crossOrigin='anonymous';image.fetchPriority='high';image.onload=()=>resolve(image);image.onerror=()=>reject(new Error('Exterior reference unavailable: '+name));image.src=folder+'material-'+name+'.webp'});const texture=new THREE.Texture(img);texture.needsUpdate=true;texture.colorSpace=THREE.SRGBColorSpace;texture.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());return texture}
  const maps=await Promise.all(names.map(load));if(isDisposed()){maps.forEach(t=>t.dispose());return false}const textures=Object.fromEntries(names.map((n,i)=>[n,maps[i]]));

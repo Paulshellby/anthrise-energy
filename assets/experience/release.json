@@ -1,5 +1,5 @@
 {
-  "version": "20261122-batteryset1",
+  "version": "20261122-readybrand1",
   "date": "2026-11-22",
   "products": 77,
   "entry": "one centered transparent sphere; previous/next category; no mascot intro",
@@ -69,5 +69,18 @@
       "前.png",
       "右.png"
     ]
+  },
+  "readyBranding": {
+    "preassembled16": "AE-E-READY-16",
+    "home32": "AE-E-READY-32",
+    "surfaces": [
+      "category sphere",
+      "enlarged preview",
+      "three gallery photos",
+      "360 exterior textures",
+      "page model identifiers",
+      "specification export"
+    ],
+    "editScope": "Existing nameplate header areas only; source imagery outside these areas and alpha preserved"
   }
 }
