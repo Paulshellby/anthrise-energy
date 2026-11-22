@@ -1,8 +1,10 @@
 {
-  "version": "20261121-live1",
-  "date": "2026-11-21",
+  "version": "20261122-orbit1",
+  "date": "2026-11-22",
   "products": 77,
-  "entry": "direct category spheres; no mascot throw/explosion intro",
+  "entry": "one centered transparent sphere; previous/next category; no mascot intro",
   "vehicleAnimation": false,
-  "productRotation": false
+  "productRotation": false,
+  "cardInteraction": "single click: enlarged preview; double click: direct detail",
+  "detailEntryAnimation": false
 }
