@@ -1,6 +1,6 @@
 // Product category spheres: tangible image cards, independent idle and drag rotation.
 const catalog=window.ATLAS_PRODUCTS||[],reduced=matchMedia('(prefers-reduced-motion: reduce)');
-const shell=document.createElement('section');shell.className='product-orbits';shell.hidden=true;shell.setAttribute('role','dialog');shell.setAttribute('aria-modal','true');shell.setAttribute('aria-label','产品分类');
+const shell=document.createElement('section');shell.className='product-orbits';shell.id='product-collections';shell.hidden=true;shell.setAttribute('role','dialog');shell.setAttribute('aria-modal','true');shell.setAttribute('aria-label','产品分类');
 shell.innerHTML='<header><img src="/assets/brand/anthrise-official.png" alt="Anthrise"><span>探索产品系列</span><button class="orbit-close">返回园区 ×</button></header><div class="orbit-intro"><p>ANTHRISE COLLECTIONS</p><h1>从一款产品，探索更多可能。</h1><span>拖动旋转 · 单击放大 · 双击进入详情</span></div><div class="orbit-triangle"></div><button class="orbit-motion" aria-pressed="false">暂停旋转</button>';
 document.body.append(shell);let raf=0,previous=0,paused=reduced.matches,busy=false,lastFocus;
 const brand=document.createElement('button');brand.className='orbit-home';brand.setAttribute('aria-label','Anthrise，返回主页');const brandImage=shell.querySelector('header>img');brandImage.replaceWith(brand);brand.append(brandImage);brand.onclick=()=>{close();history.replaceState(null,'',location.pathname);window.scrollTo({top:0,behavior:'smooth'})};

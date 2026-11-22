@@ -1,10 +1,12 @@
 {
-  "version": "20261122-orbit1",
+  "version": "20261122-clean2",
   "date": "2026-11-22",
   "products": 77,
   "entry": "one centered transparent sphere; previous/next category; no mascot intro",
   "vehicleAnimation": false,
   "productRotation": false,
   "cardInteraction": "single click: enlarged preview; double click: direct detail",
-  "detailEntryAnimation": false
+  "detailEntryAnimation": false,
+  "legacyMascotIntroduction": "removed controller, timeline, listeners, markup, styles and preload references",
+  "compareMenuEntry": false
 }
