@@ -1,10 +1,10 @@
 {
-  "version": "20261122-floor16-entry4",
+  "version": "20261122-batteryset1",
   "date": "2026-11-22",
   "products": 77,
   "entry": "one centered transparent sphere; previous/next category; no mascot intro",
   "vehicleAnimation": false,
-  "productRotation": "ess16 reference exterior only; all other products remain photos",
+  "productRotation": "ess16, preassembled16 and home32 reference exterior models; other products remain photos",
   "cardInteraction": "single click: enlarged preview; double click: direct detail",
   "detailEntryAnimation": false,
   "legacyMascotIntroduction": "removed controller, timeline, listeners, markup, styles and preload references",
@@ -46,8 +46,28 @@
     "cycleCondition": "≥8000 @ 0.5°C, 70% SOH",
     "rotation": "reference-based exterior visualization",
     "sideFinish": "white case with direct perforations; recessed white grips; no mesh grille or dark vent frame",
-    "photoBackground": "supplied image pixels preserved; white background blends with warm gallery",
+    "photoBackground": "true alpha cutouts, shared across sphere, preview and all three gallery angles",
     "directEntry": "initialize on DOM readiness; no wait for images or fonts",
     "materialLoading": "high-priority model and textures; preload on direct product pages"
+  },
+  "batteryPhotos": {
+    "source": "User supplied latest folders, 2026-11-22",
+    "products": [
+      "ess16",
+      "preassembled16",
+      "home32"
+    ],
+    "galleryPerProduct": 3,
+    "background": "programmatically extracted RGBA; original opaque product pixels retained",
+    "surfaces": [
+      "category sphere",
+      "enlarged preview",
+      "product details"
+    ],
+    "preassembledSelection": [
+      "16kwh preasssemble.png",
+      "前.png",
+      "右.png"
+    ]
   }
 }

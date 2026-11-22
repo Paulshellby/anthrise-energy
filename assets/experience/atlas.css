@@ -72,3 +72,7 @@
 .atlas-showroom[data-product-id="ess16"] .atlas-photo{mix-blend-mode:multiply;filter:none}
 .atlas-showroom[data-product-id="ess16"] .atlas-detail-card img,.atlas-showroom[data-product-id="ess16"] .atlas-views img{mix-blend-mode:multiply}
 .atlas-showroom[data-product-id="ess16"]:not(.has-rotation) .atlas-display{mix-blend-mode:multiply}.atlas-showroom[data-product-id="ess16"]:not(.has-rotation) .atlas-photo{mix-blend-mode:normal}
+
+/* Original pixels with alpha cutouts: identical treatment in every product surface. */
+#atlas[data-transparent="true"] .atlas-display,#atlas[data-transparent="true"] .atlas-photo,#atlas[data-transparent="true"] .atlas-detail-card img,#atlas[data-transparent="true"] .atlas-views img{mix-blend-mode:normal!important;filter:none}
+.orbit-preview-panel>img{background:transparent}
