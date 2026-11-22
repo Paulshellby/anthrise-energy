@@ -22,8 +22,8 @@
   function routeProducts() { location.assign(homeFor(locale()) + '#products'); }
   // Solutions and selection tools are normal standalone destinations.
   function planningTarget(target) {
-    const trigger=target.closest('header [aria-controls="menu-solutions"],header [aria-controls="mega-solutions"],header [aria-controls="menu-tools"],header [aria-controls="mega-tools"]');
-    if(!trigger)return null;return trigger.getAttribute('aria-controls').endsWith('tools')?'selection-tools.html':'solutions.html';
+    const trigger=target.closest('header [aria-controls="menu-about"],header [aria-controls="mega-company"],header [aria-controls="menu-solutions"],header [aria-controls="mega-solutions"],header [aria-controls="menu-tools"],header [aria-controls="mega-tools"]');
+    if(!trigger)return null;if(['menu-about','mega-company'].includes(trigger.getAttribute('aria-controls')))return 'about.html';return trigger.getAttribute('aria-controls').endsWith('tools')?'selection-tools.html':'solutions.html';
   }
   document.addEventListener('click',event=>{const page=planningTarget(event.target);if(!page)return;event.preventDefault();event.stopImmediatePropagation();location.assign('/'+page+'?lang='+locale());},true);
   document.addEventListener('keydown',event=>{if(!['Enter',' '].includes(event.key))return;const page=planningTarget(event.target);if(!page)return;event.preventDefault();event.stopImmediatePropagation();location.assign('/'+page+'?lang='+locale());},true);
