@@ -5,8 +5,10 @@
   const hero=document.getElementById('hero-section'),frame=document.getElementById('hero-scene-viewport'),plane=document.getElementById('reference-plane'),popover=document.getElementById('reference-popover');
   if(!hero||!plane)return;
   const reduce=matchMedia('(prefers-reduced-motion: reduce)'),products=window.REFERENCE_PRODUCTS||{};
-  const state={time:'day',flow:false,paused:reduce.matches,suspended:false,lang:document.documentElement.lang.startsWith('zh')?'zh':'en',family:'all',zone:'overview',zoom:1,x:0,y:0,ready:false};
-  let selected=null,returnFocus=null,lastTick=0,motionClock=0,raf=0;
+  const chinaHour=date=>Number(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Shanghai',hour:'2-digit',hourCycle:'h23'}).format(date||new Date()));
+  const chinaTime=date=>{const hour=chinaHour(date);return hour>=6&&hour<18?'day':'night'};
+  const state={time:chinaTime(),flow:true,paused:reduce.matches,suspended:false,lang:document.documentElement.lang.startsWith('zh')?'zh':'en',family:'all',zone:'overview',zoom:1,x:0,y:0,ready:false};
+  let selected=null,returnFocus=null,lastTick=0,motionClock=0,raf=0,layoutWidth=0;
   const svgNS='http://www.w3.org/2000/svg',flowHost=document.getElementById('reference-flows');
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const definitions=[
@@ -31,7 +33,7 @@
     const b=document.createElement('button');b.className='reference-zone-pin campus-zone-btn';b.dataset.zonePin=zone;b.style.left=x/1672*100+'%';b.style.top=y/941*100+'%';b.onclick=()=>focusZone(zone);hotspotHost.append(b);
   });
   function syncCopy(){
-    const zh=state.lang==='zh';document.getElementById('reference-time-note').textContent=zh?(state.time==='day'?'白天 · 光伏供能与储能充电 · 灯具关闭':'夜晚 · 储能供电 · 路灯、庭院灯与壁灯亮起'):(state.time==='day'?'Day · Solar supply and battery charging · Lamps off':'Night · Stored energy supply · Lighting on');
+    const zh=state.lang==='zh';const timeNote=document.getElementById('reference-time-note');if(timeNote)timeNote.textContent=zh?(state.time==='day'?'白天 · 光伏供能与储能充电 · 灯具关闭':'夜晚 · 储能供电 · 路灯、庭院灯与壁灯亮起'):(state.time==='day'?'Day · Solar supply and battery charging · Lamps off':'Night · Stored energy supply · Lighting on');
     definitions.forEach(d=>{const b=hotspotHost.querySelector('[data-hotspot="'+d.key+'"]'),p=products[d.id];if(b&&p){const name=zh?p.zh:p.en;b.setAttribute('aria-label',name);b.querySelector('.reference-hotspot-label').textContent=name}});
     hotspotHost.querySelectorAll('[data-zone-pin]').forEach(b=>{b.textContent=zoneData[b.dataset.zonePin][zh?'zh':'en']});
   }
@@ -43,15 +45,15 @@
   }
   function constrain(){const maxX=Math.max(0,(plane.offsetWidth*state.zoom-frame.clientWidth)/2),maxY=Math.max(0,(plane.offsetHeight*state.zoom-frame.clientHeight)/2);state.x=Math.max(-maxX,Math.min(maxX,state.x));state.y=Math.max(-maxY,Math.min(maxY,state.y))}
   function renderCamera(){constrain();hero.style.setProperty('--zoom',state.zoom);hero.style.setProperty('--pan-x',state.x+'px');hero.style.setProperty('--pan-y',state.y+'px');frame.classList.toggle('is-zoomed',state.zoom>1.01)}
-  function layout(){const w=Math.min(frame.clientWidth,frame.clientHeight*1672/941);plane.style.width=w+'px';plane.style.height=w*941/1672+'px';if(state.zone!=='overview')positionZone();else renderCamera()}
-  function positionZone(){const z=zoneData[state.zone];state.zoom=z.zoom;state.x=(836-z.x)*plane.offsetWidth/1672*state.zoom;state.y=(470.5-z.y)*plane.offsetHeight/941*state.zoom;renderCamera()}
+  function layout(){const w=Math.max(frame.clientWidth,frame.clientHeight*1672/941);plane.style.width=w+'px';plane.style.height=w*941/1672+'px';if(state.zone!=='overview')positionZone();else{if(layoutWidth!==frame.clientWidth)state.x=frame.clientWidth<641?(836-550)*w/1672:0;renderCamera()}layoutWidth=frame.clientWidth}
+  function positionZone(){const z=zoneData[state.zone];state.zoom=z.zoom;state.x=(836-(state.zone==='overview'&&frame.clientWidth<641?550:z.x))*plane.offsetWidth/1672*state.zoom;state.y=(470.5-z.y)*plane.offsetHeight/941*state.zoom;renderCamera()}
   function focusZone(zone){if(!zoneData[zone])return;closePopover();state.zone=zone;positionZone();document.querySelectorAll('[data-focus]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.focus===zone)))}
   document.querySelectorAll('[data-focus]').forEach(b=>b.onclick=()=>focusZone(b.dataset.focus));
   document.querySelectorAll('.reference-families button').forEach(b=>b.onclick=()=>{closePopover();state.family=b.dataset.family;hero.dataset.family=state.family;document.querySelectorAll('.reference-families button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));hotspotHost.querySelectorAll('[data-hotspot]').forEach(x=>{const muted=state.family!=='all'&&x.dataset.family!==state.family;x.classList.toggle('is-muted',muted);x.disabled=muted})});
   document.querySelectorAll('[data-zoom]').forEach(b=>b.onclick=()=>{if(b.dataset.zoom==='reset'){focusZone('overview');return}state.zone='overview';state.zoom=Math.max(1,Math.min(2.8,state.zoom+(b.dataset.zoom==='in'?.35:-.35)));renderCamera()});
   let drag=null,moved=false;
   frame.addEventListener('pointerdown',e=>{if(e.target.closest('button,a,.campus-popover,.campus-hud-card'))return;drag={id:e.pointerId,x:e.clientX,y:e.clientY,px:state.x,py:state.y};moved=false;if(state.zoom>1)frame.setPointerCapture(e.pointerId)});
-  frame.addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.hypot(dx,dy)>7){moved=true;if(state.zoom>1){frame.classList.add('is-dragging');state.zone='overview';state.x=drag.px+dx;state.y=drag.py+dy;renderCamera()}}});
+  frame.addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.hypot(dx,dy)>7){moved=true;if(state.zoom>1||Math.abs(dx)>Math.abs(dy)*1.1){frame.setPointerCapture(e.pointerId);frame.classList.add('is-dragging');state.zone='overview';state.x=drag.px+dx;state.y=drag.py+dy;renderCamera()}}});
   const endDrag=()=>{drag=null;frame.classList.remove('is-dragging')};frame.addEventListener('pointerup',endDrag);frame.addEventListener('pointercancel',endDrag);frame.addEventListener('click',e=>{
     if(moved){e.preventDefault();e.stopImmediatePropagation();moved=false;return}
     const clicked=e.target.closest('.reference-hotspot');
@@ -85,16 +87,25 @@
   ];
   const flows=flowDefinitions.map((d,index)=>{const group=document.createElementNS(svgNS,'g');group.classList.add('reference-flow');group.dataset.flowId=d.id;const path=document.createElementNS(svgNS,'path');path.setAttribute('d',d.path);path.setAttribute('class','reference-flow-path');group.append(path);const dots=[0,.48].map(offset=>{const c=document.createElementNS(svgNS,'circle');c.setAttribute('r','3');c.setAttribute('class','reference-flow-dot');group.append(c);return {node:c,offset:offset+index*.067}});flowHost.append(group);return {...d,group,path,dots,length:path.getTotalLength()}});
   function syncFlows(){flows.forEach(f=>{f.group.dataset.active=String(f.mode==='both'||f.mode===state.time)})}
-  function setTime(time,instant=false){state.time=time==='night'?'night':'day';hero.dataset.sceneTime=state.time;if(instant){hero.classList.add('reference-instant');setTimeout(()=>hero.classList.remove('reference-instant'),0)}syncFlows();syncCopy()}
+  function setTime(time,instant=false){state.time=time==='night'?'night':'day';hero.dataset.sceneTime=state.time;if(instant){hero.classList.add('reference-instant');setTimeout(()=>hero.classList.remove('reference-instant'),0)}syncFlows();syncCopy();syncHeader();window.dispatchEvent(new CustomEvent('anthrise:scene-time',{detail:{time:state.time}}))}
   function tick(now){const dt=lastTick?Math.min(.06,(now-lastTick)/1000):0;lastTick=now;if(!state.paused&&!state.suspended&&!document.hidden&&!reduce.matches)motionClock+=dt;
     if(!state.suspended){
       if(state.flow)flows.forEach(f=>{if(f.group.dataset.active==='false')return;f.dots.forEach(d=>{const p=f.path.getPointAtLength(((motionClock*.21+d.offset)%1)*f.length);d.node.setAttribute('cx',p.x);d.node.setAttribute('cy',p.y)})});
     }
     raf=requestAnimationFrame(tick);
   }
-  const bridge={setTime,setFlowVisible(value){state.flow=!!value;hero.dataset.flowVisible=String(state.flow)},setMotionPaused(value){state.paused=!!value},setSuspended(value){state.suspended=!!value;if(value)closePopover()},setLanguage(lang){state.lang=lang==='zh'?'zh':'en';syncCopy()},closeHotspots:closePopover,goToZone(zone){focusZone(zone==='commercial'?'business':zone)},getState(){return {...state,ready:true,renderer:'fixed-camera-reference',activeFlowIds:flows.filter(f=>f.group.dataset.active!=='false').map(f=>f.id),traffic:[],vehicleAnimation:false}}};
+  const bridge={setTime(time,instant=false){setTime(chinaTime(),instant)},setFlowVisible(){state.flow=true;hero.dataset.flowVisible='true'},setMotionPaused(value){state.paused=!!value},setSuspended(value){state.suspended=!!value;if(value)closePopover()},setLanguage(lang){state.lang=lang==='zh'?'zh':'en';syncCopy()},closeHotspots:closePopover,goToZone(zone){focusZone(zone==='commercial'?'business':zone)},getState(){return {...state,ready:true,renderer:'fixed-camera-reference',timeZone:'Asia/Shanghai',automaticTime:true,dayHours:[6,18],activeFlowIds:flows.filter(f=>f.group.dataset.active!=='false').map(f=>f.id),traffic:[],vehicleAnimation:false}}};
+  function syncHeader(){
+    const header=document.getElementById('site-header');if(!header)return;
+    const progress=Math.max(0,Math.min(1,scrollY/(innerHeight*.55))),night=state.time==='night',v=Math.round(night?255-(255-21)*progress:21);
+    header.style.setProperty('--header-opacity',String(progress));header.style.setProperty('--header-ink',night?`rgb(${v},${Math.round(night?255-(255-61)*progress:61)},${Math.round(night?255-(255-51)*progress:51)})`:'#153d33');
+    header.classList.toggle('is-campus-night',night&&progress<.55);header.classList.toggle('is-campus-white',progress>.8);
+  }
+  function syncChinaTime(){const next=chinaTime();if(next!==state.time)setTime(next);else syncHeader()}
   window.ANTHRISE_CAMPUS=bridge;
+  let chinaTimer=setInterval(syncChinaTime,60000);window.addEventListener('focus',syncChinaTime);window.addEventListener('scroll',syncHeader,{passive:true});window.addEventListener('resize',syncHeader,{passive:true});
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncChinaTime()});window.addEventListener('pagehide',()=>clearInterval(chinaTimer));window.addEventListener('pageshow',event=>{if(event.persisted){syncChinaTime();clearInterval(chinaTimer);chinaTimer=setInterval(syncChinaTime,60000);lastTick=0;raf=requestAnimationFrame(tick)}});
   new ResizeObserver(layout).observe(frame);reduce.addEventListener('change',()=>{state.paused=reduce.matches});
-  document.addEventListener('visibilitychange',()=>{lastTick=0});window.addEventListener('pagehide',()=>cancelAnimationFrame(raf),{once:true});
-  layout();syncCopy();syncFlows();state.ready=true;raf=requestAnimationFrame(tick);
+  document.addEventListener('visibilitychange',()=>{lastTick=0});window.addEventListener('pagehide',()=>cancelAnimationFrame(raf));
+  hero.dataset.flowVisible='true';setTime(state.time,true);layout();syncHeader();state.ready=true;raf=requestAnimationFrame(tick);
 })();

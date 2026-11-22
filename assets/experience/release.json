@@ -1,5 +1,5 @@
 {
-  "version": "20261122-telegram1",
+  "version": "20261122-campus1",
   "date": "2026-11-22",
   "products": 77,
   "entry": "one centered transparent sphere; previous/next category; no mascot intro",
@@ -17,5 +17,12 @@
   "solutions": "standalone illustrated scenarios page",
   "selectionTools": "standalone combined sizing and runtime; shared parameters; inquiry prefill",
   "footerBrandNavigationBar": false,
-  "telegramContact": "https://t.me/Solarsolution178"
+  "telegramContact": "https://t.me/Solarsolution178",
+  "campusHero": "full viewport; cover image; transparent to white header",
+  "campusControls": "removed toolbar, note, captions and control dock",
+  "energyFlow": true,
+  "timeZone": "Asia/Shanghai",
+  "automaticDayNight": true,
+  "dayStarts": "06:00",
+  "nightStarts": "18:00"
 }

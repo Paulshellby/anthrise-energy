@@ -79,12 +79,13 @@
 
   let currentLang = docEl.lang.startsWith('zh') ? 'zh' : 'en';
   const sceneState = {
-    time: 'day',
-    targetTime: 'day',
-    flowVisible: false,
+    time: window.ANTHRISE_CAMPUS?.getState().time || 'day',
+    targetTime: window.ANTHRISE_CAMPUS?.getState().time || 'day',
+    flowVisible: true,
     timers: [],
   };
 
+  window.addEventListener('anthrise:scene-time',event=>{sceneState.time=event.detail.time;sceneState.targetTime=event.detail.time;},{signal});
   window.__anthriseGetLang = () => currentLang;
 
   const SCENE_I18N = {
