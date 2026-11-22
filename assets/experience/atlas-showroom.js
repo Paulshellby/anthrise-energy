@@ -85,5 +85,6 @@ import './product-orbits.js';
  });
  window.__anthriseOpenAtlasProduct=open;window.ATLAS_PREVIEW={open,close,getState:()=>({id:selected?.id,mode:rotationActive?'rotation':'photos',imageIndex,viewCount:selected?views(selected).length:0,zoom,focus:focusMode,rotationEnabled:selected?.id==='ess16',rotation:viewer?.getState()||null,filteredIds:filtered().map(p=>p.id)})};
  function connect(){if(!window.ANTHRISE_I18N&&window.ANTHRISE_PAGE?.lang)lang=window.ANTHRISE_PAGE.lang==='zh'?'zh':'en';const original=window.__anthriseOpenStageProduct;if(original&&!original.atlasWrapped){const wrapper=id=>open(id)||original(id);wrapper.atlasWrapped=true;window.__anthriseOpenStageProduct=wrapper}const id=new URL(location.href).searchParams.get('product')||window.ANTHRISE_PAGE?.id;if(id&&byId.has(id))open(id);if(window.ANTHRISE_PAGE)$('[data-action="close"]').addEventListener('click',()=>location.assign(lang==='zh'?'/home-zh.html':'/'))}
- if(document.readyState==='complete')connect();else window.addEventListener('load',connect,{once:true});
+ // Open direct product links as soon as deferred catalog scripts are ready; remote assets must not block the controls.
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',connect,{once:true});else connect();
 })();
