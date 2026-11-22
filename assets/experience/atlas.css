@@ -67,3 +67,8 @@
 .atlas-rotation[hidden],.atlas-rotation-button[hidden],.atlas-auto-button[hidden],.atlas-photo[hidden]{display:none!important}.atlas-rotation{position:absolute;inset:-6% -12%;pointer-events:auto;touch-action:none}.atlas-rotation canvas{display:block;width:100%;height:100%;cursor:grab}.atlas-rotation canvas.is-dragging{cursor:grabbing}.atlas-rotation canvas:focus-visible{outline:2px solid #008777;outline-offset:-5px}.atlas-showroom .atlas-rotation-button{align-self:center;border:1px solid #a9c8b8;border-radius:22px;padding:7px 24px;color:#175542;background:#fff;cursor:pointer;font:600 13px Outfit,sans-serif}.atlas-rotation-button[aria-pressed=true]{background:#e1ece1}.atlas-rotation[aria-busy=true]{opacity:.3}.atlas-rotation[aria-busy=true]:before{content:'360°';position:absolute;left:45%;top:45%;color:#356955}.atlas-showroom.has-rotation .atlas-display{pointer-events:auto}.atlas-showroom.has-rotation .atlas-stage{touch-action:pan-y}@media(max-width:760px){.atlas-rotation{inset:-4% -20%}.atlas-showroom .atlas-rotation-button{padding:6px 22px}}
 
 .atlas-showroom .atlas-tools .atlas-rotation-button{width:55px;font-size:12px;padding:4px}.atlas-rotation-button[aria-pressed=true]{border-color:#38735f!important}
+
+/* Blend the supplied white-background photos into the warm gallery without altering source pixels. */
+.atlas-showroom[data-product-id="ess16"] .atlas-photo{mix-blend-mode:multiply;filter:none}
+.atlas-showroom[data-product-id="ess16"] .atlas-detail-card img,.atlas-showroom[data-product-id="ess16"] .atlas-views img{mix-blend-mode:multiply}
+.atlas-showroom[data-product-id="ess16"]:not(.has-rotation) .atlas-display{mix-blend-mode:multiply}.atlas-showroom[data-product-id="ess16"]:not(.has-rotation) .atlas-photo{mix-blend-mode:normal}

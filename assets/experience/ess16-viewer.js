@@ -8,8 +8,20 @@ export async function mount(host){
  const canvas=renderer.domElement;canvas.tabIndex=0;canvas.setAttribute('role','img');canvas.setAttribute('aria-label','360° · ANTHRISE 16kWh');canvas.style.touchAction='none';
  scene.add(new THREE.HemisphereLight(0xffffff,0xaba899,3));const key=new THREE.DirectionalLight(0xffffff,3.5);key.position.set(2,4,5);scene.add(key);const rim=new THREE.DirectionalLight(0xdce9ef,2.5);rim.position.set(-3,2,-4);scene.add(rim);
  const pivot=new THREE.Group(),model=new THREE.Group();scene.add(pivot);pivot.add(model);let observer;let yaw=-.52,pitch=.08,scale=1,auto=!matchMedia('(prefers-reduced-motion: reduce)').matches,visible=true,disposed=false,raf,last=0,drag,ready=false;
- const white=new THREE.MeshStandardMaterial({color:0xf1f2f3,roughness:.32,metalness:.13}),silver=new THREE.MeshStandardMaterial({color:0xbfc5c8,metalness:.88,roughness:.2}),rubber=new THREE.MeshStandardMaterial({color:0x171a1b,roughness:.65}),black=new THREE.MeshStandardMaterial({color:0x222728,roughness:.45});
+ const white=new THREE.MeshStandardMaterial({color:0xffffff,roughness:.48,metalness:.025,emissive:0xe5e8eb,emissiveIntensity:.12}),silver=new THREE.MeshStandardMaterial({color:0xbfc5c8,metalness:.88,roughness:.2}),rubber=new THREE.MeshStandardMaterial({color:0x171a1b,roughness:.65}),black=new THREE.MeshStandardMaterial({color:0x222728,roughness:.45});
  function mesh(g,m,x=0,y=0,z=0){const o=new THREE.Mesh(g,m);o.position.set(x,y,z);model.add(o);return o}
+ // Cut ventilation directly through the white case surface; no grille or dark frame.
+ white.onBeforeCompile=shader=>{
+  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vCasePosition;').replace('#include <begin_vertex>','#include <begin_vertex>\nvCasePosition = position;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vCasePosition;').replace('#include <clipping_planes_fragment>',`#include <clipping_planes_fragment>
+   if (abs(vCasePosition.x) > 0.247 && abs(vCasePosition.y + 0.105) < 0.122 && abs(vCasePosition.z) < 0.067) {
+    float row = floor((vCasePosition.y + 0.105) / 0.009);
+    float dy = abs(fract((vCasePosition.y + 0.105) / 0.009 + 0.5) - 0.5) * 0.009;
+    float dz = abs(fract(vCasePosition.z / 0.0092 + mod(row, 2.0) * 0.5 + 0.5) - 0.5) * 0.0092;
+    if (dy / 0.0036 + dz / 0.0036 < 1.0) discard;
+   }`);
+ };
+ white.customProgramCacheKey=()=> 'ess16-white-perforated-case-v2';
  mesh(new RoundedBoxGeometry(.5,.7,.27,6,.022),white);
  const loader=new THREE.TextureLoader();async function texture(name){const t=await loader.loadAsync(folder+'material-'+name+'.webp');t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=renderer.capabilities.getMaxAnisotropy();return t}
  function face(w,h,r){const s=new THREE.Shape();s.moveTo(-w/2+r,-h/2);s.lineTo(w/2-r,-h/2);s.quadraticCurveTo(w/2,-h/2,w/2,-h/2+r);s.lineTo(w/2,h/2-r);s.quadraticCurveTo(w/2,h/2,w/2-r,h/2);s.lineTo(-w/2+r,h/2);s.quadraticCurveTo(-w/2,h/2,-w/2,h/2-r);s.lineTo(-w/2,-h/2+r);s.quadraticCurveTo(-w/2,-h/2,-w/2+r,-h/2);const g=new THREE.ShapeGeometry(s,24),p=g.attributes.position,u=g.attributes.uv;for(let i=0;i<p.count;i++)u.setXY(i,p.getX(i)/w+.5,p.getY(i)/h+.5);return g}
@@ -18,14 +30,15 @@ export async function mount(host){
   const top=mesh(face(.475,.245,.012),material(textures[2]),0,.3505,0);top.rotation.x=-Math.PI/2;top.rotation.z=Math.PI;
   ready=true;
  }catch(e){dispose();throw e}
- // The reference has a recessed grip and diamond ventilation on both sides.
+ // White recessed grips and individual holes follow the supplied side photographs.
+ const recessCanvas=document.createElement('canvas');recessCanvas.width=128;recessCanvas.height=64;const ctx=recessCanvas.getContext('2d'),gradient=ctx.createLinearGradient(0,0,0,64);gradient.addColorStop(0,'#b5babf');gradient.addColorStop(.35,'#d7dbdf');gradient.addColorStop(1,'#fafbfc');ctx.fillStyle=gradient;ctx.fillRect(0,0,128,64);const recessTexture=new THREE.CanvasTexture(recessCanvas);recessTexture.colorSpace=THREE.SRGBColorSpace;
+ const gripWhite=new THREE.MeshStandardMaterial({color:0xffffff,roughness:.6,metalness:.015}),gripInner=new THREE.MeshStandardMaterial({map:recessTexture,color:0xffffff,roughness:.85,metalness:0});
+ const cavity=new THREE.MeshStandardMaterial({color:0x303437,roughness:1});
  for(const side of [-1,1]){
-  const grip=mesh(new RoundedBoxGeometry(.006,.052,.108,3,.008),silver,side*.251,.205,0);mesh(new RoundedBoxGeometry(.007,.034,.086,3,.006),black,side*.254,.205,0);
-  mesh(new RoundedBoxGeometry(.004,.26,.16,3,.008),silver,side*.251,-.105,0);mesh(new THREE.BoxGeometry(.004,.245,.145),black,side*.254,-.105,0);
-  const grille=new THREE.Group();grille.position.set(side*.257,-.105,0);model.add(grille);
-  const lineMat=new THREE.MeshStandardMaterial({color:0xe1e5e6,metalness:.45,roughness:.4});
-  // Perforations are bounded to the vent panel, not a tiled photograph.
-  const lattice=new THREE.InstancedMesh(new THREE.BoxGeometry(.001,.009,.0012),lineMat,440),dummy=new THREE.Object3D();let instance=0;for(let row=0;row<20;row++)for(let col=0;col<11;col++)for(const angle of [-.65,.65]){dummy.position.set(0,(row-9.5)*.0115,(col-5)*.012);dummy.rotation.set(angle,0,0);dummy.updateMatrix();lattice.setMatrixAt(instance++,dummy.matrix)}grille.add(lattice);
+  mesh(new RoundedBoxGeometry(.004,.062,.113,4,.009),gripWhite,side*.251,.205,0);
+  mesh(new RoundedBoxGeometry(.004,.037,.084,4,.007),gripInner,side*.2535,.205,0);
+  // This backing is inside the case and is visible only through the cut holes.
+  mesh(new THREE.BoxGeometry(.001,.25,.145),cavity,side*.242,-.105,0);
   for(const y of [.27,.12,-.27])mesh(new THREE.SphereGeometry(.0028,8,6),silver,side*.253,y,.083);
  }
  // Chrome U-handles run front-to-back above the top panel.
