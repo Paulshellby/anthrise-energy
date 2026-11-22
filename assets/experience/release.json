@@ -1,5 +1,5 @@
 {
-  "version": "20261122-clean3",
+  "version": "20261122-pages1",
   "date": "2026-11-22",
   "products": 77,
   "entry": "one centered transparent sphere; previous/next category; no mascot intro",
@@ -13,5 +13,7 @@
     "FAQ section and navigation link",
     "About supplemental Shenzhen and quality columns",
     "Plan your system section"
-  ]
+  ],
+  "solutions": "standalone illustrated scenarios page",
+  "selectionTools": "standalone combined sizing and runtime; shared parameters; inquiry prefill"
 }

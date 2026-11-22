@@ -20,6 +20,13 @@
   };
   const homeFor = lang => window.ANTHRISE_I18N?.home(lang) || paths[lang] || '/';
   function routeProducts() { location.assign(homeFor(locale()) + '#products'); }
+  // Solutions and selection tools are normal standalone destinations.
+  function planningTarget(target) {
+    const trigger=target.closest('header [aria-controls="menu-solutions"],header [aria-controls="mega-solutions"],header [aria-controls="menu-tools"],header [aria-controls="mega-tools"]');
+    if(!trigger)return null;return trigger.getAttribute('aria-controls').endsWith('tools')?'selection-tools.html':'solutions.html';
+  }
+  document.addEventListener('click',event=>{const page=planningTarget(event.target);if(!page)return;event.preventDefault();event.stopImmediatePropagation();location.assign('/'+page+'?lang='+locale());},true);
+  document.addEventListener('keydown',event=>{if(!['Enter',' '].includes(event.key))return;const page=planningTarget(event.target);if(!page)return;event.preventDefault();event.stopImmediatePropagation();location.assign('/'+page+'?lang='+locale());},true);
   // Capture before the retired menu controller can expand its product taxonomy.
   document.addEventListener('click', event => {
     const target = event.target.closest('header summary[aria-controls="mega-products"],header [data-nav-category],header a[href$="#products"]');
@@ -62,7 +69,7 @@
         const old = document.getElementById('inquiry'); if (old) old.hidden = true;
       }
       document.querySelectorAll('.site-footer .footer-company').forEach(node => { node.textContent = lang === 'zh' ? '深圳市昂旭启元科技有限公司 · 深圳' : 'Anthrise Technology · Shenzhen'; });
-      const destinations = ['/official-site.html?lang=' + lang + '#about', home + '#products', home + '#stories', '/official-site.html?lang=' + lang + '#calculator', home + '#project-inquiry'];
+      const destinations = ['/official-site.html?lang=' + lang + '#about', home + '#products', '/solutions.html?lang=' + lang, '/selection-tools.html?lang=' + lang, home + '#project-inquiry'];
       document.querySelectorAll('.site-footer .footer-nav a').forEach((a, index) => { a.href = destinations[index]; a.textContent = copy[index]; });
       document.querySelectorAll('a[href*="official-site.html"]').forEach(a => {
         const url = new URL(a.href, location.href); if (url.origin !== location.origin) return;
