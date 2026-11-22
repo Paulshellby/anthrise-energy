@@ -1,5 +1,5 @@
 {
-  "version": "20261122-clean2",
+  "version": "20261122-clean3",
   "date": "2026-11-22",
   "products": 77,
   "entry": "one centered transparent sphere; previous/next category; no mascot intro",
@@ -8,5 +8,10 @@
   "cardInteraction": "single click: enlarged preview; double click: direct detail",
   "detailEntryAnimation": false,
   "legacyMascotIntroduction": "removed controller, timeline, listeners, markup, styles and preload references",
-  "compareMenuEntry": false
+  "compareMenuEntry": false,
+  "removedContent": [
+    "FAQ section and navigation link",
+    "About supplemental Shenzhen and quality columns",
+    "Plan your system section"
+  ]
 }
