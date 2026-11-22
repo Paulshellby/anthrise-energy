@@ -1,10 +1,9 @@
 (() => {
  'use strict';
- const params=new URLSearchParams(location.search);let lang=params.get('lang')==='zh'?'zh':'en';
+ const params=new URLSearchParams(location.search);let lang=(window.ANTHRISE_I18N?.language||params.get('lang'))==='zh'?'zh':'en';
  const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],tr=(zh,en)=>lang==='zh'?zh:en;
  const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- function localize(){document.documentElement.lang=lang==='zh'?'zh-CN':'en';$$('[data-zh][data-en]').forEach(n=>n.textContent=n.dataset[lang]);$('#page-language').value=lang;$$('a[data-page]').forEach(a=>{const url=new URL('/'+a.dataset.page,location.origin);url.searchParams.set('lang',lang);a.href=url.pathname+url.search+url.hash});$$('[data-home]').forEach(a=>a.href=lang==='zh'?'/home-zh.html':'/');document.title=document.body.dataset.page==='solutions'?tr('解决方案 | Anthrise Technology','Energy Solutions | Anthrise Technology'):tr('储能选型与续航计算 | Anthrise Technology','Storage Sizing & Runtime | Anthrise Technology')}
- $('#page-language').onchange=e=>{lang=e.target.value;const url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState(null,'',url);localize();render()};
+ function localize(){document.documentElement.lang=lang==='zh'?'zh-CN':'en';$$('[data-zh][data-en]').forEach(n=>n.textContent=n.dataset[lang]);if($('#page-language'))$('#page-language').value=lang;$$('a[data-page]').forEach(a=>{const url=new URL('/'+a.dataset.page,location.origin);url.searchParams.set('lang',lang);a.href=url.pathname+url.search+url.hash});$$('[data-home]').forEach(a=>a.href=lang==='zh'?'/home-zh.html':'/');document.title=document.body.dataset.page==='solutions'?tr('解决方案 | Anthrise Technology','Energy Solutions | Anthrise Technology'):tr('储能选型与续航计算 | Anthrise Technology','Storage Sizing & Runtime | Anthrise Technology')}
  const catalog=window.ATLAS_PRODUCTS||[];let scene=({business:'commercial',lighting:'outdoor'})[location.hash.slice(1)]||location.hash.slice(1)||'home';
  const names={home:['家庭储能','Residential'],commercial:['商业应用','Commercial'],offgrid:['离网供电','Off-grid'],outdoor:['户外照明','Outdoor lighting']};
  function renderScene(){const data=window.PLANNING_SCENES;if(!data[scene])scene='home';const s=data[scene],i=lang==='zh'?0:1;
@@ -23,7 +22,7 @@
   const meets=runtime+1e-8>=hours;$('#target-status').dataset.short=String(!meets);$('#target-status').textContent=meets?tr('当前 '+capacity+' kWh 容量的理论续航可覆盖 '+hours+' 小时目标。','The estimated runtime of '+capacity+' kWh covers your '+hours+' hour target.'):tr('当前容量预计支持 '+runtime.toFixed(1)+' 小时，低于 '+hours+' 小时目标。','The selected capacity supports about '+runtime.toFixed(1)+' hours, below your '+hours+' hour target.');
   $('#apply-capacity').textContent=tr('采用约 '+Math.ceil(required)+' kWh 容量 →','Use approximately '+Math.ceil(required)+' kWh →');
   const note=tr('储能初步估算：场景 '+$('#application').selectedOptions[0].textContent+'，持续负载 '+load+' kW，目标备电 '+hours+' 小时；可用容量 '+Math.round(usable*100)+'%，转换效率 '+Math.round(efficiency*100)+'%；计算所需额定容量 '+required.toFixed(1)+' kWh，当前所选 '+capacity+' kWh，理论续航 '+runtime.toFixed(1)+' 小时。仅供初步沟通。','Initial storage estimate: '+$('#application').value+', continuous load '+load+' kW, target '+hours+' hours; usable fraction '+Math.round(usable*100)+'%, efficiency '+Math.round(efficiency*100)+'%; required nominal capacity '+required.toFixed(1)+' kWh, selected '+capacity+' kWh, estimated runtime '+runtime.toFixed(1)+' hours. Indicative only.');
-  $('#estimate-inquiry').href='/official-site.html?lang='+lang+'&estimate='+encodeURIComponent(note)+'#project-inquiry';
+  $('#estimate-inquiry').href='/official-site.html?lang='+lang+'&estimate='+encodeURIComponent(window.ANTHRISE_I18N?.t(note)||note)+'#project-inquiry';
   $$('[data-capacity]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.capacity)===capacity)))
  }
  function syncRange(){const value=Number($('#capacity').value);$('#capacity-range').max=Math.max(100,Math.ceil(value/100)*100);$('#capacity-range').value=value;$('#capacity-max').textContent=$('#capacity-range').max+' kWh'}

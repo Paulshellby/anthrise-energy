@@ -1,5 +1,5 @@
 {
-  "version": "20261122-about1",
+  "version": "20261122-locale1",
   "date": "2026-11-22",
   "products": 77,
   "entry": "one centered transparent sphere; previous/next category; no mascot intro",
@@ -29,5 +29,9 @@
   "inquiryPalette": "muted plum-grey to warm khaki gradient",
   "aboutPage": "standalone; company mission and PACK gallery in two screens",
   "aboutGalleryImages": 10,
-  "inquiryHeader": "transparent over matching background only when inquiry reaches the top"
+  "inquiryHeader": "transparent over matching background only when inquiry reaches the top",
+  "globalLanguages": 30,
+  "localeControl": "one shared globe; persistent across pages and product details",
+  "translationRuntime": "local static packs; dynamic content and form validation",
+  "productLocaleToggle": false
 }

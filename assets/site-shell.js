@@ -39,7 +39,7 @@
   }, true);
   function init(data) {
     const headerActions = document.querySelector('.site-header .header-actions');
-    if (headerActions && !document.getElementById('localeToggle')) {
+    if (headerActions && !document.getElementById('localeToggle') && !document.querySelector('.site-language-picker')) {
       const picker = document.createElement('details');
       picker.className = 'site-language-picker';
       picker.innerHTML = '<summary>' + data.globe + '<span class="site-language-code"></span><span aria-hidden="true">⌄</span></summary><nav aria-label="Languages"><a href="/" lang="en">English</a><a href="/home-zh.html" lang="zh-Hans">简体中文</a><a href="/home-es.html" lang="es">Español</a><a href="/home-ru.html" lang="ru">Русский</a></nav>';
@@ -54,7 +54,7 @@
     function sync() {
       const lang = locale(), copy = labels[lang] || labels.en, home = homeFor(lang);
       const picker = document.querySelector('.site-language-picker');
-      if (picker) {
+      if (picker && !picker.hasAttribute('data-global-locale')) {
         picker.querySelector('.site-language-code').textContent = { en: 'EN', zh: '中', es: 'ES', ru: 'RU' }[lang] || lang.toUpperCase();
         picker.querySelector('summary').setAttribute('aria-label', copy[5]);
         picker.querySelectorAll('a').forEach(a => { if (a.pathname === home) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
@@ -82,7 +82,7 @@
     }
     sync();
     window.addEventListener('anthrise:language-ready',sync);
-    const languageScript=document.createElement('script');languageScript.src='/assets/global-languages.js?v=20261120-actions3';document.head.append(languageScript);
+    const languageScript=document.createElement('script');languageScript.src='/assets/global-languages.js?v=20261122-locale1';document.head.append(languageScript);
     const footer = document.querySelector('.site-inquiry-shell, #project-inquiry');
     if (footer && 'IntersectionObserver' in window) new IntersectionObserver(entries => {
       document.body.classList.toggle('site-footer-in-view', entries[0].isIntersecting);
