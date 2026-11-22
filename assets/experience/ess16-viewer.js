@@ -23,7 +23,7 @@ export async function mount(host){
  };
  white.customProgramCacheKey=()=> 'ess16-white-perforated-case-v2';
  mesh(new RoundedBoxGeometry(.5,.7,.27,6,.022),white);
- const loader=new THREE.TextureLoader();async function texture(name){const t=await loader.loadAsync(folder+'material-'+name+'.webp');t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=renderer.capabilities.getMaxAnisotropy();return t}
+ async function texture(name){const image=await new Promise((resolve,reject)=>{const img=new Image();img.crossOrigin='anonymous';img.fetchPriority='high';img.onload=()=>resolve(img);img.onerror=()=>reject(new Error('Product material unavailable: '+name));img.src=folder+'material-'+name+'.webp'});const t=new THREE.Texture(image);t.needsUpdate=true;t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=renderer.capabilities.getMaxAnisotropy();return t}
  function face(w,h,r){const s=new THREE.Shape();s.moveTo(-w/2+r,-h/2);s.lineTo(w/2-r,-h/2);s.quadraticCurveTo(w/2,-h/2,w/2,-h/2+r);s.lineTo(w/2,h/2-r);s.quadraticCurveTo(w/2,h/2,w/2-r,h/2);s.lineTo(-w/2+r,h/2);s.quadraticCurveTo(-w/2,h/2,-w/2,h/2-r);s.lineTo(-w/2,-h/2+r);s.quadraticCurveTo(-w/2,-h/2,-w/2+r,-h/2);const g=new THREE.ShapeGeometry(s,24),p=g.attributes.position,u=g.attributes.uv;for(let i=0;i<p.count;i++)u.setXY(i,p.getX(i)/w+.5,p.getY(i)/h+.5);return g}
  try{const textures=await Promise.all(['front','back','top'].map(texture));if(disposed){textures.forEach(t=>t.dispose());return}
   const material=t=>new THREE.MeshStandardMaterial({map:t,roughness:.42,metalness:.04});mesh(face(.493,.693,.022),material(textures[0]),0,0,.1356);const back=mesh(face(.493,.693,.022),material(textures[1]),0,0,-.1356);back.rotation.y=Math.PI;

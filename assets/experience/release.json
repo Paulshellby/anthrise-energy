@@ -1,5 +1,5 @@
 {
-  "version": "20261122-floor16-entry3",
+  "version": "20261122-floor16-entry4",
   "date": "2026-11-22",
   "products": 77,
   "entry": "one centered transparent sphere; previous/next category; no mascot intro",
@@ -47,6 +47,7 @@
     "rotation": "reference-based exterior visualization",
     "sideFinish": "white case with direct perforations; recessed white grips; no mesh grille or dark vent frame",
     "photoBackground": "supplied image pixels preserved; white background blends with warm gallery",
-    "directEntry": "initialize on DOM readiness; no wait for images or fonts"
+    "directEntry": "initialize on DOM readiness; no wait for images or fonts",
+    "materialLoading": "high-priority model and textures; preload on direct product pages"
   }
 }
