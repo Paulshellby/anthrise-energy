@@ -16,7 +16,8 @@ function applyNative(){ /* Native HTML already contains model-specific metadata 
 function apply(){
  const title=product?name(product,lang)+' | ANTHRISE':(titles[kind]?.[lang]||titles[kind]?.en||titles.home.en),description=product?((product.modelCode||'ANTHRISE')+' · '+name(product,lang)+'. '+suffix[lang]):desc[lang];
  const nativeProduct=product&&defaults.id&&!params.has('id')&&!params.has('model');
- if(nativeProduct){applyNative();return;}
+ const nativeCategory=/\/(?:energy|lighting)(?:-zh)?\.html$/.test(location.pathname)&&!params.has('id')&&!params.has('model');
+ if(nativeProduct||nativeCategory){applyNative();return;}
  document.title=title;meta('meta[name="description"]',{name:'description'},description);meta('meta[name="robots"]',{name:'robots'},'index,follow,max-image-preview:large');
  const canonical=kind==='home'&&lang==='en'?origin:origin+relative(lang);meta('link[rel="canonical"]',{rel:'canonical'},canonical);
  for(const l of (kind==='product'||kind==='home'?['en','zh','es','ru']:['en','zh']))meta('link[hreflang="'+l+'"]',{rel:'alternate',hreflang:l},origin+relative(l));meta('link[hreflang="x-default"]',{rel:'alternate',hreflang:'x-default'},origin+relative('en'));

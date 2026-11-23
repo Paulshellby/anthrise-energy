@@ -1,5 +1,5 @@
 {
-  "version": "20261123-seo1",
+  "version": "20261123-keywords1",
   "date": "2026-11-23",
   "products": 77,
   "entry": "one centered transparent sphere; previous/next category; no mascot intro",
@@ -98,12 +98,15 @@
   },
   "seo": {
     "date": "2026-11-23",
-    "staticProductDirectory": 77,
+    "staticProductDirectory": false,
     "resourceLanguages": [
       "en",
       "zh"
     ],
     "nativeProductMetadataPreserved": true,
-    "homeCanonical": "https://anthrise-tech.com/"
+    "homeCanonical": "https://anthrise-tech.com/",
+    "directoryRemovedByRequest": true,
+    "keywordPagesUpdated": 20,
+    "searchConsoleSubmission": "Not submitted in this session"
   }
 }
