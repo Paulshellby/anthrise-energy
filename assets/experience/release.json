@@ -1,5 +1,5 @@
 {
-  "version": "20261123-keywords1",
+  "version": "20261123-catalogues1",
   "date": "2026-11-23",
   "products": 77,
   "entry": "one centered transparent sphere; previous/next category; no mascot intro",
@@ -108,5 +108,24 @@
     "directoryRemovedByRequest": true,
     "keywordPagesUpdated": 20,
     "searchConsoleSubmission": "Not submitted in this session"
+  },
+  "catalogues": {
+    "updated": "2026-11-23",
+    "languages": [
+      "en",
+      "zh",
+      "es",
+      "ru"
+    ],
+    "energyProducts": 44,
+    "lightingProducts": 33,
+    "currentCatalogues": 12,
+    "updatedBilingualBriefs": [
+      "ess16",
+      "preassembled16",
+      "home32"
+    ],
+    "source": "Current website product catalog and latest supplied battery photographs",
+    "oldDownloadAliases": "Latest pre-assembled collection served at legacy DIY URLs"
   }
 }
