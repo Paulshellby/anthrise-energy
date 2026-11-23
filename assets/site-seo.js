@@ -12,10 +12,13 @@ const copy=window.ANTHRISE_DETAIL_COPY||{};
 function name(p,l){return l==='zh'?p.zh:l==='es'?(copy[p.en]?.[0]||p.en):l==='ru'?(copy[p.en]?.[1]||p.en):p.en;}
 const relative=(l)=>kind==='product'?'products/'+product.id+'-'+l+'.html':kind==='home'?(l==='en'?'index.html':'home-'+l+'.html'):kind+(l==='en'?'':'-'+l)+'.html';
 function meta(selector,attrs,content){let el=document.head.querySelector(selector);if(!el){el=document.createElement(selector.startsWith('link')?'link':'meta');for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);document.head.append(el);}el.setAttribute(el.tagName==='LINK'?'href':'content',content);}
+function applyNative(){ /* Native HTML already contains model-specific metadata and JSON-LD. */ }
 function apply(){
  const title=product?name(product,lang)+' | ANTHRISE':(titles[kind]?.[lang]||titles[kind]?.en||titles.home.en),description=product?((product.modelCode||'ANTHRISE')+' · '+name(product,lang)+'. '+suffix[lang]):desc[lang];
+ const nativeProduct=product&&defaults.id&&!params.has('id')&&!params.has('model');
+ if(nativeProduct){applyNative();return;}
  document.title=title;meta('meta[name="description"]',{name:'description'},description);meta('meta[name="robots"]',{name:'robots'},'index,follow,max-image-preview:large');
- const canonical=origin+relative(lang);meta('link[rel="canonical"]',{rel:'canonical'},canonical);
+ const canonical=kind==='home'&&lang==='en'?origin:origin+relative(lang);meta('link[rel="canonical"]',{rel:'canonical'},canonical);
  for(const l of (kind==='product'||kind==='home'?['en','zh','es','ru']:['en','zh']))meta('link[hreflang="'+l+'"]',{rel:'alternate',hreflang:l},origin+relative(l));meta('link[hreflang="x-default"]',{rel:'alternate',hreflang:'x-default'},origin+relative('en'));
  const image=origin+(product?.image||'images/anthrise-logo.webp');
  for(const [key,value] of Object.entries({title,description,type:'website',url:canonical,image,site_name:'ANTHRISE'}))meta('meta[property="og:'+key+'"]',{property:'og:'+key},value);

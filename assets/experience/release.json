@@ -1,5 +1,5 @@
 {
-  "version": "20261123-campusfloor16",
+  "version": "20261123-seo1",
   "date": "2026-11-23",
   "products": 77,
   "entry": "one centered transparent sphere; previous/next category; no mascot intro",
@@ -95,5 +95,15 @@
       "night"
     ],
     "method": "Original transparent product photo composited into existing scene"
+  },
+  "seo": {
+    "date": "2026-11-23",
+    "staticProductDirectory": 77,
+    "resourceLanguages": [
+      "en",
+      "zh"
+    ],
+    "nativeProductMetadataPreserved": true,
+    "homeCanonical": "https://anthrise-tech.com/"
   }
 }
