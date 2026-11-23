@@ -1,6 +1,6 @@
 {
-  "version": "20261122-readybrand1",
-  "date": "2026-11-22",
+  "version": "20261123-campusfloor16",
+  "date": "2026-11-23",
   "products": 77,
   "entry": "one centered transparent sphere; previous/next category; no mascot intro",
   "vehicleAnimation": false,
@@ -82,5 +82,18 @@
       "specification export"
     ],
     "editScope": "Existing nameplate header areas only; source imagery outside these areas and alpha preserved"
+  },
+  "campusFloor16": {
+    "model": "AE-E-DAWN-16",
+    "source": "User supplied latest floor stand photos",
+    "locations": [
+      "home",
+      "offgrid"
+    ],
+    "plates": [
+      "day",
+      "night"
+    ],
+    "method": "Original transparent product photo composited into existing scene"
   }
 }
