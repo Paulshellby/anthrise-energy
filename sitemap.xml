@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://anthrise-tech.com/</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://anthrise-tech.com/home-zh.html</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://anthrise-tech.com/home-es.html</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://anthrise-tech.com/home-ru.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://anthrise-tech.com/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://anthrise-tech.com/home-zh.html</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://anthrise-tech.com/home-es.html</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://anthrise-tech.com/home-ru.html</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://anthrise-tech.com/energy.html</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://anthrise-tech.com/energy-zh.html</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://anthrise-tech.com/lighting.html</loc><lastmod>2026-11-23</lastmod></url>
@@ -318,4 +318,5 @@
 <url><loc>https://anthrise-tech.com/bess-project.html</loc></url><url><loc>https://anthrise-tech.com/solutions.html</loc></url><url><loc>https://anthrise-tech.com/products/home32-en.html</loc><lastmod>2026-11-23</lastmod></url><url><loc>https://anthrise-tech.com/products/home32-zh.html</loc><lastmod>2026-11-23</lastmod></url><url><loc>https://anthrise-tech.com/products/home32-es.html</loc><lastmod>2026-11-23</lastmod></url><url><loc>https://anthrise-tech.com/products/home32-ru.html</loc><lastmod>2026-11-23</lastmod></url><url><loc>https://anthrise-tech.com/selection-tools.html</loc></url><url><loc>https://anthrise-tech.com/about.html</loc></url>
   <url><loc>https://anthrise-tech.com/battery-storage-guide.html</loc></url>
   <url><loc>https://anthrise-tech.com/battery-storage-guide-zh.html</loc></url>
+  <url><loc>https://anthrise-tech.com/products.html</loc><lastmod>2026-11-24</lastmod></url>
 </urlset>

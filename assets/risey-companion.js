@@ -28,9 +28,10 @@
     let paused=reduce.matches,x=0,y=0,serial=0,raf=0,previousFocus=null;
     const words=()=>text[document.documentElement.lang.split('-')[0]]||text.en;
     const home=()=>window.ANTHRISE_I18N?.home(window.ANTHRISE_I18N.language)||({zh:'/home-zh.html',es:'/home-es.html',ru:'/home-ru.html'}[document.documentElement.lang.split('-')[0]]||'/');
-    const size=()=>innerWidth<641?126:198;
+    const productScene=()=>document.body.classList.contains('products-body');
+    const size=()=>productScene()?(innerWidth<641?74:100):(innerWidth<641?126:198);
     const bounds=(a,b)=>({x:Math.max(0,Math.min(innerWidth-size(),a)),y:Math.max(76,Math.min(innerHeight-size()*492/420-12,b))});
-    const dock=()=>bounds(innerWidth-size()-(innerWidth<641?57:76),innerHeight-size()*492/420-(innerWidth<641?92:104));
+    const dock=()=>bounds(innerWidth-size()-(productScene()?12:(innerWidth<641?57:76)),innerHeight-size()*492/420-(productScene()?160:(innerWidth<641?92:104)));
     function render(){host.style.width=size()+'px';host.style.transform=`translate3d(${x}px,${y}px,0)`}
     function setMenu(open,restore=false){menu.hidden=!open;actor.setAttribute('aria-expanded',String(open));if(open){previousFocus=document.activeElement;const left=Math.max(12,Math.min(innerWidth-menu.offsetWidth-12,x+size()-menu.offsetWidth));const top=Math.max(88,Math.min(innerHeight-menu.offsetHeight-12,y-menu.offsetHeight));menu.style.left=(left-x)+'px';menu.style.top=(top-y)+'px';menu.querySelector('a')?.focus({preventScroll:true})}else if(restore)(previousFocus||actor).focus({preventScroll:true})}
     function sync(){

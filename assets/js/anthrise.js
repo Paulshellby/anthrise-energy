@@ -922,7 +922,7 @@
     const vw = window.innerWidth;
     const vh = window.innerHeight;
     const headerH = header ? header.offsetHeight : 70;
-    const rightReserve = vw <= 768 ? 64 : 84;
+    const rightReserve = document.body.classList.contains('home-showcase') ? 6 : (vw <= 768 ? 64 : 84);
     return {
       minX: 12,
       maxX: Math.max(12, vw - w - rightReserve),
@@ -936,10 +936,11 @@
     const vh = window.innerHeight;
     const isMobile = vw <= 768;
 
-    const targetW = isMobile ? clamp(vw * 0.28, 108, 128) : clamp(vw * 0.125, 148, BASE_HERO_WIDTH);
+    const showcase = document.body.classList.contains('home-showcase');
+    const targetW = showcase ? (isMobile ? 70 : 94) : (isMobile ? clamp(vw * 0.28, 108, 128) : clamp(vw * 0.125, 148, BASE_HERO_WIDTH));
     const targetH = targetW * ASPECT_RATIO;
-    const rightGap = isMobile ? 64 : 84;
-    const bottomGap = isMobile ? 14 : 90;
+    const rightGap = showcase ? 6 : (isMobile ? 64 : 84);
+    const bottomGap = showcase ? (isMobile ? 170 : 140) : (isMobile ? 14 : 90);
 
     const bounds = getViewportSafeRect(targetW, targetH);
     state.restW = targetW;

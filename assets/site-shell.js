@@ -3,7 +3,7 @@
   if (window.__anthriseShellLoaded) return;
   window.__anthriseShellLoaded = true;
   if (!window.__anthriseUnifiedRisey && !document.querySelector('script[data-unified-risey]')) {
-    const companionScript=document.createElement('script');companionScript.src='/assets/risey-companion.js?v=20261120-actions3';companionScript.dataset.unifiedRisey='';document.head.append(companionScript);
+    const companionScript=document.createElement('script');companionScript.src='/assets/risey-companion.js?v=20261124-products1';companionScript.dataset.unifiedRisey='';document.head.append(companionScript);
   }
   const version = '20261122-telegram1';
   const paths = { en: '/', zh: '/home-zh.html', es: '/home-es.html', ru: '/home-ru.html' };
@@ -19,7 +19,8 @@
     ru: ['О компании', 'Продукция', 'Решения', 'Подбор', 'Партнёрство', 'Выбрать язык'],
   };
   const homeFor = lang => window.ANTHRISE_I18N?.home(lang) || paths[lang] || '/';
-  function routeProducts() { location.assign(homeFor(locale()) + '#products'); }
+  function routeProducts() { location.assign('/products.html?lang=' + encodeURIComponent(locale())); }
+  if (/^\/(?:index\.html|home-(?:zh|es|ru)\.html)?$/.test(location.pathname) && location.hash === '#products') routeProducts();
   // Solutions and selection tools are normal standalone destinations.
   function planningTarget(target) {
     const trigger=target.closest('header [aria-controls="menu-about"],header [aria-controls="mega-company"],header [aria-controls="menu-solutions"],header [aria-controls="mega-solutions"],header [aria-controls="menu-tools"],header [aria-controls="mega-tools"]');
@@ -29,8 +30,8 @@
   document.addEventListener('keydown',event=>{if(!['Enter',' '].includes(event.key))return;const page=planningTarget(event.target);if(!page)return;event.preventDefault();event.stopImmediatePropagation();location.assign('/'+page+'?lang='+locale());},true);
   // Capture before the retired menu controller can expand its product taxonomy.
   document.addEventListener('click', event => {
-    const target = event.target.closest('header summary[aria-controls="mega-products"],header [data-nav-category],header a[href$="#products"]');
-    if (!target || target.hasAttribute('data-open-products-stage')) return;
+    const target = event.target.closest('header summary[aria-controls="mega-products"],header [data-nav-category],header a[href$="#products"],header [data-open-products-stage]');
+    if (!target) return;
     event.preventDefault(); event.stopImmediatePropagation(); routeProducts();
   }, true);
   document.addEventListener('keydown', event => {
@@ -71,7 +72,7 @@
       }
       document.querySelectorAll('a[href*="official-site.html"]').forEach(a => {
         const url = new URL(a.href, location.href); if (url.origin !== location.origin) return;
-        if (url.hash === '#products') a.href = home + '#products';
+        if (url.hash === '#products') a.href = '/products.html?lang=' + encodeURIComponent(lang);
         else { url.searchParams.set('lang', lang); a.href = url.pathname + url.search + url.hash; }
       });
       if (isCompanyPage) document.querySelectorAll('a[href="#inquiry"]').forEach(a => a.href = '#project-inquiry');
