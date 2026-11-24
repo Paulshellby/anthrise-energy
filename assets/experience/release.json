@@ -1,6 +1,6 @@
 {
-  "version": "20261123-catalogues1",
-  "date": "2026-11-23",
+  "version": "20261124-packgallery1",
+  "date": "2026-11-24",
   "products": 77,
   "entry": "one centered transparent sphere; previous/next category; no mascot intro",
   "vehicleAnimation": false,
@@ -28,7 +28,7 @@
   "inquiryScreen": "full viewport on desktop; responsive form on mobile",
   "inquiryPalette": "muted plum-grey to warm khaki gradient",
   "aboutPage": "standalone; company mission and PACK gallery in two screens",
-  "aboutGalleryImages": 10,
+  "aboutGalleryImages": 13,
   "inquiryHeader": "transparent over matching background only when inquiry reaches the top",
   "globalLanguages": 30,
   "localeControl": "one shared globe; persistent across pages and product details",
@@ -127,5 +127,10 @@
     ],
     "source": "Current website product catalog and latest supplied battery photographs",
     "oldDownloadAliases": "Latest pre-assembled collection served at legacy DIY URLs"
+  },
+  "packGalleryUpdate": {
+    "removed": 2,
+    "added": 5,
+    "languages": 30
   }
 }
