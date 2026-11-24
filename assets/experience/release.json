@@ -1,5 +1,5 @@
 {
-  "version": "20261124-aboutglobe1",
+  "version": "20261124-portals1",
   "date": "2026-11-24",
   "products": 77,
   "entry": "Full-screen white product-led homepage; Products opens an architectural application scene",
@@ -14,7 +14,21 @@
     "About supplemental Shenzhen and quality columns",
     "Plan your system section"
   ],
-  "solutions": "standalone illustrated scenarios page",
+  "solutions": {
+    "page": "solutions.html",
+    "fullViewport": true,
+    "scenes": [
+      "home",
+      "commercial",
+      "offgrid",
+      "outdoor"
+    ],
+    "navigation": "Central next-scene window expands to fill the viewport; all four scenes loop; direct sidebar selection",
+    "commercialCabinet": "Owner supplied Anthrise double-door cabinet with teal stripe, external cooling box and rain canopy",
+    "backgrounds": "Illustrative applications; related product specifications unchanged",
+    "globalLanguagePicker": true,
+    "stationaryMascot": true
+  },
   "selectionTools": "standalone combined sizing and runtime; shared parameters; inquiry prefill",
   "footerBrandNavigationBar": false,
   "telegramContact": "https://t.me/Solarsolution178",

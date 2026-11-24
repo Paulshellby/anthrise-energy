@@ -1,7 +1,7 @@
 /* Stationary Risey: eye tracking, occasional dances and a quiet hover greeting. */
 (()=>{'use strict';if(window.__anthriseUnifiedRisey)return;window.__anthriseUnifiedRisey=true;
 function boot(){
- const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/risey-companion.css?v=20261124-stationary1';document.head.append(css);
+ const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/risey-companion.css?v=20261124-portals1';document.head.append(css);
  const original=document.getElementById('risey-actor-btn');let host,actor;
  if(original){host=document.getElementById('risey-mover');actor=original;actor.removeAttribute('aria-controls');actor.removeAttribute('aria-expanded');}
  else{
@@ -21,7 +21,7 @@ function boot(){
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),rig=host.querySelector('.risey-stationary-rig'),viewport=host.querySelector('.risey-stationary-dance'),sheet=viewport.querySelector('img'),eyes=[...host.querySelectorAll('.risey-stationary-eye img')];
  let px=0,py=0,lx=0,ly=0,frameId=0,danceTimer=0,dancing=false,danceStart=0,lastTime=0;
  const kinds=['samba','hiphop','tango','ballet'];setTimeout(()=>{if(!reduced.matches&&!navigator.connection?.saveData)for(const k of kinds){const img=new Image();img.src='/assets/images/risey-dance-'+k+'.png'}},2500);
- function dock(){const product=document.body.classList.contains('products-body'),small=innerWidth<641,w=product?(small?74:100):(small?94:140);host.style.width=w+'px';host.style.transform=`translate3d(${innerWidth-w-(small?8:20)}px,${Math.max(100,innerHeight-w*492/420-(small?170:148))}px,0)`}
+ function dock(){const product=(document.body.classList.contains('products-body')||document.body.classList.contains('solutions-portal')),small=innerWidth<641,w=product?(small?74:100):(small?94:140);host.style.width=w+'px';host.style.transform=`translate3d(${innerWidth-w-(small?8:20)}px,${Math.max(100,innerHeight-w*492/420-(small?170:148))}px,0)`}
  function planDance(){clearTimeout(danceTimer);if(!reduced.matches&&!document.hidden)danceTimer=setTimeout(dance,18500+Math.random()*13500)}
  function dance(){if(reduced.matches||document.hidden||dancing)return;clearTimeout(danceTimer);const kind=kinds[Math.floor(Math.random()*kinds.length)];sheet.src='/assets/images/risey-dance-'+kind+'.png';dancing=true;danceStart=performance.now();host.dataset.state='dancing';rig.hidden=true;viewport.hidden=false;start()}
  function frame(now){frameId=0;if(document.hidden||reduced.matches)return;const dt=lastTime?Math.min((now-lastTime)/1000,.05):1/60;lastTime=now;
