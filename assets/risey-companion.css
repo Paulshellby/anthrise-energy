@@ -1,3 +1,4 @@
+@import url('/assets/risey-stationary.css?v=20261124-stationary1');
 html.unified-risey .risey-companion-layer,html.unified-risey #risey,html.unified-risey .floating-inquiry,html.unified-risey .whatsapp-quick{display:none!important}
 .risey-shared-contacts{position:fixed;right:24px;bottom:74px;z-index:106;display:grid;gap:8px}
 .risey-shared-contacts a{display:grid;place-items:center;width:46px;height:46px;background:white;border:1px solid #d6e6df;border-radius:13px;color:#005b48;box-shadow:0 4px 18px #173b3210}

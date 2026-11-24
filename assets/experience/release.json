@@ -1,5 +1,5 @@
 {
-  "version": "20261124-blend1",
+  "version": "20261124-aboutglobe1",
   "date": "2026-11-24",
   "products": 77,
   "entry": "Full-screen white product-led homepage; Products opens an architectural application scene",
@@ -27,7 +27,7 @@
   "nightStarts": "18:00",
   "inquiryScreen": "full viewport on desktop; responsive form on mobile",
   "inquiryPalette": "muted plum-grey to warm khaki gradient",
-  "aboutPage": "standalone; company mission and PACK gallery in two screens",
+  "aboutPage": "Full-screen mission, integrated R&D/manufacturing/sales and 16+ country network; transparent header; slowly rotating Earth",
   "aboutGalleryImages": 13,
   "inquiryHeader": "transparent over matching background only when inquiry reaches the top",
   "globalLanguages": 30,
@@ -160,5 +160,13 @@
       "ess16"
     ],
     "inquiryTransition": "Continuous white-to-lavender and warm ivory gradient; responsive 240-420px fade"
+  },
+  "mascot": {
+    "stationary": true,
+    "clickTravel": false,
+    "clickTurning": false,
+    "gazeFollow": true,
+    "idleDancing": true,
+    "hoverBubble": "minimal greeting"
   }
 }

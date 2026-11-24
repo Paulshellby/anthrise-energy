@@ -259,7 +259,7 @@
       riseyFollowLabel.textContent = followDisabled ? dict.resumeFollow : dict.pauseFollow;
       riseyFollowToggle.setAttribute(
         'aria-label',
-        followDisabled ? 'Enable Risey gaze follow and click running' : 'Disable Risey gaze follow and click running'
+        followDisabled ? 'Enable Risey gaze follow' : 'Disable Risey gaze follow'
       );
     }
     if (assistantFollowToggle) {
@@ -816,14 +816,7 @@
     );
   }
 
-  function isRunInteractive() {
-    return (
-      !followDisabled &&
-      finePointerQuery.matches &&
-      !prefersReducedMotion.matches &&
-      !isProductExplorerOpen()
-    );
-  }
+  function isRunInteractive() { return false; }
 
   function isIdleBreathAllowed() {
     return !prefersReducedMotion.matches && !userPaused && !isProductExplorerOpen() && document.visibilityState !== 'hidden';
@@ -1132,7 +1125,7 @@
 
     if (riseyBody) {
       if (gazeOk || state.phase === 'notice' || state.phase === 'turn') {
-        riseyBody.style.transform = `perspective(720px) rotateY(${(state.bodyX * 2.8).toFixed(2)}deg) translate3d(${(state.bodyX * 1.6 * scaleFactor).toFixed(2)}px, 0, 0)`;
+        riseyBody.style.transform = 'none';
       } else {
         riseyBody.style.transform = 'none';
       }
@@ -1143,7 +1136,7 @@
         const yaw = state.headX * 7.8;
         const pitch = -state.headY * 5.0;
         const roll = state.headX * 2.2;
-        riseyHeadGroup.style.transform = `perspective(680px) rotateY(${yaw.toFixed(2)}deg) rotateX(${pitch.toFixed(2)}deg) rotate(${roll.toFixed(2)}deg)`;
+        riseyHeadGroup.style.transform = 'none';
       } else {
         riseyHeadGroup.style.transform = 'none';
       }
@@ -1292,6 +1285,9 @@
   }
 
   function startRunTo(destX, destY, destW, onArrive, purpose = 'roam') {
+    if (typeof onArrive === 'function') onArrive();
+    return; // Stationary companion: no click travel, turning or rolling.
+
     if (state.activeFailSafeId) {
       window.clearTimeout(state.activeFailSafeId);
       state.activeFailSafeId = 0;
@@ -1816,6 +1812,7 @@
     { signal }
   );
 
+  window.RISEY_STATIONARY={getState:()=>({stationary:true,mode:state.mode,phase:state.phase,x:state.x,y:state.y,pupilX:state.pupilX,pupilY:state.pupilY}),dance:()=>scheduleIdleDance(0)};
   syncMotionState();
 
   window.__anthriseRiseyCleanup = () => {

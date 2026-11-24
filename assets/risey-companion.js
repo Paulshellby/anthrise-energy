@@ -1,76 +1,38 @@
-/* Shared Risey identity, menu, and electric roll for every page. */
-(() => {
-  'use strict';
-  if (window.__anthriseUnifiedRisey) return;
-  window.__anthriseUnifiedRisey = true;
-  const boot = () => {
-    const style=document.createElement('link');style.rel='stylesheet';style.href='/assets/risey-companion.css?v=20261120-actions3';document.head.append(style);
-    const arc='<svg class="risey-electric-arc" viewBox="0 0 100 100" aria-hidden="true"><path d="M8 54 25 48 19 62 42 47 37 60 63 43 57 58 82 47 75 64 95 55"/><path d="m23 18-9 16 13-3-8 17M80 69l9 7-12 4 6 13"/></svg>';
-    const originalActor=document.getElementById('risey-actor-btn');
-    if (originalActor) {
-      // Enhance the existing rig/controller; do not replace its idle, gaze,
-      // blinking, tail, dances, directional run, menu or stage choreography.
-      originalActor.insertAdjacentHTML('beforeend','<span class="risey-electric-shoes" aria-hidden="true">'+arc+'</span><span class="risey-electric-ball" aria-hidden="true"><img src="/assets/images/risey-curl-ball-v2.webp" alt="" draggable="false">'+arc+'</span>');
-      return;
-    }
-    document.documentElement.classList.add('unified-risey');
-    const reduce=matchMedia('(prefers-reduced-motion: reduce)');
-    const host=document.createElement('aside');host.id='risey-unified';host.dataset.state='idle';
-    host.innerHTML='<button class="risey-unified-actor" aria-controls="risey-unified-menu" aria-expanded="false"><img class="risey-unified-idle" src="/assets/images/risey-compact-idle.png" alt="Risey" draggable="false"><span class="risey-electric-shoes">'+arc+'</span><span class="risey-electric-ball"><img src="/assets/images/risey-curl-ball-v2.webp" alt="" draggable="false">'+arc+'</span></button><section id="risey-unified-menu" role="dialog" aria-label="Risey" hidden><strong>Risey</strong><nav></nav><button data-risey-pause></button><button data-risey-close></button></section>';
-    document.body.append(host);
-    if (!document.querySelector('.floating-controls')) {
-      const contacts=document.createElement('nav');contacts.className='risey-shared-contacts';contacts.setAttribute('aria-label','Quick contact');
-      contacts.innerHTML='<a href="https://wa.me/8615768897280" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-12 7L3 20l1.4-4.6A8 8 0 1 1 20 11.5Z"/><path d="M8 7c0 5 3 8 7 8l1-2-3-1-1 1-2-2 1-1-1-3Z"/></svg></a><a href="mailto:sales@anthrise-tech.com" aria-label="Email sales@anthrise-tech.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></a>';
-      document.body.append(contacts);
-    }
-    const actor=host.querySelector('.risey-unified-actor'),menu=host.querySelector('section');
-    const text={en:['Open Risey assistant','Contact sales','WhatsApp','Email','Explore products','Pause Risey','Resume Risey','Close'],zh:['打开 Risey 助手','讨论你的项目','WhatsApp','电子邮件','浏览产品','暂停 Risey','继续 Risey','关闭'],es:['Abrir asistente Risey','Consultar proyecto','WhatsApp','Correo','Explorar productos','Pausar Risey','Reanudar Risey','Cerrar'],ru:['Открыть помощника Risey','Обсудить проект','WhatsApp','Эл. почта','Продукция','Пауза Risey','Продолжить Risey','Закрыть']};
-    let paused=reduce.matches,x=0,y=0,serial=0,raf=0,previousFocus=null;
-    const words=()=>text[document.documentElement.lang.split('-')[0]]||text.en;
-    const home=()=>window.ANTHRISE_I18N?.home(window.ANTHRISE_I18N.language)||({zh:'/home-zh.html',es:'/home-es.html',ru:'/home-ru.html'}[document.documentElement.lang.split('-')[0]]||'/');
-    const productScene=()=>document.body.classList.contains('products-body');
-    const size=()=>productScene()?(innerWidth<641?74:100):(innerWidth<641?126:198);
-    const bounds=(a,b)=>({x:Math.max(0,Math.min(innerWidth-size(),a)),y:Math.max(76,Math.min(innerHeight-size()*492/420-12,b))});
-    const dock=()=>bounds(innerWidth-size()-(productScene()?12:(innerWidth<641?57:76)),innerHeight-size()*492/420-(productScene()?160:(innerWidth<641?92:104)));
-    function render(){host.style.width=size()+'px';host.style.transform=`translate3d(${x}px,${y}px,0)`}
-    function setMenu(open,restore=false){menu.hidden=!open;actor.setAttribute('aria-expanded',String(open));if(open){previousFocus=document.activeElement;const left=Math.max(12,Math.min(innerWidth-menu.offsetWidth-12,x+size()-menu.offsetWidth));const top=Math.max(88,Math.min(innerHeight-menu.offsetHeight-12,y-menu.offsetHeight));menu.style.left=(left-x)+'px';menu.style.top=(top-y)+'px';menu.querySelector('a')?.focus({preventScroll:true})}else if(restore)(previousFocus||actor).focus({preventScroll:true})}
-    function sync(){
-      const w=words();actor.setAttribute('aria-label',w[0]);const contact=document.querySelector('#inquiry,#contact');
-      const links=[contact?'#'+contact.id:home()+'#inquiry','https://wa.me/8615768897280','mailto:sales@anthrise-tech.com',home()+'#products'];
-      const nav=menu.querySelector('nav');nav.replaceChildren();links.forEach((href,i)=>{const a=document.createElement('a');a.href=href;a.textContent=w[i+1];if(i===1){a.target='_blank';a.rel='noopener'}a.addEventListener('click',()=>setMenu(false));nav.append(a)});
-      host.classList.toggle('is-paused',paused);menu.querySelector('[data-risey-pause]').textContent=w[paused?6:5];menu.querySelector('[data-risey-close]').textContent=w[7];
-    }
-    function stop(){serial++;cancelAnimationFrame(raf);host.dataset.state='idle'}
-    function move(a,b,force=false){
-      if((paused||reduce.matches)&&!force)return;
-      setMenu(false);stop();const destination=bounds(a,b),sx=x,sy=y,token=serial,distance=Math.hypot(destination.x-x,destination.y-y);
-      if(distance<12)return;
-      if(reduce.matches||paused){x=destination.x;y=destination.y;render();return}
-      host.dataset.state='rolling';host.style.setProperty('--roll-direction',destination.x>=x?1:-1);
-      const duration=Math.min(1450,Math.max(550,distance/1.05)),begin=performance.now();
-      function frame(now){if(token!==serial)return;const p=Math.min(1,(now-begin)/duration),ease=p*p*(3-2*p);x=sx+(destination.x-sx)*ease;y=sy+(destination.y-sy)*ease;render();if(p<1)raf=requestAnimationFrame(frame);else host.dataset.state='idle'}
-      raf=requestAnimationFrame(frame);
-    }
-    actor.addEventListener('click',()=>setMenu(menu.hidden));
-    menu.querySelector('[data-risey-close]').onclick=()=>setMenu(false,true);
-    menu.querySelector('[data-risey-pause]').onclick=()=>{paused=!paused;stop();sync();const toggle=document.getElementById('risey-follow-toggle');if(toggle&&toggle.getAttribute('aria-pressed')!==String(paused))toggle.click()};
-    let down=null;
-    document.addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY};if(!host.contains(e.target))setMenu(false)},{passive:true});
-    document.addEventListener('click',e=>{
-      if(e.defaultPrevented||e.detail===0||e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||!down||Math.hypot(e.clientX-down.x,e.clientY-down.y)>8)return;
-      if(!(e.target instanceof Element)||e.target.closest('a,button,input,textarea,select,form,label,summary,[role="button"],header,#risey-unified,.campus-hotspot,.campus-popover,.campus-zone-bar,#products-stage,.global-language-picker'))return;
-      move(e.clientX-size()*.5,e.clientY-size()*.72);
-    });
-    let scrollTimer;
-    window.addEventListener('scroll',()=>{clearTimeout(scrollTimer);setMenu(false);scrollTimer=setTimeout(()=>{const d=dock();move(d.x,d.y,true)},90)},{passive:true});
-    window.addEventListener('resize',()=>{stop();const d=dock();x=d.x;y=d.y;render()},{passive:true});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden)setMenu(false,true);if(e.key==='Tab'&&!menu.hidden){const items=[...menu.querySelectorAll('a,button')],first=items[0],last=items.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
-    document.getElementById('risey-follow-toggle')?.addEventListener('click',()=>{paused=document.getElementById('risey-follow-toggle').getAttribute('aria-pressed')==='true';stop();sync()});
-    document.getElementById('motion-toggle')?.addEventListener('click',()=>stop());
-    reduce.addEventListener('change',()=>{paused=reduce.matches;stop();sync()});
-    document.addEventListener('visibilitychange',()=>{if(document.hidden){stop();const d=dock();x=d.x;y=d.y;render()}});
-    new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
-    const d=dock();x=d.x;y=d.y;render();sync();
-  };
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
-})();
+/* Stationary Risey: eye tracking, occasional dances and a quiet hover greeting. */
+(()=>{'use strict';if(window.__anthriseUnifiedRisey)return;window.__anthriseUnifiedRisey=true;
+function boot(){
+ const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/risey-companion.css?v=20261124-stationary1';document.head.append(css);
+ const original=document.getElementById('risey-actor-btn');let host,actor;
+ if(original){host=document.getElementById('risey-mover');actor=original;actor.removeAttribute('aria-controls');actor.removeAttribute('aria-expanded');}
+ else{
+  document.documentElement.classList.add('unified-risey');host=document.createElement('aside');host.id='risey-unified';host.dataset.state='idle';
+  host.innerHTML='<button type="button" class="risey-unified-actor"><span class="risey-stationary-rig" aria-hidden="true"><img class="risey-stationary-layer" src="/assets/images/risey-compact-tail.png" alt=""><img class="risey-stationary-layer" src="/assets/images/risey-compact-body.png" alt=""><span class="risey-stationary-head"><span class="risey-stationary-eye eye-l"><img src="/assets/images/risey-compact-iris-l.png" alt=""></span><span class="risey-stationary-eye eye-r"><img src="/assets/images/risey-compact-iris-r.png" alt=""></span><img class="risey-stationary-layer" src="/assets/images/risey-compact-head.png" alt=""></span></span><span class="risey-stationary-dance" hidden aria-hidden="true"><img alt=""></span></button>';
+  document.body.append(host);actor=host.querySelector('button');
+  if(!document.querySelector('.floating-controls,.risey-shared-contacts')){const nav=document.createElement('nav');nav.className='risey-shared-contacts';nav.setAttribute('aria-label','Quick contact');nav.innerHTML='<a href="https://wa.me/8615768897280" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-12 7L3 20l1.4-4.6A8 8 0 1 1 20 11.5Z"/><path d="M8 7c0 5 3 8 7 8l1-2-3-1-1 1-2-2 1-1-1-3Z"/></svg></a><a href="mailto:sales@anthrise-tech.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></a>';document.body.append(nav)}
+ }
+ const bubble=document.createElement('span');bubble.className='risey-simple-bubble';bubble.id='risey-greeting';bubble.setAttribute('role','tooltip');host.append(bubble);actor.setAttribute('aria-describedby',bubble.id);
+ const greetings={en:'Hi, I’m Risey. How can I help?',zh:'你好，我是 Risey。需要帮忙吗？',es:'Hola, soy Risey. ¿Te ayudo?',ru:'Привет, я Risey. Чем помочь?'};
+ function localize(){const lang=document.documentElement.lang.split('-')[0];bubble.textContent=greetings[lang]||greetings.en;actor.setAttribute('aria-label',lang==='zh'?'Risey，点击跳舞':'Risey, click to dance')}
+ const show=()=>host.classList.add('is-greeting'),hide=()=>host.classList.remove('is-greeting');actor.addEventListener('pointerenter',show);actor.addEventListener('pointerleave',hide);actor.addEventListener('focus',show);actor.addEventListener('blur',hide);
+ let hideTimer;actor.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();show();clearTimeout(hideTimer);hideTimer=setTimeout(hide,3500);if(original)window.RISEY_STATIONARY?.dance();else dance()},{capture:true});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()});
+ new MutationObserver(localize).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});localize();
+ if(original)return;
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)'),rig=host.querySelector('.risey-stationary-rig'),viewport=host.querySelector('.risey-stationary-dance'),sheet=viewport.querySelector('img'),eyes=[...host.querySelectorAll('.risey-stationary-eye img')];
+ let px=0,py=0,lx=0,ly=0,frameId=0,danceTimer=0,dancing=false,danceStart=0,lastTime=0;
+ const kinds=['samba','hiphop','tango','ballet'];setTimeout(()=>{if(!reduced.matches&&!navigator.connection?.saveData)for(const k of kinds){const img=new Image();img.src='/assets/images/risey-dance-'+k+'.png'}},2500);
+ function dock(){const product=document.body.classList.contains('products-body'),small=innerWidth<641,w=product?(small?74:100):(small?94:140);host.style.width=w+'px';host.style.transform=`translate3d(${innerWidth-w-(small?8:20)}px,${Math.max(100,innerHeight-w*492/420-(small?170:148))}px,0)`}
+ function planDance(){clearTimeout(danceTimer);if(!reduced.matches&&!document.hidden)danceTimer=setTimeout(dance,18500+Math.random()*13500)}
+ function dance(){if(reduced.matches||document.hidden||dancing)return;clearTimeout(danceTimer);const kind=kinds[Math.floor(Math.random()*kinds.length)];sheet.src='/assets/images/risey-dance-'+kind+'.png';dancing=true;danceStart=performance.now();host.dataset.state='dancing';rig.hidden=true;viewport.hidden=false;start()}
+ function frame(now){frameId=0;if(document.hidden||reduced.matches)return;const dt=lastTime?Math.min((now-lastTime)/1000,.05):1/60;lastTime=now;
+  if(dancing){const elapsed=now-danceStart,seq=[0,1,2,3,4,5,4,3,2,1];sheet.style.transform=`translateX(${-seq[Math.floor(elapsed/125)%seq.length]*100/6}%)`;if(elapsed>=5400){dancing=false;host.dataset.state='idle';rig.hidden=false;viewport.hidden=true;planDance()}}
+  else{const a=1-Math.exp(-dt*9);lx+=(px-lx)*a;ly+=(py-ly)*a;eyes.forEach((eye,i)=>eye.style.transform=`translate(${lx*(i?9:7)}%,${ly*6}%)`)}
+  frameId=requestAnimationFrame(frame);
+ }
+ function start(){if(!frameId&&!document.hidden&&!reduced.matches)frameId=requestAnimationFrame(frame)}
+ function stop(){cancelAnimationFrame(frameId);frameId=0;lastTime=0;clearTimeout(danceTimer);dancing=false;host.dataset.state='idle';rig.hidden=false;viewport.hidden=true}
+ document.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'&&e.pointerType!=='pen')return;const r=actor.getBoundingClientRect();px=Math.max(-1,Math.min(1,(e.clientX-r.x-r.width*.4)/Math.max(200,innerWidth*.4)));py=Math.max(-1,Math.min(1,(e.clientY-r.y-r.height*.43)/Math.max(180,innerHeight*.4)))},{passive:true});
+ document.addEventListener('mouseleave',()=>{px=py=0});window.addEventListener('resize',dock,{passive:true});document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else{start();planDance()}});reduced.addEventListener('change',()=>{stop();start();planDance()});
+ dock();start();planDance();window.RISEY_STATIONARY={getState:()=>({stationary:true,mode:host.dataset.state,pupilX:lx,pupilY:ly}),dance};
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();})();
