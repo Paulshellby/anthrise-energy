@@ -1,5 +1,5 @@
 {
-  "version": "20261124-portals1",
+  "version": "20261124-navright1",
   "date": "2026-11-24",
   "products": 77,
   "entry": "Full-screen white product-led homepage; Products opens an architectural application scene",
@@ -182,5 +182,18 @@
     "gazeFollow": true,
     "idleDancing": true,
     "hoverBubble": "minimal greeting"
+  },
+  "navigation": {
+    "alignment": "right on all pages",
+    "order": [
+      "home",
+      "products",
+      "solutions",
+      "about",
+      "contact",
+      "global-language-picker"
+    ],
+    "selectionToolsInHeader": false,
+    "homepageCalculatorLinkRetained": true
   }
 }

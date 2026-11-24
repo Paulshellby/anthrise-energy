@@ -83,7 +83,7 @@
     }
     sync();
     window.addEventListener('anthrise:language-ready',sync);
-    const languageScript=document.createElement('script');languageScript.src='/assets/global-languages.js?v=20261122-floor16';document.head.append(languageScript);
+    const languageScript=document.createElement('script');languageScript.src='/assets/global-languages.js?v=20261124-navright1';document.head.append(languageScript);
     const footer = document.querySelector('.site-inquiry-shell, #project-inquiry');
     if (footer && 'IntersectionObserver' in window) new IntersectionObserver(entries => {
       document.body.classList.toggle('site-footer-in-view', entries[0].isIntersecting);
