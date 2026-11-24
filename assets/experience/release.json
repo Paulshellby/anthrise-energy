@@ -1,5 +1,5 @@
 {
-  "version": "20261124-whitecatalogues1",
+  "version": "20261124-blend1",
   "date": "2026-11-24",
   "products": 77,
   "entry": "Full-screen white product-led homepage; Products opens an architectural application scene",
@@ -158,6 +158,7 @@
       "balconyBess",
       "ess10",
       "ess16"
-    ]
+    ],
+    "inquiryTransition": "Continuous white-to-lavender and warm ivory gradient; responsive 240-420px fade"
   }
 }

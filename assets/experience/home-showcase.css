@@ -99,6 +99,9 @@ body.home-showcase{background:#fff;color:#18232a;--header-h:78px}
 .home-showcase .home-scene-dots{bottom:1%}
 .home-showcase .home-value-strip{padding-block:15px}
 .home-catalog-surface{width:100%;background:#fff}
+/* Let the white product surface dissolve into the contact palette. */
+.home-showcase #project-inquiry.inquiry-section:before{content:'';position:absolute;inset:0 0 auto;height:clamp(240px,32svh,420px);background:linear-gradient(to bottom,#fff 0%,rgba(255,255,255,.98) 12%,rgba(255,255,255,.82) 35%,rgba(255,255,255,.42) 64%,rgba(255,255,255,.12) 85%,rgba(255,255,255,0) 100%);pointer-events:none;z-index:-1}
+@media(max-width:640px){.home-showcase #project-inquiry.inquiry-section:before{height:240px}}
 .home-showcase .home-categories{padding-block:15px 18px}
 .home-showcase .home-category img,.home-showcase .home-category svg{height:58px;margin-bottom:6px}
 .home-showcase .home-feature-layout{padding-bottom:24px;gap:28px}
