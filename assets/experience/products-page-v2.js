@@ -1,12 +1,12 @@
 (()=>{'use strict';
 const t=s=>window.ANTHRISE_I18N?.t(s)||s,products=window.ANTHRISE_SCENE_PRODUCTS||[],dialog=document.querySelector('#product-popover'),root=document.querySelector('#scene-product-list'),search=document.querySelector('#scene-product-search');
-const types={storage:['storage','portable'],inverter:['inverter'],solar:['solar'],lighting:['lighting']},titles={all:'All Products',storage:'Energy storage',inverter:'Hybrid inverters',solar:'Solar panels & kits',lighting:'Solar Lighting'};
+const types={storage:['storage','portable'],inverter:['inverter'],solar:['solar'],lighting:['lighting'],commercial:['storage']},titles={all:'All Products',storage:'Energy storage',inverter:'Hybrid inverters',solar:'Solar panels & kits',lighting:'Solar Lighting',commercial:'C&I'};
 let zone='all',query='',pinned=false,timer=0,hoverTimer=0,returnFocus=null;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function route(p){const l=window.ANTHRISE_I18N?.language||'en';return '/products/'+p.id+'-'+(['en','zh','es','ru'].includes(l)?l:'en')+'.html?lang='+encodeURIComponent(l)}
-function render(){let list=products.filter(p=>(zone==='all'||types[zone].includes(p.category))&&(!query||[p.id,p.en,p.zh,p.modelCode,...p.tags].join(' ').toLocaleLowerCase().includes(query)));
+function render(){let list=products.filter(p=>(zone==='all'||types[zone].includes(p.category))&&(zone!=='commercial'||p.id==='series_horizon')&&(!query||[p.id,p.en,p.zh,p.modelCode,...p.tags].join(' ').toLocaleLowerCase().includes(query)));
  if(zone==='storage'){const order=['balconyBess','ess10','ess16'];list.sort((a,b)=>{const rank=p=>order.includes(p.id)?order.indexOf(p.id):100;return rank(a)-rank(b)})}
- document.querySelector('#scene-product-title').textContent=t(titles[zone]);document.querySelector('#scene-product-count').textContent=String(list.length);root.replaceChildren();
+ document.querySelector('#scene-product-title').textContent=zone==='commercial'?titles[zone]:t(titles[zone]);document.querySelector('#scene-product-count').textContent=String(list.length);root.replaceChildren();
  for(const p of list){const a=document.createElement('a');a.className='scene-product';a.href=route(p);a.dataset.product=p.id;a.innerHTML='<img src="/'+esc(p.image)+'" width="240" height="240" loading="lazy" alt="'+esc(t(p.en))+'"><h3>'+esc(t(p.en))+'</h3><p>'+esc(p.modelCode||'')+'</p><span>'+esc(t('View details'))+'</span>';root.append(a)}
  if(!list.length){const p=document.createElement('p');p.className='no-results';p.textContent=t('No matching products.');root.append(p)}root.scrollTop=0;dialog.dataset.category=zone;
 }
