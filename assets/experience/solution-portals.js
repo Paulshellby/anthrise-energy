@@ -47,7 +47,66 @@ function draw(){if(!ctx)return;const width=innerWidth,height=root.clientHeight;c
 function frame(time){raf=0;if(document.hidden)return;rotX+=(aimX-rotX)*.12;rotY+=(aimY-rotY)*.12;if(time-lastDraw>30){draw();lastDraw=time}if(!reduced.matches&&(busy||time<revealingUntil||Math.abs(aimX-rotX)>.01||Math.abs(aimY-rotY)>.01))raf=requestAnimationFrame(frame)}
 function start(){if(ctx&&!raf&&!document.hidden&&!reduced.matches)raf=requestAnimationFrame(frame);else if(reduced.matches)draw()}
 function animate(duration,setter){if(reduced.matches||duration<=0){setter(1);draw();return Promise.resolve()}return new Promise(resolve=>{const begin=performance.now();function step(now){const p=Math.min(1,(now-begin)/duration),ease=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;setter(ease);draw();if(p<1)requestAnimationFrame(step);else resolve()}requestAnimationFrame(step)})}
-async function travel(key){if(busy||key===current||!order.includes(key))return;const restoreFocus=document.activeElement===portal;busy=true;portal.disabled=true;root.setAttribute('aria-busy','true');aimX=aimY=0;try{status(images.has(key)?'':translate(words().loading));await load(key);status();if(dialog.open)dialog.close();target=key;root.classList.remove('is-revealing');root.classList.add('is-transitioning');await animate(ctx?1100:0,p=>expansion=p);current=key;render();history.replaceState(null,'','#'+current);await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));target=null;expansion=0;maskScale=reduced.matches?1:0;root.classList.remove('is-transitioning');root.classList.add('is-revealing');revealingUntil=performance.now()+750;start();await load(nextKey()).catch(()=>{});await animate(600,p=>maskScale=p);}
+const wheelDistance=420, wheelCommit=.23;
+let wheelProgress=0,wheelTarget=null,wheelTimer,lastWheel=0;
+const clamp=(value,min,max)=>Math.min(max,Math.max(min,value));
+
+function clearWheel(){
+ clearTimeout(wheelTimer);
+ if(wheelTarget){target=null;expansion=0;}
+ wheelProgress=0;wheelTarget=null;
+ root.classList.remove('is-scrolling');
+ root.style.removeProperty('--scene-scroll-opacity');
+}
+
+function finishWheel(){
+ if(!wheelTarget)return;
+ const key=wheelTarget;
+ if(Math.abs(wheelProgress)>=wheelCommit){
+  travel(key,true);
+  return;
+ }
+ const initial=expansion;
+ busy=true;
+ animate(180,p=>{
+  expansion=initial*(1-p);
+  root.style.setProperty('--scene-scroll-opacity',1-expansion);
+ }).finally(()=>{
+  clearWheel();
+  busy=false;
+  draw();
+ });
+}
+
+root.addEventListener('wheel',event=>{
+ if(event.ctrlKey||event.metaKey||dialog.open||event.target.closest('.site-language-picker'))return;
+ if(!event.deltaY||Math.abs(event.deltaX)>Math.abs(event.deltaY))return;
+ event.preventDefault();
+ const now=performance.now(),continued=now-lastWheel<135;
+ lastWheel=now;
+ if(busy||(!wheelTarget&&continued))return;
+ const factor=event.deltaMode===1?16:event.deltaMode===2?root.clientHeight:1;
+ wheelProgress=clamp(wheelProgress+clamp(event.deltaY*factor,-125,125)/wheelDistance,-1,1);
+ const offset=wheelProgress<0?-1:1;
+ const key=order[(order.indexOf(current)+offset+order.length)%order.length];
+ wheelTarget=key;
+ if(ctx&&!reduced.matches&&images.has(key)){
+  target=key;
+  expansion=Math.abs(wheelProgress);
+  root.classList.remove('is-revealing');
+  root.classList.add('is-scrolling');
+  root.style.setProperty('--scene-scroll-opacity',1-expansion);
+  draw();
+ }
+ clearTimeout(wheelTimer);
+ if(Math.abs(wheelProgress)===1)finishWheel();
+ else wheelTimer=setTimeout(finishWheel,145);
+},{passive:false});
+
+async function travel(key,fromWheel=false){if(busy||key===current||!order.includes(key))return;
+ const initial=fromWheel&&target===key?expansion:0;
+ clearWheel();
+ const restoreFocus=document.activeElement===portal;busy=true;portal.disabled=true;root.setAttribute('aria-busy','true');aimX=aimY=0;try{status(images.has(key)?'':translate(words().loading));await load(key);status();if(dialog.open)dialog.close();target=key;root.classList.remove('is-revealing');root.classList.add('is-transitioning');await animate(ctx?(fromWheel?Math.max(120,480*(1-initial)):1100):0,p=>expansion=initial+(1-initial)*p);current=key;render();history.replaceState(null,'','#'+current);await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));target=null;expansion=0;maskScale=reduced.matches?1:0;root.classList.remove('is-transitioning');root.classList.add('is-revealing');revealingUntil=performance.now()+750;start();await load(nextKey()).catch(()=>{});await animate(600,p=>maskScale=p);}
  catch{status(translate(words().error))}finally{target=null;expansion=0;maskScale=1;root.classList.remove('is-transitioning');busy=false;portal.disabled=false;root.setAttribute('aria-busy','false');if(restoreFocus)portal.focus({preventScroll:true});draw()}}
 portal.addEventListener('click',()=>travel(nextKey()));
 root.querySelectorAll('[data-scene]').forEach(a=>a.addEventListener('click',event=>{event.preventDefault();travel(a.dataset.scene)}));

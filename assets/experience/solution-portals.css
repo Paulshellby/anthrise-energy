@@ -36,3 +36,11 @@ body.solutions-portal #risey-unified{z-index:14}body.solutions-portal .risey-sha
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.solution-experience.is-transitioning .solution-content,.solution-experience.is-transitioning .solution-portal-wrap{filter:none}}
 #solution-status{position:absolute;z-index:16;top:calc(50% + 180px);left:50%;transform:translateX(-50%);font-size:13px;padding:8px 14px;background:#173c33dd;color:#fff;border-radius:12px;max-width:90vw;text-align:center}
 @media(max-height:540px){.solution-experience{min-height:0}.solution-header{padding-block:10px}.solution-logo img{width:145px}.solution-portal-wrap{width:130px;top:44%}.solution-portal-heading{font-size:10px}.solution-portal-heading strong{font-size:10px}.solution-sidebar{top:44%;gap:5px}.solution-sidebar a{font-size:12px;min-height:24px}.solution-content{bottom:40px}.solution-content h1{font-size:35px}.solution-description{font-size:12px}.solution-kicker{font-size:10px;margin-bottom:7px}.solution-facts{display:none}.solution-enter{font-size:10px;gap:4px}.solution-enter-orbit{width:25px;height:25px}.solution-actions{font-size:12px}.solution-details{padding-inline-end:65px}}
+
+/* The wheel reveals the incoming canvas in proportion to the gesture. */
+.solution-experience.is-scrolling .solution-content,
+.solution-experience.is-scrolling .solution-portal-heading,
+.solution-experience.is-scrolling .solution-enter {
+  opacity: var(--scene-scroll-opacity, 1);
+  transition: none;
+}

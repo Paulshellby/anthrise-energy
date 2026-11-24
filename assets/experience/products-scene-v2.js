@@ -2,11 +2,11 @@
 (()=>{'use strict';
 const host=document.querySelector('#energy-city'),plane=host.querySelector('.scene-image-plane'),markerHost=document.querySelector('#scene-markers');
 const definitions={
- storage:{label:'Energy storage',color:'#4f73d6',x:.19,y:.55,path:'M62 285 208 232 338 278 340 386 224 405 63 384Z'},
- inverter:{label:'Hybrid inverters',color:'#9262ce',x:.35,y:.38,path:'M248 181 429 155 617 179 615 294 459 331 248 292Z'},
- solar:{label:'Solar panels & kits',color:'#dca434',x:.53,y:.55,path:'M495 289 632 244 830 263 826 291 690 327 494 302Z'},
- lighting:{label:'Solar Lighting',color:'#399672',x:.23,y:.82,path:'M298 417 338 401 344 410 311 426 310 527 300 527Z M453 306 478 297 484 304 471 314 471 434 458 436Z M186 465 197 465 198 501 187 503Z'},
- commercial:{label:'C&amp;I',color:'#007d77',x:.74,y:.58,path:'M732 207 889 183 1082 209 1082 313 984 356 732 316Z'}
+ storage:{label:'Energy storage',color:'#4f73d6',x:.26,y:.49,path:'M63 504 283 414 471 481 555 511 552 530 532 537 532 704 456 729 349 755 65 713Z'},
+ inverter:{label:'Hybrid inverters',color:'#9262ce',x:.555,y:.35,path:'M499 292 798 220 1177 282 1176 400 1076 419 1018 530 855 585 499 499Z'},
+ solar:{label:'Solar panels & kits',color:'#dca434',x:.822,y:.43,path:'M997 501 1292 382 1405 404 1405 452 1221 546 998 520Z'},
+ lighting:{label:'Solar Lighting',color:'#399672',x:.422,y:.798,path:'M513 755 570 733 586 736 539 763 539 966 524 970 524 764Z M867 528 934 502 952 508 894 534 894 751 880 758 880 532Z M289 823 306 824 307 890 292 892Z M364 842 379 843 380 915 365 918Z M573 882 588 883 589 950 573 954Z M982 718 995 719 995 775 982 776Z'},
+ commercial:{label:'C&amp;I',color:'#007d77',x:.876,y:.232,path:'M1269 278 1292 270 1315 279 1334 275 1360 286 1358 355 1330 370 1268 355Z'}
 };
 const grid=document.createElement('span');
 grid.className='scene-marker scene-marker--grid';
@@ -14,7 +14,7 @@ grid.style.setProperty('--zone-color','#007d77');
 grid.innerHTML='<span class="marker-dot" aria-hidden="true"></span><span>Grid</span>';
 markerHost.append(grid);
 
-const imageWidth=1254,imageHeight=534,imageRatio=1.55;
+const imageWidth=1505,imageHeight=1045,imageRatio=imageWidth/imageHeight;
 const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 '+imageWidth+' '+imageHeight);svg.setAttribute('focusable','false');svg.classList.add('application-regions');svg.setAttribute('aria-hidden','true');plane.append(svg);
 let hovered=null,selected=null,layoutState={};
 function setHighlight(zone){if(hovered===zone)return;hovered=zone;host.dataset.hover=zone||'';for(const n of document.querySelectorAll('[data-zone]'))n.classList.toggle('is-hovered',n.dataset.zone===zone);for(const p of svg.children)p.classList.toggle('active-region',p.dataset.zone===zone);layout();window.dispatchEvent(new CustomEvent('anthrise:scene-hover',{detail:{zone}}));}
@@ -35,12 +35,11 @@ function layout(){
  layoutState={width:w,height:h,planeWidth:pw,planeHeight:ph,left,top};
  function place(node,x,y){
   const center=left+x*pw;
-  node.hidden=mobile&&(center<0||center>w);
   const inset=node.offsetWidth/2+12;
   node.style.left=Math.min(w-inset,Math.max(inset,center))+'px';
   node.style.top=(top+y*ph)+'px';
  }
- place(grid,.90,.40);
+ place(grid,.829,.72);
  for(const [zone,def] of Object.entries(definitions)){
   place(markerHost.querySelector('[data-zone="'+zone+'"]'),def.x,def.y);
  }
