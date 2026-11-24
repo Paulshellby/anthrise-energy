@@ -1,5 +1,5 @@
 {
-  "version": "20261124-scene1",
+  "version": "20261124-whitecatalogues1",
   "date": "2026-11-24",
   "products": 77,
   "entry": "Full-screen white product-led homepage; Products opens an architectural application scene",
@@ -110,7 +110,7 @@
     "searchConsoleSubmission": "Not submitted in this session"
   },
   "catalogues": {
-    "updated": "2026-11-23",
+    "updated": "2026-11-24",
     "languages": [
       "en",
       "zh",
@@ -126,7 +126,13 @@
       "home32"
     ],
     "source": "Current website product catalog and latest supplied battery photographs",
-    "oldDownloadAliases": "Latest pre-assembled collection served at legacy DIY URLs"
+    "oldDownloadAliases": "Latest pre-assembled collection served at legacy DIY URLs",
+    "whiteBackground": true,
+    "imagePanelsRemoved": true,
+    "edgeCleanup": "Conservative edge-connected near-white pixels only; source images unchanged",
+    "pdfs": 15,
+    "pages": 390,
+    "productContentUnchanged": true
   },
   "packGalleryUpdate": {
     "removed": 2,
