@@ -1,7 +1,7 @@
-/* Stationary Risey: eye tracking, occasional dances and a quiet hover greeting. */
+/* Stationary Risey: eye tracking, occasional dances and a sales contact bubble. */
 (()=>{'use strict';if(window.__anthriseUnifiedRisey)return;window.__anthriseUnifiedRisey=true;
 function boot(){
- const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/risey-companion.css?v=20261124-portals1';document.head.append(css);
+ const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/risey-companion.css?v=20261124-sales';document.head.append(css);
  const original=document.getElementById('risey-actor-btn');let host,actor;
  if(original){host=document.getElementById('risey-mover');actor=original;actor.removeAttribute('aria-controls');actor.removeAttribute('aria-expanded');}
  else{
@@ -10,12 +10,67 @@ function boot(){
   document.body.append(host);actor=host.querySelector('button');
   if(!document.querySelector('.floating-controls,.risey-shared-contacts')){const nav=document.createElement('nav');nav.className='risey-shared-contacts';nav.setAttribute('aria-label','Quick contact');nav.innerHTML='<a href="https://wa.me/8615768897280" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-12 7L3 20l1.4-4.6A8 8 0 1 1 20 11.5Z"/><path d="M8 7c0 5 3 8 7 8l1-2-3-1-1 1-2-2 1-1-1-3Z"/></svg></a><a href="mailto:sales@anthrise-tech.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></a>';document.body.append(nav)}
  }
- const bubble=document.createElement('span');bubble.className='risey-simple-bubble';bubble.id='risey-greeting';bubble.setAttribute('role','tooltip');host.append(bubble);actor.setAttribute('aria-describedby',bubble.id);
- const greetings={en:'Hi, I’m Risey. How can I help?',zh:'你好，我是 Risey。需要帮忙吗？',es:'Hola, soy Risey. ¿Te ayudo?',ru:'Привет, я Risey. Чем помочь?'};
- function localize(){const lang=document.documentElement.lang.split('-')[0];bubble.textContent=greetings[lang]||greetings.en;actor.setAttribute('aria-label',lang==='zh'?'Risey，点击跳舞':'Risey, click to dance')}
- const show=()=>host.classList.add('is-greeting'),hide=()=>host.classList.remove('is-greeting');actor.addEventListener('pointerenter',show);actor.addEventListener('pointerleave',hide);actor.addEventListener('focus',show);actor.addEventListener('blur',hide);
- let hideTimer;actor.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();show();clearTimeout(hideTimer);hideTimer=setTimeout(hide,3500);if(original)window.RISEY_STATIONARY?.dance();else dance()},{capture:true});
- document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()});
+ const bubble=document.createElement('div');
+ bubble.className='risey-simple-bubble';
+ bubble.id='risey-greeting';
+ bubble.hidden=true;
+ const greeting=document.createElement('span'),sales=document.createElement('a');
+ sales.className='risey-sales-link';
+ bubble.append(greeting,sales);
+ host.append(bubble);
+ actor.setAttribute('aria-controls',bubble.id);
+ actor.setAttribute('aria-expanded','false');
+ const copy={
+  en:['Hi, I’m Risey. How can I help?','Contact the sales team','Risey, click for help'],
+  zh:['你好，我是 Risey。需要帮忙吗？','联系销售团队','Risey，点击获取帮助'],
+  es:['Hola, soy Risey. ¿Te ayudo?','Contactar con el equipo de ventas','Risey, pulsa para obtener ayuda'],
+  ru:['Привет, я Risey. Чем помочь?','Связаться с отделом продаж','Risey, нажмите для помощи']
+ };
+ function localize(){
+  const lang=document.documentElement.lang.split('-')[0];
+  const [hello,contact,label]=copy[lang]||copy.en;
+  const home=window.ANTHRISE_I18N?.home()||({zh:'/home-zh.html',es:'/home-es.html',ru:'/home-ru.html'}[lang]||'/');
+  greeting.textContent=hello;
+  sales.textContent=contact;
+  sales.href=home+'#project-inquiry';
+  actor.setAttribute('aria-label',label);
+ }
+ let hideTimer;
+ function show(){
+  clearTimeout(hideTimer);
+  bubble.hidden=false;
+  host.classList.add('is-greeting');
+  actor.setAttribute('aria-expanded','true');
+ }
+ function hide(){
+  clearTimeout(hideTimer);
+  host.classList.remove('is-greeting');
+  bubble.hidden=true;
+  actor.setAttribute('aria-expanded','false');
+ }
+ function scheduleHide(){
+  clearTimeout(hideTimer);
+  hideTimer=setTimeout(()=>{
+   if(!actor.matches(':hover')&&!bubble.matches(':hover')&&!host.contains(document.activeElement))hide();
+  },250);
+ }
+ for(const element of [actor,bubble]){
+  element.addEventListener('pointerenter',show);
+  element.addEventListener('pointerleave',scheduleHide);
+ }
+ host.addEventListener('focusin',show);
+ host.addEventListener('focusout',scheduleHide);
+ actor.addEventListener('click',e=>{
+  e.preventDefault();e.stopImmediatePropagation();show();
+  if(original)window.RISEY_STATIONARY?.dance();else dance();
+ },{capture:true});
+ document.addEventListener('pointerdown',e=>{if(!host.contains(e.target))hide()});
+ document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&!bubble.hidden){
+   if(bubble.contains(document.activeElement))actor.focus({preventScroll:true});
+   hide();
+  }
+ });
  new MutationObserver(localize).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});localize();
  if(original)return;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),rig=host.querySelector('.risey-stationary-rig'),viewport=host.querySelector('.risey-stationary-dance'),sheet=viewport.querySelector('img'),eyes=[...host.querySelectorAll('.risey-stationary-eye img')];

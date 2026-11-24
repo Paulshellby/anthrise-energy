@@ -64,3 +64,15 @@
 @media (min-width: 781px) and (min-height: 781px) {
   .products-intro { top: 12.4svh; }
 }
+
+.scene-image-plane::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 34% 23% at 50% 13%, #f6f5f2f5 0%, #f6f5f2df 47%, #f6f5f27a 73%, transparent 100%);
+  pointer-events: none;
+}
+.products-intro h1 {
+  font-size: clamp(30px, 3.4vw, 52px);
+  letter-spacing: -.035em;
+}

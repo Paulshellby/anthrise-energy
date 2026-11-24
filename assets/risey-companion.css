@@ -37,3 +37,14 @@ html.stage-open #risey-unified,body:has(#products-stage:not([hidden])) #risey-un
 @keyframes risey-shoe-spark{0%,87%,100%{opacity:0}88%,92%,96%{opacity:1}90%,94%{opacity:.3}}
 @media(max-width:640px){body.site-footer-in-view #risey-unified{visibility:hidden}#risey-unified-menu{width:245px}}
 @media(prefers-reduced-motion:reduce){#risey-unified *{animation:none!important}.risey-electric-shoes{display:none}}
+
+.risey-simple-bubble[hidden] { display: none; }
+.is-greeting > .risey-simple-bubble { pointer-events: auto; }
+.risey-sales-link {
+  display: block;
+  margin-top: 6px;
+  color: #00634d;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
