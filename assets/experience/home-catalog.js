@@ -1,4 +1,4 @@
-/* The homepage catalog preview uses the same products as the full catalog. */
+/* The shared catalog showcase uses the same products as the full catalog. */
 (() => {
   'use strict';
 
@@ -14,6 +14,7 @@
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const dialog = document.createElement('dialog');
   dialog.className = 'home-catalog-dialog';
+  dialog.id = 'catalog-showcase';
   dialog.setAttribute('aria-labelledby', 'home-catalog-title');
   dialog.innerHTML = `
     <header><h2 id="home-catalog-title"></h2><button type="button" data-close autofocus>×</button></header>
@@ -108,14 +109,19 @@
     });
   }
 
-  for (const link of links) link.addEventListener('click', event => {
-    if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
-    event.preventDefault();
-    trigger = link;
-    localize();
-    dialog.showModal();
-    animate();
-  });
+  for (const link of links) {
+    link.setAttribute('aria-controls', dialog.id);
+    link.setAttribute('aria-haspopup', 'dialog');
+    link.addEventListener('click', event => {
+      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
+      event.preventDefault();
+      trigger = link;
+      window.PRODUCT_BROWSER?.close();
+      localize();
+      dialog.showModal();
+      animate();
+    });
+  }
   close.addEventListener('click', () => dialog.close());
   replay.addEventListener('click', animate);
   dialog.addEventListener('close', () => {

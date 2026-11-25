@@ -17,7 +17,7 @@ window.addEventListener('anthrise:scene-hover',e=>{clearTimeout(hoverTimer);if(e
 window.addEventListener('anthrise:product-zone',e=>open(e.detail.zone,{pin:true}));
 dialog.addEventListener('pointerenter',()=>{clearTimeout(timer);clearTimeout(hoverTimer)});dialog.addEventListener('pointerleave',scheduleClose);dialog.addEventListener('focusin',()=>{clearTimeout(timer);clearTimeout(hoverTimer)});dialog.addEventListener('focusout',()=>setTimeout(()=>{if(!dialog.contains(document.activeElement))scheduleClose()},0));
 search.addEventListener('input',()=>{query=search.value.trim().toLocaleLowerCase();pinned=true;render()});
-document.querySelector('#product-popover-close').addEventListener('click',()=>close({restore:true}));document.querySelector('#scene-reset').addEventListener('click',()=>{window.PRODUCT_SCENE?.clear();open('all',{pin:true,focus:true})});
+document.querySelector('#product-popover-close').addEventListener('click',()=>close({restore:true}));document.querySelector('#scene-reset').addEventListener('click',event=>{if(event.defaultPrevented)return;window.PRODUCT_SCENE?.clear();open('all',{pin:true,focus:true})});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!dialog.hidden){e.preventDefault();close({restore:true})}});
 document.addEventListener('pointerdown',e=>{if(!dialog.hidden&&!dialog.contains(e.target)&&!e.target.closest('[data-zone],#scene-reset,.site-language-picker'))close()});
 window.addEventListener('anthrise:language-ready',()=>{if(!dialog.hidden)render()});
