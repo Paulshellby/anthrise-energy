@@ -1,7 +1,12 @@
 /* Stationary Risey: eye tracking, occasional dances and a sales contact bubble. */
 (()=>{'use strict';if(window.__anthriseUnifiedRisey)return;window.__anthriseUnifiedRisey=true;
 function boot(){
- const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/risey-companion.css?v=20261124-sales';document.head.append(css);
+ const icon=document.querySelector('link[rel~="icon"]')||document.createElement('link');
+ icon.rel='icon';
+ icon.type='image/png';
+ icon.href='/assets/brand/anthrise-icon.png';
+ if(!icon.isConnected)document.head.append(icon);
+ const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/risey-companion.css?v=20261125-assistant';document.head.append(css);
  const original=document.getElementById('risey-actor-btn');let host,actor;
  if(original){host=document.getElementById('risey-mover');actor=original;actor.removeAttribute('aria-controls');actor.removeAttribute('aria-expanded');}
  else{
@@ -14,27 +19,113 @@ function boot(){
  bubble.className='risey-simple-bubble';
  bubble.id='risey-greeting';
  bubble.hidden=true;
- const greeting=document.createElement('span'),sales=document.createElement('a');
- sales.className='risey-sales-link';
- bubble.append(greeting,sales);
+ bubble.classList.add('risey-assistant');
+ bubble.setAttribute('role','region');
+ bubble.innerHTML=`
+  <header><strong>Risey</strong><button type="button" class="risey-close">×</button></header>
+  <div class="risey-assistant-body">
+   <p class="risey-answer" role="status"></p>
+   <div class="risey-topics">
+    <button type="button" data-topic="sizing"></button>
+    <button type="button" data-topic="hybrid"></button>
+    <button type="button" data-topic="commercial"></button>
+   </div>
+   <form class="risey-sizing" hidden>
+    <label><span></span><input name="load" type="number" min="0.1" max="100" step="any" value="1.5" required></label>
+    <label><span></span><input name="hours" type="number" min="0.5" max="120" step="any" value="8" required></label>
+    <button type="submit"></button>
+    <p role="status" class="risey-estimate"></p>
+   </form>
+   <form class="risey-question">
+    <input name="question" type="text" maxlength="240" required>
+    <button type="submit"></button>
+   </form>
+   <div class="risey-actions"><a class="risey-tools-link"></a><a class="risey-sales-link"></a></div>
+  </div>`;
  host.append(bubble);
  actor.setAttribute('aria-controls',bubble.id);
  actor.setAttribute('aria-expanded','false');
+
  const copy={
-  en:['Hi, I’m Risey. How can I help?','Contact the sales team','Risey, click for help'],
-  zh:['你好，我是 Risey。需要帮忙吗？','联系销售团队','Risey，点击获取帮助'],
-  es:['Hola, soy Risey. ¿Te ayudo?','Contactar con el equipo de ventas','Risey, pulsa para obtener ayuda'],
-  ru:['Привет, я Risey. Чем помочь?','Связаться с отделом продаж','Risey, нажмите для помощи']
+  en:{
+   labels:['Anthrise product assistant','Contact the sales team','Selection tools','Close assistant','Ask about our products','Ask','Storage sizing','How hybrid works','C&I storage','Load (kW)','Backup (hours)','Estimate'],
+   hello:'I can help you size home storage and answer common questions about hybrid inverters and C&I systems.',
+   sizing:'Enter your continuous load and target backup time to estimate the nominal battery capacity.',
+   hybrid:'A hybrid inverter manages power from solar panels, batteries and the grid. In self-consumption mode, solar can supply loads first, then charge the battery. Export depends on site settings and grid approval.',
+   commercial:'C&I storage can discharge during demand peaks to reduce grid draw. It can charge during lower-price hours or from surplus solar, depending on the site strategy.',
+   fallback:'I don’t have a verified answer for that. Try a topic below, open the selection tools or ask our sales team.',
+   estimate:value=>`Estimated battery capacity: ${value} kWh (85% usable capacity, 92% conversion efficiency). This is a planning estimate.`
+  },
+  zh:{
+   labels:['昂旭产品助手','联系销售团队','选型工具','关闭助手','输入你的产品问题','提问','储能容量估算','混合逆变器原理','工商业储能','持续负载 (kW)','备电时长 (小时)','估算'],
+   hello:'我可以帮你估算家用储能容量，也可以回答混合逆变器和工商业储能的常见问题。',
+   sizing:'输入持续负载和目标备电时长，即可估算所需的额定电池容量。',
+   hybrid:'混合逆变器协调光伏、电池与电网。自发自用模式下，光伏通常先供负载，多余电量可给电池充电。余电能否上网取决于现场设置和并网许可。',
+   commercial:'工商业储能可以在用电高峰放电，降低从电网取电的峰值。低价时段或光伏有余电时，可以按现场策略充电。',
+   fallback:'我暂时没有可核实的答案。你可以选择下方的常见问题、打开选型工具或联系销售团队。',
+   estimate:value=>`建议额定电池容量约 ${value} kWh（按 85% 可用容量、92% 转换效率估算，仅供初步选型）。`
+  }
  };
+ const answer=bubble.querySelector('.risey-answer');
+ const sizing=bubble.querySelector('.risey-sizing');
+ const estimate=bubble.querySelector('.risey-estimate');
+ const question=bubble.querySelector('.risey-question');
+ const close=bubble.querySelector('.risey-close');
+ const tools=bubble.querySelector('.risey-tools-link');
+ const sales=bubble.querySelector('.risey-sales-link');
+ const topics=[...bubble.querySelectorAll('[data-topic]')];
+ let locale,words=copy.en,topic='hello';
+ function reply(next){
+  topic=next;
+  sizing.hidden=next!=='sizing';
+  answer.textContent=words[next];
+ }
  function localize(){
-  const lang=document.documentElement.lang.split('-')[0];
-  const [hello,contact,label]=copy[lang]||copy.en;
-  const home=window.ANTHRISE_I18N?.home()||({zh:'/home-zh.html',es:'/home-es.html',ru:'/home-ru.html'}[lang]||'/');
-  greeting.textContent=hello;
+  const language=window.ANTHRISE_I18N?.language||document.documentElement.lang;
+  if(language===locale)return;
+  locale=language;
+  const localLanguage=locale.split('-')[0];
+  words=copy[localLanguage]||copy.en;
+  bubble.lang=copy[localLanguage]?localLanguage:'en';
+  bubble.setAttribute('data-no-translate','');
+  const [name,contact,tool,dismiss,prompt,ask,...options]=words.labels;
+  const home=window.ANTHRISE_I18N?.home()||({zh:'/home-zh.html',es:'/home-es.html',ru:'/home-ru.html'}[localLanguage]||'/');
+  actor.setAttribute('aria-label',name);
+  bubble.setAttribute('aria-label',name);
+  close.setAttribute('aria-label',dismiss);
+  question.elements.question.placeholder=prompt;
+  question.elements.question.setAttribute('aria-label',prompt);
+  question.querySelector('button').textContent=ask;
   sales.textContent=contact;
   sales.href=home+'#project-inquiry';
-  actor.setAttribute('aria-label',label);
+  tools.textContent=tool;
+  tools.href='/selection-tools.html?lang='+encodeURIComponent(locale);
+  topics.forEach((button,index)=>button.textContent=options[index]);
+  sizing.querySelectorAll('label span').forEach((label,index)=>label.textContent=options[index+3]);
+  sizing.querySelector('button').textContent=options[5];
+  estimate.textContent='';
+  reply(topic);
  }
+ topics.forEach(button=>button.addEventListener('click',()=>reply(button.dataset.topic)));
+ sizing.addEventListener('submit',event=>{
+  event.preventDefault();
+  const load=sizing.elements.load.valueAsNumber,hours=sizing.elements.hours.valueAsNumber;
+  const capacity=load*hours/(.85*.92);
+  estimate.textContent=words.estimate(new Intl.NumberFormat(bubble.lang,{maximumFractionDigits:1}).format(capacity));
+ });
+ question.addEventListener('submit',event=>{
+  event.preventDefault();
+  const input=question.elements.question;
+  const value=input.value.trim();
+  if(!value)return;
+  const matches=[
+   ['commercial',/\bc\s*&\s*i\b|commercial|peak.shav|工商业|工商储能|削峰|填谷/i],
+   ['sizing',/siz(?:e|ing)|runtime|back.?up|capacity|\bkwh\b|容量|续航|备电|选型|能用多久/i],
+   ['hybrid',/inverter|hybrid|export|solar|逆变|混合|并网|光伏|上网/i]
+  ];
+  reply(matches.find(([,pattern])=>pattern.test(value))?.[0]||'fallback');
+  input.value='';
+ });
  let hideTimer;
  function show(){
   clearTimeout(hideTimer);
@@ -58,11 +149,12 @@ function boot(){
   element.addEventListener('pointerenter',show);
   element.addEventListener('pointerleave',scheduleHide);
  }
+close.addEventListener('click',()=>{actor.focus({preventScroll:true});hide()});
  host.addEventListener('focusin',show);
  host.addEventListener('focusout',scheduleHide);
  actor.addEventListener('click',e=>{
   e.preventDefault();e.stopImmediatePropagation();show();
-  if(original)window.RISEY_STATIONARY?.dance();else dance();
+  question.elements.question.focus({preventScroll:true});
  },{capture:true});
  document.addEventListener('pointerdown',e=>{if(!host.contains(e.target))hide()});
  document.addEventListener('keydown',e=>{
@@ -71,6 +163,7 @@ function boot(){
    hide();
   }
  });
+ window.addEventListener('anthrise:language-ready',localize);
  new MutationObserver(localize).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});localize();
  if(original)return;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),rig=host.querySelector('.risey-stationary-rig'),viewport=host.querySelector('.risey-stationary-dance'),sheet=viewport.querySelector('img'),eyes=[...host.querySelectorAll('.risey-stationary-eye img')];

@@ -48,3 +48,49 @@ html.stage-open #risey-unified,body:has(#products-stage:not([hidden])) #risey-un
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+.risey-simple-bubble.risey-assistant {
+  width: min(348px, calc(100vw - 32px));
+  max-width: none;
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 12px 40px #173b3233;
+}
+.risey-assistant header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 14px;
+  border-bottom: 1px solid #d5e3dd;
+}
+.risey-assistant header strong { font-size: 16px; }
+.risey-assistant-body {
+  max-height: min(330px, max(108px, calc(100dvh - 320px)));
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 12px 14px;
+}
+.risey-assistant p { margin: 0 0 10px; }
+.risey-assistant button,
+.risey-assistant input {
+  font: inherit;
+  color: inherit;
+  border: 1px solid #afc9be;
+  border-radius: 7px;
+  background: #fff;
+  padding: 5px 8px;
+}
+.risey-assistant button { cursor: pointer; }
+.risey-assistant .risey-close { border: 0; font-size: 20px; padding: 0 6px; }
+.risey-topics,
+.risey-actions { display: flex; flex-wrap: wrap; gap: 6px 12px; }
+.risey-topics button { background: #f1f8f5; }
+.risey-question { display: flex; gap: 6px; margin-top: 10px; }
+.risey-question input { flex: 1; min-width: 0; }
+.risey-question button { background: #00634d; color: #fff; }
+.risey-sizing:not([hidden]) { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 10px; }
+.risey-sizing label { display: grid; gap: 4px; }
+.risey-sizing input { width: 100%; box-sizing: border-box; }
+.risey-sizing .risey-estimate { grid-column: 1 / -1; margin: 0; }
+.risey-actions { margin-top: 8px; }
+.risey-actions a { margin-top: 0; color: #00634d; font-weight: 650; text-decoration: underline; }
