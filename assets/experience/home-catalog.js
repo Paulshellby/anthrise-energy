@@ -6,9 +6,10 @@
   const catalog = window.ANTHRISE_SCENE_PRODUCTS;
   if (!links.length || !catalog || !HTMLDialogElement.prototype.showModal) return;
 
-  const showcase = ['ess16', 'series_ascend', 'balconyBess', 'series_horizon', 'hybrid20', 'origAER400']
-    .map(id => catalog.find(product => product.id === id)).filter(Boolean);
-  if (!showcase.length) return;
+  const featuredIds = ['ess16', 'series_ascend', 'balconyBess', 'series_horizon', 'hybrid20', 'origAER400'];
+  const featured = featuredIds.map(id => catalog.find(product => product.id === id)).filter(Boolean);
+  const products = [...featured, ...catalog.filter(product => !featured.includes(product))];
+  if (!products.length) return;
 
   const translate = text => window.ANTHRISE_I18N?.t(text) || text;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -22,19 +23,35 @@
       <div class="home-catalog-orbit" aria-hidden="true"></div>
       <div class="home-catalog-track"></div>
     </div>
-    <footer><button type="button" data-replay></button><a href="/products.html?category=all"></a></footer>`;
+    <footer>
+      <div class="home-catalog-controls">
+        <button type="button" data-step="-1">←</button>
+        <button type="button" data-playback></button>
+        <button type="button" data-step="1">→</button>
+      </div>
+      <a href="/products.html?category=all"></a>
+    </footer>`;
   document.body.append(dialog);
 
   const stage = dialog.querySelector('.home-catalog-stage');
   const orbit = dialog.querySelector('.home-catalog-orbit');
   const track = dialog.querySelector('.home-catalog-track');
   const close = dialog.querySelector('[data-close]');
-  const replay = dialog.querySelector('[data-replay]');
+  const playback = dialog.querySelector('[data-playback]');
+  const steps = [...dialog.querySelectorAll('[data-step]')];
   const browse = dialog.querySelector('footer a');
-  const items = showcase.map(product => {
+  const items = [...products, ...products].map((product, index) => {
     const card = document.createElement('a');
     card.className = 'home-catalog-card';
+    card.dataset.product = product.id;
+    if (index >= products.length) {
+      card.tabIndex = -1;
+      card.setAttribute('aria-hidden', 'true');
+    }
     const image = new Image();
+    image.loading = index < featured.length ? 'eager' : 'lazy';
+    image.decoding = 'async';
+    image.draggable = false;
     image.src = '/' + product.image;
     image.alt = '';
     const name = document.createElement('strong');
@@ -45,21 +62,27 @@
   });
 
   const interfaceCopy = {
-    en: ['All products', 'Replay animation', count => 'Search all ' + count + ' products'],
-    zh: ['全部产品', '重播动画', count => '搜索全部 ' + count + ' 款产品'],
-    es: ['Todos los productos', 'Repetir animación', count => 'Buscar en ' + count + ' productos'],
-    ru: ['Все продукты', 'Повторить анимацию', count => 'Поиск по каталогу (' + count + ')']
+    en: ['All products', 'Play', 'Pause', 'Scroll left', 'Scroll right', count => 'Search all ' + count + ' products'],
+    zh: ['全部产品', '播放', '暂停', '向左滑动', '向右滑动', count => '搜索全部 ' + count + ' 款产品'],
+    es: ['Todos los productos', 'Reproducir', 'Pausar', 'Desplazar a la izquierda', 'Desplazar a la derecha', count => 'Buscar en ' + count + ' productos'],
+    ru: ['Все продукты', 'Воспроизвести', 'Приостановить', 'Прокрутить влево', 'Прокрутить вправо', count => 'Поиск по каталогу (' + count + ')']
   };
+
+  let playbackText, paused, frameId, previousTime, distance, resumeAt = 0;
+  let drag, hovering = false, suppressClick = false;
 
   function localize() {
     const locale = window.ANTHRISE_I18N?.language || document.documentElement.lang;
     const language = locale.split('-')[0];
     const productLanguage = ['en', 'zh', 'es', 'ru'].includes(language) ? language : 'en';
-    const [title, replayText, searchText] = interfaceCopy[language] || interfaceCopy.en;
+    const [title, play, pause, left, right, searchText] = interfaceCopy[language] || interfaceCopy.en;
 
     dialog.querySelector('h2').textContent = title;
     close.setAttribute('aria-label', translate('Close'));
-    replay.textContent = replayText;
+    playbackText = {play, pause};
+    steps[0].setAttribute('aria-label', left);
+    steps[1].setAttribute('aria-label', right);
+    updatePlaybackLabel();
     browse.textContent = searchText(catalog.length);
     browse.href = '/products.html?category=all&lang=' + encodeURIComponent(locale);
     for (const {card, name, detail, product} of items) {
@@ -67,6 +90,44 @@
       name.textContent = language === 'zh' ? product.zh : translate(product.en);
       detail.textContent = translate('View details');
     }
+  }
+
+  function updatePlaybackLabel() {
+    if (playbackText) playback.textContent = paused ? playbackText.play : playbackText.pause;
+  }
+
+  function cycleWidth() {
+    return items[products.length].card.offsetLeft - items[0].card.offsetLeft;
+  }
+
+  function stopAutoplay() {
+    cancelAnimationFrame(frameId);
+    frameId = previousTime = distance = 0;
+  }
+
+  function tick(time) {
+    const elapsed = previousTime ? Math.min(50, time - previousTime) : 0;
+    previousTime = time;
+    if (!paused && !drag && !hovering && !track.contains(document.activeElement) && time >= resumeAt) {
+      distance += elapsed * .052;
+      const step = Math.floor(distance);
+      if (step) {
+        distance -= step;
+        const cycle = cycleWidth();
+        const position = track.scrollLeft - step;
+        track.scrollLeft = cycle && position < 0 ? position + cycle : position;
+      }
+    }
+    frameId = requestAnimationFrame(tick);
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    if (!paused && dialog.open) frameId = requestAnimationFrame(tick);
+  }
+
+  function deferAutoplay() {
+    resumeAt = performance.now() + 1600;
   }
 
   let animations = [];
@@ -80,16 +141,16 @@
   function animate() {
     stopAnimation();
     track.scrollLeft = 0;
-    if (reducedMotion.matches) return;
+    if (reducedMotion.matches) { startAutoplay(); return; }
 
     const bounds = stage.getBoundingClientRect();
     dialog.classList.add('is-orbiting');
-    const movement = items.map(({card}, index) => {
+    const movement = items.slice(0, featured.length).map(({card}, index) => {
       const rect = card.getBoundingClientRect();
       const centerX = bounds.left + bounds.width / 2 - rect.left - rect.width / 2;
       const centerY = bounds.top + bounds.height / 2 - rect.top - rect.height / 2;
       function orbitFrame(turn, offset) {
-        const angle = -.7 + 2 * Math.PI * (index / items.length + turn);
+        const angle = -.7 + 2 * Math.PI * (index / featured.length + turn);
         const depth = Math.sin(angle);
         const x = centerX + Math.cos(angle) * bounds.width * .35;
         const y = centerY + depth * bounds.height * .29 + Math.cos(angle) * bounds.height * .07;
@@ -105,7 +166,7 @@
     movement.push(orbit.animate([{opacity: 0}, {opacity: 1, offset: .15}, {opacity: 1, offset: .68}, {opacity: 0}], {duration: 2370}));
     animations = movement;
     Promise.allSettled(movement.map(animation => animation.finished)).then(() => {
-      if (animations === movement) stopAnimation();
+      if (animations === movement) { stopAnimation(); startAutoplay(); }
     });
   }
 
@@ -117,16 +178,87 @@
       event.preventDefault();
       trigger = link;
       window.PRODUCT_BROWSER?.close();
+      paused = reducedMotion.matches;
+      resumeAt = 0;
+      hovering = false;
       localize();
       dialog.showModal();
       animate();
     });
   }
   close.addEventListener('click', () => dialog.close());
-  replay.addEventListener('click', animate);
+  playback.addEventListener('click', () => {
+    paused = !paused;
+    updatePlaybackLabel();
+    if (paused) stopAutoplay();
+    else startAutoplay();
+  });
+  for (const button of steps) button.addEventListener('click', () => {
+    const step = Number(button.dataset.step);
+    if (dialog.classList.contains('is-orbiting')) {
+      stopAnimation();
+      startAutoplay();
+    }
+    deferAutoplay();
+    const cycle = cycleWidth();
+    if (step < 0 && track.scrollLeft === 0 && cycle) track.scrollLeft = cycle;
+    if (step > 0 && track.scrollLeft >= cycle && cycle) track.scrollLeft -= cycle;
+    track.scrollBy({left: step * items[0].card.offsetWidth, behavior: reducedMotion.matches ? 'instant' : 'smooth'});
+  });
+  track.addEventListener('wheel', deferAutoplay, {passive: true});
+  track.addEventListener('dragstart', event => event.preventDefault());
+  track.addEventListener('pointerdown', event => {
+    suppressClick = false;
+    deferAutoplay();
+    if (event.pointerType !== 'mouse' || event.button !== 0 || dialog.classList.contains('is-orbiting')) return;
+    drag = {pointer: event.pointerId, x: event.clientX, left: track.scrollLeft, moved: false};
+  });
+  track.addEventListener('pointermove', event => {
+    hovering = event.pointerType === 'mouse' && !!event.target.closest('.home-catalog-card');
+    if (!drag || drag.pointer !== event.pointerId) return;
+    const delta = event.clientX - drag.x;
+    if (!drag.moved && Math.abs(delta) < 6) return;
+    if (!drag.moved) track.setPointerCapture(event.pointerId);
+    drag.moved = true;
+    event.preventDefault();
+    const cycle = cycleWidth();
+    const position = drag.left - delta;
+    if (cycle && position < 0) drag.left += cycle;
+    else if (cycle && position > track.scrollWidth - track.clientWidth) drag.left -= cycle;
+    track.scrollLeft = drag.left - delta;
+  });
+  function endDrag(event) {
+    if (!drag || drag.pointer !== event.pointerId) return;
+    suppressClick = drag.moved;
+    drag = null;
+    deferAutoplay();
+  }
+  track.addEventListener('pointerup', endDrag);
+  track.addEventListener('pointercancel', endDrag);
+  track.addEventListener('pointerleave', event => {
+    hovering = false;
+    if (drag && !drag.moved) endDrag(event);
+  });
+  track.addEventListener('click', event => {
+    if (!suppressClick || !event.detail) return;
+    event.preventDefault();
+    suppressClick = false;
+  }, true);
   dialog.addEventListener('close', () => {
     stopAnimation();
+    stopAutoplay();
+    drag = null;
     trigger?.focus({preventScroll: true});
   });
-  reducedMotion.addEventListener('change', event => { if (event.matches) stopAnimation(); });
+  window.addEventListener('pagehide', () => {
+    stopAutoplay();
+    if (dialog.open) dialog.close();
+  });
+  reducedMotion.addEventListener('change', event => {
+    if (!event.matches) return;
+    paused = true;
+    stopAnimation();
+    stopAutoplay();
+    updatePlaybackLabel();
+  });
 })();
