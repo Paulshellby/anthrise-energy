@@ -6,7 +6,7 @@ function boot(){
  icon.type='image/png';
  icon.href='/assets/brand/anthrise-icon.png';
  if(!icon.isConnected)document.head.append(icon);
- const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/risey-companion.css?v=20261125-assistant';document.head.append(css);
+ const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/risey-companion.css?v=20261125-homecatalog';document.head.append(css);
  const original=document.getElementById('risey-actor-btn');let host,actor;
  if(original){host=document.getElementById('risey-mover');actor=original;actor.removeAttribute('aria-controls');actor.removeAttribute('aria-expanded');}
  else{
@@ -27,12 +27,16 @@ function boot(){
    <p class="risey-answer" role="status"></p>
    <div class="risey-topics">
     <button type="button" data-topic="sizing"></button>
+    <button type="button" data-topic="runtime"></button>
     <button type="button" data-topic="hybrid"></button>
     <button type="button" data-topic="commercial"></button>
    </div>
    <form class="risey-sizing" hidden>
-    <label><span></span><input name="load" type="number" min="0.1" max="100" step="any" value="1.5" required></label>
+    <label><span></span><input name="load" type="number" min="0.1" max="1000" step="any" value="1.5" required></label>
     <label><span></span><input name="hours" type="number" min="0.5" max="120" step="any" value="8" required></label>
+    <label data-runtime hidden><span></span><input name="battery" type="number" min="0.01" max="10000" step="any" value="15.36" required disabled></label>
+    <label data-runtime hidden><span></span><input name="usable" type="number" min="1" max="100" step="any" value="85" required disabled></label>
+    <label data-runtime hidden><span></span><input name="efficiency" type="number" min="1" max="100" step="any" value="92" required disabled></label>
     <button type="submit"></button>
     <p role="status" class="risey-estimate"></p>
    </form>
@@ -48,18 +52,22 @@ function boot(){
 
  const copy={
   en:{
-   labels:['Anthrise product assistant','Contact the sales team','Selection tools','Close assistant','Ask about our products','Ask','Storage sizing','How hybrid works','C&I storage','Load (kW)','Backup (hours)','Estimate'],
+   labels:['Anthrise product assistant','Contact the sales team','Selection tools','Close assistant','Ask about our products','Ask','Storage sizing','Backup runtime','How hybrid works','C&I storage','Load (kW)','Backup (hours)','Battery capacity (kWh)','Usable capacity (%)','Efficiency (%)','Estimate'],
    hello:'I can help you size home storage and answer common questions about hybrid inverters and C&I systems.',
    sizing:'Enter your continuous load and target backup time to estimate the nominal battery capacity.',
+   runtime:'Enter a battery capacity and continuous load to estimate backup runtime.',
+   runtimeResult:value=>`Estimated backup time: ${value} hours at the stated load and settings.`,
    hybrid:'A hybrid inverter manages power from solar panels, batteries and the grid. In self-consumption mode, solar can supply loads first, then charge the battery. Export depends on site settings and grid approval.',
    commercial:'C&I storage can discharge during demand peaks to reduce grid draw. It can charge during lower-price hours or from surplus solar, depending on the site strategy.',
    fallback:'I don’t have a verified answer for that. Try a topic below, open the selection tools or ask our sales team.',
    estimate:value=>`Estimated battery capacity: ${value} kWh (85% usable capacity, 92% conversion efficiency). This is a planning estimate.`
   },
   zh:{
-   labels:['昂旭产品助手','联系销售团队','选型工具','关闭助手','输入你的产品问题','提问','储能容量估算','混合逆变器原理','工商业储能','持续负载 (kW)','备电时长 (小时)','估算'],
+   labels:['昂旭产品助手','联系销售团队','选型工具','关闭助手','输入你的产品问题','提问','储能容量估算','备电续航估算','混合逆变器原理','工商业储能','持续负载 (kW)','备电时长 (小时)','电池容量 (kWh)','可用容量 (%)','转换效率 (%)','估算'],
    hello:'我可以帮你估算家用储能容量，也可以回答混合逆变器和工商业储能的常见问题。',
    sizing:'输入持续负载和目标备电时长，即可估算所需的额定电池容量。',
+   runtime:'输入电池容量和持续负载，估算可供电的时间。',
+   runtimeResult:value=>`按输入的负载和设置，预计可备电约 ${value} 小时。`,
    hybrid:'混合逆变器协调光伏、电池与电网。自发自用模式下，光伏通常先供负载，多余电量可给电池充电。余电能否上网取决于现场设置和并网许可。',
    commercial:'工商业储能可以在用电高峰放电，降低从电网取电的峰值。低价时段或光伏有余电时，可以按现场策略充电。',
    fallback:'我暂时没有可核实的答案。你可以选择下方的常见问题、打开选型工具或联系销售团队。',
@@ -77,7 +85,15 @@ function boot(){
  let locale,words=copy.en,topic='hello';
  function reply(next){
   topic=next;
-  sizing.hidden=next!=='sizing';
+  const runtime=next==='runtime';
+  sizing.hidden=next!=='sizing'&&!runtime;
+  sizing.elements.hours.disabled=runtime;
+  sizing.elements.hours.closest('label').hidden=runtime;
+  for(const label of sizing.querySelectorAll('[data-runtime]')){
+   label.hidden=!runtime;
+   label.querySelector('input').disabled=!runtime;
+  }
+  estimate.textContent='';
   answer.textContent=words[next];
  }
  function localize(){
@@ -101,17 +117,20 @@ function boot(){
   tools.textContent=tool;
   tools.href='/selection-tools.html?lang='+encodeURIComponent(locale);
   topics.forEach((button,index)=>button.textContent=options[index]);
-  sizing.querySelectorAll('label span').forEach((label,index)=>label.textContent=options[index+3]);
-  sizing.querySelector('button').textContent=options[5];
+  sizing.querySelectorAll('label span').forEach((label,index)=>label.textContent=options[index+4]);
+  sizing.querySelector('button').textContent=options[9];
   estimate.textContent='';
   reply(topic);
  }
  topics.forEach(button=>button.addEventListener('click',()=>reply(button.dataset.topic)));
  sizing.addEventListener('submit',event=>{
   event.preventDefault();
-  const load=sizing.elements.load.valueAsNumber,hours=sizing.elements.hours.valueAsNumber;
-  const capacity=load*hours/(.85*.92);
-  estimate.textContent=words.estimate(new Intl.NumberFormat(bubble.lang,{maximumFractionDigits:1}).format(capacity));
+  const read=name=>sizing.elements[name].valueAsNumber;
+  const load=read('load');
+  const format=value=>new Intl.NumberFormat(bubble.lang,{minimumFractionDigits:1,maximumFractionDigits:1}).format(value);
+  estimate.textContent=topic==='runtime'
+   ? words.runtimeResult(format(read('battery')*(read('usable')/100)*(read('efficiency')/100)/load))
+   : words.estimate(format(load*read('hours')/(.85*.92)));
  });
  question.addEventListener('submit',event=>{
   event.preventDefault();
@@ -120,7 +139,8 @@ function boot(){
   if(!value)return;
   const matches=[
    ['commercial',/\bc\s*&\s*i\b|commercial|peak.shav|工商业|工商储能|削峰|填谷/i],
-   ['sizing',/siz(?:e|ing)|runtime|back.?up|capacity|\bkwh\b|容量|续航|备电|选型|能用多久/i],
+   ['runtime',/runtime|run time|how long|续航|能用多久/i],
+   ['sizing',/siz(?:e|ing)|back.?up|capacity|\bkwh\b|容量|续航|备电|选型/i],
    ['hybrid',/inverter|hybrid|export|solar|逆变|混合|并网|光伏|上网/i]
   ];
   reply(matches.find(([,pattern])=>pattern.test(value))?.[0]||'fallback');

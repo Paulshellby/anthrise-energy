@@ -21,6 +21,6 @@ document.querySelector('#product-popover-close').addEventListener('click',()=>cl
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!dialog.hidden){e.preventDefault();close({restore:true})}});
 document.addEventListener('pointerdown',e=>{if(!dialog.hidden&&!dialog.contains(e.target)&&!e.target.closest('[data-zone],#scene-reset,.site-language-picker'))close()});
 window.addEventListener('anthrise:language-ready',()=>{if(!dialog.hidden)render()});
-window.addEventListener('anthrise:scene-ready',()=>{const requested=new URLSearchParams(location.search).get('category');if(types[requested])window.PRODUCT_SCENE.select(requested)});
+window.addEventListener('anthrise:scene-ready',()=>{const requested=new URLSearchParams(location.search).get('category');if(requested==='all')open('all',{pin:true});else if(types[requested])window.PRODUCT_SCENE.select(requested)});
 window.PRODUCT_BROWSER={open,close,getState:()=>({zone,count:root.querySelectorAll('.scene-product').length,query,open:!dialog.hidden,pinned,allProducts:products.length})};
 })();

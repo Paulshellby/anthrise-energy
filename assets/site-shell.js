@@ -3,7 +3,7 @@
   if (window.__anthriseShellLoaded) return;
   window.__anthriseShellLoaded = true;
   if (!window.__anthriseUnifiedRisey && !document.querySelector('script[data-unified-risey]')) {
-    const companionScript=document.createElement('script');companionScript.src='/assets/risey-companion.js?v=20261125-assistant';companionScript.dataset.unifiedRisey='';document.head.append(companionScript);
+    const companionScript=document.createElement('script');companionScript.src='/assets/risey-companion.js?v=20261125-homecatalog';companionScript.dataset.unifiedRisey='';document.head.append(companionScript);
   }
   const version = '20261122-telegram1';
   const paths = { en: '/', zh: '/home-zh.html', es: '/home-es.html', ru: '/home-ru.html' };

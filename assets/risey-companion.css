@@ -94,3 +94,5 @@ html.stage-open #risey-unified,body:has(#products-stage:not([hidden])) #risey-un
 .risey-sizing .risey-estimate { grid-column: 1 / -1; margin: 0; }
 .risey-actions { margin-top: 8px; }
 .risey-actions a { margin-top: 0; color: #00634d; font-weight: 650; text-decoration: underline; }
+
+.risey-sizing label[hidden] { display: none; }
