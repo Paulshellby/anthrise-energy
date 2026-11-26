@@ -20,7 +20,7 @@ const init=()=>{
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  function reveal(scene){
   const top=scene.getBoundingClientRect().top;
-  const progress=Math.min(1,Math.max(0,(innerHeight*.92-top)/(innerHeight*.72)));
+  const progress=Math.min(1,Math.max(0,(innerHeight*.85-top)/(innerHeight*.79)));
   return reduced.matches?Number(progress>=.5):progress*progress*(3-2*progress);
  }
  function syncShowcaseHeader(){

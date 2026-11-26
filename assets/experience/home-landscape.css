@@ -14,14 +14,15 @@
   background-size: cover;
 }
 .home-landscape-solar {
-  background-image: linear-gradient(90deg,#f6f8f3f2 5%,#eaf2edba 36%,transparent 72%),url('/assets/experience/solar-farm.webp');
+  background-image: url('/assets/experience/home-sunrise.webp');
+  background-position: 68% center;
 }
 .home-landscape-community {
-  background-image: linear-gradient(180deg,#f4f7f395,#e8f0e944 55%,#eff5edb0),url('/assets/experience/community.webp');
+  background-image: linear-gradient(180deg,#f8e7cd50,#e8f0e944 55%,#eff5edb0),url('/assets/experience/community.webp');
   opacity: var(--home-community-opacity,0);
 }
 .home-landscape-path {
-  background-image: linear-gradient(90deg,#f8f6eeeb,#edf1e6b8 57%,#ebf2e340),url('/assets/experience/solar-path.webp');
+  background-image: linear-gradient(90deg,#f8f6eed9,#edf1e6a8 57%,#ebf2e325),url('/assets/experience/solar-path.webp');
   opacity: var(--home-path-opacity,0);
 }
 .home-showcase .home-landscape-hero::before { content: none; }
@@ -30,22 +31,31 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
   align-items: center;
+  min-height: calc(100svh - var(--header-h));
   gap: clamp(24px, 4vw, 76px);
   padding: 35px 0;
 }
 .home-landscape-hero h1 { color: #163d36; }
 .home-landscape-lead { color: #284f48; font-size: clamp(16px, 1.55vw, 22px); margin: 0 0 25px; }
-.home-landscape-horizon { margin: 0; text-align: center; }
-.home-landscape-horizon img {
+.home-landscape-solar canvas {
+  width: 100%;
+  height: 100%;
   display: block;
-  width: min(100%, 500px, 57.6svh, 550px);
-  height: auto;
-  clip-path: polygon(0 0,100% 0,100% 88%,80% 88%,80% 94.5%,54% 99.4%,3% 96.2%,3% 91%,0 91%);
-  margin: auto;
-  filter: drop-shadow(0 15px 18px #173e3e49);
+  object-fit: cover;
+  object-position: 68% center;
 }
-.home-landscape-horizon figcaption { margin-top: 12px; }
-.home-landscape-horizon figcaption,
+.home-landscape-hero .home-hero-copy { transform: translateY(-55px); }
+.home-landscape-hero .home-landscape-motion {
+  position: absolute;
+  inset: auto auto 18px clamp(18px, 3vw, 48px);
+  min-width: 44px;
+  min-height: 44px;
+  color: #163d36;
+  background: #fffef0e8;
+  border: 1px solid #d3ded2;
+  border-radius: 50%;
+  cursor: pointer;
+}
 .home-landscape-pair [data-no-translate] { color: #185747; font-size: 12px; letter-spacing: .13em; }
 .home-landscape-range {
   min-height: 91svh;
@@ -88,16 +98,28 @@
 .home-showcase #project-inquiry.inquiry-section::before {
   content: none;
 }
-@media (prefers-reduced-motion: no-preference) {
-  .home-landscape-horizon img { animation: landscape-arrival 2.25s cubic-bezier(.16,.75,.25,1) both; }
-}
-@keyframes landscape-arrival {
-  from { transform: translateY(-32px) scale(.34); opacity: .35; }
-  to { transform: translateY(0) scale(1); opacity: 1; }
-}
 @media (max-width:700px) {
   .home-showcase .home-landscape-hero .home-container { grid-template-columns: 1fr; gap: 20px; padding: 28px 0 40px; }
-  .home-landscape-horizon img { width: min(100%, 38.7svh, 324px); }
+  .home-landscape-hero .home-hero-copy { align-self: start; transform: none; }
+  .home-landscape-solar {
+    background-color: #bfcdd3;
+    background-repeat: no-repeat;
+    background-size: auto 64%;
+    background-position: 92% bottom;
+  }
+  .home-landscape-solar canvas {
+    position: absolute;
+    bottom: 0;
+    height: 64%;
+    object-position: 92% center;
+    mask-image: linear-gradient(transparent, #000 20%);
+  }
+  .home-landscape-solar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(#f4f5eebf, #bfcdd3 36%, transparent 49%);
+  }
   .home-landscape-range { min-height: 80svh; }
   .home-landscape-pair img { height: clamp(100px, 25svh, 230px); }
   .home-landscape-pair [data-no-translate] { font-size: 10px; }
