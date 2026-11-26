@@ -1,7 +1,8 @@
 /* One site-wide locale, one globe control, static local translation packs. */
 (() => {
  'use strict';
- if(window.ANTHRISE_I18N?.version==='20261124-citypopup1')return;
+ const version='20261126-products-nav';
+ if(window.ANTHRISE_I18N?.version===version)return;
  const config=window.ANTHRISE_LOCALE_CONFIG;if(!config)return;
  const names=config.names,aliases=config.aliases,normalize=s=>String(s??'').replace(/\s+/g,' ').trim();
  const normalizeLocale=code=>({ 'zh-CN':'zh','zh-Hans':'zh','zh-TW':'zh-Hant','pt':'pt-BR','tl':'fil','iw':'he' }[code]||code);
@@ -18,7 +19,7 @@
  function home(code=language){return nativePaths[code]||'/?lang='+encodeURIComponent(code)}
  function targetFor(code){const url=new URL(location.href);if(/^\/(?:index\.html|home-(?:zh|es|ru)\.html)?$/.test(url.pathname))url.pathname=nativePaths[code]||'/';else if(url.pathname.startsWith('/products/'))url.pathname=url.pathname.replace(/-(?:[a-z]{2,3}|zh-Hant|pt-BR)\.html$/,'-'+(nativePaths[code]?code:'en')+'.html');url.searchParams.set('lang',code);return url.pathname+url.search+url.hash}
  function changeLanguage(code){if(!Object.hasOwn(names,code))return;try{localStorage.setItem('anthrise_language',code);localStorage.setItem('anthrise_lang',code)}catch{}if(code===language){document.querySelectorAll('.site-language-picker').forEach(p=>p.open=false);apply();return}location.assign(targetFor(code))}
- const api={version:'20261124-navright1',language,home,languages:Object.keys(names),t:text,text,changeLanguage,ready:readyPromise,get isReady(){return ready},getCoverage};window.ANTHRISE_I18N=api;
+ const api={version,language,home,languages:Object.keys(names),t:text,text,changeLanguage,ready:readyPromise,get isReady(){return ready},getCoverage};window.ANTHRISE_I18N=api;
  try{localStorage.setItem('anthrise_language',language);localStorage.setItem('anthrise_lang',language)}catch{}
  document.documentElement.dataset.siteLocale=language;document.documentElement.translate=false;
  const excluded='script,style,textarea,code,pre,template,.brand-subtext,.global-language-panel,.site-language-picker summary,[data-no-translate]';
@@ -33,6 +34,7 @@
  function mountNavigation(header,picker){
   const frame=header.querySelector('.header-inner')||header;
   let nav=header.querySelector('.anthrise-primary-nav');
+  if(nav&&!nav.querySelector('.anthrise-products-menu')){nav.remove();nav=null;}
   if(!nav){
    const brand=frame.querySelector('a.brand-link,a.planning-logo,a.solution-logo,a.brand')||[...frame.querySelectorAll('a')].find(a=>a.querySelector('img'));
    if(!brand)return;

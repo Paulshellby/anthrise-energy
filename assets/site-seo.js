@@ -34,4 +34,4 @@ function apply(){
 apply();window.AnthriseSEO={origin,relative};
 })();
 
-;(()=>{const css=document.createElement("link");css.rel="stylesheet";css.href="/assets/site-shell.css?v=20261120-actions3";document.head.append(css);const script=document.createElement("script");script.src="/assets/site-shell.js?v=20261122-floor16";document.head.append(script);})();
+;(()=>{const css=document.createElement("link");css.rel="stylesheet";css.href="/assets/site-shell.css?v=20261120-actions3";document.head.append(css);if(!window.__anthriseShellLoaded&&!document.querySelector('script[src*="/assets/site-shell.js"]')){const script=document.createElement("script");script.src="/assets/site-shell.js?v=20261126-products-nav";document.head.append(script);}})();
