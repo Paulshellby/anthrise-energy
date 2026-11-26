@@ -140,3 +140,14 @@ body:has(.home-catalog-dialog[open]) { overflow: hidden; }
 .home-catalog-dialog.is-single .home-catalog-card { flex-basis: min(270px, 80%); height: min(300px, 50dvh); }
 
 .home-catalog-dialog footer[hidden] { display: none; }
+
+.home-catalog-dialog.is-commercial .home-catalog-card {
+  flex-basis: max(180px, calc((100% - 2 * var(--catalog-gap)) / 3));
+  height: min(290px, 48dvh);
+}
+.home-catalog-dialog.is-commercial .home-catalog-track {
+  width: calc(100% - 2 * var(--catalog-inset));
+  padding-inline: 0;
+  margin-inline: auto;
+  scrollbar-width: none;
+}

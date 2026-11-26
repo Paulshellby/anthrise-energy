@@ -19,7 +19,7 @@ const contextLabels={en:'PV illustration',zh:'光伏示意',es:'Ejemplo fotovolt
 const language=window.ANTHRISE_I18N?.language||document.documentElement.lang;
 const locale=language.split('-')[0];
 const lightingPath=(locale==='zh'?'/lighting-zh.html':'/lighting.html')+'?lang='+encodeURIComponent(language);
-const lightingNames={en:'Lighting Series',zh:'灯具系列',es:'Serie de iluminación',ru:'Серия освещения'};
+const lightingNames={en:'Smart Lighting',zh:'智能照明',es:'Iluminación inteligente',ru:'Умное освещение'};
 pvContext.textContent='☀ '+(contextLabels[locale]||contextLabels.en);
 markerHost.append(pvContext);
 
@@ -27,19 +27,33 @@ const imageWidth=1505,imageHeight=1045,imageRatio=imageWidth/imageHeight;
 const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 '+imageWidth+' '+imageHeight);svg.setAttribute('focusable','false');svg.classList.add('application-regions');svg.setAttribute('aria-hidden','true');plane.append(svg);
 let hovered=null,selected=null,layoutState={};
 function setHighlight(zone){if(hovered===zone)return;hovered=zone;host.dataset.hover=zone||'';for(const n of document.querySelectorAll('[data-zone]'))n.classList.toggle('is-hovered',n.dataset.zone===zone);for(const p of svg.children)p.classList.toggle('active-region',p.dataset.zone===zone);layout();window.dispatchEvent(new CustomEvent('anthrise:scene-hover',{detail:{zone}}));}
-function choose(zone){selected=zone;setHighlight(zone);for(const n of document.querySelectorAll('[data-zone]'))n.setAttribute('aria-pressed',String(n.dataset.zone===zone));window.dispatchEvent(new CustomEvent('anthrise:product-zone',{detail:{zone}}));}
-function attach(node,zone){node.addEventListener('pointerenter',e=>{if(e.pointerType!=='touch')setHighlight(zone)});node.addEventListener('pointerleave',()=>setHighlight(selected));node.addEventListener('focus',()=>setHighlight(zone));node.addEventListener('blur',()=>setHighlight(selected));node.addEventListener('click',()=>choose(zone));}
+function choose(zone){selected=zone;setHighlight(zone);for(const n of markerHost.querySelectorAll('button[data-zone]'))n.setAttribute('aria-pressed',String(n.dataset.zone===zone));window.dispatchEvent(new CustomEvent('anthrise:product-zone',{detail:{zone}}));}
+function attach(node,zone){node.addEventListener('pointerenter',e=>{if(e.pointerType!=='touch')setHighlight(zone)});node.addEventListener('pointerleave',()=>setHighlight(selected));node.addEventListener('focus',()=>setHighlight(zone));node.addEventListener('blur',()=>setHighlight(selected));}
+function attachSelection(node,zone){attach(node,zone);node.addEventListener('click',()=>choose(zone));}
 for(const [zone,def] of Object.entries(definitions)){
+ const region=document.createElementNS(ns,'path');
+ region.setAttribute('d',def.path);
+ region.setAttribute('focusable','false');
+ region.setAttribute('tabindex','-1');
+ region.dataset.zone=zone;
+ region.style.setProperty('--region-color',def.color);
+ svg.append(region);
  if(zone==='lighting'){
+  region.style.pointerEvents='none';
   const link=document.createElement('a');
-  link.className='scene-marker scene-marker--lighting-link';
+  link.className='scene-marker';
+  link.dataset.zone=zone;
   link.href=lightingPath;
-  link.textContent=lightingNames[locale]||lightingNames.en;
+  link.style.setProperty('--zone-color',def.color);
+  link.innerHTML='<span class="marker-dot" aria-hidden="true"></span><span></span>';
+  link.lastElementChild.textContent=lightingNames[locale]||lightingNames.en;
   markerHost.append(link);
+  attach(link,zone);
   continue;
  }
- const p=document.createElementNS(ns,'path');p.setAttribute('d',def.path);p.setAttribute('focusable','false');p.setAttribute('tabindex','-1');p.addEventListener('pointerdown',e=>{if(e.pointerType!=='touch')e.preventDefault()});p.dataset.zone=zone;p.style.setProperty('--region-color',def.color);svg.append(p);attach(p,zone);
- const button=document.createElement('button');button.type='button';button.className='scene-marker';button.dataset.zone=zone;button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','catalog-showcase');button.style.setProperty('--zone-color',def.color);button.innerHTML='<span class="marker-dot" aria-hidden="true"></span><span'+(zone==='commercial'?' data-no-translate':'')+'>'+def.label+'</span>';button.setAttribute('aria-pressed','false');markerHost.append(button);attach(button,zone);
+ region.addEventListener('pointerdown',e=>{if(e.pointerType!=='touch')e.preventDefault()});
+ attachSelection(region,zone);
+ const button=document.createElement('button');button.type='button';button.className='scene-marker';button.dataset.zone=zone;button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','catalog-showcase');button.style.setProperty('--zone-color',def.color);button.innerHTML='<span class="marker-dot" aria-hidden="true"></span><span'+(zone==='commercial'?' data-no-translate':'')+'>'+def.label+'</span>';button.setAttribute('aria-pressed','false');markerHost.append(button);attachSelection(button,zone);
 }
 for(const button of document.querySelectorAll('.product-scene-tabs [data-zone]'))attach(button,button.dataset.zone);
 function layout(){
@@ -59,10 +73,10 @@ function layout(){
  place(grid,.829,.72);
  place(pvContext,.817,.397);
  for(const [zone,def] of Object.entries(definitions)){
-  place(zone==='lighting'?markerHost.querySelector('.scene-marker--lighting-link'):markerHost.querySelector('[data-zone="'+zone+'"]'),def.x,def.y);
+  place(markerHost.querySelector('[data-zone="'+zone+'"]'),def.x,def.y);
  }
 }
 const observer=new ResizeObserver(layout);observer.observe(host);host.dataset.renderer='architectural-scene';layout();
-window.PRODUCT_SCENE={select:choose,hover:setHighlight,clear:()=>{selected=null;setHighlight(null);for(const n of document.querySelectorAll('[data-zone]'))n.setAttribute('aria-pressed','false')},getState:()=>({selected,hovered,renderer:host.dataset.renderer,colors:Object.fromEntries(Object.entries(definitions).map(([k,v])=>[k,v.color])),zones:Object.keys(definitions),productSpheres:document.querySelectorAll('.product-orbits,.orbit-space').length,layout:layoutState}),project:zone=>{const n=markerHost.querySelector('[data-zone="'+zone+'"]'),r=n.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2}}};
+window.PRODUCT_SCENE={select:choose,hover:setHighlight,clear:()=>{selected=null;setHighlight(null);for(const n of markerHost.querySelectorAll('button[data-zone]'))n.setAttribute('aria-pressed','false')},getState:()=>({selected,hovered,renderer:host.dataset.renderer,colors:Object.fromEntries(Object.entries(definitions).map(([k,v])=>[k,v.color])),zones:Object.keys(definitions),productSpheres:document.querySelectorAll('.product-orbits,.orbit-space').length,layout:layoutState}),project:zone=>{const n=markerHost.querySelector('[data-zone="'+zone+'"]'),r=n.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2}}};
 window.addEventListener('pagehide',()=>observer.disconnect());window.dispatchEvent(new Event('anthrise:scene-ready'));
 })();

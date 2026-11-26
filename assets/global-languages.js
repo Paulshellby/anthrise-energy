@@ -37,7 +37,32 @@
    const brand=frame.querySelector('a.brand-link,a.planning-logo,a.solution-logo,a.brand')||[...frame.querySelectorAll('a')].find(a=>a.querySelector('img'));
    if(!brand)return;
    nav=document.createElement('nav');nav.className='anthrise-primary-nav';nav.setAttribute('aria-label','Main navigation');nav.setAttribute('data-no-translate','');
-   const links=document.createElement('div');links.className='anthrise-nav-links';['home','products','lighting','solutions','about','contact'].forEach(key=>{const a=document.createElement('a');a.dataset.primaryPage=key;links.append(a)});nav.append(links);
+   const links=document.createElement('div');
+   links.className='anthrise-nav-links';
+   for(const key of ['home','products','solutions','about','contact']){
+    if(key==='products'){
+     const menu=document.createElement('details');
+     menu.className='anthrise-products-menu';
+     menu.innerHTML='<summary data-primary-page="products"><span></span><i aria-hidden="true"></i></summary><div class="anthrise-products-options"></div>';
+     const options=menu.querySelector('.anthrise-products-options');
+     const categories=[
+      ['power','<circle cx="8" cy="7" r="3"/><path d="M8 1v2M2 7h2m8 0h2M4 3l1 1m6-1-1 1M6 12h12l2 7H4l2-7Zm6 0v7m-7-3h14m-7 3v3"/>'],
+      ['lighting','<path d="M7 14a6 6 0 1 1 10 0l-2 3H9l-2-3Zm3 6h4m-3 2h2M20 3v4m-2-2h4M3 10H1"/>']
+     ];
+     for(const [category,icon] of categories){
+      const link=document.createElement('a');
+      link.dataset.catalogCategory=category;
+      link.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+icon+'</svg><span></span>';
+      options.append(link);
+     }
+     links.append(menu);
+    }else{
+     const link=document.createElement('a');
+     link.dataset.primaryPage=key;
+     links.append(link);
+    }
+   }
+   nav.append(links);
    header.classList.add('anthrise-unified-header');frame.classList.add('anthrise-nav-frame');brand.classList.add('anthrise-nav-brand');
    frame.append(brand,nav);nav.append(picker);
    for(const child of [...frame.children])if(child!==brand&&child!==nav){child.classList.add('anthrise-nav-retired');child.inert=true;child.hidden=true}
@@ -45,10 +70,25 @@
   }
   if(picker.parentElement!==nav)nav.append(picker);
   picker.dir=rtl?'rtl':'ltr';
-  const labels={en:['Home','Products','Lighting Series','Solutions','About us','Contact'],zh:['首页','产品','灯具系列','解决方案','关于我们','联系我们'],es:['Inicio','Productos','Serie de iluminación','Soluciones','Empresa','Contacto'],ru:['Главная','Продукция','Серия освещения','Решения','О компании','Связаться']};
-  const copy=labels[language]||['Home','Products','Lighting Series','Solutions','About','Contact'].map(text),homeUrl=home(language),targets=[homeUrl,'/products.html?lang='+language,(language==='zh'?'/lighting-zh.html':'/lighting.html')+'?lang='+language,'/solutions.html?lang='+language,'/about.html?lang='+language,homeUrl+'#project-inquiry'];
-  const path=location.pathname,current=location.hash==='#project-inquiry'&&/^\/(?:index\.html|home-(?:zh|es|ru)\.html)?$/.test(path)?'contact':/^\/(?:index\.html|home-(?:zh|es|ru)\.html)?$/.test(path)?'home':path.includes('products')?'products':/^\/lighting(?:-zh)?\.html$/.test(path)?'lighting':path.endsWith('/solutions.html')?'solutions':path.endsWith('/about.html')?'about':'';
-  nav.querySelectorAll('[data-primary-page]').forEach((a,i)=>{if(a.textContent!==copy[i])a.textContent=copy[i];if(a.getAttribute('href')!==targets[i])a.setAttribute('href',targets[i]);if(a.dataset.primaryPage===current)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+  const labels={en:['Home','Products','Solutions','About us','Contact'],zh:['首页','产品','解决方案','关于我们','联系我们'],es:['Inicio','Productos','Soluciones','Empresa','Contacto'],ru:['Главная','Продукция','Решения','О компании','Связаться']};
+  const copy=labels[language]||['Home','Products','Solutions','About','Contact'].map(text),homeUrl=home(language),targets=[homeUrl,'/products.html?lang='+language,'/solutions.html?lang='+language,'/about.html?lang='+language,homeUrl+'#project-inquiry'];
+  const path=location.pathname,current=location.hash==='#project-inquiry'&&/^\/(?:index\.html|home-(?:zh|es|ru)\.html)?$/.test(path)?'contact':/^\/(?:index\.html|home-(?:zh|es|ru)\.html)?$/.test(path)?'home':path.includes('products')?'products':/^\/lighting(?:-zh)?\.html$/.test(path)?'products':path.endsWith('/solutions.html')?'solutions':path.endsWith('/about.html')?'about':'';
+  nav.querySelectorAll('[data-primary-page]').forEach((item,i)=>{
+   const isProducts=item.dataset.primaryPage==='products';
+   const label=isProducts?item.querySelector('span'):item;
+   if(label.textContent!==copy[i])label.textContent=copy[i];
+   if(!isProducts&&item.getAttribute('href')!==targets[i])item.setAttribute('href',targets[i]);
+   if(item.dataset.primaryPage===current)item.setAttribute('aria-current','page');
+   else item.removeAttribute('aria-current');
+  });
+  const categories={en:['Solar Power','Smart Lighting'],zh:['太阳能电力','智能照明'],es:['Energía solar','Iluminación inteligente'],ru:['Солнечная энергетика','Умное освещение']};
+  const [powerLabel,lightingLabel]=categories[language]||categories.en;
+  const power=nav.querySelector('[data-catalog-category="power"]');
+  const lighting=nav.querySelector('[data-catalog-category="lighting"]');
+  power.href=targets[1];
+  lighting.href=(language==='zh'?'/lighting-zh.html':'/lighting.html')+'?lang='+language;
+  power.querySelector('span').textContent=powerLabel;
+  lighting.querySelector('span').textContent=lightingLabel;
  }
  function mountPicker(){const header=document.querySelector('#site-header,.planning-header,body>header.header,body>header');if(!header)return;let picker=header.querySelector('.site-language-picker');if(!picker){picker=document.createElement('details');picker.className='site-language-picker';(header.querySelector('.nav-tools,.header-actions,.planning-nav')||header.querySelector('.header-inner')||header).append(picker)}picker.dataset.globalLocale='';
   const open=picker.open,code={zh:'中','zh-Hant':'繁','pt-BR':'PT'}[language]||language.toUpperCase();picker.innerHTML='<summary>'+config.globe+'<span class="site-language-code">'+code+'</span><span aria-hidden="true">⌄</span></summary><div class="global-language-panel"><strong></strong><input type="search" class="global-language-search"><div class="global-language-grid"></div></div>';picker.open=open;
@@ -62,9 +102,9 @@
  window.addEventListener('hashchange',()=>{const picker=document.querySelector('.site-language-picker'),header=picker?.closest('header');if(header)mountNavigation(header,picker)});
  function removeLocalControls(){document.querySelectorAll('#atlas [data-action="language"]').forEach(n=>n.remove());for(const id of ['about-language','page-language']){const select=document.getElementById(id);if(select){const parent=select.closest('label');(parent||select).remove()}}document.querySelectorAll('header label.language,header #langBtn,header .locale-picker,header .lang-switch,header .language-switch,header .lang-btn').forEach(n=>{n.hidden=true;n.setAttribute('aria-hidden','true');n.inert=true})}
  function getCoverage(root=document.body){const missing=new Set();let needed=0,covered=0;if(!root)return {needed,covered,missing:[]};function check(source){const result=lookup(source);if(!result.needed)return;needed++;if(result.covered)covered++;else missing.add(normalize(source))}const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let node;while(node=walker.nextNode()){const parent=node.parentElement;if(!parent||parent.closest(excluded+', [hidden], [inert]')||!parent.getClientRects().length)continue;const record=textRecords.get(node);check(record&&node.nodeValue===record.last?record.source:node.nodeValue)}root.querySelectorAll('[aria-label],[title],[placeholder],[alt],[data-tooltip]').forEach(n=>{if(n.closest(excluded+', [hidden], [inert]')||!n.getClientRects().length)return;const records=attributeRecords.get(n)||{};for(const name of attributes){const value=n.getAttribute(name);if(value){const record=records[name];check(record&&value===record.last?record.source:value)}}});return {needed,covered,missing:[...missing]}}
- document.addEventListener('click',event=>{const choice=event.target.closest('a[data-language]');if(choice){event.preventDefault();event.stopImmediatePropagation();changeLanguage(choice.dataset.language);return}document.querySelectorAll('.site-language-picker').forEach(p=>{if(!p.contains(event.target))p.open=false})},true);
+ document.addEventListener('click',event=>{const choice=event.target.closest('a[data-language]');if(choice){event.preventDefault();event.stopImmediatePropagation();changeLanguage(choice.dataset.language);return}document.querySelectorAll('.site-language-picker,.anthrise-products-menu').forEach(p=>{if(!p.contains(event.target)||event.target.closest('[data-catalog-category]'))p.open=false})},true);
  document.addEventListener('invalid',event=>{const field=event.target;if(!field.setCustomValidity)return;field.setCustomValidity(text(field.validity.valueMissing?'Please complete this field.':field.validity.typeMismatch?'Please enter a valid email address.':'Please enter a valid value.'))},true);document.addEventListener('input',event=>{if(event.target.setCustomValidity)event.target.setCustomValidity('')},true);
- document.addEventListener('keydown',event=>{if(event.key==='Escape')document.querySelectorAll('.site-language-picker[open]').forEach(p=>{p.open=false;p.querySelector('summary').focus()})});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape')document.querySelectorAll('.site-language-picker[open],.anthrise-products-menu[open]').forEach(p=>{p.open=false;p.querySelector('summary').focus()})});
  function start(){if(started)return;started=true;removeLocalControls();mountPicker();enforceLanguage();observer=new MutationObserver(records=>{if(records.some(r=>r.target.nodeType===Node.ELEMENT_NODE&&r.target.matches?.('.site-language-picker summary')))return;queue()});observer.observe(document.body,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:[...attributes,'href']});new MutationObserver(()=>{enforceLanguage();queue()}).observe(document.documentElement,{attributes:true,attributeFilter:['lang','dir']});const script=document.createElement('script');script.src='/assets/i18n/'+encodeURIComponent(language)+'.js?v=20261124-citypopup1';script.onload=()=>{pack=window.ANTHRISE_TRANSLATIONS?.[language]||{};ready=true;mountPicker();apply();resolveReady(api);window.dispatchEvent(new Event('anthrise:language-ready'));queue()};script.onerror=()=>{console.error('Local language pack could not load:',language)};document.head.append(script)}
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();

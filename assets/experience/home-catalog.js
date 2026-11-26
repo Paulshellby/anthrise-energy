@@ -18,13 +18,19 @@
     series_orbit1: '3–10 kW', series_orbit3: '5–30 kW', series_pulse: '6 kW', series_pulse3: '12 kW'
   };
   const ordered = ids => ids.map(id => catalog.find(product => product.id === id)).filter(Boolean);
+  const horizon = catalog.find(product => product.id === 'series_horizon');
+  const commercialOptions = horizon ? [
+    ['AE-C-30-60', '30 kW / 60 kWh'],
+    ['AE-C-50-112', '50 kW / 112 kWh'],
+    ['AE-C-125-261', '125 kW / 261 kWh']
+  ].map(([model, capacity]) => ({...horizon, configuration: {model, capacity}})) : [];
   const groups = {
     storage: {title: 'Energy storage', products: [
       ...ordered(storageOrder),
       ...catalog.filter(p => p.category === 'storage' && p.id !== 'series_horizon' && !storageOrder.includes(p.id))
     ]},
     inverter: {title: 'Hybrid inverters', products: ordered(hybridOrder)},
-    commercial: {title: 'C&I', products: ordered(['series_horizon'])}
+    commercial: {title: 'C&I', products: commercialOptions}
   };
   let products = [], items = [], group;
 
@@ -69,7 +75,7 @@
     return copies.map((product, index) => {
     const card = document.createElement('a');
     card.className = 'home-catalog-card';
-    card.dataset.product = product.id;
+    card.dataset.product = product.configuration?.model || product.id;
     if (index >= products.length) {
       card.tabIndex = -1;
       card.setAttribute('aria-hidden', 'true');
@@ -149,8 +155,9 @@
     search.setAttribute('aria-label', search.placeholder);
     for (const {card, name, detail, product} of items) {
       card.href = '/products/' + product.id + '-' + productLanguage + '.html?lang=' + encodeURIComponent(locale);
-      name.textContent = language === 'zh' ? product.zh : translate(product.en);
-      detail.textContent = [hybridPower[product.id], translate('View details')].filter(Boolean).join(' · ');
+      if (product.configuration) card.href += '#variantsSection';
+      name.textContent = product.configuration?.model || (language === 'zh' ? product.zh : translate(product.en));
+      detail.textContent = [product.configuration?.capacity || hybridPower[product.id], translate('View details')].filter(Boolean).join(' · ');
     }
     search.value = '';
     filterCatalog();
@@ -245,6 +252,8 @@
     hovering = false;
     deferAutoplay();
     dialog.classList.toggle('is-single', products.length === 1);
+    dialog.classList.toggle('is-commercial', zone === 'commercial');
+    search.closest('.home-catalog-search').hidden = zone === 'commercial';
     dialog.querySelector('footer').hidden = products.length === 1;
     items = mountCards();
     localize();
