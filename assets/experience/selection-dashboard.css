@@ -64,7 +64,6 @@ body[data-page="tools"] {
   border-radius: inherit;
   clip-path: inset(0 calc(100% - var(--target-coverage, 100%)) 0 0);
 }
-body[data-page="tools"] .planning-footer { background: #f7f9f0ef; }
 @media (prefers-reduced-motion: no-preference) {
   .selection-gauge > div::after { transition: clip-path .35s ease; }
   .selection-dashboard .tool-panel { animation: selection-arrival .55s ease-out both; }
