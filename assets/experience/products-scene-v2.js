@@ -13,6 +13,13 @@ grid.style.setProperty('--zone-color','#007d77');
 grid.innerHTML='<span class="marker-dot" aria-hidden="true"></span><span>Grid</span>';
 markerHost.append(grid);
 
+const pvContext=document.createElement('span');
+pvContext.className='scene-marker scene-marker--context';
+const contextLabels={en:'PV illustration',zh:'光伏示意',es:'Ejemplo fotovoltaico',ru:'Иллюстрация ФЭМ'};
+const locale=(window.ANTHRISE_I18N?.language||document.documentElement.lang).split('-')[0];
+pvContext.textContent='☀ '+(contextLabels[locale]||contextLabels.en);
+markerHost.append(pvContext);
+
 const imageWidth=1505,imageHeight=1045,imageRatio=imageWidth/imageHeight;
 const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 '+imageWidth+' '+imageHeight);svg.setAttribute('focusable','false');svg.classList.add('application-regions');svg.setAttribute('aria-hidden','true');plane.append(svg);
 let hovered=null,selected=null,layoutState={};
@@ -39,6 +46,7 @@ function layout(){
   node.style.top=(top+y*ph)+'px';
  }
  place(grid,.829,.72);
+ place(pvContext,.817,.397);
  for(const [zone,def] of Object.entries(definitions)){
   place(markerHost.querySelector('[data-zone="'+zone+'"]'),def.x,def.y);
  }

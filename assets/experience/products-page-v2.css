@@ -76,3 +76,12 @@
   font-size: clamp(30px, 3.4vw, 52px);
   letter-spacing: -.035em;
 }
+
+.scene-marker.scene-marker--context {
+  pointer-events: none;
+  color: #43564e;
+  background: #fffef2e8;
+  border: 1px dashed #bca970;
+  box-shadow: none;
+  cursor: default;
+}
