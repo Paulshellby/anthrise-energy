@@ -17,6 +17,25 @@
   background-image: url('/assets/experience/home-sunrise.webp');
   background-position: 68% center;
 }
+.home-horizon-model {
+  /* Match the sunrise image’s cover crop and its 68% horizontal anchor. */
+  --image-width: max(100vw, 177.778svh);
+  --image-height: max(100svh, 56.25vw);
+  position: absolute;
+  z-index: 1;
+  left: calc(68vw + var(--image-width) * .018);
+  top: max(85px, calc(50svh - var(--image-height) * .267));
+  transform: translate(-50%, -100%);
+  padding: 5px 12px;
+  border: 1px solid #fff9;
+  border-radius: 999px;
+  background: #f7f9f0e8;
+  color: #163d36;
+  font-size: clamp(10px, 1.05vw, 14px);
+  font-weight: 650;
+  letter-spacing: .1em;
+  white-space: nowrap;
+}
 .home-landscape-community {
   background-image: linear-gradient(180deg,#f8e7cd50,#e8f0e944 55%,#eff5edb0),url('/assets/experience/community.webp');
   opacity: var(--home-community-opacity,0);
@@ -113,6 +132,11 @@
     height: 64%;
     object-position: 92% center;
     mask-image: linear-gradient(transparent, #000 20%);
+  }
+  .home-horizon-model {
+    --image-width: max(100vw, 113.778svh);
+    left: calc(92vw - var(--image-width) * .222);
+    top: 50.9svh;
   }
   .home-landscape-solar::after {
     content: "";
