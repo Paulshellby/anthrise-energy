@@ -37,7 +37,7 @@
    const brand=frame.querySelector('a.brand-link,a.planning-logo,a.solution-logo,a.brand')||[...frame.querySelectorAll('a')].find(a=>a.querySelector('img'));
    if(!brand)return;
    nav=document.createElement('nav');nav.className='anthrise-primary-nav';nav.setAttribute('aria-label','Main navigation');nav.setAttribute('data-no-translate','');
-   const links=document.createElement('div');links.className='anthrise-nav-links';['home','products','solutions','about','contact'].forEach(key=>{const a=document.createElement('a');a.dataset.primaryPage=key;links.append(a)});nav.append(links);
+   const links=document.createElement('div');links.className='anthrise-nav-links';['home','products','lighting','solutions','about','contact'].forEach(key=>{const a=document.createElement('a');a.dataset.primaryPage=key;links.append(a)});nav.append(links);
    header.classList.add('anthrise-unified-header');frame.classList.add('anthrise-nav-frame');brand.classList.add('anthrise-nav-brand');
    frame.append(brand,nav);nav.append(picker);
    for(const child of [...frame.children])if(child!==brand&&child!==nav){child.classList.add('anthrise-nav-retired');child.inert=true;child.hidden=true}
@@ -45,9 +45,9 @@
   }
   if(picker.parentElement!==nav)nav.append(picker);
   picker.dir=rtl?'rtl':'ltr';
-  const labels={en:['Home','Products','Solutions','About us','Contact'],zh:['首页','产品','解决方案','关于我们','联系我们'],es:['Inicio','Productos','Soluciones','Empresa','Contacto'],ru:['Главная','Продукция','Решения','О компании','Связаться']};
-  const copy=labels[language]||['Home','Products','Solutions','About','Contact'].map(text),homeUrl=home(language),targets=[homeUrl,'/products.html?lang='+language,'/solutions.html?lang='+language,'/about.html?lang='+language,homeUrl+'#project-inquiry'];
-  const path=location.pathname,current=location.hash==='#project-inquiry'&&/^\/(?:index\.html|home-(?:zh|es|ru)\.html)?$/.test(path)?'contact':/^\/(?:index\.html|home-(?:zh|es|ru)\.html)?$/.test(path)?'home':path.includes('products')?'products':path.endsWith('/solutions.html')?'solutions':path.endsWith('/about.html')?'about':'';
+  const labels={en:['Home','Products','Lighting Series','Solutions','About us','Contact'],zh:['首页','产品','灯具系列','解决方案','关于我们','联系我们'],es:['Inicio','Productos','Serie de iluminación','Soluciones','Empresa','Contacto'],ru:['Главная','Продукция','Серия освещения','Решения','О компании','Связаться']};
+  const copy=labels[language]||['Home','Products','Lighting Series','Solutions','About','Contact'].map(text),homeUrl=home(language),targets=[homeUrl,'/products.html?lang='+language,(language==='zh'?'/lighting-zh.html':'/lighting.html')+'?lang='+language,'/solutions.html?lang='+language,'/about.html?lang='+language,homeUrl+'#project-inquiry'];
+  const path=location.pathname,current=location.hash==='#project-inquiry'&&/^\/(?:index\.html|home-(?:zh|es|ru)\.html)?$/.test(path)?'contact':/^\/(?:index\.html|home-(?:zh|es|ru)\.html)?$/.test(path)?'home':path.includes('products')?'products':/^\/lighting(?:-zh)?\.html$/.test(path)?'lighting':path.endsWith('/solutions.html')?'solutions':path.endsWith('/about.html')?'about':'';
   nav.querySelectorAll('[data-primary-page]').forEach((a,i)=>{if(a.textContent!==copy[i])a.textContent=copy[i];if(a.getAttribute('href')!==targets[i])a.setAttribute('href',targets[i]);if(a.dataset.primaryPage===current)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
  }
  function mountPicker(){const header=document.querySelector('#site-header,.planning-header,body>header.header,body>header');if(!header)return;let picker=header.querySelector('.site-language-picker');if(!picker){picker=document.createElement('details');picker.className='site-language-picker';(header.querySelector('.nav-tools,.header-actions,.planning-nav')||header.querySelector('.header-inner')||header).append(picker)}picker.dataset.globalLocale='';

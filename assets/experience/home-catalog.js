@@ -6,9 +6,10 @@
   const catalog = window.ANTHRISE_SCENE_PRODUCTS;
   if (!links.length || !catalog || !HTMLDialogElement.prototype.showModal) return;
 
-  const featuredIds = ['ess16', 'series_ascend', 'balconyBess', 'series_horizon', 'hybrid20', 'jcLight09'];
-  const featured = featuredIds.map(id => catalog.find(product => product.id === id)).filter(Boolean);
-  const products = [...featured, ...catalog.filter(product => !featured.includes(product))];
+  const coreProducts = catalog.filter(product => product.category !== 'lighting');
+  const featuredIds = ['ess16', 'series_ascend', 'balconyBess', 'series_horizon', 'hybrid20', 'origAEV500'];
+  const featured = featuredIds.map(id => coreProducts.find(product => product.id === id)).filter(Boolean);
+  const products = [...featured, ...coreProducts.filter(product => !featured.includes(product))];
   if (!products.length) return;
 
   const translate = text => window.ANTHRISE_I18N?.t(text) || text;
@@ -124,7 +125,7 @@
     steps[0].setAttribute('aria-label', left);
     steps[1].setAttribute('aria-label', right);
     updatePlaybackLabel();
-    search.placeholder = searchText(catalog.length);
+    search.placeholder = searchText(products.length);
     search.setAttribute('aria-label', search.placeholder);
     for (const {card, name, detail, product} of items) {
       card.href = '/products/' + product.id + '-' + productLanguage + '.html?lang=' + encodeURIComponent(locale);

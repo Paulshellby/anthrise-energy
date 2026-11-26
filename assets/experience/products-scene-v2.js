@@ -16,7 +16,10 @@ markerHost.append(grid);
 const pvContext=document.createElement('span');
 pvContext.className='scene-marker scene-marker--context';
 const contextLabels={en:'PV illustration',zh:'光伏示意',es:'Ejemplo fotovoltaico',ru:'Иллюстрация ФЭМ'};
-const locale=(window.ANTHRISE_I18N?.language||document.documentElement.lang).split('-')[0];
+const language=window.ANTHRISE_I18N?.language||document.documentElement.lang;
+const locale=language.split('-')[0];
+const lightingPath=(locale==='zh'?'/lighting-zh.html':'/lighting.html')+'?lang='+encodeURIComponent(language);
+const lightingNames={en:'Lighting Series',zh:'灯具系列',es:'Serie de iluminación',ru:'Серия освещения'};
 pvContext.textContent='☀ '+(contextLabels[locale]||contextLabels.en);
 markerHost.append(pvContext);
 
@@ -27,6 +30,14 @@ function setHighlight(zone){if(hovered===zone)return;hovered=zone;host.dataset.h
 function choose(zone){selected=zone;setHighlight(zone);for(const n of document.querySelectorAll('[data-zone]'))n.setAttribute('aria-pressed',String(n.dataset.zone===zone));window.dispatchEvent(new CustomEvent('anthrise:product-zone',{detail:{zone}}));}
 function attach(node,zone){node.addEventListener('pointerenter',e=>{if(e.pointerType!=='touch')setHighlight(zone)});node.addEventListener('pointerleave',()=>setHighlight(selected));node.addEventListener('focus',()=>setHighlight(zone));node.addEventListener('blur',()=>setHighlight(selected));node.addEventListener('click',()=>choose(zone));}
 for(const [zone,def] of Object.entries(definitions)){
+ if(zone==='lighting'){
+  const link=document.createElement('a');
+  link.className='scene-marker scene-marker--lighting-link';
+  link.href=lightingPath;
+  link.textContent=lightingNames[locale]||lightingNames.en;
+  markerHost.append(link);
+  continue;
+ }
  const p=document.createElementNS(ns,'path');p.setAttribute('d',def.path);p.setAttribute('focusable','false');p.setAttribute('tabindex','-1');p.addEventListener('pointerdown',e=>{if(e.pointerType!=='touch')e.preventDefault()});p.dataset.zone=zone;p.style.setProperty('--region-color',def.color);svg.append(p);attach(p,zone);
  const button=document.createElement('button');button.type='button';button.className='scene-marker';button.dataset.zone=zone;button.style.setProperty('--zone-color',def.color);button.innerHTML='<span class="marker-dot" aria-hidden="true"></span><span'+(zone==='commercial'?' data-no-translate':'')+'>'+def.label+'</span>';button.setAttribute('aria-controls','product-popover');button.setAttribute('aria-pressed','false');markerHost.append(button);attach(button,zone);
 }
@@ -48,7 +59,7 @@ function layout(){
  place(grid,.829,.72);
  place(pvContext,.817,.397);
  for(const [zone,def] of Object.entries(definitions)){
-  place(markerHost.querySelector('[data-zone="'+zone+'"]'),def.x,def.y);
+  place(zone==='lighting'?markerHost.querySelector('.scene-marker--lighting-link'):markerHost.querySelector('[data-zone="'+zone+'"]'),def.x,def.y);
  }
 }
 const observer=new ResizeObserver(layout);observer.observe(host);host.dataset.renderer='architectural-scene';layout();
