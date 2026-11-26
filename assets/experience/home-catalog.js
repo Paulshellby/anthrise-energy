@@ -22,6 +22,7 @@
     <div class="home-catalog-stage">
       <div class="home-catalog-orbit" aria-hidden="true"></div>
       <div class="home-catalog-track"></div>
+      <p class="home-catalog-empty" hidden></p>
     </div>
     <footer>
       <div class="home-catalog-controls">
@@ -29,7 +30,10 @@
         <button type="button" data-playback></button>
         <button type="button" data-step="1">→</button>
       </div>
-      <a href="/products.html?category=all"></a>
+      <div class="home-catalog-search">
+        <input type="search" autocomplete="off" enterkeyhint="search">
+        <span class="home-catalog-search-status" role="status"></span>
+      </div>
     </footer>`;
   document.body.append(dialog);
 
@@ -39,7 +43,9 @@
   const close = dialog.querySelector('[data-close]');
   const playback = dialog.querySelector('[data-playback]');
   const steps = [...dialog.querySelectorAll('[data-step]')];
-  const browse = dialog.querySelector('footer a');
+  const search = dialog.querySelector('input[type="search"]');
+  const searchStatus = dialog.querySelector('.home-catalog-search-status');
+  const empty = dialog.querySelector('.home-catalog-empty');
   const items = [...products, ...products].map((product, index) => {
     const card = document.createElement('a');
     card.className = 'home-catalog-card';
@@ -58,7 +64,7 @@
     const detail = document.createElement('span');
     card.append(image, name, detail);
     track.append(card);
-    return {card, name, detail, product};
+    return {card, name, detail, product, duplicate: index >= products.length};
   });
 
   const interfaceCopy = {
@@ -70,10 +76,45 @@
 
   let playbackText, paused, frameId, previousTime, distance, resumeAt = 0;
   let drag, hovering = false, suppressClick = false;
+  let searching = false;
+  let localeLanguage = 'en';
+
+  function filterCatalog() {
+    const query = search.value.trim();
+    searching = Boolean(query);
+    if (searching) stopAnimation();
+    let count = 0;
+    for (const {card, product, name, duplicate} of items) {
+      const visible = !searching || (!duplicate && window.ANTHRISE_PRODUCT_MATCHES(product, query, name.textContent));
+      card.hidden = !visible;
+      if (visible && !duplicate) count++;
+    }
+    empty.hidden = count > 0;
+    const chinese = localeLanguage === 'zh';
+    empty.textContent = chinese ? '未找到匹配的产品' : translate('No matching products.');
+    searchStatus.textContent = searching ? (chinese ? count + ' 款匹配产品' : count + ' ' + translate('Products')) : '';
+    track.scrollLeft = 0;
+    for (const button of steps) button.disabled = count === 0;
+    playback.disabled = searching;
+    if (searching) stopAutoplay();
+    else if (!dialog.classList.contains('is-orbiting')) startAutoplay();
+  }
+
+  search.addEventListener('input', filterCatalog);
+  search.addEventListener('keydown', event => {
+    if (event.key === 'Enter' && !event.isComposing) event.preventDefault();
+    if (event.key === 'Escape' && !event.isComposing && search.value) {
+      event.preventDefault();
+      event.stopPropagation();
+      search.value = '';
+      filterCatalog();
+    }
+  });
 
   function localize() {
     const locale = window.ANTHRISE_I18N?.language || document.documentElement.lang;
     const language = locale.split('-')[0];
+    localeLanguage = language;
     const productLanguage = ['en', 'zh', 'es', 'ru'].includes(language) ? language : 'en';
     const [title, play, pause, left, right, searchText] = interfaceCopy[language] || interfaceCopy.en;
 
@@ -83,13 +124,15 @@
     steps[0].setAttribute('aria-label', left);
     steps[1].setAttribute('aria-label', right);
     updatePlaybackLabel();
-    browse.textContent = searchText(catalog.length);
-    browse.href = '/products.html?category=all&lang=' + encodeURIComponent(locale);
+    search.placeholder = searchText(catalog.length);
+    search.setAttribute('aria-label', search.placeholder);
     for (const {card, name, detail, product} of items) {
       card.href = '/products/' + product.id + '-' + productLanguage + '.html?lang=' + encodeURIComponent(locale);
       name.textContent = language === 'zh' ? product.zh : translate(product.en);
       detail.textContent = translate('View details');
     }
+    search.value = '';
+    filterCatalog();
   }
 
   function updatePlaybackLabel() {
@@ -97,6 +140,7 @@
   }
 
   function cycleWidth() {
+    if (searching) return 0;
     return items[products.length].card.offsetLeft - items[0].card.offsetLeft;
   }
 
@@ -123,7 +167,7 @@
 
   function startAutoplay() {
     stopAutoplay();
-    if (!paused && dialog.open) frameId = requestAnimationFrame(tick);
+    if (!paused && !searching && dialog.open) frameId = requestAnimationFrame(tick);
   }
 
   function deferAutoplay() {
@@ -203,7 +247,7 @@
     const cycle = cycleWidth();
     if (step < 0 && track.scrollLeft === 0 && cycle) track.scrollLeft = cycle;
     if (step > 0 && track.scrollLeft >= cycle && cycle) track.scrollLeft -= cycle;
-    track.scrollBy({left: step * items[0].card.offsetWidth, behavior: reducedMotion.matches ? 'instant' : 'smooth'});
+    track.scrollBy({left: step * (track.querySelector('.home-catalog-card:not([hidden])')?.offsetWidth || 0), behavior: reducedMotion.matches ? 'instant' : 'smooth'});
   });
   track.addEventListener('wheel', deferAutoplay, {passive: true});
   track.addEventListener('dragstart', event => event.preventDefault());
