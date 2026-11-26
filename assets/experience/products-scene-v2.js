@@ -4,7 +4,6 @@ const host=document.querySelector('#energy-city'),plane=host.querySelector('.sce
 const definitions={
  storage:{label:'Energy storage',color:'#4f73d6',x:.26,y:.49,path:'M63 504 283 414 471 481 555 511 552 530 532 537 532 704 456 729 349 755 65 713Z'},
  inverter:{label:'Hybrid inverters',color:'#9262ce',x:.555,y:.35,path:'M499 292 798 220 1177 282 1176 400 1076 419 1018 530 855 585 499 499Z'},
- solar:{label:'Solar panels & kits',color:'#dca434',x:.822,y:.43,path:'M997 501 1292 382 1405 404 1405 452 1221 546 998 520Z'},
  lighting:{label:'Solar Lighting',color:'#399672',x:.422,y:.798,path:'M513 755 570 733 586 736 539 763 539 966 524 970 524 764Z M867 528 934 502 952 508 894 534 894 751 880 758 880 532Z M289 823 306 824 307 890 292 892Z M364 842 379 843 380 915 365 918Z M573 882 588 883 589 950 573 954Z M982 718 995 719 995 775 982 776Z'},
  commercial:{label:'C&amp;I',color:'#007d77',x:.876,y:.232,path:'M1269 278 1292 270 1315 279 1334 275 1360 286 1358 355 1330 370 1268 355Z'}
 };

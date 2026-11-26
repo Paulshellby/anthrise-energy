@@ -6,7 +6,7 @@
   const catalog = window.ANTHRISE_SCENE_PRODUCTS;
   if (!links.length || !catalog || !HTMLDialogElement.prototype.showModal) return;
 
-  const featuredIds = ['ess16', 'series_ascend', 'balconyBess', 'series_horizon', 'hybrid20', 'origAER400'];
+  const featuredIds = ['ess16', 'series_ascend', 'balconyBess', 'series_horizon', 'hybrid20', 'jcLight09'];
   const featured = featuredIds.map(id => catalog.find(product => product.id === id)).filter(Boolean);
   const products = [...featured, ...catalog.filter(product => !featured.includes(product))];
   if (!products.length) return;

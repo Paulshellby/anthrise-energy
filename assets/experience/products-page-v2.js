@@ -1,6 +1,6 @@
 (()=>{'use strict';
 const t=s=>window.ANTHRISE_I18N?.t(s)||s,products=window.ANTHRISE_SCENE_PRODUCTS||[],dialog=document.querySelector('#product-popover'),root=document.querySelector('#scene-product-list'),search=document.querySelector('#scene-product-search');
-const types={storage:['storage','portable'],inverter:['inverter'],solar:['solar'],lighting:['lighting'],commercial:['storage']},titles={all:'All Products',storage:'Energy storage',inverter:'Hybrid inverters',solar:'Solar panels & kits',lighting:'Solar Lighting',commercial:'C&I'};
+const types={storage:['storage'],inverter:['inverter'],lighting:['lighting'],commercial:['storage']},titles={all:'All Products',storage:'Energy storage',inverter:'Hybrid inverters',lighting:'Solar Lighting',commercial:'C&I'};
 let zone='all',query='',pinned=false,timer=0,hoverTimer=0,returnFocus=null;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function route(p){const l=window.ANTHRISE_I18N?.language||'en';return '/products/'+p.id+'-'+(['en','zh','es','ru'].includes(l)?l:'en')+'.html?lang='+encodeURIComponent(l)}

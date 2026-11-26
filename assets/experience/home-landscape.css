@@ -14,7 +14,7 @@
   background-size: cover;
 }
 .home-landscape-solar {
-  background-image: url('/assets/experience/home-sunrise.webp');
+  background-image: url('/assets/experience/sunrise-clean.webp');
   background-position: 68% center;
 }
 .home-horizon-model {
@@ -37,7 +37,7 @@
   white-space: nowrap;
 }
 .home-landscape-community {
-  background-image: linear-gradient(180deg,#f8e7cd50,#e8f0e944 55%,#eff5edb0),url('/assets/experience/community.webp');
+  background-image: linear-gradient(180deg,#f8e7cd50,#e8f0e944 55%,#eff5edb0),url('/assets/experience/community-clean.webp');
   opacity: var(--home-community-opacity,0);
 }
 .home-landscape-path {
@@ -64,17 +64,6 @@
   object-position: 68% center;
 }
 .home-landscape-hero .home-hero-copy { transform: translateY(-55px); }
-.home-landscape-hero .home-landscape-motion {
-  position: absolute;
-  inset: auto auto 18px clamp(18px, 3vw, 48px);
-  min-width: 44px;
-  min-height: 44px;
-  color: #163d36;
-  background: #fffef0e8;
-  border: 1px solid #d3ded2;
-  border-radius: 50%;
-  cursor: pointer;
-}
 .home-landscape-pair [data-no-translate] { color: #185747; font-size: 12px; letter-spacing: .13em; }
 .home-landscape-range {
   min-height: 91svh;

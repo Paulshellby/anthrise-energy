@@ -8,7 +8,7 @@
   border-radius: 20px;
   color: #173627;
   background: linear-gradient(180deg,#f2fbefaa,transparent 34%,#13320f22 74%,#173c20ab),
-    url('/assets/experience/home-catalog-meadow.webp') center 54% / cover;
+    url('/assets/experience/meadow-clean.webp') center 54% / cover;
   box-shadow: 0 30px 95px #071e2870;
 }
 .home-catalog-dialog::backdrop { background: #22483755; backdrop-filter: blur(5px); }

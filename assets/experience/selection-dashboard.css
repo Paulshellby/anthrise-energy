@@ -2,7 +2,7 @@ body[data-page="tools"] {
   background-color: #e5eee5;
   background-image:
     linear-gradient(90deg, #f0f7ef85, #f0f7ef16 66%, transparent),
-    url("/assets/experience/selection-meadow.webp");
+    url("/assets/experience/meadow-clean.webp");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
