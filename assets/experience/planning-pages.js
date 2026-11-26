@@ -24,7 +24,13 @@
   const meets=runtime+1e-8>=hours;$('#target-status').dataset.short=String(!meets);$('#target-status').textContent=meets?tr('当前 '+capacity+' kWh 容量的理论续航可覆盖 '+hours+' 小时目标。','The estimated runtime of '+capacity+' kWh covers your '+hours+' hour target.'):tr('当前容量预计支持 '+runtime.toFixed(1)+' 小时，低于 '+hours+' 小时目标。','The selected capacity supports about '+runtime.toFixed(1)+' hours, below your '+hours+' hour target.');
   $('#apply-capacity').textContent=tr('采用约 '+Math.ceil(required)+' kWh 容量 →','Use approximately '+Math.ceil(required)+' kWh →');
   const note=tr('储能初步估算：场景 '+$('#application').selectedOptions[0].textContent+'，持续负载 '+load+' kW，目标备电 '+hours+' 小时；可用容量 '+Math.round(usable*100)+'%，转换效率 '+Math.round(efficiency*100)+'%；计算所需额定容量 '+required.toFixed(1)+' kWh，当前所选 '+capacity+' kWh，理论续航 '+runtime.toFixed(1)+' 小时。仅供初步沟通。','Initial storage estimate: '+$('#application').value+', continuous load '+load+' kW, target '+hours+' hours; usable fraction '+Math.round(usable*100)+'%, efficiency '+Math.round(efficiency*100)+'%; required nominal capacity '+required.toFixed(1)+' kWh, selected '+capacity+' kWh, estimated runtime '+runtime.toFixed(1)+' hours. Indicative only.');
-  $('#estimate-inquiry').href='/official-site.html?lang='+lang+'&estimate='+encodeURIComponent(window.ANTHRISE_I18N?.t(note)||note)+'#project-inquiry';
+  const locale=window.ANTHRISE_I18N?.language||lang;
+  const home=window.ANTHRISE_I18N?.home(locale)||tr('/home-zh.html','/');
+  const inquiry=new URL(home,location.origin);
+  inquiry.searchParams.set('lang',locale);
+  inquiry.searchParams.set('estimate',window.ANTHRISE_I18N?.t(note)||note);
+  inquiry.hash='project-inquiry';
+  $('#estimate-inquiry').href=inquiry.pathname+inquiry.search+inquiry.hash;
   $$('[data-capacity]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.capacity)===capacity)))
  }
  function syncRange(){const value=Number($('#capacity').value);$('#capacity-range').max=Math.max(100,Math.ceil(value/100)*100);$('#capacity-range').value=value;$('#capacity-max').textContent=$('#capacity-range').max+' kWh'}
