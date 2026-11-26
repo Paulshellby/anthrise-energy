@@ -2,15 +2,31 @@
 (() => {
   'use strict';
 
-  const links = [...document.querySelectorAll('[data-home-catalog]')];
   const catalog = window.ANTHRISE_SCENE_PRODUCTS;
-  if (!links.length || !catalog || !HTMLDialogElement.prototype.showModal) return;
+  const scene = document.querySelector('#energy-city');
+  if (!scene || !catalog || !HTMLDialogElement.prototype.showModal) return;
 
-  const coreProducts = catalog.filter(product => product.category !== 'lighting');
-  const featuredIds = ['ess16', 'series_ascend', 'balconyBess', 'series_horizon', 'hybrid20', 'origAEV500'];
-  const featured = featuredIds.map(id => coreProducts.find(product => product.id === id)).filter(Boolean);
-  const products = [...featured, ...coreProducts.filter(product => !featured.includes(product))];
-  if (!products.length) return;
+  const storageOrder = [
+    'ess10', 'ess16', 'origAEV200', 'origAEV500', 'origAEV1000', 'origAEV1500', 'origAEV2500', 'origAEVP',
+    'series_seed12', 'seed12_100', 'seed12_150', 'seed12_200', 'seed12_300',
+    'series_seed24', 'seed24_100', 'seed24_150', 'seed24_200', 'seed24_300'
+  ];
+  const hybridOrder = [
+    'series_orbit1', 'series_orbit3', 'hybrid6', 'series_pulse', 'hybrid12', 'series_pulse3', 'hybrid20', 'hybrid50'
+  ];
+  const hybridPower = {
+    series_orbit1: '3–10 kW', series_orbit3: '5–30 kW', series_pulse: '6 kW', series_pulse3: '12 kW'
+  };
+  const ordered = ids => ids.map(id => catalog.find(product => product.id === id)).filter(Boolean);
+  const groups = {
+    storage: {title: 'Energy storage', products: [
+      ...ordered(storageOrder),
+      ...catalog.filter(p => p.category === 'storage' && p.id !== 'series_horizon' && !storageOrder.includes(p.id))
+    ]},
+    inverter: {title: 'Hybrid inverters', products: ordered(hybridOrder)},
+    commercial: {title: 'C&I', products: ordered(['series_horizon'])}
+  };
+  let products = [], items = [], group;
 
   const translate = text => window.ANTHRISE_I18N?.t(text) || text;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -47,7 +63,10 @@
   const search = dialog.querySelector('input[type="search"]');
   const searchStatus = dialog.querySelector('.home-catalog-search-status');
   const empty = dialog.querySelector('.home-catalog-empty');
-  const items = [...products, ...products].map((product, index) => {
+  function mountCards() {
+    track.replaceChildren();
+    const copies = products.length > 1 ? [...products, ...products] : products;
+    return copies.map((product, index) => {
     const card = document.createElement('a');
     card.className = 'home-catalog-card';
     card.dataset.product = product.id;
@@ -56,7 +75,7 @@
       card.setAttribute('aria-hidden', 'true');
     }
     const image = new Image();
-    image.loading = index < featured.length ? 'eager' : 'lazy';
+    image.loading = index < 6 ? 'eager' : 'lazy';
     image.decoding = 'async';
     image.draggable = false;
     image.src = '/' + product.image;
@@ -66,7 +85,8 @@
     card.append(image, name, detail);
     track.append(card);
     return {card, name, detail, product, duplicate: index >= products.length};
-  });
+    });
+  }
 
   const interfaceCopy = {
     en: ['All products', 'Play', 'Pause', 'Scroll left', 'Scroll right', count => 'Search all ' + count + ' products'],
@@ -117,9 +137,9 @@
     const language = locale.split('-')[0];
     localeLanguage = language;
     const productLanguage = ['en', 'zh', 'es', 'ru'].includes(language) ? language : 'en';
-    const [title, play, pause, left, right, searchText] = interfaceCopy[language] || interfaceCopy.en;
+    const [, play, pause, left, right, searchText] = interfaceCopy[language] || interfaceCopy.en;
 
-    dialog.querySelector('h2').textContent = title;
+    dialog.querySelector('h2').textContent = translate(group.title);
     close.setAttribute('aria-label', translate('Close'));
     playbackText = {play, pause};
     steps[0].setAttribute('aria-label', left);
@@ -130,7 +150,7 @@
     for (const {card, name, detail, product} of items) {
       card.href = '/products/' + product.id + '-' + productLanguage + '.html?lang=' + encodeURIComponent(locale);
       name.textContent = language === 'zh' ? product.zh : translate(product.en);
-      detail.textContent = translate('View details');
+      detail.textContent = [hybridPower[product.id], translate('View details')].filter(Boolean).join(' · ');
     }
     search.value = '';
     filterCatalog();
@@ -141,7 +161,7 @@
   }
 
   function cycleWidth() {
-    if (searching) return 0;
+    if (searching || products.length < 2) return 0;
     return items[products.length].card.offsetLeft - items[0].card.offsetLeft;
   }
 
@@ -159,8 +179,8 @@
       if (step) {
         distance -= step;
         const cycle = cycleWidth();
-        const position = track.scrollLeft - step;
-        track.scrollLeft = cycle && position < 0 ? position + cycle : position;
+        const position = track.scrollLeft + step;
+        track.scrollLeft = cycle && position >= cycle ? position - cycle : position;
       }
     }
     frameId = requestAnimationFrame(tick);
@@ -168,7 +188,7 @@
 
   function startAutoplay() {
     stopAutoplay();
-    if (!paused && !searching && dialog.open) frameId = requestAnimationFrame(tick);
+    if (!paused && !searching && dialog.open && products.length > 1) frameId = requestAnimationFrame(tick);
   }
 
   function deferAutoplay() {
@@ -186,16 +206,17 @@
   function animate() {
     stopAnimation();
     track.scrollLeft = 0;
-    if (reducedMotion.matches) { startAutoplay(); return; }
+    if (reducedMotion.matches || products.length < 2) { startAutoplay(); return; }
+    const orbitCount = Math.min(6, products.length);
 
     const bounds = stage.getBoundingClientRect();
     dialog.classList.add('is-orbiting');
-    const movement = items.slice(0, featured.length).map(({card}, index) => {
+    const movement = items.slice(0, orbitCount).map(({card}, index) => {
       const rect = card.getBoundingClientRect();
       const centerX = bounds.left + bounds.width / 2 - rect.left - rect.width / 2;
       const centerY = bounds.top + bounds.height / 2 - rect.top - rect.height / 2;
       function orbitFrame(turn, offset) {
-        const angle = -.7 + 2 * Math.PI * (index / featured.length + turn);
+        const angle = -.7 + 2 * Math.PI * (index / orbitCount + turn);
         const depth = Math.sin(angle);
         const x = centerX + Math.cos(angle) * bounds.width * .35;
         const y = centerY + depth * bounds.height * .29 + Math.cos(angle) * bounds.height * .07;
@@ -211,26 +232,33 @@
     movement.push(orbit.animate([{opacity: 0}, {opacity: 1, offset: .15}, {opacity: 1, offset: .68}, {opacity: 0}], {duration: 2370}));
     animations = movement;
     Promise.allSettled(movement.map(animation => animation.finished)).then(() => {
-      if (animations === movement) { stopAnimation(); startAutoplay(); }
+      if (animations === movement) { stopAnimation(); deferAutoplay(); startAutoplay(); }
     });
   }
 
-  for (const link of links) {
-    link.setAttribute('aria-controls', dialog.id);
-    link.setAttribute('aria-haspopup', 'dialog');
-    link.addEventListener('click', event => {
-      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
-      event.preventDefault();
-      trigger = link;
-      window.PRODUCT_BROWSER?.close();
-      paused = reducedMotion.matches;
-      resumeAt = 0;
-      hovering = false;
-      localize();
-      dialog.showModal();
-      animate();
-    });
+  function open(zone, element) {
+    if (dialog.open || !groups[zone]?.products.length) return;
+    group = groups[zone];
+    products = group.products;
+    trigger = element;
+    paused = reducedMotion.matches;
+    hovering = false;
+    deferAutoplay();
+    dialog.classList.toggle('is-single', products.length === 1);
+    dialog.querySelector('footer').hidden = products.length === 1;
+    items = mountCards();
+    localize();
+    dialog.showModal();
+    animate();
   }
+
+  window.addEventListener('anthrise:product-zone', ({detail}) => {
+    open(detail.zone, scene.querySelector('button[data-zone="' + detail.zone + '"]'));
+  });
+  window.addEventListener('anthrise:scene-ready', () => {
+    const requested = new URLSearchParams(location.search).get('category');
+    if (Object.hasOwn(groups, requested)) window.PRODUCT_SCENE.select(requested);
+  });
   close.addEventListener('click', () => dialog.close());
   playback.addEventListener('click', () => {
     paused = !paused;
@@ -293,6 +321,7 @@
     stopAnimation();
     stopAutoplay();
     drag = null;
+    window.PRODUCT_SCENE?.clear();
     trigger?.focus({preventScroll: true});
   });
   window.addEventListener('pagehide', () => {

@@ -39,7 +39,7 @@ for(const [zone,def] of Object.entries(definitions)){
   continue;
  }
  const p=document.createElementNS(ns,'path');p.setAttribute('d',def.path);p.setAttribute('focusable','false');p.setAttribute('tabindex','-1');p.addEventListener('pointerdown',e=>{if(e.pointerType!=='touch')e.preventDefault()});p.dataset.zone=zone;p.style.setProperty('--region-color',def.color);svg.append(p);attach(p,zone);
- const button=document.createElement('button');button.type='button';button.className='scene-marker';button.dataset.zone=zone;button.style.setProperty('--zone-color',def.color);button.innerHTML='<span class="marker-dot" aria-hidden="true"></span><span'+(zone==='commercial'?' data-no-translate':'')+'>'+def.label+'</span>';button.setAttribute('aria-controls','product-popover');button.setAttribute('aria-pressed','false');markerHost.append(button);attach(button,zone);
+ const button=document.createElement('button');button.type='button';button.className='scene-marker';button.dataset.zone=zone;button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','catalog-showcase');button.style.setProperty('--zone-color',def.color);button.innerHTML='<span class="marker-dot" aria-hidden="true"></span><span'+(zone==='commercial'?' data-no-translate':'')+'>'+def.label+'</span>';button.setAttribute('aria-pressed','false');markerHost.append(button);attach(button,zone);
 }
 for(const button of document.querySelectorAll('.product-scene-tabs [data-zone]'))attach(button,button.dataset.zone);
 function layout(){
