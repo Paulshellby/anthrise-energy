@@ -30,3 +30,17 @@ body{background:#eef5f1}
 
 .about-capability em{font-style:normal}
 @media(max-width:640px){.about-header .site-language-picker{position:absolute;right:18px;top:12px}.about-header .planning-nav{padding-right:0;width:100%}.about-header{padding-top:16px;padding-bottom:16px}.about-header .planning-logo{margin-right:100px}}
+
+body { background: #f7f8f4; }
+#about.about-screen {
+  background:
+    radial-gradient(ellipse at 79% 37%,#dcecf3be 0%,#e2edf168 32%,transparent 60%),
+    linear-gradient(160deg,#faf9f4 9%,#f6f8f4 55%,#e8f0e9 100%);
+}
+.about-hero-copy h1,.about-hero-copy h2 { color: #163d36; }
+.about-earth::after { border-color: #27938354; }
+#pack-process.pack-screen {
+  background:
+    radial-gradient(ellipse at 89% 65%,#dfedf2a6,transparent 65%),
+    linear-gradient(180deg,#e8f0e9 0%,#f5f7f1 40%,#faf9f5 100%);
+}

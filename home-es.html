@@ -98,7 +98,7 @@
 <link rel="stylesheet" href="/assets/css/codex-refinement.css?v=20261120-refine1">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; object-src 'none'; base-uri 'self'">
 <link rel="stylesheet" href="/assets/site-shell.css?v=20261121-live1">
-<link rel="stylesheet" href="/assets/experience/atlas.css?v=20261122-batteryset1"><link rel="stylesheet" href="/assets/experience/inquiry-screen.css?v=20261122-about1"><script src="/assets/experience/contact-header.js?v=20261122-about1" defer></script><link rel="stylesheet" href="/assets/experience/home-showcase.css?v=20261125-sharedcatalog"><script src="/assets/experience/home-showcase.js?v=20261125-homecatalog" defer></script><link rel="stylesheet" href="/assets/site-navigation.css?v=20261124-sales"><script src="/assets/experience/products-scene-data.js?v=20261124-products1" defer></script><script src="/assets/experience/home-catalog.js?v=20261125-carousel" defer></script><link rel="stylesheet" href="/assets/experience/catalog-showcase.css?v=20261125-carousel"></head>
+<link rel="stylesheet" href="/assets/experience/atlas.css?v=20261122-batteryset1"><link rel="stylesheet" href="/assets/experience/inquiry-screen.css?v=20261122-about1"><script src="/assets/experience/contact-header.js?v=20261122-about1" defer></script><link rel="stylesheet" href="/assets/experience/home-showcase.css?v=20261125-sharedcatalog"><script src="/assets/experience/home-showcase.js?v=20261126-landscape" defer></script><link rel="stylesheet" href="/assets/site-navigation.css?v=20261124-sales"><script src="/assets/experience/products-scene-data.js?v=20261124-products1" defer></script><script src="/assets/experience/home-catalog.js?v=20261125-carousel" defer></script><link rel="stylesheet" href="/assets/experience/catalog-showcase.css?v=20261125-carousel"><link rel="stylesheet" href="/assets/experience/home-landscape.css?v=20261126-landscape"></head>
 
   <body class="campus-home home-showcase">
     <a class="skip-link" href="#main-content">Ir al contenido principal</a>
@@ -270,17 +270,44 @@
       </div>
     </header>
 
-    <main id="main-content"><div class="home-first-screen">
+    <main id="main-content"><div class="home-landscape" aria-hidden="true">
+  <div class="home-landscape-scene home-landscape-solar"></div>
+  <div class="home-landscape-scene home-landscape-community"></div>
+  <div class="home-landscape-scene home-landscape-path"></div>
+</div><div class="home-first-screen">
 <!-- Product-led homepage preview: real product assets, shared language and mascot. -->
-<section class="home-hero" aria-labelledby="home-showcase-heading">
- <div class="home-container"><div class="home-hero-copy"><p class="home-eyebrow" data-no-translate>ANTHRISE ENERGY</p>
- <h1 id="home-showcase-heading">Energy for everyday possibilities.</h1>
- <p class="home-hero-description"><span>Energy storage</span><span>Solar panels &amp; inverters</span><span>Solar Lighting</span></p>
- <div class="home-hero-actions"><a class="home-button" href="#featured-products">Explore products</a><a class="home-button secondary" href="/selection-tools.html">Selection tools</a></div></div>
- <div class="home-products-scene" data-focus="floor">
- <img class="home-scene-item home-scene-panel" src="/assets/experience/showroom-views/origAER400-1.webp" alt="AE-R400 · 400W Rigid" width="500" height="500" fetchpriority="high" decoding="async"><img class="home-scene-item home-scene-light" src="/assets/experience/showroom-views/jcLight27-1.webp" alt="Split Solar Street Light" width="500" height="500" fetchpriority="high" decoding="async">
- <img class="home-scene-item home-scene-balcony" src="/assets/experience/showroom-views/balconyBess-1.webp" alt="Balcony Energy Storage System" width="500" height="500" fetchpriority="high" decoding="async"><img class="home-scene-item home-scene-compact" src="/assets/experience/showroom-views/ess10-1.webp" alt="5–10kWh Compact Storage" width="500" height="500" fetchpriority="high" decoding="async"><img class="home-scene-item home-scene-floor" src="/assets/experience/battery-photos-v2/ess16-main.webp" alt="16kWh Home Storage" width="500" height="500" fetchpriority="high" decoding="async">
- <div class="home-scene-dots"><button type="button" data-home-focus="balcony" aria-pressed="false" aria-label="Balcony Energy Storage System"></button><button type="button" data-home-focus="compact" aria-pressed="false" aria-label="5–10kWh Compact Storage"></button><button type="button" data-home-focus="floor" aria-pressed="true" aria-label="16kWh Home Storage"></button></div></div></div>
+<section class="home-hero home-landscape-hero" aria-labelledby="home-showcase-heading">
+  <div class="home-container">
+    <div class="home-hero-copy">
+      <p class="home-eyebrow" data-no-translate>ANTHRISE ENERGY</p>
+      <h1 id="home-showcase-heading">Energía a gran escala.</h1>
+      <p class="home-landscape-lead">Almacenamiento de energía comercial e industrial.</p>
+      <div class="home-hero-actions">
+        <a class="home-button" href="/products/series_horizon-es.html?lang=es">Explorar HORIZON</a>
+        <a class="home-button secondary" href="/solutions.html?lang=es">Ver soluciones</a>
+      </div>
+    </div>
+    <figure class="home-landscape-horizon">
+      <img src="/assets/experience/showroom-views/series_horizon-1.webp" width="573" height="636" alt="Anthrise AE-E-HORIZON" fetchpriority="high">
+      <figcaption data-no-translate>AE-E-HORIZON</figcaption>
+    </figure>
+  </div>
+</section>
+<section class="home-landscape-range" id="storage-range" aria-labelledby="home-range-heading">
+  <div class="home-container">
+    <h2 id="home-range-heading">Almacenamiento para el día a día.</h2>
+    <p class="home-landscape-lead">Desde la energía solar en balcones hasta el respaldo doméstico modular.</p>
+    <div class="home-landscape-pair">
+      <a href="/products/balconyBess-es.html?lang=es">
+        <img src="/assets/experience/showroom-views/balconyBess-1.webp" width="1102" height="840" alt="" loading="lazy">
+        <span data-no-translate>AE-E-BALCONY</span><h3>Almacenamiento para balcones</h3><span class="home-landscape-view">Ver producto</span>
+      </a>
+      <a href="/products/series_ascend-es.html?lang=es">
+        <img src="/assets/experience/showroom-views/series_ascend-1.webp" width="510" height="637" alt="" loading="lazy">
+        <span data-no-translate>AE-E-ASCEND</span><h3>Almacenamiento modular de alta tensión</h3><span class="home-landscape-view">Ver producto</span>
+      </a>
+    </div>
+  </div>
 </section>
 <div class="home-catalog-surface"><div class="home-container"><nav class="home-categories" aria-label="Products"><a class="home-category" href="/products/ess16-en.html"><img class="" src="/assets/experience/battery-photos-v2/ess16-main.webp" alt="16kWh Home Storage" width="500" height="500" loading="lazy" decoding="async"><span>Energy storage</span></a><a class="home-category" href="/products/hybrid20-en.html"><img class="" src="/assets/experience/showroom-views/hybrid20-1.webp" alt="20 kW Hybrid Inverter" width="500" height="500" loading="lazy" decoding="async"><span>Hybrid inverters</span></a><a class="home-category" href="/products/origAER400-en.html"><img class="" src="/assets/experience/showroom-views/origAER400-1.webp" alt="AE-R400 · 400W Rigid" width="500" height="500" loading="lazy" decoding="async"><span>Solar panels & kits</span></a><a class="home-category" href="/products/origAEV2500-en.html"><img class="" src="/assets/experience/showroom-views/origAEV2500-1.webp" alt="Professional Portable Power Station" width="500" height="500" loading="lazy" decoding="async"><span>Portable power</span></a><a class="home-category" href="/products/jcLight27-en.html"><img class="" src="/assets/experience/showroom-views/jcLight27-1.webp" alt="Split Solar Street Light" width="500" height="500" loading="lazy" decoding="async"><span>Solar Lighting</span></a><a class="home-category" data-home-catalog href="/products.html?category=all"><svg viewBox="0 0 48 64" aria-hidden="true"><rect x="4" y="12" width="16" height="16" rx="3"/><rect x="28" y="12" width="16" height="16" rx="3"/><rect x="4" y="36" width="16" height="16" rx="3"/><rect x="28" y="36" width="16" height="16" rx="3"/></svg><span>All Products</span></a></nav>
 <div class="home-feature-layout"><section id="featured-products" aria-labelledby="home-featured-heading"><div class="home-section-heading"><h2 id="home-featured-heading">Featured products</h2><a data-home-catalog href="/products.html?category=all">All Products</a></div><div class="home-feature-grid"><a class="home-product" data-product="balconyBess" href="/products/balconyBess-en.html"><img class="" src="/assets/experience/showroom-views/balconyBess-1.webp" alt="Balcony Energy Storage System" width="500" height="500" loading="lazy" decoding="async"><h3>Balcony Energy Storage System</h3><p>Compact home storage.</p></a><a class="home-product" data-product="ess10" href="/products/ess10-en.html"><img class="" src="/assets/experience/showroom-views/ess10-1.webp" alt="5–10kWh Compact Storage" width="500" height="500" loading="lazy" decoding="async"><h3>5–10kWh Compact Storage</h3><p>Home energy storage</p></a><a class="home-product" data-product="ess16" href="/products/ess16-en.html"><img class="" src="/assets/experience/battery-photos-v2/ess16-main.webp" alt="16kWh Home Storage" width="500" height="500" loading="lazy" decoding="async"><h3>AE-E-DAWN-16</h3><p>15.36 kWh · 51.2 V · 300 Ah</p></a></div></section>
